@@ -86,3 +86,4 @@
 | 2026-09-13 | Java | Beginner | Strings | Immutability and StringBuilder | java/strings/string_immutability_and_stringbuilder.java |
 | 2026-09-13 | Ruby | Beginner | Basics | Hash and array idioms | ruby/basics/hash_array_idioms.rb |
 | 2026-09-13 | C | Beginner | Pointers | Function pointers and callbacks | c/pointers/function_pointers.c |
+| 2026-09-13 | JavaScript | Intermediate | Async | Promises and the event loop | javascript/async/promises_and_event_loop.js |

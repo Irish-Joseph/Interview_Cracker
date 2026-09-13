@@ -1,5 +1,5 @@
 {
-  "total_examples": 84,
+  "total_examples": 85,
   "examples": [
     {
       "date": "2026-09-03",
@@ -672,6 +672,14 @@
       "category": "pointers",
       "topic": "Function pointers and callbacks",
       "file": "c/pointers/function_pointers.c"
+    },
+    {
+      "date": "2026-09-13",
+      "language": "javascript",
+      "difficulty": "intermediate",
+      "category": "async",
+      "topic": "Promises and the event loop",
+      "file": "javascript/async/promises_and_event_loop.js"
     }
   ]
 }
