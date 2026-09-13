@@ -15,7 +15,7 @@ Explore the language folders to start learning.
 
 Examples: 90
 Languages: 12
-Categories: 44
+Categories: 74
 
 ## Languages Covered
 
