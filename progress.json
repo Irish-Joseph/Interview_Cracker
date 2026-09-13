@@ -1,5 +1,5 @@
 {
-  "total_examples": 85,
+  "total_examples": 86,
   "examples": [
     {
       "date": "2026-09-03",
@@ -680,6 +680,14 @@
       "category": "async",
       "topic": "Promises and the event loop",
       "file": "javascript/async/promises_and_event_loop.js"
+    },
+    {
+      "date": "2026-09-13",
+      "language": "sql",
+      "difficulty": "intermediate",
+      "category": "aggregation",
+      "topic": "GROUP BY and HAVING",
+      "file": "sql/aggregation/group_by_and_having.sql"
     }
   ]
 }

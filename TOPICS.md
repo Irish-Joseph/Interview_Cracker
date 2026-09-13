@@ -87,3 +87,4 @@
 | 2026-09-13 | Ruby | Beginner | Basics | Hash and array idioms | ruby/basics/hash_array_idioms.rb |
 | 2026-09-13 | C | Beginner | Pointers | Function pointers and callbacks | c/pointers/function_pointers.c |
 | 2026-09-13 | JavaScript | Intermediate | Async | Promises and the event loop | javascript/async/promises_and_event_loop.js |
+| 2026-09-13 | SQL | Intermediate | Aggregation | GROUP BY and HAVING | sql/aggregation/group_by_and_having.sql |
