@@ -710,7 +710,7 @@
       "language": "python",
       "difficulty": "advanced",
       "category": "algorithms",
-      "topic": "Sorting mastery — key, stability, DsuD, top-K",
+      "topic": "Sorting mastery — key, stability, DSU, top-K",
       "file": "python/algorithms/sorting_key_stability.py"
     },
     {
