@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Programming Q&A
+    url: https://github.com/Irish-Joseph/code-by-example/discussions/categories/q-a
+    about: Ask for help understanding an example or programming concept.
+  - name: Ideas and suggestions
+    url: https://github.com/Irish-Joseph/code-by-example/discussions/categories/ideas
+    about: Share broader ideas for improving the learning collection.
