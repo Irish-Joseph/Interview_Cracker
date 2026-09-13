@@ -1,5 +1,5 @@
 {
-  "total_examples": 79,
+  "total_examples": 80,
   "examples": [
     {
       "date": "2026-09-03",
@@ -632,6 +632,14 @@
       "category": "dates",
       "topic": "Date and time with the datetime module",
       "file": "python/dates/datetime_basics.py"
+    },
+    {
+      "date": "2026-09-13",
+      "language": "go",
+      "difficulty": "beginner",
+      "category": "files",
+      "topic": "File I/O — read, write, scan, append",
+      "file": "go/files/file_io.go"
     }
   ]
 }

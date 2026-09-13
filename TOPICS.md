@@ -81,3 +81,4 @@
 | 2026-09-10 | C# | Beginner | Collections | List, Dictionary and HashSet idioms | csharp/collections/list_dictionary_hashset.cs |
 | 2026-09-10 | Rust | Advanced | Concurrency | Threads, mpsc channels, Arc<Mutex> and atomics | rust/concurrency/threads_and_channels.rs |
 | 2026-09-13 | Python | Beginner | Dates | Date and time with the datetime module | python/dates/datetime_basics.py |
+| 2026-09-13 | Go | Beginner | Files | File I/O — read, write, scan, append | go/files/file_io.go |
