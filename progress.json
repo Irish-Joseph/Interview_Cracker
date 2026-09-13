@@ -1,5 +1,5 @@
 {
-  "total_examples": 83,
+  "total_examples": 84,
   "examples": [
     {
       "date": "2026-09-03",
@@ -664,6 +664,14 @@
       "category": "basics",
       "topic": "Hash and array idioms",
       "file": "ruby/basics/hash_array_idioms.rb"
+    },
+    {
+      "date": "2026-09-13",
+      "language": "c",
+      "difficulty": "beginner",
+      "category": "pointers",
+      "topic": "Function pointers and callbacks",
+      "file": "c/pointers/function_pointers.c"
     }
   ]
 }
