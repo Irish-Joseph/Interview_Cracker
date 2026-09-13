@@ -80,3 +80,4 @@
 | 2026-09-10 | Java | Intermediate | Generics | Generic methods, bounded types and PECS wildcards | java/generics/generic_methods_and_wildcards.java |
 | 2026-09-10 | C# | Beginner | Collections | List, Dictionary and HashSet idioms | csharp/collections/list_dictionary_hashset.cs |
 | 2026-09-10 | Rust | Advanced | Concurrency | Threads, mpsc channels, Arc<Mutex> and atomics | rust/concurrency/threads_and_channels.rs |
+| 2026-09-13 | Python | Beginner | Dates | Date and time with the datetime module | python/dates/datetime_basics.py |

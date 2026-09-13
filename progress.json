@@ -1,5 +1,5 @@
 {
-  "total_examples": 78,
+  "total_examples": 79,
   "examples": [
     {
       "date": "2026-09-03",
@@ -624,6 +624,14 @@
       "category": "concurrency",
       "topic": "Threads, mpsc channels, Arc<Mutex> and atomics",
       "file": "rust/concurrency/threads_and_channels.rs"
+    },
+    {
+      "date": "2026-09-13",
+      "language": "python",
+      "difficulty": "beginner",
+      "category": "dates",
+      "topic": "Date and time with the datetime module",
+      "file": "python/dates/datetime_basics.py"
     }
   ]
 }
