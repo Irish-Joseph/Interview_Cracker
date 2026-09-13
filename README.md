@@ -17,6 +17,25 @@ Examples: 90
 Languages: 12
 Categories: 44
 
+## Languages Covered
+
+| Language | Examples |
+|---|---|
+| python | 14 |
+| sql | 9 |
+| javascript | 8 |
+| rust | 8 |
+| typescript | 8 |
+| go | 8 |
+| java | 7 |
+| bash | 7 |
+| c | 7 |
+| cpp | 6 |
+| csharp | 6 |
+| ruby | 2 |
+
+Full per-example listing (with date, difficulty and category) is in [TOPICS.md](TOPICS.md).
+
 ## Repository Layout
 
 - Each programming language has its own top-level folder (e.g. `python/`, `javascript/`).
@@ -24,3 +43,6 @@ Categories: 44
 - `TOPICS.md` is a human-readable registry of every example.
 - `progress.json` is the machine-readable registry.
 - `Skill.md` documents the rules used to maintain this repository.
+
+Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the
+example checklist and pull-request workflow.
