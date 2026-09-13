@@ -1,0 +1,45 @@
+name: Example request
+description: Suggest a focused programming concept for a new example
+title: "[Example]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping expand the learning collection.
+  - type: input
+    id: language
+    attributes:
+      label: Programming language
+      placeholder: Python
+    validations:
+      required: true
+  - type: input
+    id: concept
+    attributes:
+      label: Concept
+      description: Name the single concept the example should teach.
+      placeholder: Context managers with ExitStack
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Learning outcome
+      description: Explain what a learner should understand after running it.
+    validations:
+      required: true
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Practical use case
+      description: Describe where this concept is useful.
+    validations:
+      required: true
+  - type: checkboxes
+    id: duplicate-check
+    attributes:
+      label: Duplicate check
+      options:
+        - label: I checked TOPICS.md and did not find this concept.
+          required: true

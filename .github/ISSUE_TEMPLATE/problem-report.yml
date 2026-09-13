@@ -1,0 +1,38 @@
+name: Problem report
+description: Report incorrect, unclear, or non-running example code
+title: "[Problem]: "
+labels:
+  - bug
+body:
+  - type: input
+    id: file
+    attributes:
+      label: Example file
+      description: Provide the path to the affected example.
+      placeholder: python/algorithms/binary_search_iterative.py
+    validations:
+      required: true
+  - type: dropdown
+    id: problem
+    attributes:
+      label: Problem type
+      options:
+        - Incorrect behavior
+        - Example does not run
+        - Explanation is unclear
+        - Registry information is incorrect
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Include the observed behavior and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include the runtime/compiler version and operating system when relevant.

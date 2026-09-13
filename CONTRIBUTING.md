@@ -32,3 +32,14 @@ clear concept through a small, focused example.
 - The pull request targets the default `main` branch.
 
 For the repository's complete maintenance rules, see `Skill.md`.
+
+## Collaborating on a change
+
+When two or more people genuinely work on the same change, record each person's
+contribution with Git's `Co-authored-by` trailer. The email in the trailer must
+belong to that contributor's GitHub account. Do not add a co-author who did not
+participate in the change.
+
+Questions about the examples belong in the repository's
+[Q&A Discussions](https://github.com/Irish-Joseph/code-by-example/discussions/categories/q-a),
+where the question author can mark a helpful response as the accepted answer.
