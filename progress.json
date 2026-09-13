@@ -1,5 +1,5 @@
 {
-  "total_examples": 86,
+  "total_examples": 87,
   "examples": [
     {
       "date": "2026-09-03",
@@ -688,6 +688,14 @@
       "category": "aggregation",
       "topic": "GROUP BY and HAVING",
       "file": "sql/aggregation/group_by_and_having.sql"
+    },
+    {
+      "date": "2026-09-13",
+      "language": "cpp",
+      "difficulty": "intermediate",
+      "category": "error-handling",
+      "topic": "Exceptions — throw, catch, rethrow, noexcept",
+      "file": "cpp/error-handling/exceptions.cpp"
     }
   ]
 }
