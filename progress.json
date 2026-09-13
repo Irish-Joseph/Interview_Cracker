@@ -1,5 +1,5 @@
 {
-  "total_examples": 80,
+  "total_examples": 81,
   "examples": [
     {
       "date": "2026-09-03",
@@ -640,6 +640,14 @@
       "category": "files",
       "topic": "File I/O — read, write, scan, append",
       "file": "go/files/file_io.go"
+    },
+    {
+      "date": "2026-09-13",
+      "language": "typescript",
+      "difficulty": "beginner",
+      "category": "basics",
+      "topic": "Optional chaining and nullish coalescing",
+      "file": "typescript/basics/optional_chaining_nullish.ts"
     }
   ]
 }
