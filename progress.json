@@ -1,5 +1,5 @@
 {
-  "total_examples": 87,
+  "total_examples": 88,
   "examples": [
     {
       "date": "2026-09-03",
@@ -696,6 +696,14 @@
       "category": "error-handling",
       "topic": "Exceptions — throw, catch, rethrow, noexcept",
       "file": "cpp/error-handling/exceptions.cpp"
+    },
+    {
+      "date": "2026-09-13",
+      "language": "bash",
+      "difficulty": "intermediate",
+      "category": "testing",
+      "topic": "Minimal test harness with diff",
+      "file": "bash/testing/test_harness.sh"
     }
   ]
 }

@@ -89,3 +89,4 @@
 | 2026-09-13 | JavaScript | Intermediate | Async | Promises and the event loop | javascript/async/promises_and_event_loop.js |
 | 2026-09-13 | SQL | Intermediate | Aggregation | GROUP BY and HAVING | sql/aggregation/group_by_and_having.sql |
 | 2026-09-13 | C++ | Intermediate | Error handling | Exceptions — throw, catch, rethrow, noexcept | cpp/error-handling/exceptions.cpp |
+| 2026-09-13 | Bash | Intermediate | Testing | Minimal test harness with diff | bash/testing/test_harness.sh |
