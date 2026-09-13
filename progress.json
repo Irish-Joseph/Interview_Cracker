@@ -1,5 +1,5 @@
 {
-  "total_examples": 88,
+  "total_examples": 89,
   "examples": [
     {
       "date": "2026-09-03",
@@ -704,6 +704,14 @@
       "category": "testing",
       "topic": "Minimal test harness with diff",
       "file": "bash/testing/test_harness.sh"
+    },
+    {
+      "date": "2026-09-13",
+      "language": "python",
+      "difficulty": "advanced",
+      "category": "algorithms",
+      "topic": "Sorting mastery — key, stability, DsuD, top-K",
+      "file": "python/algorithms/sorting_key_stability.py"
     }
   ]
 }
