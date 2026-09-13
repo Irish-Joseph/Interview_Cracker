@@ -1,5 +1,5 @@
 {
-  "total_examples": 81,
+  "total_examples": 82,
   "examples": [
     {
       "date": "2026-09-03",
@@ -648,6 +648,14 @@
       "category": "basics",
       "topic": "Optional chaining and nullish coalescing",
       "file": "typescript/basics/optional_chaining_nullish.ts"
+    },
+    {
+      "date": "2026-09-13",
+      "language": "java",
+      "difficulty": "beginner",
+      "category": "strings",
+      "topic": "Immutability and StringBuilder",
+      "file": "java/strings/string_immutability_and_stringbuilder.java"
     }
   ]
 }
