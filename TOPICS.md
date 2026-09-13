@@ -84,3 +84,4 @@
 | 2026-09-13 | Go | Beginner | Files | File I/O — read, write, scan, append | go/files/file_io.go |
 | 2026-09-13 | TypeScript | Beginner | Basics | Optional chaining and nullish coalescing | typescript/basics/optional_chaining_nullish.ts |
 | 2026-09-13 | Java | Beginner | Strings | Immutability and StringBuilder | java/strings/string_immutability_and_stringbuilder.java |
+| 2026-09-13 | Ruby | Beginner | Basics | Hash and array idioms | ruby/basics/hash_array_idioms.rb |

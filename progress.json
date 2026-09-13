@@ -1,5 +1,5 @@
 {
-  "total_examples": 82,
+  "total_examples": 83,
   "examples": [
     {
       "date": "2026-09-03",
@@ -656,6 +656,14 @@
       "category": "strings",
       "topic": "Immutability and StringBuilder",
       "file": "java/strings/string_immutability_and_stringbuilder.java"
+    },
+    {
+      "date": "2026-09-13",
+      "language": "ruby",
+      "difficulty": "beginner",
+      "category": "basics",
+      "topic": "Hash and array idioms",
+      "file": "ruby/basics/hash_array_idioms.rb"
     }
   ]
 }
