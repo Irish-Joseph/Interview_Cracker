@@ -1,5 +1,5 @@
 {
-  "total_examples": 89,
+  "total_examples": 90,
   "examples": [
     {
       "date": "2026-09-03",
@@ -712,6 +712,14 @@
       "category": "algorithms",
       "topic": "Sorting mastery — key, stability, DsuD, top-K",
       "file": "python/algorithms/sorting_key_stability.py"
+    },
+    {
+      "date": "2026-09-13",
+      "language": "csharp",
+      "difficulty": "advanced",
+      "category": "delegates",
+      "topic": "Delegates and events (publisher/subscriber)",
+      "file": "csharp/delegates/delegates_and_events.cs"
     }
   ]
 }

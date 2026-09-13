@@ -13,7 +13,7 @@ Explore the language folders to start learning.
 
 ## Statistics
 
-Examples: 78
+Examples: 90
 Languages: 12
 Categories: 44
 
