@@ -1,5 +1,5 @@
 {
-  "total_examples": 90,
+  "total_examples": 91,
   "examples": [
     {
       "date": "2026-09-03",
@@ -720,6 +720,14 @@
       "category": "delegates",
       "topic": "Delegates and events (publisher/subscriber)",
       "file": "csharp/delegates/delegates_and_events.cs"
+    },
+    {
+      "date": "2026-09-14",
+      "language": "python",
+      "difficulty": "intermediate",
+      "category": "data-models",
+      "topic": "Dataclass validation and derived fields",
+      "file": "python/data-models/dataclass_validation.py"
     }
   ]
 }
