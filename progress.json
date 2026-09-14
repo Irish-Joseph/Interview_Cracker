@@ -1,5 +1,5 @@
 {
-  "total_examples": 93,
+  "total_examples": 94,
   "examples": [
     {
       "date": "2026-09-03",
@@ -744,6 +744,14 @@
       "category": "concurrency",
       "topic": "Bounded worker pool with channels",
       "file": "go/concurrency/worker_pool.go"
+    },
+    {
+      "date": "2026-09-14",
+      "language": "rust",
+      "difficulty": "intermediate",
+      "category": "lifetimes",
+      "topic": "Relating borrowed text with lifetimes",
+      "file": "rust/lifetimes/borrowed_text_lifetimes.rs"
     }
   ]
 }

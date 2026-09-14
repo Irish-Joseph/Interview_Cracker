@@ -95,3 +95,4 @@
 | 2026-09-14 | Python | Intermediate | Data models | Dataclass validation and derived fields | python/data-models/dataclass_validation.py |
 | 2026-09-14 | JavaScript | Beginner | Collections | Map and Set patterns | javascript/collections/map_set_patterns.js |
 | 2026-09-14 | Go | Intermediate | Concurrency | Bounded worker pool with channels | go/concurrency/worker_pool.go |
+| 2026-09-14 | Rust | Intermediate | Lifetimes | Relating borrowed text with lifetimes | rust/lifetimes/borrowed_text_lifetimes.rs |
