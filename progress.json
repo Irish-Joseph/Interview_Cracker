@@ -1,5 +1,5 @@
 {
-  "total_examples": 101,
+  "total_examples": 102,
   "examples": [
     {
       "date": "2026-09-03",
@@ -808,6 +808,14 @@
       "category": "pattern-matching",
       "topic": "Destructuring nested data with structural patterns",
       "file": "ruby/pattern-matching/structural_patterns.rb"
+    },
+    {
+      "date": "2026-09-14",
+      "language": "powershell",
+      "difficulty": "beginner",
+      "category": "objects",
+      "topic": "Processing custom objects through the pipeline",
+      "file": "powershell/objects/custom_objects_pipeline.ps1"
     }
   ]
 }
