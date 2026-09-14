@@ -1,5 +1,5 @@
 {
-  "total_examples": 95,
+  "total_examples": 96,
   "examples": [
     {
       "date": "2026-09-03",
@@ -760,6 +760,14 @@
       "category": "records",
       "topic": "Immutable data carriers with records",
       "file": "java/records/record_data_carriers.java"
+    },
+    {
+      "date": "2026-09-14",
+      "language": "cpp",
+      "difficulty": "intermediate",
+      "category": "sum-types",
+      "topic": "Type-safe alternatives with std::variant visitors",
+      "file": "cpp/sum-types/variant_visitor.cpp"
     }
   ]
 }
