@@ -101,3 +101,4 @@
 | 2026-09-14 | Bash | Intermediate | Scripting | Reliable temporary cleanup with trap | bash/scripting/trap_cleanup.sh |
 | 2026-09-14 | SQL | Intermediate | Transactions | Partial transaction rollback with savepoints | sql/transactions/savepoints_and_rollback.sql |
 | 2026-09-14 | C | Advanced | Data structures | Fixed-capacity circular queue | c/data-structures/circular_queue.c |
+| 2026-09-14 | C# | Beginner | Methods | Adding focused behavior with extension methods | csharp/methods/extension_methods.cs |
