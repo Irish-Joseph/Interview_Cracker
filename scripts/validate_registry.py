@@ -63,14 +63,32 @@ def main() -> int:
         "Languages": len({example["language"] for example in examples}),
         "Categories": len({(example["language"], example["category"]) for example in examples}),
     }
+
+    # README statistics are intentionally updated once, with the twelfth example
+    # of a daily batch. During examples 1-11, accept the summary from immediately
+    # before the latest batch as well as an already-current summary.
+    latest_date = max((example["date"] for example in examples), default=None)
+    latest_batch = [example for example in examples if example["date"] == latest_date]
+    earlier_examples = [example for example in examples if example["date"] != latest_date]
+    earlier = {
+        "Examples": len(earlier_examples),
+        "Languages": len({example["language"] for example in earlier_examples}),
+        "Categories": len(
+            {(example["language"], example["category"]) for example in earlier_examples}
+        ),
+    }
     for label, value in expected.items():
         try:
             actual = read_summary(readme, label)
         except ValueError as error:
             errors.append(str(error))
         else:
-            if actual != value:
-                errors.append(f"README.md {label} is {actual}; expected {value}")
+            allowed = {value}
+            if 0 < len(latest_batch) < 12:
+                allowed.add(earlier[label])
+            if actual not in allowed:
+                allowed_text = " or ".join(str(item) for item in sorted(allowed))
+                errors.append(f"README.md {label} is {actual}; expected {allowed_text}")
 
     if errors:
         print("Registry validation failed:", file=sys.stderr)
