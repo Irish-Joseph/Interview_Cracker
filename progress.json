@@ -1,5 +1,5 @@
 {
-  "total_examples": 92,
+  "total_examples": 93,
   "examples": [
     {
       "date": "2026-09-03",
@@ -736,6 +736,14 @@
       "category": "collections",
       "topic": "Map and Set patterns",
       "file": "javascript/collections/map_set_patterns.js"
+    },
+    {
+      "date": "2026-09-14",
+      "language": "go",
+      "difficulty": "intermediate",
+      "category": "concurrency",
+      "topic": "Bounded worker pool with channels",
+      "file": "go/concurrency/worker_pool.go"
     }
   ]
 }
