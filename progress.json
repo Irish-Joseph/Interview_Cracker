@@ -1,5 +1,5 @@
 {
-  "total_examples": 100,
+  "total_examples": 101,
   "examples": [
     {
       "date": "2026-09-03",
@@ -800,6 +800,14 @@
       "category": "methods",
       "topic": "Adding focused behavior with extension methods",
       "file": "csharp/methods/extension_methods.cs"
+    },
+    {
+      "date": "2026-09-14",
+      "language": "ruby",
+      "difficulty": "advanced",
+      "category": "pattern-matching",
+      "topic": "Destructuring nested data with structural patterns",
+      "file": "ruby/pattern-matching/structural_patterns.rb"
     }
   ]
 }
