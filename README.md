@@ -15,26 +15,27 @@ Explore the language folders to start learning.
 
 ## Statistics
 
-Examples: 90
-Languages: 12
-Categories: 74
+Examples: 102
+Languages: 13
+Categories: 84
 
 ## Languages Covered
 
 | Language | Examples |
 |---|---|
-| python | 14 |
-| sql | 9 |
-| javascript | 8 |
-| rust | 8 |
+| python | 15 |
+| sql | 10 |
+| javascript | 9 |
+| rust | 9 |
+| go | 9 |
 | typescript | 8 |
-| go | 8 |
-| java | 7 |
-| bash | 7 |
-| c | 7 |
-| cpp | 6 |
-| csharp | 6 |
-| ruby | 2 |
+| java | 8 |
+| bash | 8 |
+| c | 8 |
+| cpp | 7 |
+| csharp | 7 |
+| ruby | 3 |
+| powershell | 1 |
 
 Full per-example listing (with date, difficulty and category) is in [TOPICS.md](TOPICS.md).
 

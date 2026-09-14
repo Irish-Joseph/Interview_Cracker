@@ -103,3 +103,4 @@
 | 2026-09-14 | C | Advanced | Data structures | Fixed-capacity circular queue | c/data-structures/circular_queue.c |
 | 2026-09-14 | C# | Beginner | Methods | Adding focused behavior with extension methods | csharp/methods/extension_methods.cs |
 | 2026-09-14 | Ruby | Advanced | Pattern matching | Destructuring nested data with structural patterns | ruby/pattern-matching/structural_patterns.rb |
+| 2026-09-14 | PowerShell | Beginner | Objects | Processing custom objects through the pipeline | powershell/objects/custom_objects_pipeline.ps1 |
