@@ -96,3 +96,4 @@
 | 2026-09-14 | JavaScript | Beginner | Collections | Map and Set patterns | javascript/collections/map_set_patterns.js |
 | 2026-09-14 | Go | Intermediate | Concurrency | Bounded worker pool with channels | go/concurrency/worker_pool.go |
 | 2026-09-14 | Rust | Intermediate | Lifetimes | Relating borrowed text with lifetimes | rust/lifetimes/borrowed_text_lifetimes.rs |
+| 2026-09-14 | Java | Beginner | Records | Immutable data carriers with records | java/records/record_data_carriers.java |

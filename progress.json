@@ -1,5 +1,5 @@
 {
-  "total_examples": 94,
+  "total_examples": 95,
   "examples": [
     {
       "date": "2026-09-03",
@@ -752,6 +752,14 @@
       "category": "lifetimes",
       "topic": "Relating borrowed text with lifetimes",
       "file": "rust/lifetimes/borrowed_text_lifetimes.rs"
+    },
+    {
+      "date": "2026-09-14",
+      "language": "java",
+      "difficulty": "beginner",
+      "category": "records",
+      "topic": "Immutable data carriers with records",
+      "file": "java/records/record_data_carriers.java"
     }
   ]
 }
