@@ -98,3 +98,4 @@
 | 2026-09-14 | Rust | Intermediate | Lifetimes | Relating borrowed text with lifetimes | rust/lifetimes/borrowed_text_lifetimes.rs |
 | 2026-09-14 | Java | Beginner | Records | Immutable data carriers with records | java/records/record_data_carriers.java |
 | 2026-09-14 | C++ | Intermediate | Sum types | Type-safe alternatives with std::variant visitors | cpp/sum-types/variant_visitor.cpp |
+| 2026-09-14 | Bash | Intermediate | Scripting | Reliable temporary cleanup with trap | bash/scripting/trap_cleanup.sh |
