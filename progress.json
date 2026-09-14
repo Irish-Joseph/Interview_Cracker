@@ -1,5 +1,5 @@
 {
-  "total_examples": 96,
+  "total_examples": 97,
   "examples": [
     {
       "date": "2026-09-03",
@@ -768,6 +768,14 @@
       "category": "sum-types",
       "topic": "Type-safe alternatives with std::variant visitors",
       "file": "cpp/sum-types/variant_visitor.cpp"
+    },
+    {
+      "date": "2026-09-14",
+      "language": "bash",
+      "difficulty": "intermediate",
+      "category": "scripting",
+      "topic": "Reliable temporary cleanup with trap",
+      "file": "bash/scripting/trap_cleanup.sh"
     }
   ]
 }
