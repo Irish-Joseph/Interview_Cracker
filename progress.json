@@ -1,5 +1,5 @@
 {
-  "total_examples": 98,
+  "total_examples": 99,
   "examples": [
     {
       "date": "2026-09-03",
@@ -784,6 +784,14 @@
       "category": "transactions",
       "topic": "Partial transaction rollback with savepoints",
       "file": "sql/transactions/savepoints_and_rollback.sql"
+    },
+    {
+      "date": "2026-09-14",
+      "language": "c",
+      "difficulty": "advanced",
+      "category": "data-structures",
+      "topic": "Fixed-capacity circular queue",
+      "file": "c/data-structures/circular_queue.c"
     }
   ]
 }
