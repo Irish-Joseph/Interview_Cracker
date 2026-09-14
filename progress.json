@@ -1,5 +1,5 @@
 {
-  "total_examples": 91,
+  "total_examples": 92,
   "examples": [
     {
       "date": "2026-09-03",
@@ -728,6 +728,14 @@
       "category": "data-models",
       "topic": "Dataclass validation and derived fields",
       "file": "python/data-models/dataclass_validation.py"
+    },
+    {
+      "date": "2026-09-14",
+      "language": "javascript",
+      "difficulty": "beginner",
+      "category": "collections",
+      "topic": "Map and Set patterns",
+      "file": "javascript/collections/map_set_patterns.js"
     }
   ]
 }

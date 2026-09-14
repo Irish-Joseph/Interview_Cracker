@@ -93,3 +93,4 @@
 | 2026-09-13 | Python | Advanced | Algorithms | Sorting mastery — key, stability, DSU, top-K | python/algorithms/sorting_key_stability.py |
 | 2026-09-13 | C# | Advanced | Delegates | Delegates and events (publisher/subscriber) | csharp/delegates/delegates_and_events.cs |
 | 2026-09-14 | Python | Intermediate | Data models | Dataclass validation and derived fields | python/data-models/dataclass_validation.py |
+| 2026-09-14 | JavaScript | Beginner | Collections | Map and Set patterns | javascript/collections/map_set_patterns.js |
