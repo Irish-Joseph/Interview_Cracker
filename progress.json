@@ -1,5 +1,5 @@
 {
-  "total_examples": 97,
+  "total_examples": 98,
   "examples": [
     {
       "date": "2026-09-03",
@@ -776,6 +776,14 @@
       "category": "scripting",
       "topic": "Reliable temporary cleanup with trap",
       "file": "bash/scripting/trap_cleanup.sh"
+    },
+    {
+      "date": "2026-09-14",
+      "language": "sql",
+      "difficulty": "intermediate",
+      "category": "transactions",
+      "topic": "Partial transaction rollback with savepoints",
+      "file": "sql/transactions/savepoints_and_rollback.sql"
     }
   ]
 }
