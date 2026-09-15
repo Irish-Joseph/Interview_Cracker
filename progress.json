@@ -1,5 +1,5 @@
 {
-  "total_examples": 112,
+  "total_examples": 113,
   "examples": [
     {
       "date": "2026-09-03",
@@ -896,6 +896,14 @@
       "category": "linq",
       "topic": "Deferred execution — LINQ queries run when enumerated",
       "file": "csharp/linq/deferred_execution_ienumerable.cs"
+    },
+    {
+      "date": "2026-09-15",
+      "language": "bash",
+      "difficulty": "beginner",
+      "category": "basics",
+      "topic": "Reading a file line by line: while IFS= read -r",
+      "file": "bash/basics/read_file_line_by_line.sh"
     }
   ]
 }
