@@ -1,5 +1,5 @@
 {
-  "total_examples": 103,
+  "total_examples": 104,
   "examples": [
     {
       "date": "2026-09-03",
@@ -824,6 +824,14 @@
       "category": "standard-library",
       "topic": "Chunking and adjacent pairs with itertools",
       "file": "python/standard-library/itertools_chunk_and_pairwise.py"
+    },
+    {
+      "date": "2026-09-15",
+      "language": "javascript",
+      "difficulty": "intermediate",
+      "category": "utilities",
+      "topic": "Minimal event emitter with on, once, off and emit",
+      "file": "javascript/utilities/event_emitter_with_once_off.js"
     }
   ]
 }

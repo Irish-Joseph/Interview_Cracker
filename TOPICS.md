@@ -105,3 +105,4 @@
 | 2026-09-14 | Ruby | Advanced | Pattern matching | Destructuring nested data with structural patterns | ruby/pattern-matching/structural_patterns.rb |
 | 2026-09-14 | PowerShell | Beginner | Objects | Processing custom objects through the pipeline | powershell/objects/custom_objects_pipeline.ps1 |
 | 2026-09-15 | Python | Beginner | Standard library | Chunking and adjacent pairs with itertools | python/standard-library/itertools_chunk_and_pairwise.py |
+| 2026-09-15 | JavaScript | Intermediate | Utilities | Minimal event emitter with on, once, off and emit | javascript/utilities/event_emitter_with_once_off.js |
