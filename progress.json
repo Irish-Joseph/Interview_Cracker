@@ -1,5 +1,5 @@
 {
-  "total_examples": 102,
+  "total_examples": 103,
   "examples": [
     {
       "date": "2026-09-03",
@@ -816,6 +816,14 @@
       "category": "objects",
       "topic": "Processing custom objects through the pipeline",
       "file": "powershell/objects/custom_objects_pipeline.ps1"
+    },
+    {
+      "date": "2026-09-15",
+      "language": "python",
+      "difficulty": "beginner",
+      "category": "standard-library",
+      "topic": "Chunking and adjacent pairs with itertools",
+      "file": "python/standard-library/itertools_chunk_and_pairwise.py"
     }
   ]
 }
