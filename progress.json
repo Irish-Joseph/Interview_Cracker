@@ -1,5 +1,5 @@
 {
-  "total_examples": 111,
+  "total_examples": 112,
   "examples": [
     {
       "date": "2026-09-03",
@@ -888,6 +888,14 @@
       "category": "smart-pointers",
       "topic": "unique_ptr and shared_ptr ownership",
       "file": "cpp/smart-pointers/unique_and_shared_ptr.cpp"
+    },
+    {
+      "date": "2026-09-15",
+      "language": "csharp",
+      "difficulty": "intermediate",
+      "category": "linq",
+      "topic": "Deferred execution — LINQ queries run when enumerated",
+      "file": "csharp/linq/deferred_execution_ienumerable.cs"
     }
   ]
 }

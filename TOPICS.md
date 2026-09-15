@@ -113,3 +113,4 @@
 | 2026-09-15 | TypeScript | Intermediate | Basics | The satisfies operator: check types without widening | typescript/basics/satisfies_operator.ts |
 | 2026-09-15 | C | Beginner | Basics | Bit manipulation: set, clear, test and toggle bits | c/basics/bit_operations.c |
 | 2026-09-15 | C++ | Intermediate | Smart pointers | unique_ptr and shared_ptr ownership | cpp/smart-pointers/unique_and_shared_ptr.cpp |
+| 2026-09-15 | C# | Intermediate | LINQ | Deferred execution — LINQ queries run when enumerated | csharp/linq/deferred_execution_ienumerable.cs |
