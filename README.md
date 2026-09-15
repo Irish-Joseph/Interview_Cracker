@@ -15,9 +15,9 @@ Explore the language folders to start learning.
 
 ## Statistics
 
-Examples: 102
+Examples: 114
 Languages: 13
-Categories: 84
+Categories: 87
 
 ## Languages Covered
 
