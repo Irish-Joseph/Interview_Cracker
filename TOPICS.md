@@ -110,3 +110,4 @@
 | 2026-09-15 | Rust | Beginner | Closures | Capturing and passing closures | rust/closures/capturing_and_passing_closures.rs |
 | 2026-09-15 | Java | Intermediate | Collections | Custom sorting with Comparator and thenComparing chains | java/collections/comparator_custom_sorting.java |
 | 2026-09-15 | SQL | Intermediate | Window functions | Deduplicate records with ROW_NUMBER (keep newest per group) | sql/window-functions/deduplicate_keep_newest_per_group.sql |
+| 2026-09-15 | TypeScript | Intermediate | Basics | The satisfies operator: check types without widening | typescript/basics/satisfies_operator.ts |

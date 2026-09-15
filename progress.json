@@ -1,5 +1,5 @@
 {
-  "total_examples": 108,
+  "total_examples": 109,
   "examples": [
     {
       "date": "2026-09-03",
@@ -864,6 +864,14 @@
       "category": "window-functions",
       "topic": "Deduplicate records with ROW_NUMBER (keep newest per group)",
       "file": "sql/window-functions/deduplicate_keep_newest_per_group.sql"
+    },
+    {
+      "date": "2026-09-15",
+      "language": "typescript",
+      "difficulty": "intermediate",
+      "category": "basics",
+      "topic": "The satisfies operator: check types without widening",
+      "file": "typescript/basics/satisfies_operator.ts"
     }
   ]
 }
