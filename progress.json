@@ -1,5 +1,5 @@
 {
-  "total_examples": 110,
+  "total_examples": 111,
   "examples": [
     {
       "date": "2026-09-03",
@@ -880,6 +880,14 @@
       "category": "basics",
       "topic": "Bit manipulation: set, clear, test and toggle bits",
       "file": "c/basics/bit_operations.c"
+    },
+    {
+      "date": "2026-09-15",
+      "language": "cpp",
+      "difficulty": "intermediate",
+      "category": "smart-pointers",
+      "topic": "unique_ptr and shared_ptr ownership",
+      "file": "cpp/smart-pointers/unique_and_shared_ptr.cpp"
     }
   ]
 }

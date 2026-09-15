@@ -112,3 +112,4 @@
 | 2026-09-15 | SQL | Intermediate | Window functions | Deduplicate records with ROW_NUMBER (keep newest per group) | sql/window-functions/deduplicate_keep_newest_per_group.sql |
 | 2026-09-15 | TypeScript | Intermediate | Basics | The satisfies operator: check types without widening | typescript/basics/satisfies_operator.ts |
 | 2026-09-15 | C | Beginner | Basics | Bit manipulation: set, clear, test and toggle bits | c/basics/bit_operations.c |
+| 2026-09-15 | C++ | Intermediate | Smart pointers | unique_ptr and shared_ptr ownership | cpp/smart-pointers/unique_and_shared_ptr.cpp |
