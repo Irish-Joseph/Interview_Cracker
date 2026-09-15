@@ -1,5 +1,5 @@
 {
-  "total_examples": 104,
+  "total_examples": 105,
   "examples": [
     {
       "date": "2026-09-03",
@@ -832,6 +832,14 @@
       "category": "utilities",
       "topic": "Minimal event emitter with on, once, off and emit",
       "file": "javascript/utilities/event_emitter_with_once_off.js"
+    },
+    {
+      "date": "2026-09-15",
+      "language": "go",
+      "difficulty": "intermediate",
+      "category": "concurrency",
+      "topic": "Cancelling long-running work with context.Context",
+      "file": "go/concurrency/context_cancellation.go"
     }
   ]
 }
