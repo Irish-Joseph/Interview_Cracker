@@ -11,9 +11,9 @@
 //
 // Example output (approximate):
 //
-//	tick 1
-//	tick 2
-//	tick 3
+//	tick
+//	tick
+//	tick
 //	cancel requested
 //	context cancelled, worker stopping
 //	finished

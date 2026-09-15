@@ -107,3 +107,4 @@
 | 2026-09-15 | Python | Beginner | Standard library | Chunking and adjacent pairs with itertools | python/standard-library/itertools_chunk_and_pairwise.py |
 | 2026-09-15 | JavaScript | Intermediate | Utilities | Minimal event emitter with on, once, off and emit | javascript/utilities/event_emitter_with_once_off.js |
 | 2026-09-15 | Go | Intermediate | Concurrency | Cancelling long-running work with context.Context | go/concurrency/context_cancellation.go |
+| 2026-09-15 | Rust | Beginner | Closures | Capturing and passing closures | rust/closures/capturing_and_passing_closures.rs |

@@ -1,5 +1,5 @@
 {
-  "total_examples": 105,
+  "total_examples": 106,
   "examples": [
     {
       "date": "2026-09-03",
@@ -840,6 +840,14 @@
       "category": "concurrency",
       "topic": "Cancelling long-running work with context.Context",
       "file": "go/concurrency/context_cancellation.go"
+    },
+    {
+      "date": "2026-09-15",
+      "language": "rust",
+      "difficulty": "beginner",
+      "category": "closures",
+      "topic": "Capturing and passing closures",
+      "file": "rust/closures/capturing_and_passing_closures.rs"
     }
   ]
 }
