@@ -1,5 +1,5 @@
 {
-  "total_examples": 106,
+  "total_examples": 107,
   "examples": [
     {
       "date": "2026-09-03",
@@ -848,6 +848,14 @@
       "category": "closures",
       "topic": "Capturing and passing closures",
       "file": "rust/closures/capturing_and_passing_closures.rs"
+    },
+    {
+      "date": "2026-09-15",
+      "language": "java",
+      "difficulty": "intermediate",
+      "category": "collections",
+      "topic": "Custom sorting with Comparator and thenComparing chains",
+      "file": "java/collections/comparator_custom_sorting.java"
     }
   ]
 }

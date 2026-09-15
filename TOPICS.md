@@ -108,3 +108,4 @@
 | 2026-09-15 | JavaScript | Intermediate | Utilities | Minimal event emitter with on, once, off and emit | javascript/utilities/event_emitter_with_once_off.js |
 | 2026-09-15 | Go | Intermediate | Concurrency | Cancelling long-running work with context.Context | go/concurrency/context_cancellation.go |
 | 2026-09-15 | Rust | Beginner | Closures | Capturing and passing closures | rust/closures/capturing_and_passing_closures.rs |
+| 2026-09-15 | Java | Intermediate | Collections | Custom sorting with Comparator and thenComparing chains | java/collections/comparator_custom_sorting.java |
