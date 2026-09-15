@@ -1,5 +1,5 @@
 {
-  "total_examples": 107,
+  "total_examples": 108,
   "examples": [
     {
       "date": "2026-09-03",
@@ -856,6 +856,14 @@
       "category": "collections",
       "topic": "Custom sorting with Comparator and thenComparing chains",
       "file": "java/collections/comparator_custom_sorting.java"
+    },
+    {
+      "date": "2026-09-15",
+      "language": "sql",
+      "difficulty": "intermediate",
+      "category": "window-functions",
+      "topic": "Deduplicate records with ROW_NUMBER (keep newest per group)",
+      "file": "sql/window-functions/deduplicate_keep_newest_per_group.sql"
     }
   ]
 }
