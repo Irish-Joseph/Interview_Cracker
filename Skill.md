@@ -68,6 +68,12 @@ The repository root holds only the top-level sections, so it stays readable:
 `examples/`, `interview-prep/`, `coding-challenges/`, `daily-challenges/`,
 `resources/` and `scripts/`. Do NOT create a new language folder at the root.
 
+`.gitattributes` keeps GitHub's language bar honest and must not be deleted.
+GitHub's Linguist treats a top-level `examples/` directory as documentation and
+would otherwise report "Python 100%"; the file opts `examples/` back in and
+marks `*.sql` detectable (Linguist types SQL as data, not programming). A new
+language added under `examples/` is covered automatically.
+
 Example:
 
 ```text
