@@ -1,5 +1,5 @@
 {
-  "total_examples": 125,
+  "total_examples": 126,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1000,6 +1000,14 @@
       "category": "arrays",
       "topic": "Indexed and associative arrays",
       "file": "bash/arrays/indexed_and_associative_arrays.sh"
+    },
+    {
+      "date": "2026-09-17",
+      "language": "powershell",
+      "difficulty": "intermediate",
+      "category": "error-handling",
+      "topic": "Terminating vs non-terminating errors",
+      "file": "powershell/error-handling/terminating_vs_non_terminating_errors.ps1"
     }
   ]
 }

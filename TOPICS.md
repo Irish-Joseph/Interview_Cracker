@@ -127,3 +127,4 @@
 | 2026-09-17 | C++ | Intermediate | Operators | Operator overloading for value types | cpp/operators/operator_overloading.cpp |
 | 2026-09-17 | C# | Beginner | Error handling | Exceptions, filters and IDisposable cleanup | csharp/error-handling/exceptions_and_idisposable.cs |
 | 2026-09-17 | Bash | Intermediate | Arrays | Indexed and associative arrays | bash/arrays/indexed_and_associative_arrays.sh |
+| 2026-09-17 | PowerShell | Intermediate | Error handling | Terminating vs non-terminating errors | powershell/error-handling/terminating_vs_non_terminating_errors.ps1 |
