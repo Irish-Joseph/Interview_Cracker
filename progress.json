@@ -1,5 +1,5 @@
 {
-  "total_examples": 126,
+  "total_examples": 127,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1008,6 +1008,14 @@
       "category": "error-handling",
       "topic": "Terminating vs non-terminating errors",
       "file": "examples/powershell/error-handling/terminating_vs_non_terminating_errors.ps1"
+    },
+    {
+      "date": "2026-09-18",
+      "language": "python",
+      "difficulty": "advanced",
+      "category": "standard-library",
+      "topic": "functools: cache, partial, reduce, singledispatch",
+      "file": "examples/python/standard-library/functools_essentials.py"
     }
   ]
 }
