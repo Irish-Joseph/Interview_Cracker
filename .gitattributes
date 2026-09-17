@@ -1,0 +1,16 @@
+# GitHub language statistics (github-linguist)
+#
+# 1. Linguist classifies a top-level `examples/` directory as documentation and
+#    leaves it out of the language bar. That folder is the point of this
+#    repository -- 126 runnable examples across 13 languages -- so opt it back
+#    in. Without this, GitHub reports "Python 100%", counting only scripts/
+#    and coding-challenges/.
+examples/** -linguist-documentation
+
+# 2. Linguist types SQL as `data`, not `programming`, so it is excluded from
+#    stats even once the rule above applies. These are hand-written teaching
+#    queries, so mark them detectable.
+*.sql linguist-detectable
+
+# 3. The PDFs are build output of scripts/build_pdfs.py, not authored source.
+resources/pdf/** linguist-generated
