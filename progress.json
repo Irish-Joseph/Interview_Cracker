@@ -1,5 +1,5 @@
 {
-  "total_examples": 121,
+  "total_examples": 122,
   "examples": [
     {
       "date": "2026-09-03",
@@ -968,6 +968,14 @@
       "category": "optional",
       "topic": "Optional instead of returning null",
       "file": "java/optional/optional_instead_of_null.java"
+    },
+    {
+      "date": "2026-09-17",
+      "language": "c",
+      "difficulty": "beginner",
+      "category": "files",
+      "topic": "Text file I/O with fopen, fgets and error checks",
+      "file": "c/files/read_write_text_file.c"
     }
   ]
 }
