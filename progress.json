@@ -1,5 +1,5 @@
 {
-  "total_examples": 136,
+  "total_examples": 137,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1088,6 +1088,14 @@
       "category": "dates",
       "topic": "Date functions, half-open ranges and complete series",
       "file": "examples/sql/dates/date_functions_and_ranges.sql"
+    },
+    {
+      "date": "2026-09-18",
+      "language": "bash",
+      "difficulty": "beginner",
+      "category": "basics",
+      "topic": "Conditionals: [[ ]] vs [ ], string, numeric and file tests",
+      "file": "examples/bash/basics/conditionals_and_tests.sh"
     }
   ]
 }
