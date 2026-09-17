@@ -124,3 +124,4 @@
 | 2026-09-17 | Rust | Beginner | Options | Option handling without null | rust/options/option_handling.rs |
 | 2026-09-17 | Java | Intermediate | Optional | Optional instead of returning null | java/optional/optional_instead_of_null.java |
 | 2026-09-17 | C | Beginner | Files | Text file I/O with fopen, fgets and error checks | c/files/read_write_text_file.c |
+| 2026-09-17 | C++ | Intermediate | Operators | Operator overloading for value types | cpp/operators/operator_overloading.cpp |

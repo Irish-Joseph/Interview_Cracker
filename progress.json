@@ -1,5 +1,5 @@
 {
-  "total_examples": 122,
+  "total_examples": 123,
   "examples": [
     {
       "date": "2026-09-03",
@@ -976,6 +976,14 @@
       "category": "files",
       "topic": "Text file I/O with fopen, fgets and error checks",
       "file": "c/files/read_write_text_file.c"
+    },
+    {
+      "date": "2026-09-17",
+      "language": "cpp",
+      "difficulty": "intermediate",
+      "category": "operators",
+      "topic": "Operator overloading for value types",
+      "file": "cpp/operators/operator_overloading.cpp"
     }
   ]
 }
