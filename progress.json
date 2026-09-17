@@ -1,5 +1,5 @@
 {
-  "total_examples": 116,
+  "total_examples": 117,
   "examples": [
     {
       "date": "2026-09-03",
@@ -928,6 +928,14 @@
       "category": "generators",
       "topic": "Generators, yield* and the iteration protocol",
       "file": "javascript/generators/generators_and_iterators.js"
+    },
+    {
+      "date": "2026-09-17",
+      "language": "typescript",
+      "difficulty": "beginner",
+      "category": "enums",
+      "topic": "enum vs literal union vs as-const object",
+      "file": "typescript/enums/enums_vs_literal_unions.ts"
     }
   ]
 }

@@ -118,3 +118,4 @@
 | 2026-09-15 | Ruby | Beginner | Basics | Symbol #to_proc — calling a named method on each element | ruby/basics/symbols_and_to_proc.rb |
 | 2026-09-17 | Python | Intermediate | Collections | defaultdict, deque, namedtuple and ChainMap | python/collections/defaultdict_deque_namedtuple.py |
 | 2026-09-17 | JavaScript | Advanced | Generators | Generators, yield* and the iteration protocol | javascript/generators/generators_and_iterators.js |
+| 2026-09-17 | TypeScript | Beginner | Enums | enum vs literal union vs as-const object | typescript/enums/enums_vs_literal_unions.ts |
