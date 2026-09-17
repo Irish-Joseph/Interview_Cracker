@@ -133,3 +133,4 @@
 | 2026-09-18 | TypeScript | Intermediate | Classes | Classes: access modifiers, abstract and #private | examples/typescript/classes/classes_and_access_modifiers.ts |
 | 2026-09-18 | Java | Intermediate | Oop | The equals and hashCode contract | examples/java/oop/equals_and_hashcode.java |
 | 2026-09-18 | C | Beginner | Basics | Command-line arguments with argc and argv | examples/c/basics/command_line_arguments.c |
+| 2026-09-18 | C++ | Intermediate | Stl | map, set and their unordered counterparts | examples/cpp/stl/map_and_set_containers.cpp |

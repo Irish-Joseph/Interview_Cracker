@@ -1,5 +1,5 @@
 {
-  "total_examples": 131,
+  "total_examples": 132,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1048,6 +1048,14 @@
       "category": "basics",
       "topic": "Command-line arguments with argc and argv",
       "file": "examples/c/basics/command_line_arguments.c"
+    },
+    {
+      "date": "2026-09-18",
+      "language": "cpp",
+      "difficulty": "intermediate",
+      "category": "stl",
+      "topic": "map, set and their unordered counterparts",
+      "file": "examples/cpp/stl/map_and_set_containers.cpp"
     }
   ]
 }
