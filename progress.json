@@ -1,5 +1,5 @@
 {
-  "total_examples": 134,
+  "total_examples": 135,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1072,6 +1072,14 @@
       "category": "structs",
       "topic": "Structs, embedding and JSON tags",
       "file": "examples/go/structs/structs_embedding_and_json.go"
+    },
+    {
+      "date": "2026-09-18",
+      "language": "rust",
+      "difficulty": "beginner",
+      "category": "collections",
+      "topic": "Vec and HashMap essentials",
+      "file": "examples/rust/collections/vec_and_hashmap.rs"
     }
   ]
 }

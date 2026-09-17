@@ -136,3 +136,4 @@
 | 2026-09-18 | C++ | Intermediate | Stl | map, set and their unordered counterparts | examples/cpp/stl/map_and_set_containers.cpp |
 | 2026-09-18 | C# | Advanced | Generics | Generic constraints, covariance and contravariance | examples/csharp/generics/generic_classes_and_variance.cs |
 | 2026-09-18 | Go | Intermediate | Structs | Structs, embedding and JSON tags | examples/go/structs/structs_embedding_and_json.go |
+| 2026-09-18 | Rust | Beginner | Collections | Vec and HashMap essentials | examples/rust/collections/vec_and_hashmap.rs |
