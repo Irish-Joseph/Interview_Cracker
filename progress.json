@@ -1,5 +1,5 @@
 {
-  "total_examples": 119,
+  "total_examples": 120,
   "examples": [
     {
       "date": "2026-09-03",
@@ -952,6 +952,14 @@
       "category": "generics",
       "topic": "Type parameters, constraints and generic types",
       "file": "go/generics/type_parameters_and_constraints.go"
+    },
+    {
+      "date": "2026-09-17",
+      "language": "rust",
+      "difficulty": "beginner",
+      "category": "options",
+      "topic": "Option handling without null",
+      "file": "rust/options/option_handling.rs"
     }
   ]
 }

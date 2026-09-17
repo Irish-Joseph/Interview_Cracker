@@ -121,3 +121,4 @@
 | 2026-09-17 | TypeScript | Beginner | Enums | enum vs literal union vs as-const object | typescript/enums/enums_vs_literal_unions.ts |
 | 2026-09-17 | SQL | Intermediate | Window functions | Row-over-row change with LAG and LEAD | sql/window-functions/lag_lead_row_over_row_change.sql |
 | 2026-09-17 | Go | Advanced | Generics | Type parameters, constraints and generic types | go/generics/type_parameters_and_constraints.go |
+| 2026-09-17 | Rust | Beginner | Options | Option handling without null | rust/options/option_handling.rs |
