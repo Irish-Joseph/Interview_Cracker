@@ -1,5 +1,5 @@
 {
-  "total_examples": 118,
+  "total_examples": 119,
   "examples": [
     {
       "date": "2026-09-03",
@@ -944,6 +944,14 @@
       "category": "window-functions",
       "topic": "Row-over-row change with LAG and LEAD",
       "file": "sql/window-functions/lag_lead_row_over_row_change.sql"
+    },
+    {
+      "date": "2026-09-17",
+      "language": "go",
+      "difficulty": "advanced",
+      "category": "generics",
+      "topic": "Type parameters, constraints and generic types",
+      "file": "go/generics/type_parameters_and_constraints.go"
     }
   ]
 }
