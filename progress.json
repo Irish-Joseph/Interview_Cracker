@@ -1,5 +1,5 @@
 {
-  "total_examples": 128,
+  "total_examples": 129,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1024,6 +1024,14 @@
       "category": "arrays",
       "topic": "Array methods: map, filter, reduce, find, some, every",
       "file": "examples/javascript/arrays/array_methods_tour.js"
+    },
+    {
+      "date": "2026-09-18",
+      "language": "typescript",
+      "difficulty": "intermediate",
+      "category": "classes",
+      "topic": "Classes: access modifiers, abstract and #private",
+      "file": "examples/typescript/classes/classes_and_access_modifiers.ts"
     }
   ]
 }

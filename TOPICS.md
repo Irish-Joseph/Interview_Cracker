@@ -130,3 +130,4 @@
 | 2026-09-17 | PowerShell | Intermediate | Error handling | Terminating vs non-terminating errors | examples/powershell/error-handling/terminating_vs_non_terminating_errors.ps1 |
 | 2026-09-18 | Python | Advanced | Standard library | functools: cache, partial, reduce, singledispatch | examples/python/standard-library/functools_essentials.py |
 | 2026-09-18 | JavaScript | Beginner | Arrays | Array methods: map, filter, reduce, find, some, every | examples/javascript/arrays/array_methods_tour.js |
+| 2026-09-18 | TypeScript | Intermediate | Classes | Classes: access modifiers, abstract and #private | examples/typescript/classes/classes_and_access_modifiers.ts |
