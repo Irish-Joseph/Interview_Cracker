@@ -1,5 +1,5 @@
 {
-  "total_examples": 117,
+  "total_examples": 118,
   "examples": [
     {
       "date": "2026-09-03",
@@ -936,6 +936,14 @@
       "category": "enums",
       "topic": "enum vs literal union vs as-const object",
       "file": "typescript/enums/enums_vs_literal_unions.ts"
+    },
+    {
+      "date": "2026-09-17",
+      "language": "sql",
+      "difficulty": "intermediate",
+      "category": "window-functions",
+      "topic": "Row-over-row change with LAG and LEAD",
+      "file": "sql/window-functions/lag_lead_row_over_row_change.sql"
     }
   ]
 }
