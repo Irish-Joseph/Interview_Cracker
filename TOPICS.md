@@ -129,3 +129,4 @@
 | 2026-09-17 | Bash | Intermediate | Arrays | Indexed and associative arrays | examples/bash/arrays/indexed_and_associative_arrays.sh |
 | 2026-09-17 | PowerShell | Intermediate | Error handling | Terminating vs non-terminating errors | examples/powershell/error-handling/terminating_vs_non_terminating_errors.ps1 |
 | 2026-09-18 | Python | Advanced | Standard library | functools: cache, partial, reduce, singledispatch | examples/python/standard-library/functools_essentials.py |
+| 2026-09-18 | JavaScript | Beginner | Arrays | Array methods: map, filter, reduce, find, some, every | examples/javascript/arrays/array_methods_tour.js |

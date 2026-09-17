@@ -1,5 +1,5 @@
 {
-  "total_examples": 127,
+  "total_examples": 128,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1016,6 +1016,14 @@
       "category": "standard-library",
       "topic": "functools: cache, partial, reduce, singledispatch",
       "file": "examples/python/standard-library/functools_essentials.py"
+    },
+    {
+      "date": "2026-09-18",
+      "language": "javascript",
+      "difficulty": "beginner",
+      "category": "arrays",
+      "topic": "Array methods: map, filter, reduce, find, some, every",
+      "file": "examples/javascript/arrays/array_methods_tour.js"
     }
   ]
 }
