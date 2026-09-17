@@ -12,15 +12,58 @@ to a small runnable program you can actually execute.
 
 ---
 
-## What is inside
+## Start here
 
-| Section | What it gives you |
+| I want to… | Go to |
 |---|---|
-| [`interview-prep/`](interview-prep/) | Subject-by-subject question banks with full written answers — data structures, algorithms, databases, OS, networking, concurrency, system design, language-specific and behavioural. |
-| [`coding-challenges/`](coding-challenges/) | Small coding problems grouped by the **pattern** that solves them, each with a tested solution and complexity analysis. |
-| [`daily-challenges/`](daily-challenges/) | One focused problem per day, with the answer kept in the same file so you can self-check after attempting it. |
-| Language folders (`python/`, `go/`, `rust/`, …) | The original library of focused, runnable examples — one concept per file, across 13 languages. |
-| [`resources/`](resources/) | Printable [PDF question banks](resources/pdf/interview-questions-complete.pdf) generated from the Markdown sources. |
+| **Revise a subject** — data structures, algorithms, SQL, OS, networking, system design | [`interview-prep/`](interview-prep/) |
+| **Practise problems** — grouped by the pattern that solves them | [`coding-challenges/`](coding-challenges/) |
+| **Do one problem a day** | [`daily-challenges/`](daily-challenges/) |
+| **Learn a language feature** — 126 runnable examples across 13 languages | [`examples/`](examples/) |
+| **Print or read offline** | [`resources/pdf/`](resources/) |
+| **Follow a study plan** — one week or four weeks | [`interview-prep/README.md`](interview-prep/README.md) |
+
+---
+
+## Layout
+
+```
+interview-cracker/
+│
+├── interview-prep/          Question banks with written answers, by subject
+│   ├── data-structures/       arrays, linked lists, stacks/queues/heaps,
+│   │                          hash tables, trees and graphs
+│   ├── algorithms/            complexity, sorting/searching, recursion, DP
+│   ├── databases/             SQL queries, indexing, transactions
+│   ├── core-cs/               operating systems, networking, concurrency
+│   ├── system-design/         fundamentals + a full worked walkthrough
+│   ├── languages/             Python, JavaScript, Java
+│   └── behavioral/            STAR method and the recurring questions
+│
+├── coding-challenges/       Problems grouped by SOLVING PATTERN, with
+│   ├── two-pointers/          tested solutions and complexity analysis
+│   ├── sliding-window/
+│   ├── hashing/
+│   ├── binary-search/
+│   ├── stack/
+│   ├── linked-list/
+│   ├── trees/
+│   ├── graphs/
+│   ├── dynamic-programming/
+│   └── intervals/
+│
+├── daily-challenges/        One dated problem per day, answer collapsed
+│
+├── examples/                126 runnable examples, one concept per file
+│   ├── python/  javascript/  typescript/  java/  c/  cpp/  csharp/
+│   └── go/  rust/  sql/  bash/  powershell/  ruby/
+│
+├── resources/pdf/           Printable PDFs generated from interview-prep/
+├── scripts/                 Registry validation, test runner, PDF builder
+│
+├── TOPICS.md                Every example: date, difficulty, category
+└── progress.json            The same registry, machine-readable
+```
 
 ---
 
@@ -41,47 +84,41 @@ problems understood deeply will serve you better than a hundred skimmed.
 
 ---
 
+## What makes this different
+
+- **Every code snippet has been executed.** Solutions are cross-checked against
+  brute-force references on randomised inputs, not just eyeballed.
+- **Complexity is stated and justified**, including the space cost of recursion.
+- **Trade-offs over rules.** Where there is no single right answer — 301 vs 302,
+  greedy vs DP, `orElse` vs `orElseGet` — the answer explains the choice.
+- **No fake company attributions.** Nothing here claims to be "asked at Google".
+  Those claims are not verifiable, and drilling a rumoured list is worse practice
+  than understanding the topic.
+
+## Verify it yourself
+
+```bash
+python scripts/validate_registry.py    # registries and README agree
+python scripts/run_challenges.py       # all 20 challenge test suites
+```
+
+Both run on every push and pull request.
+
+---
+
 ## Statistics
 
 Examples: 126
 Languages: 13
 Categories: 97
 
-## Languages Covered
+Plus 19 subject question banks, 20 pattern-grouped challenges, and 8 generated
+PDFs. Full per-example listing in [TOPICS.md](TOPICS.md).
 
-| Language | Examples |
-|---|---|
-| python | 17 |
-| sql | 12 |
-| go | 11 |
-| javascript | 11 |
-| rust | 11 |
-| bash | 10 |
-| c | 10 |
-| java | 10 |
-| typescript | 10 |
-| cpp | 9 |
-| csharp | 9 |
-| ruby | 4 |
-| powershell | 2 |
+## Contributing
 
-Full per-example listing (with date, difficulty and category) is in [TOPICS.md](TOPICS.md).
-
----
-
-## Repository layout
-
-- `interview-prep/` — question banks with answers, organised by subject.
-- `coding-challenges/` — problems grouped by solving pattern, with solutions.
-- `daily-challenges/` — one dated problem per day.
-- `resources/pdf/` — generated PDF question banks.
-- One top-level folder per language, each grouped into categories.
-- `TOPICS.md` — human-readable registry of every language example.
-- `progress.json` — machine-readable registry of the same.
-- `scripts/` — registry validation and the PDF builder.
-- `Skill.md` — the maintenance rules this repository follows.
-
-Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md) — there is a checklist for each area.
+`Skill.md` documents the repository's full maintenance rules.
 
 ## Community
 

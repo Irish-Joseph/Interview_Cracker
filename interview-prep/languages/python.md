@@ -97,7 +97,7 @@ cannot index or take `len()`.
 
 Use `()` instead of `[]` to get a generator expression:
 `sum(x*x for x in range(10**8))` never allocates the list. Worked example:
-[`python/generators/log_pipeline_with_generators.py`](../../python/generators/log_pipeline_with_generators.py).
+[`examples/python/generators/log_pipeline_with_generators.py`](../../examples/python/generators/log_pipeline_with_generators.py).
 
 ---
 
@@ -128,7 +128,7 @@ def work(): ...
 **`functools.wraps` is the detail interviewers check for.** Without it the
 decorated function reports the wrapper's name and loses its docstring, which
 breaks introspection, documentation tools and debugging. Worked example:
-[`python/decorators/retry_decorator_with_backoff.py`](../../python/decorators/retry_decorator_with_backoff.py).
+[`examples/python/decorators/retry_decorator_with_backoff.py`](../../examples/python/decorators/retry_decorator_with_backoff.py).
 
 ---
 
@@ -174,7 +174,7 @@ def timer(label):
 
 `with open(...)` is the everyday example: the file closes on any exit path.
 Worked example:
-[`python/context-managers/custom_context_managers.py`](../../python/context-managers/custom_context_managers.py).
+[`examples/python/context-managers/custom_context_managers.py`](../../examples/python/context-managers/custom_context_managers.py).
 
 ---
 
@@ -186,7 +186,7 @@ that would recreate the object. It is what the REPL and containers show.
 
 If you implement only one, implement `__repr__`: `__str__` falls back to it, but
 not the other way round. Worked example:
-[`python/oop/dunder_methods.py`](../../python/oop/dunder_methods.py).
+[`examples/python/oop/dunder_methods.py`](../../examples/python/oop/dunder_methods.py).
 
 ---
 

@@ -55,7 +55,7 @@ for (let i = 0; i < 3; i++) setTimeout(() => console.log(i));   // 0, 1, 2
 
 `var` is function-scoped, so all three callbacks close over **one** variable,
 which is 3 by the time they run. `let` creates a fresh binding per iteration.
-Worked example: [`javascript/basics/closures.js`](../../javascript/basics/closures.js).
+Worked example: [`examples/javascript/basics/closures.js`](../../examples/javascript/basics/closures.js).
 
 ---
 
@@ -83,7 +83,7 @@ console.log("4");
 `2` comes last despite a 0 ms delay, because the microtask queue is drained
 first. The follow-up: an infinite chain of microtasks **starves** the macrotask
 queue and freezes the page — microtask priority is not free.
-Worked example: [`javascript/async/promises_and_event_loop.js`](../../javascript/async/promises_and_event_loop.js).
+Worked example: [`examples/javascript/async/promises_and_event_loop.js`](../../examples/javascript/async/promises_and_event_loop.js).
 
 ---
 
@@ -108,7 +108,7 @@ class Timer {
 }
 ```
 
-Worked example: [`javascript/basics/this_and_binding.js`](../../javascript/basics/this_and_binding.js).
+Worked example: [`examples/javascript/basics/this_and_binding.js`](../../examples/javascript/basics/this_and_binding.js).
 
 ---
 
@@ -180,7 +180,7 @@ latency of each. Know the four combinators:
 - `Promise.any` — first to **succeed**.
 
 Worked example:
-[`typescript/async/async_await_parallel_vs_sequential.ts`](../../typescript/async/async_await_parallel_vs_sequential.ts).
+[`examples/typescript/async/async_await_parallel_vs_sequential.ts`](../../examples/typescript/async/async_await_parallel_vs_sequential.ts).
 
 ---
 
@@ -195,4 +195,4 @@ Worked example:
 
 "Fire after the user stops typing" is debounce; "fire at most every 200 ms while
 scrolling" is throttle. Worked example:
-[`javascript/utilities/debounce_with_cancellation.js`](../../javascript/utilities/debounce_with_cancellation.js).
+[`examples/javascript/utilities/debounce_with_cancellation.js`](../../examples/javascript/utilities/debounce_with_cancellation.js).

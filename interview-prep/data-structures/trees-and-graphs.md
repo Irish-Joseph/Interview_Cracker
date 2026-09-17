@@ -185,7 +185,7 @@ Kahn's algorithm, O(V + E):
 4. If the output holds fewer than V vertices, **there is a cycle**.
 
 A recursive example over a hierarchy is in
-[`sql/recursive-ctes/org_chart_tree_traversal.sql`](../../sql/recursive-ctes/org_chart_tree_traversal.sql).
+[`examples/sql/recursive-ctes/org_chart_tree_traversal.sql`](../../examples/sql/recursive-ctes/org_chart_tree_traversal.sql).
 
 ---
 

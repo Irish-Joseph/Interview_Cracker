@@ -186,4 +186,4 @@ a numeric range, and checking "is value V feasible?" is easy even though finding
 the best V directly is not. Complexity becomes O(log(range) × cost of `works`).
 
 A worked binary search with insertion points is in
-[`python/algorithms/binary_search_iterative.py`](../../python/algorithms/binary_search_iterative.py).
+[`examples/python/algorithms/binary_search_iterative.py`](../../examples/python/algorithms/binary_search_iterative.py).

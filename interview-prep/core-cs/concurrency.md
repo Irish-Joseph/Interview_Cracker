@@ -20,7 +20,7 @@ STORE register -> count
 
 Two threads can both load 5, both compute 6, and both store 6. Two increments,
 one net effect — a **lost update**. Worked demonstration:
-[`rust/concurrency/threads_and_channels.rs`](../../rust/concurrency/threads_and_channels.rs).
+[`examples/rust/concurrency/threads_and_channels.rs`](../../examples/rust/concurrency/threads_and_channels.rs).
 
 The general term is a **critical section**: a region that must not be entered by
 more than one thread at a time.
@@ -112,7 +112,7 @@ The pool size is the tuning knob: roughly the core count for CPU-bound work
 (more threads just add switching); much higher for I/O-bound work, since most
 threads are blocked. A bounded task queue matters too — an unbounded one converts
 an overload into an out-of-memory error instead of applying backpressure.
-Worked example: [`go/concurrency/worker_pool.go`](../../go/concurrency/worker_pool.go).
+Worked example: [`examples/go/concurrency/worker_pool.go`](../../examples/go/concurrency/worker_pool.go).
 
 ---
 
@@ -155,4 +155,4 @@ Locks are one route. The others are usually better:
 
 Rust enforces this at compile time: its borrow checker rejects a data race rather
 than letting you find it in production. See
-[`rust/ownership/count_word_frequencies_borrowed.rs`](../../rust/ownership/count_word_frequencies_borrowed.rs).
+[`examples/rust/ownership/count_word_frequencies_borrowed.rs`](../../examples/rust/ownership/count_word_frequencies_borrowed.rs).

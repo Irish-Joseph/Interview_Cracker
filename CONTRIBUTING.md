@@ -7,15 +7,17 @@ The repository has four contributable areas, each with its own checklist below.
 
 ---
 
-## Adding a language example (`python/`, `go/`, `rust/`, …)
+## Adding a language example (`examples/`)
 
 1. Check `TOPICS.md` and `progress.json` to avoid duplicating an existing topic.
-2. Put the example in the matching language and category directory.
+2. Put the example at `examples/<language>/<category>/<descriptive_name>.<ext>`.
+   Language folders live inside `examples/`, never at the repository root.
 3. Include comments explaining the important idea and the expected output.
 4. Run the example with the appropriate compiler or interpreter when available.
    If no toolchain exists on your machine, review it carefully and note
    `validated by inspection` in the file header.
-5. Add matching entries to `TOPICS.md` and `progress.json`.
+5. Add matching entries to `TOPICS.md` and `progress.json` (paths there are
+   relative to the repository root, so they start with `examples/`).
 6. Keep one example to one commit, prefixed `learn(<language>):`.
 
 `python scripts/validate_registry.py` must pass.
@@ -83,6 +85,8 @@ Never hand-edit a PDF — it is a generated artefact. Commit prefix:
 ## Opening a pull request
 
 - Branch descriptively: `learn/python-binary-search`, `prep/add-graph-questions`.
+- Add a new language under `examples/`, and add it to the table in
+  `examples/README.md`.
 - Say what the change teaches, and include the validation command **and its
   output** in the description.
 - Keep unrelated changes in separate pull requests.

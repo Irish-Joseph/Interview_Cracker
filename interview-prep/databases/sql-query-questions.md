@@ -28,7 +28,7 @@ LEFT JOIN orders o ON o.customer_id = c.id
 WHERE o.id IS NULL;      -- the join produced no match
 ```
 
-Worked examples: [`sql/joins/inner_left_right_and_anti_joins.sql`](../../sql/joins/inner_left_right_and_anti_joins.sql).
+Worked examples: [`examples/sql/joins/inner_left_right_and_anti_joins.sql`](../../examples/sql/joins/inner_left_right_and_anti_joins.sql).
 
 ---
 
@@ -79,7 +79,7 @@ WHERE id NOT IN (SELECT manager_id FROM departments);
 If any `manager_id` is NULL, this returns **zero rows**, always. `x NOT IN (1,
 NULL)` evaluates to `NOT (x=1 OR x=NULL)` = `NOT (false OR unknown)` = unknown.
 Use `NOT EXISTS`, which handles NULL correctly. See
-[`sql/subqueries/exists_in_and_correlated.sql`](../../sql/subqueries/exists_in_and_correlated.sql).
+[`examples/sql/subqueries/exists_in_and_correlated.sql`](../../examples/sql/subqueries/exists_in_and_correlated.sql).
 
 ---
 
@@ -127,7 +127,7 @@ For salaries 100, 90, 90, 80:
 
 Use `ROW_NUMBER` for deduplication (keep the first row per group), `DENSE_RANK`
 for "top 3 salary levels". Worked example:
-[`sql/window-functions/rank_vs_dense_rank_vs_row_number.sql`](../../sql/window-functions/rank_vs_dense_rank_vs_row_number.sql).
+[`examples/sql/window-functions/rank_vs_dense_rank_vs_row_number.sql`](../../examples/sql/window-functions/rank_vs_dense_rank_vs_row_number.sql).
 
 ---
 
@@ -147,7 +147,7 @@ WHERE id IN (SELECT id FROM ranked WHERE rn > 1);
 
 The CTE is required because a window function cannot appear in `WHERE` — `WHERE`
 is evaluated before window functions are. Full example:
-[`sql/window-functions/deduplicate_keep_newest_per_group.sql`](../../sql/window-functions/deduplicate_keep_newest_per_group.sql).
+[`examples/sql/window-functions/deduplicate_keep_newest_per_group.sql`](../../examples/sql/window-functions/deduplicate_keep_newest_per_group.sql).
 
 ---
 
@@ -173,7 +173,7 @@ SELECT * FROM chain ORDER BY depth;
 
 Always confirm the recursion terminates — a cycle in the data loops forever
 unless you track visited nodes or cap the depth. Worked example:
-[`sql/recursive-ctes/org_chart_tree_traversal.sql`](../../sql/recursive-ctes/org_chart_tree_traversal.sql).
+[`examples/sql/recursive-ctes/org_chart_tree_traversal.sql`](../../examples/sql/recursive-ctes/org_chart_tree_traversal.sql).
 
 ---
 

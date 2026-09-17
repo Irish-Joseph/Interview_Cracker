@@ -157,8 +157,8 @@ This is the one place linked lists genuinely beat arrays, and it is why merge
 sort on a linked list is O(1)-space while merge sort on an array is O(n)-space.
 
 A worked implementation is in
-[`java/algorithms/merge_two_sorted_lists.java`](../../java/algorithms/merge_two_sorted_lists.java)
-and [`c/data-structures/linked_list.c`](../../c/data-structures/linked_list.c).
+[`examples/java/algorithms/merge_two_sorted_lists.java`](../../examples/java/algorithms/merge_two_sorted_lists.java)
+and [`examples/c/data-structures/linked_list.c`](../../examples/c/data-structures/linked_list.c).
 
 ---
 

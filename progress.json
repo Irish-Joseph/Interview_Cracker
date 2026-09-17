@@ -7,7 +7,7 @@
       "difficulty": "beginner",
       "category": "algorithms",
       "topic": "Find the missing number in a sequence",
-      "file": "python/algorithms/find_missing_number.py"
+      "file": "examples/python/algorithms/find_missing_number.py"
     },
     {
       "date": "2026-09-03",
@@ -15,7 +15,7 @@
       "difficulty": "beginner",
       "category": "arrays",
       "topic": "Flatten an arbitrarily nested array",
-      "file": "javascript/arrays/flatten_nested_arrays.js"
+      "file": "examples/javascript/arrays/flatten_nested_arrays.js"
     },
     {
       "date": "2026-09-03",
@@ -23,7 +23,7 @@
       "difficulty": "intermediate",
       "category": "algorithms",
       "topic": "Merge two sorted linked lists",
-      "file": "java/algorithms/merge_two_sorted_lists.java"
+      "file": "examples/java/algorithms/merge_two_sorted_lists.java"
     },
     {
       "date": "2026-09-03",
@@ -31,7 +31,7 @@
       "difficulty": "intermediate",
       "category": "window-functions",
       "topic": "Running totals with SUM() OVER",
-      "file": "sql/window-functions/running_totals.sql"
+      "file": "examples/sql/window-functions/running_totals.sql"
     },
     {
       "date": "2026-09-03",
@@ -39,7 +39,7 @@
       "difficulty": "intermediate",
       "category": "ownership",
       "topic": "Count word frequencies with borrowing",
-      "file": "rust/ownership/count_word_frequencies_borrowed.rs"
+      "file": "examples/rust/ownership/count_word_frequencies_borrowed.rs"
     },
     {
       "date": "2026-09-03",
@@ -47,7 +47,7 @@
       "difficulty": "advanced",
       "category": "data-structures",
       "topic": "LRU cache (list + hash map)",
-      "file": "cpp/data-structures/lru_cache.cpp"
+      "file": "examples/cpp/data-structures/lru_cache.cpp"
     },
     {
       "date": "2026-09-04",
@@ -55,7 +55,7 @@
       "difficulty": "beginner",
       "category": "unions",
       "topic": "Narrowing unions with type guards",
-      "file": "typescript/unions/shape_type_guards.ts"
+      "file": "examples/typescript/unions/shape_type_guards.ts"
     },
     {
       "date": "2026-09-04",
@@ -63,7 +63,7 @@
       "difficulty": "beginner",
       "category": "utilities",
       "topic": "Count duplicate lines in files",
-      "file": "bash/utilities/count_duplicate_lines.sh"
+      "file": "examples/bash/utilities/count_duplicate_lines.sh"
     },
     {
       "date": "2026-09-04",
@@ -71,7 +71,7 @@
       "difficulty": "intermediate",
       "category": "algorithms",
       "topic": "Longest substring without repeating characters",
-      "file": "python/algorithms/longest_substring_without_repeats.py"
+      "file": "examples/python/algorithms/longest_substring_without_repeats.py"
     },
     {
       "date": "2026-09-04",
@@ -79,7 +79,7 @@
       "difficulty": "intermediate",
       "category": "concurrency",
       "topic": "Token bucket rate limiter with channels",
-      "file": "go/concurrency/token_bucket_rate_limiter.go"
+      "file": "examples/go/concurrency/token_bucket_rate_limiter.go"
     },
     {
       "date": "2026-09-04",
@@ -87,7 +87,7 @@
       "difficulty": "intermediate",
       "category": "recursive-ctes",
       "topic": "Org chart tree traversal",
-      "file": "sql/recursive-ctes/org_chart_tree_traversal.sql"
+      "file": "examples/sql/recursive-ctes/org_chart_tree_traversal.sql"
     },
     {
       "date": "2026-09-04",
@@ -95,7 +95,7 @@
       "difficulty": "advanced",
       "category": "iterators",
       "topic": "Custom countdown iterator with adapters",
-      "file": "rust/iterators/custom_countdown_iterator.rs"
+      "file": "examples/rust/iterators/custom_countdown_iterator.rs"
     },
     {
       "date": "2026-09-04",
@@ -103,7 +103,7 @@
       "difficulty": "intermediate",
       "category": "utilities",
       "topic": "Debounce with cancel and flush",
-      "file": "javascript/utilities/debounce_with_cancellation.js"
+      "file": "examples/javascript/utilities/debounce_with_cancellation.js"
     },
     {
       "date": "2026-09-04",
@@ -111,7 +111,7 @@
       "difficulty": "advanced",
       "category": "decorators",
       "topic": "Retry with exponential backoff and jitter",
-      "file": "python/decorators/retry_decorator_with_backoff.py"
+      "file": "examples/python/decorators/retry_decorator_with_backoff.py"
     },
     {
       "date": "2026-09-04",
@@ -119,7 +119,7 @@
       "difficulty": "intermediate",
       "category": "window-functions",
       "topic": "RANK vs DENSE_RANK vs ROW_NUMBER",
-      "file": "sql/window-functions/rank_vs_dense_rank_vs_row_number.sql"
+      "file": "examples/sql/window-functions/rank_vs_dense_rank_vs_row_number.sql"
     },
     {
       "date": "2026-09-04",
@@ -127,7 +127,7 @@
       "difficulty": "beginner",
       "category": "algorithms",
       "topic": "Two Sum with a map",
-      "file": "go/algorithms/two_sum.go"
+      "file": "examples/go/algorithms/two_sum.go"
     },
     {
       "date": "2026-09-04",
@@ -135,7 +135,7 @@
       "difficulty": "beginner",
       "category": "strings",
       "topic": "Reverse a string in place with pointers",
-      "file": "c/strings/reverse_string_in_place.c"
+      "file": "examples/c/strings/reverse_string_in_place.c"
     },
     {
       "date": "2026-09-04",
@@ -143,7 +143,7 @@
       "difficulty": "intermediate",
       "category": "generics",
       "topic": "Generics with constraints",
-      "file": "typescript/generics/generics_with_constraints.ts"
+      "file": "examples/typescript/generics/generics_with_constraints.ts"
     },
     {
       "date": "2026-09-05",
@@ -151,7 +151,7 @@
       "difficulty": "beginner",
       "category": "strings",
       "topic": "Palindrome check and character frequency",
-      "file": "python/strings/palindrome_and_char_frequency.py"
+      "file": "examples/python/strings/palindrome_and_char_frequency.py"
     },
     {
       "date": "2026-09-05",
@@ -159,7 +159,7 @@
       "difficulty": "beginner",
       "category": "utilities",
       "topic": "Find the largest files in a directory",
-      "file": "bash/utilities/find_largest_files.sh"
+      "file": "examples/bash/utilities/find_largest_files.sh"
     },
     {
       "date": "2026-09-05",
@@ -167,7 +167,7 @@
       "difficulty": "beginner",
       "category": "utility-types",
       "topic": "Pick, Omit, Partial, Required, Record, Readonly",
-      "file": "typescript/utility-types/utility_types.ts"
+      "file": "examples/typescript/utility-types/utility_types.ts"
     },
     {
       "date": "2026-09-05",
@@ -175,7 +175,7 @@
       "difficulty": "beginner",
       "category": "data-structures",
       "topic": "LIFO stack with a slice",
-      "file": "go/data-structures/stack.go"
+      "file": "examples/go/data-structures/stack.go"
     },
     {
       "date": "2026-09-05",
@@ -183,7 +183,7 @@
       "difficulty": "intermediate",
       "category": "arrays",
       "topic": "Group objects by property",
-      "file": "javascript/arrays/group_objects_by_property.js"
+      "file": "examples/javascript/arrays/group_objects_by_property.js"
     },
     {
       "date": "2026-09-05",
@@ -191,7 +191,7 @@
       "difficulty": "intermediate",
       "category": "aggregation",
       "topic": "Pivot rows into columns with conditional aggregation",
-      "file": "sql/aggregation/pivot_with_conditional_aggregation.sql"
+      "file": "examples/sql/aggregation/pivot_with_conditional_aggregation.sql"
     },
     {
       "date": "2026-09-05",
@@ -199,7 +199,7 @@
       "difficulty": "intermediate",
       "category": "enums",
       "topic": "Data-carrying enums with exhaustive match",
-      "file": "rust/enums/network_status_match.rs"
+      "file": "examples/rust/enums/network_status_match.rs"
     },
     {
       "date": "2026-09-05",
@@ -207,7 +207,7 @@
       "difficulty": "intermediate",
       "category": "pointers",
       "topic": "Dynamic int array with realloc growth",
-      "file": "c/pointers/dynamic_int_array.c"
+      "file": "examples/c/pointers/dynamic_int_array.c"
     },
     {
       "date": "2026-09-05",
@@ -215,7 +215,7 @@
       "difficulty": "intermediate",
       "category": "streams",
       "topic": "Group and collect with streams",
-      "file": "java/streams/group_and_collect_with_streams.java"
+      "file": "examples/java/streams/group_and_collect_with_streams.java"
     },
     {
       "date": "2026-09-05",
@@ -223,7 +223,7 @@
       "difficulty": "intermediate",
       "category": "linq",
       "topic": "LINQ query vs method syntax",
-      "file": "csharp/linq/linq_basics_query_and_method_syntax.cs"
+      "file": "examples/csharp/linq/linq_basics_query_and_method_syntax.cs"
     },
     {
       "date": "2026-09-05",
@@ -231,7 +231,7 @@
       "difficulty": "advanced",
       "category": "generators",
       "topic": "Lazy log-processing pipeline",
-      "file": "python/generators/log_pipeline_with_generators.py"
+      "file": "examples/python/generators/log_pipeline_with_generators.py"
     },
     {
       "date": "2026-09-05",
@@ -239,7 +239,7 @@
       "difficulty": "advanced",
       "category": "raii",
       "topic": "RAII and move semantics",
-      "file": "cpp/raii/raii_and_move.cpp"
+      "file": "examples/cpp/raii/raii_and_move.cpp"
     },
     {
       "date": "2026-09-06",
@@ -247,7 +247,7 @@
       "difficulty": "beginner",
       "category": "files",
       "topic": "CSV processing with the csv module",
-      "file": "python/files/process_csv_with_csv_module.py"
+      "file": "examples/python/files/process_csv_with_csv_module.py"
     },
     {
       "date": "2026-09-06",
@@ -255,7 +255,7 @@
       "difficulty": "beginner",
       "category": "objects",
       "topic": "Destructuring with defaults and rest",
-      "file": "javascript/objects/destructuring_patterns.js"
+      "file": "examples/javascript/objects/destructuring_patterns.js"
     },
     {
       "date": "2026-09-06",
@@ -263,7 +263,7 @@
       "difficulty": "beginner",
       "category": "slices",
       "topic": "Slice patterns (len/cap, append, copy, filter)",
-      "file": "go/slices/slice_patterns.go"
+      "file": "examples/go/slices/slice_patterns.go"
     },
     {
       "date": "2026-09-06",
@@ -271,7 +271,7 @@
       "difficulty": "beginner",
       "category": "basics",
       "topic": "Structs, designated initializers, . vs ->",
-      "file": "c/basics/person_structs.c"
+      "file": "examples/c/basics/person_structs.c"
     },
     {
       "date": "2026-09-06",
@@ -279,7 +279,7 @@
       "difficulty": "intermediate",
       "category": "strings",
       "topic": "String vs &str (owned vs borrowed text)",
-      "file": "rust/strings/string_vs_str.rs"
+      "file": "examples/rust/strings/string_vs_str.rs"
     },
     {
       "date": "2026-09-06",
@@ -287,7 +287,7 @@
       "difficulty": "intermediate",
       "category": "joins",
       "topic": "INNER, LEFT, RIGHT and anti-joins",
-      "file": "sql/joins/inner_left_right_and_anti_joins.sql"
+      "file": "examples/sql/joins/inner_left_right_and_anti_joins.sql"
     },
     {
       "date": "2026-09-06",
@@ -295,7 +295,7 @@
       "difficulty": "intermediate",
       "category": "async",
       "topic": "async/await: parallel vs sequential",
-      "file": "typescript/async/async_await_parallel_vs_sequential.ts"
+      "file": "examples/typescript/async/async_await_parallel_vs_sequential.ts"
     },
     {
       "date": "2026-09-06",
@@ -303,7 +303,7 @@
       "difficulty": "intermediate",
       "category": "oop",
       "topic": "Inheritance and polymorphism",
-      "file": "java/oop/polymorphic_shapes.java"
+      "file": "examples/java/oop/polymorphic_shapes.java"
     },
     {
       "date": "2026-09-06",
@@ -311,7 +311,7 @@
       "difficulty": "intermediate",
       "category": "algorithms",
       "topic": "STL algorithms combined with lambdas",
-      "file": "cpp/algorithms/stl_algorithms_lambdas.cpp"
+      "file": "examples/cpp/algorithms/stl_algorithms_lambdas.cpp"
     },
     {
       "date": "2026-09-06",
@@ -319,7 +319,7 @@
       "difficulty": "intermediate",
       "category": "utilities",
       "topic": "Log severity counts with awk",
-      "file": "bash/utilities/log_severity_summary.sh"
+      "file": "examples/bash/utilities/log_severity_summary.sh"
     },
     {
       "date": "2026-09-06",
@@ -327,7 +327,7 @@
       "difficulty": "intermediate",
       "category": "blocks",
       "topic": "Blocks and Enumerable methods",
-      "file": "ruby/blocks/blocks_and_enumerable.rb"
+      "file": "examples/ruby/blocks/blocks_and_enumerable.rb"
     },
     {
       "date": "2026-09-06",
@@ -335,7 +335,7 @@
       "difficulty": "advanced",
       "category": "async",
       "topic": "async/await with Task.WhenAll and cancellation",
-      "file": "csharp/async/async_await_task_when_all.cs"
+      "file": "examples/csharp/async/async_await_task_when_all.cs"
     },
     {
       "date": "2026-09-08",
@@ -343,7 +343,7 @@
       "difficulty": "intermediate",
       "category": "algorithms",
       "topic": "Binary search (iterative) with insertion point",
-      "file": "python/algorithms/binary_search_iterative.py"
+      "file": "examples/python/algorithms/binary_search_iterative.py"
     },
     {
       "date": "2026-09-08",
@@ -351,7 +351,7 @@
       "difficulty": "intermediate",
       "category": "objects",
       "topic": "Deep copy: naive vs structuredClone vs manual",
-      "file": "javascript/objects/deep_copy_patterns.js"
+      "file": "examples/javascript/objects/deep_copy_patterns.js"
     },
     {
       "date": "2026-09-08",
@@ -359,7 +359,7 @@
       "difficulty": "intermediate",
       "category": "maps",
       "topic": "Map idioms (comma-ok, counting, grouping, delete)",
-      "file": "go/maps/map_patterns.go"
+      "file": "examples/go/maps/map_patterns.go"
     },
     {
       "date": "2026-09-08",
@@ -367,7 +367,7 @@
       "difficulty": "advanced",
       "category": "window-functions",
       "topic": "Gaps & islands — missing dates",
-      "file": "sql/window-functions/gaps_and_islands_missing_dates.sql"
+      "file": "examples/sql/window-functions/gaps_and_islands_missing_dates.sql"
     },
     {
       "date": "2026-09-08",
@@ -375,7 +375,7 @@
       "difficulty": "intermediate",
       "category": "arrays",
       "topic": "2D grid traversal with pointers",
-      "file": "c/arrays/grid_traversal.c"
+      "file": "examples/c/arrays/grid_traversal.c"
     },
     {
       "date": "2026-09-08",
@@ -383,7 +383,7 @@
       "difficulty": "beginner",
       "category": "interfaces",
       "topic": "interface vs type: merging, extending, implements",
-      "file": "typescript/interfaces/interface_vs_type.ts"
+      "file": "examples/typescript/interfaces/interface_vs_type.ts"
     },
     {
       "date": "2026-09-08",
@@ -391,7 +391,7 @@
       "difficulty": "beginner",
       "category": "exceptions",
       "topic": "Checked vs unchecked, try/catch/finally, custom exceptions",
-      "file": "java/exceptions/exception_handling_basics.java"
+      "file": "examples/java/exceptions/exception_handling_basics.java"
     },
     {
       "date": "2026-09-08",
@@ -399,7 +399,7 @@
       "difficulty": "intermediate",
       "category": "templates",
       "topic": "Function templates with deduction",
-      "file": "cpp/templates/function_templates.cpp"
+      "file": "examples/cpp/templates/function_templates.cpp"
     },
     {
       "date": "2026-09-08",
@@ -407,7 +407,7 @@
       "difficulty": "intermediate",
       "category": "utilities",
       "topic": "CLI flag parsing with getopts",
-      "file": "bash/utilities/cli_flags_demo.sh"
+      "file": "examples/bash/utilities/cli_flags_demo.sh"
     },
     {
       "date": "2026-09-08",
@@ -415,7 +415,7 @@
       "difficulty": "advanced",
       "category": "traits",
       "topic": "Traits, bounds and dyn dispatch",
-      "file": "rust/traits/traits_and_bounds.rs"
+      "file": "examples/rust/traits/traits_and_bounds.rs"
     },
     {
       "date": "2026-09-08",
@@ -423,7 +423,7 @@
       "difficulty": "beginner",
       "category": "basics",
       "topic": "Value vs reference types",
-      "file": "csharp/basics/value_vs_reference_types.cs"
+      "file": "examples/csharp/basics/value_vs_reference_types.cs"
     },
     {
       "date": "2026-09-08",
@@ -431,7 +431,7 @@
       "difficulty": "beginner",
       "category": "strings",
       "topic": "Regular expressions basics",
-      "file": "python/strings/regex_basics.py"
+      "file": "examples/python/strings/regex_basics.py"
     },
     {
       "date": "2026-09-09",
@@ -439,7 +439,7 @@
       "difficulty": "beginner",
       "category": "collections",
       "topic": "Set operations and membership testing",
-      "file": "python/collections/set_operations.py"
+      "file": "examples/python/collections/set_operations.py"
     },
     {
       "date": "2026-09-09",
@@ -447,7 +447,7 @@
       "difficulty": "beginner",
       "category": "basics",
       "topic": "Closures and private state",
-      "file": "javascript/basics/closures.js"
+      "file": "examples/javascript/basics/closures.js"
     },
     {
       "date": "2026-09-09",
@@ -455,7 +455,7 @@
       "difficulty": "beginner",
       "category": "errors",
       "topic": "Errors as values: Is, As, %w chains",
-      "file": "go/errors/error_handling.go"
+      "file": "examples/go/errors/error_handling.go"
     },
     {
       "date": "2026-09-09",
@@ -463,7 +463,7 @@
       "difficulty": "beginner",
       "category": "utilities",
       "topic": "Sum, min, max and avg in one awk pass",
-      "file": "bash/utilities/sum_numbers.sh"
+      "file": "examples/bash/utilities/sum_numbers.sh"
     },
     {
       "date": "2026-09-09",
@@ -471,7 +471,7 @@
       "difficulty": "beginner",
       "category": "filters",
       "topic": "WHERE with IN, BETWEEN, LIKE and NULL",
-      "file": "sql/filters/where_in_between_like_null.sql"
+      "file": "examples/sql/filters/where_in_between_like_null.sql"
     },
     {
       "date": "2026-09-09",
@@ -479,7 +479,7 @@
       "difficulty": "beginner",
       "category": "basics",
       "topic": "Structs, methods and derives",
-      "file": "rust/basics/structs_methods.rs"
+      "file": "examples/rust/basics/structs_methods.rs"
     },
     {
       "date": "2026-09-09",
@@ -487,7 +487,7 @@
       "difficulty": "intermediate",
       "category": "collections",
       "topic": "List, Map and Set idioms",
-      "file": "java/collections/core_collections_list_map_set.java"
+      "file": "examples/java/collections/core_collections_list_map_set.java"
     },
     {
       "date": "2026-09-09",
@@ -495,7 +495,7 @@
       "difficulty": "beginner",
       "category": "stl",
       "topic": "std::vector basics",
-      "file": "cpp/stl/vector_basics.cpp"
+      "file": "examples/cpp/stl/vector_basics.cpp"
     },
     {
       "date": "2026-09-09",
@@ -503,7 +503,7 @@
       "difficulty": "intermediate",
       "category": "patterns",
       "topic": "Records and pattern matching",
-      "file": "csharp/patterns/records_and_pattern_matching.cs"
+      "file": "examples/csharp/patterns/records_and_pattern_matching.cs"
     },
     {
       "date": "2026-09-09",
@@ -511,7 +511,7 @@
       "difficulty": "intermediate",
       "category": "narrowing",
       "topic": "unknown, `in` operator and runtime validation",
-      "file": "typescript/narrowing/narrowing_unknown_in_operator.ts"
+      "file": "examples/typescript/narrowing/narrowing_unknown_in_operator.ts"
     },
     {
       "date": "2026-09-09",
@@ -519,7 +519,7 @@
       "difficulty": "advanced",
       "category": "context-managers",
       "topic": "Custom context managers and ExitStack",
-      "file": "python/context-managers/custom_context_managers.py"
+      "file": "examples/python/context-managers/custom_context_managers.py"
     },
     {
       "date": "2026-09-09",
@@ -527,7 +527,7 @@
       "difficulty": "advanced",
       "category": "data-structures",
       "topic": "Singly linked list",
-      "file": "c/data-structures/linked_list.c"
+      "file": "examples/c/data-structures/linked_list.c"
     },
     {
       "date": "2026-09-10",
@@ -535,7 +535,7 @@
       "difficulty": "beginner",
       "category": "basics",
       "topic": "List, dict, set comprehensions and generator expressions",
-      "file": "python/basics/comprehensions.py"
+      "file": "examples/python/basics/comprehensions.py"
     },
     {
       "date": "2026-09-10",
@@ -543,7 +543,7 @@
       "difficulty": "intermediate",
       "category": "basics",
       "topic": "How `this` binds: call site, bind/call/apply, arrows",
-      "file": "javascript/basics/this_and_binding.js"
+      "file": "examples/javascript/basics/this_and_binding.js"
     },
     {
       "date": "2026-09-10",
@@ -551,7 +551,7 @@
       "difficulty": "intermediate",
       "category": "subqueries",
       "topic": "Scalar, IN, EXISTS, correlated subqueries and the NOT IN NULL trap",
-      "file": "sql/subqueries/exists_in_and_correlated.sql"
+      "file": "examples/sql/subqueries/exists_in_and_correlated.sql"
     },
     {
       "date": "2026-09-10",
@@ -559,7 +559,7 @@
       "difficulty": "intermediate",
       "category": "error-handling",
       "topic": "Result, the ? operator and custom error enums",
-      "file": "rust/error-handling/result_and_error_propagation.rs"
+      "file": "examples/rust/error-handling/result_and_error_propagation.rs"
     },
     {
       "date": "2026-09-10",
@@ -567,7 +567,7 @@
       "difficulty": "beginner",
       "category": "basics",
       "topic": "Parameter expansion: defaults, substrings, trimming, replacement, case",
-      "file": "bash/basics/string_manipulation.sh"
+      "file": "examples/bash/basics/string_manipulation.sh"
     },
     {
       "date": "2026-09-10",
@@ -575,7 +575,7 @@
       "difficulty": "intermediate",
       "category": "oop",
       "topic": "Dunder methods: repr, eq/hash, ordering, containers, operators",
-      "file": "python/oop/dunder_methods.py"
+      "file": "examples/python/oop/dunder_methods.py"
     },
     {
       "date": "2026-09-10",
@@ -583,7 +583,7 @@
       "difficulty": "advanced",
       "category": "advanced-types",
       "topic": "Mapped types, key remapping, conditional types and infer",
-      "file": "typescript/advanced-types/mapped_and_conditional_types.ts"
+      "file": "examples/typescript/advanced-types/mapped_and_conditional_types.ts"
     },
     {
       "date": "2026-09-10",
@@ -591,7 +591,7 @@
       "difficulty": "intermediate",
       "category": "interfaces",
       "topic": "Implicit interfaces, composition, type switches and the nil-interface trap",
-      "file": "go/interfaces/interfaces_and_type_switch.go"
+      "file": "examples/go/interfaces/interfaces_and_type_switch.go"
     },
     {
       "date": "2026-09-10",
@@ -599,7 +599,7 @@
       "difficulty": "intermediate",
       "category": "strings",
       "topic": "Tokenizing with strtok, strtok_r and a strcspn splitter",
-      "file": "c/strings/tokenize_with_strtok.c"
+      "file": "examples/c/strings/tokenize_with_strtok.c"
     },
     {
       "date": "2026-09-10",
@@ -607,7 +607,7 @@
       "difficulty": "intermediate",
       "category": "generics",
       "topic": "Generic methods, bounded types and PECS wildcards",
-      "file": "java/generics/generic_methods_and_wildcards.java"
+      "file": "examples/java/generics/generic_methods_and_wildcards.java"
     },
     {
       "date": "2026-09-10",
@@ -615,7 +615,7 @@
       "difficulty": "beginner",
       "category": "collections",
       "topic": "List, Dictionary and HashSet idioms",
-      "file": "csharp/collections/list_dictionary_hashset.cs"
+      "file": "examples/csharp/collections/list_dictionary_hashset.cs"
     },
     {
       "date": "2026-09-10",
@@ -623,7 +623,7 @@
       "difficulty": "advanced",
       "category": "concurrency",
       "topic": "Threads, mpsc channels, Arc<Mutex> and atomics",
-      "file": "rust/concurrency/threads_and_channels.rs"
+      "file": "examples/rust/concurrency/threads_and_channels.rs"
     },
     {
       "date": "2026-09-13",
@@ -631,7 +631,7 @@
       "difficulty": "beginner",
       "category": "dates",
       "topic": "Date and time with the datetime module",
-      "file": "python/dates/datetime_basics.py"
+      "file": "examples/python/dates/datetime_basics.py"
     },
     {
       "date": "2026-09-13",
@@ -639,7 +639,7 @@
       "difficulty": "beginner",
       "category": "files",
       "topic": "File I/O — read, write, scan, append",
-      "file": "go/files/file_io.go"
+      "file": "examples/go/files/file_io.go"
     },
     {
       "date": "2026-09-13",
@@ -647,7 +647,7 @@
       "difficulty": "beginner",
       "category": "basics",
       "topic": "Optional chaining and nullish coalescing",
-      "file": "typescript/basics/optional_chaining_nullish.ts"
+      "file": "examples/typescript/basics/optional_chaining_nullish.ts"
     },
     {
       "date": "2026-09-13",
@@ -655,7 +655,7 @@
       "difficulty": "beginner",
       "category": "strings",
       "topic": "Immutability and StringBuilder",
-      "file": "java/strings/string_immutability_and_stringbuilder.java"
+      "file": "examples/java/strings/string_immutability_and_stringbuilder.java"
     },
     {
       "date": "2026-09-13",
@@ -663,7 +663,7 @@
       "difficulty": "beginner",
       "category": "basics",
       "topic": "Hash and array idioms",
-      "file": "ruby/basics/hash_array_idioms.rb"
+      "file": "examples/ruby/basics/hash_array_idioms.rb"
     },
     {
       "date": "2026-09-13",
@@ -671,7 +671,7 @@
       "difficulty": "beginner",
       "category": "pointers",
       "topic": "Function pointers and callbacks",
-      "file": "c/pointers/function_pointers.c"
+      "file": "examples/c/pointers/function_pointers.c"
     },
     {
       "date": "2026-09-13",
@@ -679,7 +679,7 @@
       "difficulty": "intermediate",
       "category": "async",
       "topic": "Promises and the event loop",
-      "file": "javascript/async/promises_and_event_loop.js"
+      "file": "examples/javascript/async/promises_and_event_loop.js"
     },
     {
       "date": "2026-09-13",
@@ -687,7 +687,7 @@
       "difficulty": "intermediate",
       "category": "aggregation",
       "topic": "GROUP BY and HAVING",
-      "file": "sql/aggregation/group_by_and_having.sql"
+      "file": "examples/sql/aggregation/group_by_and_having.sql"
     },
     {
       "date": "2026-09-13",
@@ -695,7 +695,7 @@
       "difficulty": "intermediate",
       "category": "error-handling",
       "topic": "Exceptions — throw, catch, rethrow, noexcept",
-      "file": "cpp/error-handling/exceptions.cpp"
+      "file": "examples/cpp/error-handling/exceptions.cpp"
     },
     {
       "date": "2026-09-13",
@@ -703,7 +703,7 @@
       "difficulty": "intermediate",
       "category": "testing",
       "topic": "Minimal test harness with diff",
-      "file": "bash/testing/test_harness.sh"
+      "file": "examples/bash/testing/test_harness.sh"
     },
     {
       "date": "2026-09-13",
@@ -711,7 +711,7 @@
       "difficulty": "advanced",
       "category": "algorithms",
       "topic": "Sorting mastery — key, stability, DSU, top-K",
-      "file": "python/algorithms/sorting_key_stability.py"
+      "file": "examples/python/algorithms/sorting_key_stability.py"
     },
     {
       "date": "2026-09-13",
@@ -719,7 +719,7 @@
       "difficulty": "advanced",
       "category": "delegates",
       "topic": "Delegates and events (publisher/subscriber)",
-      "file": "csharp/delegates/delegates_and_events.cs"
+      "file": "examples/csharp/delegates/delegates_and_events.cs"
     },
     {
       "date": "2026-09-14",
@@ -727,7 +727,7 @@
       "difficulty": "intermediate",
       "category": "data-models",
       "topic": "Dataclass validation and derived fields",
-      "file": "python/data-models/dataclass_validation.py"
+      "file": "examples/python/data-models/dataclass_validation.py"
     },
     {
       "date": "2026-09-14",
@@ -735,7 +735,7 @@
       "difficulty": "beginner",
       "category": "collections",
       "topic": "Map and Set patterns",
-      "file": "javascript/collections/map_set_patterns.js"
+      "file": "examples/javascript/collections/map_set_patterns.js"
     },
     {
       "date": "2026-09-14",
@@ -743,7 +743,7 @@
       "difficulty": "intermediate",
       "category": "concurrency",
       "topic": "Bounded worker pool with channels",
-      "file": "go/concurrency/worker_pool.go"
+      "file": "examples/go/concurrency/worker_pool.go"
     },
     {
       "date": "2026-09-14",
@@ -751,7 +751,7 @@
       "difficulty": "intermediate",
       "category": "lifetimes",
       "topic": "Relating borrowed text with lifetimes",
-      "file": "rust/lifetimes/borrowed_text_lifetimes.rs"
+      "file": "examples/rust/lifetimes/borrowed_text_lifetimes.rs"
     },
     {
       "date": "2026-09-14",
@@ -759,7 +759,7 @@
       "difficulty": "beginner",
       "category": "records",
       "topic": "Immutable data carriers with records",
-      "file": "java/records/record_data_carriers.java"
+      "file": "examples/java/records/record_data_carriers.java"
     },
     {
       "date": "2026-09-14",
@@ -767,7 +767,7 @@
       "difficulty": "intermediate",
       "category": "sum-types",
       "topic": "Type-safe alternatives with std::variant visitors",
-      "file": "cpp/sum-types/variant_visitor.cpp"
+      "file": "examples/cpp/sum-types/variant_visitor.cpp"
     },
     {
       "date": "2026-09-14",
@@ -775,7 +775,7 @@
       "difficulty": "intermediate",
       "category": "scripting",
       "topic": "Reliable temporary cleanup with trap",
-      "file": "bash/scripting/trap_cleanup.sh"
+      "file": "examples/bash/scripting/trap_cleanup.sh"
     },
     {
       "date": "2026-09-14",
@@ -783,7 +783,7 @@
       "difficulty": "intermediate",
       "category": "transactions",
       "topic": "Partial transaction rollback with savepoints",
-      "file": "sql/transactions/savepoints_and_rollback.sql"
+      "file": "examples/sql/transactions/savepoints_and_rollback.sql"
     },
     {
       "date": "2026-09-14",
@@ -791,7 +791,7 @@
       "difficulty": "advanced",
       "category": "data-structures",
       "topic": "Fixed-capacity circular queue",
-      "file": "c/data-structures/circular_queue.c"
+      "file": "examples/c/data-structures/circular_queue.c"
     },
     {
       "date": "2026-09-14",
@@ -799,7 +799,7 @@
       "difficulty": "beginner",
       "category": "methods",
       "topic": "Adding focused behavior with extension methods",
-      "file": "csharp/methods/extension_methods.cs"
+      "file": "examples/csharp/methods/extension_methods.cs"
     },
     {
       "date": "2026-09-14",
@@ -807,7 +807,7 @@
       "difficulty": "advanced",
       "category": "pattern-matching",
       "topic": "Destructuring nested data with structural patterns",
-      "file": "ruby/pattern-matching/structural_patterns.rb"
+      "file": "examples/ruby/pattern-matching/structural_patterns.rb"
     },
     {
       "date": "2026-09-14",
@@ -815,7 +815,7 @@
       "difficulty": "beginner",
       "category": "objects",
       "topic": "Processing custom objects through the pipeline",
-      "file": "powershell/objects/custom_objects_pipeline.ps1"
+      "file": "examples/powershell/objects/custom_objects_pipeline.ps1"
     },
     {
       "date": "2026-09-15",
@@ -823,7 +823,7 @@
       "difficulty": "beginner",
       "category": "standard-library",
       "topic": "Chunking and adjacent pairs with itertools",
-      "file": "python/standard-library/itertools_chunk_and_pairwise.py"
+      "file": "examples/python/standard-library/itertools_chunk_and_pairwise.py"
     },
     {
       "date": "2026-09-15",
@@ -831,7 +831,7 @@
       "difficulty": "intermediate",
       "category": "utilities",
       "topic": "Minimal event emitter with on, once, off and emit",
-      "file": "javascript/utilities/event_emitter_with_once_off.js"
+      "file": "examples/javascript/utilities/event_emitter_with_once_off.js"
     },
     {
       "date": "2026-09-15",
@@ -839,7 +839,7 @@
       "difficulty": "intermediate",
       "category": "concurrency",
       "topic": "Cancelling long-running work with context.Context",
-      "file": "go/concurrency/context_cancellation.go"
+      "file": "examples/go/concurrency/context_cancellation.go"
     },
     {
       "date": "2026-09-15",
@@ -847,7 +847,7 @@
       "difficulty": "beginner",
       "category": "closures",
       "topic": "Capturing and passing closures",
-      "file": "rust/closures/capturing_and_passing_closures.rs"
+      "file": "examples/rust/closures/capturing_and_passing_closures.rs"
     },
     {
       "date": "2026-09-15",
@@ -855,7 +855,7 @@
       "difficulty": "intermediate",
       "category": "collections",
       "topic": "Custom sorting with Comparator and thenComparing chains",
-      "file": "java/collections/comparator_custom_sorting.java"
+      "file": "examples/java/collections/comparator_custom_sorting.java"
     },
     {
       "date": "2026-09-15",
@@ -863,7 +863,7 @@
       "difficulty": "intermediate",
       "category": "window-functions",
       "topic": "Deduplicate records with ROW_NUMBER (keep newest per group)",
-      "file": "sql/window-functions/deduplicate_keep_newest_per_group.sql"
+      "file": "examples/sql/window-functions/deduplicate_keep_newest_per_group.sql"
     },
     {
       "date": "2026-09-15",
@@ -871,7 +871,7 @@
       "difficulty": "intermediate",
       "category": "basics",
       "topic": "The satisfies operator: check types without widening",
-      "file": "typescript/basics/satisfies_operator.ts"
+      "file": "examples/typescript/basics/satisfies_operator.ts"
     },
     {
       "date": "2026-09-15",
@@ -879,7 +879,7 @@
       "difficulty": "beginner",
       "category": "basics",
       "topic": "Bit manipulation: set, clear, test and toggle bits",
-      "file": "c/basics/bit_operations.c"
+      "file": "examples/c/basics/bit_operations.c"
     },
     {
       "date": "2026-09-15",
@@ -887,7 +887,7 @@
       "difficulty": "intermediate",
       "category": "smart-pointers",
       "topic": "unique_ptr and shared_ptr ownership",
-      "file": "cpp/smart-pointers/unique_and_shared_ptr.cpp"
+      "file": "examples/cpp/smart-pointers/unique_and_shared_ptr.cpp"
     },
     {
       "date": "2026-09-15",
@@ -895,7 +895,7 @@
       "difficulty": "intermediate",
       "category": "linq",
       "topic": "Deferred execution — LINQ queries run when enumerated",
-      "file": "csharp/linq/deferred_execution_ienumerable.cs"
+      "file": "examples/csharp/linq/deferred_execution_ienumerable.cs"
     },
     {
       "date": "2026-09-15",
@@ -903,7 +903,7 @@
       "difficulty": "beginner",
       "category": "basics",
       "topic": "Reading a file line by line: while IFS= read -r",
-      "file": "bash/basics/read_file_line_by_line.sh"
+      "file": "examples/bash/basics/read_file_line_by_line.sh"
     },
     {
       "date": "2026-09-15",
@@ -911,7 +911,7 @@
       "difficulty": "beginner",
       "category": "basics",
       "topic": "Symbol #to_proc — calling a named method on each element",
-      "file": "ruby/basics/symbols_and_to_proc.rb"
+      "file": "examples/ruby/basics/symbols_and_to_proc.rb"
     },
     {
       "date": "2026-09-17",
@@ -919,7 +919,7 @@
       "difficulty": "intermediate",
       "category": "collections",
       "topic": "defaultdict, deque, namedtuple and ChainMap",
-      "file": "python/collections/defaultdict_deque_namedtuple.py"
+      "file": "examples/python/collections/defaultdict_deque_namedtuple.py"
     },
     {
       "date": "2026-09-17",
@@ -927,7 +927,7 @@
       "difficulty": "advanced",
       "category": "generators",
       "topic": "Generators, yield* and the iteration protocol",
-      "file": "javascript/generators/generators_and_iterators.js"
+      "file": "examples/javascript/generators/generators_and_iterators.js"
     },
     {
       "date": "2026-09-17",
@@ -935,7 +935,7 @@
       "difficulty": "beginner",
       "category": "enums",
       "topic": "enum vs literal union vs as-const object",
-      "file": "typescript/enums/enums_vs_literal_unions.ts"
+      "file": "examples/typescript/enums/enums_vs_literal_unions.ts"
     },
     {
       "date": "2026-09-17",
@@ -943,7 +943,7 @@
       "difficulty": "intermediate",
       "category": "window-functions",
       "topic": "Row-over-row change with LAG and LEAD",
-      "file": "sql/window-functions/lag_lead_row_over_row_change.sql"
+      "file": "examples/sql/window-functions/lag_lead_row_over_row_change.sql"
     },
     {
       "date": "2026-09-17",
@@ -951,7 +951,7 @@
       "difficulty": "advanced",
       "category": "generics",
       "topic": "Type parameters, constraints and generic types",
-      "file": "go/generics/type_parameters_and_constraints.go"
+      "file": "examples/go/generics/type_parameters_and_constraints.go"
     },
     {
       "date": "2026-09-17",
@@ -959,7 +959,7 @@
       "difficulty": "beginner",
       "category": "options",
       "topic": "Option handling without null",
-      "file": "rust/options/option_handling.rs"
+      "file": "examples/rust/options/option_handling.rs"
     },
     {
       "date": "2026-09-17",
@@ -967,7 +967,7 @@
       "difficulty": "intermediate",
       "category": "optional",
       "topic": "Optional instead of returning null",
-      "file": "java/optional/optional_instead_of_null.java"
+      "file": "examples/java/optional/optional_instead_of_null.java"
     },
     {
       "date": "2026-09-17",
@@ -975,7 +975,7 @@
       "difficulty": "beginner",
       "category": "files",
       "topic": "Text file I/O with fopen, fgets and error checks",
-      "file": "c/files/read_write_text_file.c"
+      "file": "examples/c/files/read_write_text_file.c"
     },
     {
       "date": "2026-09-17",
@@ -983,7 +983,7 @@
       "difficulty": "intermediate",
       "category": "operators",
       "topic": "Operator overloading for value types",
-      "file": "cpp/operators/operator_overloading.cpp"
+      "file": "examples/cpp/operators/operator_overloading.cpp"
     },
     {
       "date": "2026-09-17",
@@ -991,7 +991,7 @@
       "difficulty": "beginner",
       "category": "error-handling",
       "topic": "Exceptions, filters and IDisposable cleanup",
-      "file": "csharp/error-handling/exceptions_and_idisposable.cs"
+      "file": "examples/csharp/error-handling/exceptions_and_idisposable.cs"
     },
     {
       "date": "2026-09-17",
@@ -999,7 +999,7 @@
       "difficulty": "intermediate",
       "category": "arrays",
       "topic": "Indexed and associative arrays",
-      "file": "bash/arrays/indexed_and_associative_arrays.sh"
+      "file": "examples/bash/arrays/indexed_and_associative_arrays.sh"
     },
     {
       "date": "2026-09-17",
@@ -1007,7 +1007,7 @@
       "difficulty": "intermediate",
       "category": "error-handling",
       "topic": "Terminating vs non-terminating errors",
-      "file": "powershell/error-handling/terminating_vs_non_terminating_errors.ps1"
+      "file": "examples/powershell/error-handling/terminating_vs_non_terminating_errors.ps1"
     }
   ]
 }

@@ -81,7 +81,7 @@ cache (Redis/Memcached) → database buffer pool.
   but you can lose data on a crash.
 
 **Eviction:** LRU is the default and usually right. (A worked LRU cache is in
-[`cpp/data-structures/lru_cache.cpp`](../../cpp/data-structures/lru_cache.cpp).)
+[`examples/cpp/data-structures/lru_cache.cpp`](../../examples/cpp/data-structures/lru_cache.cpp).)
 
 **Invalidation** is the hard part. TTLs are simple but serve stale data for their
 duration; explicit invalidation on write is precise but easy to miss a path.
@@ -171,7 +171,7 @@ delivery** — most queues guarantee at-least-once, not exactly-once. That makes
   A good approximation, cheap.
 - **Token bucket** — tokens refill at a steady rate; each request spends one.
   Allows controlled bursts, which usually matches what you actually want. Worked
-  example: [`go/concurrency/token_bucket_rate_limiter.go`](../../go/concurrency/token_bucket_rate_limiter.go).
+  example: [`examples/go/concurrency/token_bucket_rate_limiter.go`](../../examples/go/concurrency/token_bucket_rate_limiter.go).
 - **Leaky bucket** — outflow is perfectly constant. Smooths traffic, no bursts.
 
 In a distributed system the limiter state must be shared (typically Redis), which

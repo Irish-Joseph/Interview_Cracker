@@ -107,7 +107,7 @@ The design debate is worth knowing: checked exceptions were meant to force
 handling, but in practice they encourage `catch (Exception e) {}` and leak
 implementation details through signatures. Later languages (C#, Kotlin, Scala)
 deliberately omitted them. Worked example:
-[`java/exceptions/exception_handling_basics.java`](../../java/exceptions/exception_handling_basics.java).
+[`examples/java/exceptions/exception_handling_basics.java`](../../examples/java/exceptions/exception_handling_basics.java).
 
 ---
 
@@ -180,7 +180,7 @@ Two cautions worth raising unprompted: a stream is **single-use** — reusing on
 throws `IllegalStateException`; and `parallelStream()` is not free speed. It uses
 the common ForkJoinPool, so it helps only for large datasets with CPU-bound,
 independent, side-effect-free work, and can be slower otherwise. Worked example:
-[`java/streams/group_and_collect_with_streams.java`](../../java/streams/group_and_collect_with_streams.java).
+[`examples/java/streams/group_and_collect_with_streams.java`](../../examples/java/streams/group_and_collect_with_streams.java).
 
 ---
 
@@ -194,4 +194,4 @@ slower, and almost never needed since a builder is normally local to one thread.
 Note the compiler rewrites simple `+` concatenation into builder calls, so
 `"a" + b + "c"` is fine — it is concatenation **inside a loop** that is the
 problem. Worked example:
-[`java/strings/string_immutability_and_stringbuilder.java`](../../java/strings/string_immutability_and_stringbuilder.java).
+[`examples/java/strings/string_immutability_and_stringbuilder.java`](../../examples/java/strings/string_immutability_and_stringbuilder.java).

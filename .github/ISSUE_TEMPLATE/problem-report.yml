@@ -9,7 +9,7 @@ body:
     attributes:
       label: Example file
       description: Provide the path to the affected example.
-      placeholder: python/algorithms/binary_search_iterative.py
+      placeholder: examples/python/algorithms/binary_search_iterative.py
     validations:
       required: true
   - type: dropdown

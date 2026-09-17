@@ -62,7 +62,11 @@ The agent MUST follow these rules.
 
 # 3. Repository Structure
 
-Each programming language must have its own top-level directory.
+Every programming language has its own directory inside `examples/`.
+
+The repository root holds only the top-level sections, so it stays readable:
+`examples/`, `interview-prep/`, `coding-challenges/`, `daily-challenges/`,
+`resources/` and `scripts/`. Do NOT create a new language folder at the root.
 
 Example:
 
@@ -74,79 +78,80 @@ interview-cracker/
 ├── TOPICS.md
 ├── progress.json
 │
-├── interview-prep/       (see section 3a)
-├── coding-challenges/    (see section 3a)
-├── daily-challenges/     (see section 3a)
-├── resources/            (see section 3a)
+├── interview-prep/          (see section 3a)
+├── coding-challenges/       (see section 3a)
+├── daily-challenges/        (see section 3a)
+├── resources/               (see section 3a)
+├── scripts/
 │
-├── python/
-│   ├── basics/
-│   ├── strings/
-│   ├── collections/
-│   ├── algorithms/
-│   ├── data-structures/
-│   ├── files/
-│   └── oop/
-│
-├── javascript/
-│   ├── basics/
-│   ├── arrays/
-│   ├── objects/
-│   ├── async/
-│   ├── algorithms/
-│   └── utilities/
-│
-├── typescript/
-│   ├── basics/
-│   ├── interfaces/
-│   ├── generics/
-│   └── utilities/
-│
-├── java/
-│   ├── basics/
-│   ├── collections/
-│   ├── algorithms/
-│   └── oop/
-│
-├── c/
-│   ├── basics/
-│   ├── arrays/
-│   ├── pointers/
-│   └── algorithms/
-│
-├── cpp/
-│   ├── basics/
-│   ├── stl/
-│   ├── algorithms/
-│   └── oop/
-│
-├── csharp/
-│   ├── basics/
-│   ├── collections/
-│   ├── linq/
-│   └── oop/
-│
-├── go/
-│   ├── basics/
-│   ├── slices/
-│   ├── maps/
-│   └── concurrency/
-│
-├── rust/
-│   ├── basics/
-│   ├── ownership/
-│   ├── collections/
-│   └── concurrency/
-│
-├── kotlin/
-├── swift/
-├── dart/
-├── ruby/
-├── php/
-├── sql/
-├── bash/
-├── powershell/
-└── r/
+└── examples/                the daily example library
+    ├── README.md
+    │
+    ├── python/
+    │   ├── basics/
+    │   ├── strings/
+    │   ├── collections/
+    │   ├── algorithms/
+    │   ├── data-structures/
+    │   ├── files/
+    │   └── oop/
+    │
+    ├── javascript/
+    │   ├── basics/
+    │   ├── arrays/
+    │   ├── objects/
+    │   ├── async/
+    │   ├── algorithms/
+    │   └── utilities/
+    │
+    ├── typescript/
+    │   ├── basics/
+    │   ├── interfaces/
+    │   ├── generics/
+    │   └── utilities/
+    │
+    ├── java/
+    │   ├── basics/
+    │   ├── collections/
+    │   ├── algorithms/
+    │   └── oop/
+    │
+    ├── c/
+    │   ├── basics/
+    │   ├── arrays/
+    │   ├── pointers/
+    │   └── algorithms/
+    │
+    ├── cpp/
+    │   ├── basics/
+    │   ├── stl/
+    │   ├── algorithms/
+    │   └── oop/
+    │
+    ├── csharp/
+    │   ├── basics/
+    │   ├── collections/
+    │   ├── linq/
+    │   └── oop/
+    │
+    ├── go/
+    │   ├── basics/
+    │   ├── slices/
+    │   ├── maps/
+    │   └── concurrency/
+    │
+    ├── rust/
+    │   ├── basics/
+    │   ├── ownership/
+    │   ├── collections/
+    │   └── concurrency/
+    │
+    ├── sql/
+    ├── bash/
+    ├── powershell/
+    ├── ruby/
+    │
+    └── (kotlin/ swift/ dart/ php/ r/ ... as they are added)
 ```
 
 Folders do not need to be created in advance.
@@ -163,6 +168,7 @@ Alongside the language folders, the repository maintains interview-preparation
 material:
 
 ```text
+examples/             the daily language example library (see section 3)
 interview-prep/       question banks with written answers, by subject
 coding-challenges/    problems grouped by solving pattern, with tested solutions
 daily-challenges/     one dated problem per day, answer in a <details> block
@@ -451,14 +457,14 @@ Every filename must clearly describe what the example teaches.
 GOOD:
 
 ```text
-python/strings/count_word_frequency.py
-python/algorithms/find_second_largest_number.py
-javascript/arrays/group_objects_by_property.js
-java/collections/find_duplicate_elements.java
-cpp/algorithms/binary_search_iterative.cpp
-go/concurrency/simple_worker_pool.go
-rust/ownership/borrow_string_without_move.rs
-sql/window-functions/rank_employees_by_salary.sql
+examples/python/strings/count_word_frequency.py
+examples/python/algorithms/find_second_largest_number.py
+examples/javascript/arrays/group_objects_by_property.js
+examples/java/collections/find_duplicate_elements.java
+examples/cpp/algorithms/binary_search_iterative.cpp
+examples/go/concurrency/simple_worker_pool.go
+examples/rust/ownership/borrow_string_without_move.rs
+examples/sql/window-functions/rank_employees_by_salary.sql
 ```
 
 BAD:
@@ -519,13 +525,13 @@ does NOT automatically make an example unique.
 For example, if the repository already contains:
 
 ```text
-python/strings/reverse_string.py
+examples/python/strings/reverse_string.py
 ```
 
 do not later create:
 
 ```text
-python/basics/string_reverse.py
+examples/python/basics/string_reverse.py
 ```
 
 with essentially the same teaching objective.
@@ -533,13 +539,13 @@ with essentially the same teaching objective.
 Similarly:
 
 ```text
-python/algorithms/binary_search.py
+examples/python/algorithms/binary_search.py
 ```
 
 should not be followed by:
 
 ```text
-python/searching/simple_binary_search.py
+examples/python/searching/simple_binary_search.py
 ```
 
 unless the second example demonstrates a genuinely different concept or technique.
@@ -612,8 +618,8 @@ Recommended format:
 
 | Date | Language | Difficulty | Category | Topic | File |
 |---|---|---|---|---|---|
-| 2026-09-03 | Python | Beginner | Strings | Count word frequency | python/strings/count_word_frequency.py |
-| 2026-09-03 | Go | Intermediate | Concurrency | Worker pool using channels | go/concurrency/worker_pool.go |
+| 2026-09-03 | Python | Beginner | Strings | Count word frequency | examples/python/strings/count_word_frequency.py |
+| 2026-09-03 | Go | Intermediate | Concurrency | Worker pool using channels | examples/go/concurrency/worker_pool.go |
 ```
 
 Every example must have one entry.
@@ -642,7 +648,7 @@ Example:
       "difficulty": "beginner",
       "category": "strings",
       "topic": "Count word frequency",
-      "file": "python/strings/count_word_frequency.py"
+      "file": "examples/python/strings/count_word_frequency.py"
     },
     {
       "date": "2026-09-03",
@@ -650,7 +656,7 @@ Example:
       "difficulty": "intermediate",
       "category": "concurrency",
       "topic": "Worker pool using channels",
-      "file": "go/concurrency/worker_pool.go"
+      "file": "examples/go/concurrency/worker_pool.go"
     }
   ]
 }
@@ -875,19 +881,19 @@ Before committing, validate the example whenever the required runtime/compiler e
 ## Python
 
 ```bash
-python path/to/example.py
+python examples/<lang>/<category>/example.py
 ```
 
 or:
 
 ```bash
-python3 path/to/example.py
+python3 examples/<lang>/<category>/example.py
 ```
 
 ## JavaScript
 
 ```bash
-node path/to/example.js
+node examples/<lang>/<category>/example.js
 ```
 
 ## TypeScript
@@ -897,26 +903,26 @@ Use available TypeScript validation tools when configured.
 ## Go
 
 ```bash
-go run path/to/example.go
+go run examples/go/<category>/example.go
 ```
 
 ## Rust
 
 ```bash
-rustc path/to/example.rs
+rustc examples/rust/<category>/example.rs
 ```
 
 ## C
 
 ```bash
-gcc path/to/example.c -o /tmp/example
+gcc examples/c/<category>/example.c -o /tmp/example
 /tmp/example
 ```
 
 ## C++
 
 ```bash
-g++ path/to/example.cpp -o /tmp/example
+g++ examples/cpp/<category>/example.cpp -o /tmp/example
 /tmp/example
 ```
 
@@ -1089,7 +1095,7 @@ git diff
 Example:
 
 ```bash
-git add python/strings/count_word_frequency.py TOPICS.md progress.json
+git add examples/python/strings/count_word_frequency.py TOPICS.md progress.json
 ```
 
 Do NOT blindly use:
@@ -1376,8 +1382,8 @@ A concept MAY occasionally exist in multiple languages if the educational object
 For example:
 
 ```text
-python/algorithms/binary_search.py
-rust/algorithms/binary_search.rs
+examples/python/algorithms/binary_search.py
+examples/rust/algorithms/binary_search.rs
 ```
 
 may be acceptable if both genuinely demonstrate language-specific techniques.
@@ -1592,15 +1598,15 @@ Avoid:
 For example, do not create all three:
 
 ```text
-python/algorithm/
-python/algorithms/
-python/algo/
+examples/python/algorithm/
+examples/python/algorithms/
+examples/python/algo/
 ```
 
 Use one canonical directory:
 
 ```text
-python/algorithms/
+examples/python/algorithms/
 ```
 
 ---
@@ -1733,32 +1739,32 @@ Examples:
 
 1. Python
    Topic: Count word frequency
-   File: python/strings/count_word_frequency.py
+   File: examples/python/strings/count_word_frequency.py
    Validation: Passed
 
 2. JavaScript
    Topic: Group objects by property
-   File: javascript/arrays/group_objects_by_property.js
+   File: examples/javascript/arrays/group_objects_by_property.js
    Validation: Passed
 
 3. Java
    Topic: Queue using ArrayDeque
-   File: java/collections/queue_using_array_deque.java
+   File: examples/java/collections/queue_using_array_deque.java
    Validation: Passed
 
 4. SQL
    Topic: Rank employees with ROW_NUMBER
-   File: sql/window-functions/rank_employees.sql
+   File: examples/sql/window-functions/rank_employees.sql
    Validation: Checked
 
 5. Go
    Topic: Worker pool using channels
-   File: go/concurrency/worker_pool.go
+   File: examples/go/concurrency/worker_pool.go
    Validation: Passed
 
 6. C++
    Topic: Merge overlapping intervals
-   File: cpp/algorithms/merge_overlapping_intervals.cpp
+   File: examples/cpp/algorithms/merge_overlapping_intervals.cpp
    Validation: Passed
 
 Commits created: 12
@@ -1790,7 +1796,7 @@ Stopped because:
 Git push authentication failed.
 
 Last successful example:
-javascript/arrays/group_objects_by_property.js
+examples/javascript/arrays/group_objects_by_property.js
 
 No additional commits were created after the push failure.
 

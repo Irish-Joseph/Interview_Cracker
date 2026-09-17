@@ -40,7 +40,7 @@ Three correct options:
   cache behaviour.
 - **Circular buffer** — a fixed array with `head` and `tail` indices that wrap via
   modulo. O(1), contiguous, no allocation. Best when capacity is bounded. Worked
-  example: [`c/data-structures/circular_queue.c`](../../c/data-structures/circular_queue.c).
+  example: [`examples/c/data-structures/circular_queue.c`](../../examples/c/data-structures/circular_queue.c).
 - **Deque from the standard library** — `collections.deque`, `ArrayDeque`,
   `std::deque`. Usually a list of fixed-size blocks: O(1) at both ends with
   decent locality. **Use this in an interview unless asked to implement one.**
