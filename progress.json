@@ -1,5 +1,5 @@
 {
-  "total_examples": 132,
+  "total_examples": 133,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1056,6 +1056,14 @@
       "category": "stl",
       "topic": "map, set and their unordered counterparts",
       "file": "examples/cpp/stl/map_and_set_containers.cpp"
+    },
+    {
+      "date": "2026-09-18",
+      "language": "csharp",
+      "difficulty": "advanced",
+      "category": "generics",
+      "topic": "Generic constraints, covariance and contravariance",
+      "file": "examples/csharp/generics/generic_classes_and_variance.cs"
     }
   ]
 }
