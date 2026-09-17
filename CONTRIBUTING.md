@@ -111,5 +111,5 @@ belong to that contributor's GitHub account. Do not add a co-author who did not
 participate in the change.
 
 Questions belong in
-[Q&A Discussions](https://github.com/Irish-Joseph/interview-cracker/discussions/categories/q-a),
+[Q&A Discussions](https://github.com/Irish-Joseph/Interview_Cracker/discussions/categories/q-a),
 where the question author can mark a helpful response as the accepted answer.

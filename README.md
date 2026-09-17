@@ -1,6 +1,6 @@
 # Interview Cracker
 
-[![Validate](https://github.com/Irish-Joseph/interview-cracker/actions/workflows/validate-registry.yml/badge.svg)](https://github.com/Irish-Joseph/interview-cracker/actions/workflows/validate-registry.yml)
+[![Validate](https://github.com/Irish-Joseph/Interview_Cracker/actions/workflows/validate-registry.yml/badge.svg)](https://github.com/Irish-Joseph/Interview_Cracker/actions/workflows/validate-registry.yml)
 
 **Everything you need to prepare for a software engineering interview, in one
 repository — explained, worked through, and runnable.**
@@ -122,8 +122,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) — there is a checklist for each area.
 
 ## Community
 
-- Ask questions in [Q&A Discussions](https://github.com/Irish-Joseph/interview-cracker/discussions/categories/q-a).
-- Suggest improvements in [Ideas](https://github.com/Irish-Joseph/interview-cracker/discussions/categories/ideas).
+- Ask questions in [Q&A Discussions](https://github.com/Irish-Joseph/Interview_Cracker/discussions/categories/q-a).
+- Suggest improvements in [Ideas](https://github.com/Irish-Joseph/Interview_Cracker/discussions/categories/ideas).
 - Request a new question or report a mistake through the issue forms.
 
 If a section helped you, a star makes it easier for the next person to find.
