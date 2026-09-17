@@ -1,5 +1,5 @@
 {
-  "total_examples": 137,
+  "total_examples": 138,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1096,6 +1096,14 @@
       "category": "basics",
       "topic": "Conditionals: [[ ]] vs [ ], string, numeric and file tests",
       "file": "examples/bash/basics/conditionals_and_tests.sh"
+    },
+    {
+      "date": "2026-09-18",
+      "language": "powershell",
+      "difficulty": "intermediate",
+      "category": "functions",
+      "topic": "Parameters, validation attributes and pipeline input",
+      "file": "examples/powershell/functions/parameters_and_validation.ps1"
     }
   ]
 }
