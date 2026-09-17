@@ -1,0 +1,120 @@
+# Interview Prep
+
+Question banks with **written answers**, organised by subject. Every answer aims
+to be the explanation you would give out loud in an interview — not a definition
+copied from a textbook.
+
+## How each file is laid out
+
+Every question follows the same shape:
+
+```markdown
+### Q. The question
+
+**Answer.** The direct answer first, in one or two sentences.
+
+Then the reasoning, an example, and the follow-up the interviewer will ask next.
+```
+
+Questions are tagged by difficulty:
+
+- 🟢 **Foundational** — you are expected to answer these without hesitation.
+- 🟡 **Intermediate** — the bulk of a typical screen.
+- 🔴 **Advanced** — senior roles, or a deliberate depth probe.
+
+---
+
+## Subjects
+
+### Data structures
+| File | Covers |
+|---|---|
+| [arrays-and-strings.md](data-structures/arrays-and-strings.md) | Dynamic arrays, amortised growth, string immutability, in-place work |
+| [linked-lists.md](data-structures/linked-lists.md) | Singly/doubly linked, cycle detection, when a list beats an array |
+| [stacks-queues-heaps.md](data-structures/stacks-queues-heaps.md) | LIFO/FIFO, monotonic stacks, priority queues, heap operations |
+| [hash-tables.md](data-structures/hash-tables.md) | Hashing, collisions, load factor, why O(1) is *average* not worst |
+| [trees-and-graphs.md](data-structures/trees-and-graphs.md) | BSTs, balancing, traversals, BFS/DFS, representations |
+
+### Algorithms
+| File | Covers |
+|---|---|
+| [complexity-analysis.md](algorithms/complexity-analysis.md) | Big-O, amortised vs average, space complexity, common mistakes |
+| [sorting-and-searching.md](algorithms/sorting-and-searching.md) | Comparison sorts, stability, binary search and its edge cases |
+| [recursion-and-backtracking.md](algorithms/recursion-and-backtracking.md) | Base cases, call stack, memoisation, pruning |
+| [dynamic-programming.md](algorithms/dynamic-programming.md) | Recognising DP, state design, top-down vs bottom-up |
+
+### Databases
+| File | Covers |
+|---|---|
+| [sql-query-questions.md](databases/sql-query-questions.md) | Joins, grouping, window functions, the NULL traps |
+| [indexing-and-transactions.md](databases/indexing-and-transactions.md) | B-tree indexes, query plans, ACID, isolation levels, deadlocks |
+
+### Core computer science
+| File | Covers |
+|---|---|
+| [operating-systems.md](core-cs/operating-systems.md) | Processes vs threads, scheduling, memory, virtual memory, deadlock |
+| [networking.md](core-cs/networking.md) | TCP/UDP, HTTP, DNS, TLS, what happens when you type a URL |
+| [concurrency.md](core-cs/concurrency.md) | Race conditions, locks, atomics, async vs threads |
+
+### System design
+| File | Covers |
+|---|---|
+| [fundamentals.md](system-design/fundamentals.md) | Load balancing, caching, replication, sharding, CAP, queues |
+| [walkthrough-url-shortener.md](system-design/walkthrough-url-shortener.md) | A complete worked answer, start to finish |
+
+### Language-specific
+| File | Covers |
+|---|---|
+| [python.md](languages/python.md) | GIL, mutability, generators, decorators, `is` vs `==` |
+| [javascript.md](languages/javascript.md) | Event loop, closures, `this`, prototypes, promises |
+| [java.md](languages/java.md) | JVM memory, collections, equals/hashCode, generics erasure |
+
+### Behavioural
+| File | Covers |
+|---|---|
+| [star-stories.md](behavioral/star-stories.md) | The STAR structure, the questions that recur, how to prepare stories |
+
+---
+
+## Study plans
+
+These are deliberately conservative. A plan you actually finish beats an
+ambitious one you abandon on day three.
+
+### One week (a screen is coming up)
+
+| Day | Focus |
+|---|---|
+| 1 | `complexity-analysis.md` + `arrays-and-strings.md`, then the two-pointers and sliding-window challenges |
+| 2 | `hash-tables.md` + the hashing challenges |
+| 3 | `trees-and-graphs.md` + the tree and graph challenges |
+| 4 | `sorting-and-searching.md` + binary-search challenges |
+| 5 | Your language file + `concurrency.md` |
+| 6 | `sql-query-questions.md` or `system-design/fundamentals.md`, whichever the role needs |
+| 7 | Re-attempt every challenge you got wrong, from a blank file |
+
+### Four weeks (building real depth)
+
+| Week | Focus |
+|---|---|
+| 1 | All of **Data structures**, one challenge pattern per day |
+| 2 | All of **Algorithms**, including dynamic programming |
+| 3 | **Databases** + **Core CS** + your language file |
+| 4 | **System design**, behavioural stories, and full mock attempts under time |
+
+### How to practise a challenge properly
+
+1. Read only the problem statement. Cover the solution.
+2. Give yourself 20 minutes. If you are stuck at 20, read *only* the hint.
+3. Write the code before running it. Interviewers watch you reason, not iterate.
+4. Compare against the provided solution — including its complexity section.
+5. Note the *pattern*, not the problem. That is what transfers.
+
+---
+
+## A note on honesty
+
+Nothing here is labelled "asked at company X". Those claims circulate widely and
+are almost never verifiable, and preparing for a specific company's rumoured list
+is worse practice than understanding the underlying topic. The questions here are
+the ones that genuinely recur across the field, grouped by subject.

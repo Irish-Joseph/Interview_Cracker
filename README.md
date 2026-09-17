@@ -1,17 +1,45 @@
-# Daily Code Learning
+# Interview Cracker
 
-[![Validate example registry](https://github.com/Irish-Joseph/code-by-example/actions/workflows/validate-registry.yml/badge.svg)](https://github.com/Irish-Joseph/code-by-example/actions/workflows/validate-registry.yml)
+[![Validate example registry](https://github.com/Irish-Joseph/interview-cracker/actions/workflows/validate-registry.yml/badge.svg)](https://github.com/Irish-Joseph/interview-cracker/actions/workflows/validate-registry.yml)
 
-A growing collection of focused programming examples designed to help
-developers understand one concept at a time.
+**Everything you need to prepare for a software engineering interview, in one
+repository — explained, worked through, and runnable.**
 
-The repository contains examples across multiple programming languages,
-covering algorithms, data structures, language features, practical utilities,
-and problem-solving techniques.
+Most interview repositories are a wall of unexplained solutions. This one is
+built around *why* an answer is right: every question has a written answer, every
+challenge has a commented solution with its complexity, and every concept links
+to a small runnable program you can actually execute.
 
-Each example is intentionally small enough to study independently.
+---
 
-Explore the language folders to start learning.
+## What is inside
+
+| Section | What it gives you |
+|---|---|
+| [`interview-prep/`](interview-prep/) | Subject-by-subject question banks with full written answers — data structures, algorithms, databases, OS, networking, concurrency, system design, language-specific and behavioural. |
+| [`coding-challenges/`](coding-challenges/) | Small coding problems grouped by the **pattern** that solves them, each with a tested solution and complexity analysis. |
+| [`daily-challenges/`](daily-challenges/) | One focused problem per day, with the answer kept in the same file so you can self-check after attempting it. |
+| Language folders (`python/`, `go/`, `rust/`, …) | The original library of focused, runnable examples — one concept per file, across 13 languages. |
+| [`resources/`](resources/) | Printable PDF question banks generated from the Markdown sources. |
+
+---
+
+## How to use this repository
+
+**If your interview is months away**, work through `interview-prep/` one subject
+at a time and do the linked challenges as you go.
+
+**If your interview is next week**, start with
+[`interview-prep/README.md`](interview-prep/README.md), which has a one-week and
+a four-week plan, then drill `coding-challenges/` by pattern.
+
+**If you have 20 minutes a day**, do that day's
+[`daily-challenges/`](daily-challenges/) problem.
+
+The honest advice: recognising the *pattern* beats memorising solutions. Ten
+problems understood deeply will serve you better than a hundred skimmed.
+
+---
 
 ## Statistics
 
@@ -39,22 +67,26 @@ Categories: 97
 
 Full per-example listing (with date, difficulty and category) is in [TOPICS.md](TOPICS.md).
 
-## Repository Layout
+---
 
-- Each programming language has its own top-level folder (e.g. `python/`, `javascript/`).
-- Inside each language, examples are grouped by category (e.g. `algorithms/`, `arrays/`).
-- `TOPICS.md` is a human-readable registry of every example.
-- `progress.json` is the machine-readable registry.
-- `Skill.md` documents the rules used to maintain this repository.
+## Repository layout
 
-Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the
-example checklist and pull-request workflow.
+- `interview-prep/` — question banks with answers, organised by subject.
+- `coding-challenges/` — problems grouped by solving pattern, with solutions.
+- `daily-challenges/` — one dated problem per day.
+- `resources/pdf/` — generated PDF question banks.
+- One top-level folder per language, each grouped into categories.
+- `TOPICS.md` — human-readable registry of every language example.
+- `progress.json` — machine-readable registry of the same.
+- `scripts/` — registry validation and the PDF builder.
+- `Skill.md` — the maintenance rules this repository follows.
+
+Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Community
 
-- Ask programming questions in [Q&A Discussions](https://github.com/Irish-Joseph/code-by-example/discussions/categories/q-a).
-- Suggest broader improvements in [Ideas](https://github.com/Irish-Joseph/code-by-example/discussions/categories/ideas).
-- Request a new example or report a problem through the structured issue forms.
+- Ask questions in [Q&A Discussions](https://github.com/Irish-Joseph/interview-cracker/discussions/categories/q-a).
+- Suggest improvements in [Ideas](https://github.com/Irish-Joseph/interview-cracker/discussions/categories/ideas).
+- Request a new question or report a mistake through the issue forms.
 
-Helpful answers can be marked by the question author so future learners can
-find the solution quickly.
+If a section helped you, a star makes it easier for the next person to find.
