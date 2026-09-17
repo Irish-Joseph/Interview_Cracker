@@ -1,5 +1,5 @@
 {
-  "total_examples": 115,
+  "total_examples": 116,
   "examples": [
     {
       "date": "2026-09-03",
@@ -920,6 +920,14 @@
       "category": "collections",
       "topic": "defaultdict, deque, namedtuple and ChainMap",
       "file": "python/collections/defaultdict_deque_namedtuple.py"
+    },
+    {
+      "date": "2026-09-17",
+      "language": "javascript",
+      "difficulty": "advanced",
+      "category": "generators",
+      "topic": "Generators, yield* and the iteration protocol",
+      "file": "javascript/generators/generators_and_iterators.js"
     }
   ]
 }

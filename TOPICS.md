@@ -117,3 +117,4 @@
 | 2026-09-15 | Bash | Beginner | Basics | Reading a file line by line: while IFS= read -r | bash/basics/read_file_line_by_line.sh |
 | 2026-09-15 | Ruby | Beginner | Basics | Symbol #to_proc — calling a named method on each element | ruby/basics/symbols_and_to_proc.rb |
 | 2026-09-17 | Python | Intermediate | Collections | defaultdict, deque, namedtuple and ChainMap | python/collections/defaultdict_deque_namedtuple.py |
+| 2026-09-17 | JavaScript | Advanced | Generators | Generators, yield* and the iteration protocol | javascript/generators/generators_and_iterators.js |
