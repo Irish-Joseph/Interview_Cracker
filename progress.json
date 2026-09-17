@@ -1,5 +1,5 @@
 {
-  "total_examples": 129,
+  "total_examples": 130,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1032,6 +1032,14 @@
       "category": "classes",
       "topic": "Classes: access modifiers, abstract and #private",
       "file": "examples/typescript/classes/classes_and_access_modifiers.ts"
+    },
+    {
+      "date": "2026-09-18",
+      "language": "java",
+      "difficulty": "intermediate",
+      "category": "oop",
+      "topic": "The equals and hashCode contract",
+      "file": "examples/java/oop/equals_and_hashcode.java"
     }
   ]
 }
