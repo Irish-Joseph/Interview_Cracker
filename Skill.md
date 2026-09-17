@@ -1,10 +1,18 @@
-# Daily Code Learning Agent Skill
+# Interview Cracker Agent Skill
 
 ## 1. Mission
 
-Maintain a public GitHub repository containing small, useful, educational programming examples.
+Maintain a public GitHub repository that helps developers learn programming
+concepts and prepare for software engineering interviews.
 
-The repository is intended to help beginners and developers learn programming concepts through focused examples.
+The repository has two halves:
+
+1. **The daily example library** - small, focused, runnable programs, one
+   concept per file, organised by language. This is what the daily target below
+   refers to, and its rules are unchanged.
+2. **The interview sections** - `interview-prep/`, `coding-challenges/`,
+   `daily-challenges/` and `resources/`. These are NOT part of the daily
+   12-example target. See section 3a.
 
 Every day, the agent must create exactly **12 new educational code examples**.
 
@@ -59,12 +67,17 @@ Each programming language must have its own top-level directory.
 Example:
 
 ```text
-daily-code-learning/
+interview-cracker/
 │
 ├── README.md
-├── SKILL.md
+├── Skill.md
 ├── TOPICS.md
 ├── progress.json
+│
+├── interview-prep/       (see section 3a)
+├── coding-challenges/    (see section 3a)
+├── daily-challenges/     (see section 3a)
+├── resources/            (see section 3a)
 │
 ├── python/
 │   ├── basics/
@@ -141,6 +154,39 @@ Folders do not need to be created in advance.
 Create a language or category directory only when it is actually required.
 
 Do not create empty directories.
+
+---
+
+# 3a. Interview Sections
+
+Alongside the language folders, the repository maintains interview-preparation
+material:
+
+```text
+interview-prep/       question banks with written answers, by subject
+coding-challenges/    problems grouped by solving pattern, with tested solutions
+daily-challenges/     one dated problem per day, answer in a <details> block
+resources/pdf/        PDFs generated from interview-prep/ by scripts/build_pdfs.py
+```
+
+Rules for these sections:
+
+1. They are **not** counted toward the daily 12-example target, and are **not**
+   registered in `TOPICS.md` or `progress.json`. Those two registries describe
+   the language example library only, and `scripts/validate_registry.py`
+   enforces that.
+2. Every code snippet published in `interview-prep/` or `daily-challenges/`
+   must be **executed and verified** before committing. Cross-check against a
+   brute-force reference on randomised inputs where one is practical.
+3. Every file in `coding-challenges/` must be runnable and self-testing, and
+   `python scripts/run_challenges.py` must pass in full before committing.
+4. Never state that a question is "asked at" a named company. Those claims are
+   not verifiable. Group by subject and difficulty instead.
+5. PDFs in `resources/pdf/` are generated artefacts. Edit the Markdown source
+   and rerun `python scripts/build_pdfs.py`; never hand-edit a PDF.
+6. Commit message prefixes for these sections: `docs(interview-prep):`,
+   `feat(coding-challenges):`, `feat(daily-challenges):`, `feat(resources):`.
+   The `learn(<language>):` prefix stays reserved for the daily examples.
 
 ---
 

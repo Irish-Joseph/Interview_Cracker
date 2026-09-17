@@ -1,4 +1,4 @@
-name: Validate example registry
+name: Validate
 
 on:
   pull_request:
@@ -21,3 +21,5 @@ jobs:
           python-version: "3.x"
       - name: Validate registry and summaries
         run: python scripts/validate_registry.py
+      - name: Run coding-challenge tests
+        run: python scripts/run_challenges.py

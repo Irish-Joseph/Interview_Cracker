@@ -1,6 +1,6 @@
 # Interview Cracker
 
-[![Validate example registry](https://github.com/Irish-Joseph/interview-cracker/actions/workflows/validate-registry.yml/badge.svg)](https://github.com/Irish-Joseph/interview-cracker/actions/workflows/validate-registry.yml)
+[![Validate](https://github.com/Irish-Joseph/interview-cracker/actions/workflows/validate-registry.yml/badge.svg)](https://github.com/Irish-Joseph/interview-cracker/actions/workflows/validate-registry.yml)
 
 **Everything you need to prepare for a software engineering interview, in one
 repository — explained, worked through, and runnable.**
@@ -20,7 +20,7 @@ to a small runnable program you can actually execute.
 | [`coding-challenges/`](coding-challenges/) | Small coding problems grouped by the **pattern** that solves them, each with a tested solution and complexity analysis. |
 | [`daily-challenges/`](daily-challenges/) | One focused problem per day, with the answer kept in the same file so you can self-check after attempting it. |
 | Language folders (`python/`, `go/`, `rust/`, …) | The original library of focused, runnable examples — one concept per file, across 13 languages. |
-| [`resources/`](resources/) | Printable PDF question banks generated from the Markdown sources. |
+| [`resources/`](resources/) | Printable [PDF question banks](resources/pdf/interview-questions-complete.pdf) generated from the Markdown sources. |
 
 ---
 
