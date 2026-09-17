@@ -1,5 +1,5 @@
 {
-  "total_examples": 120,
+  "total_examples": 121,
   "examples": [
     {
       "date": "2026-09-03",
@@ -960,6 +960,14 @@
       "category": "options",
       "topic": "Option handling without null",
       "file": "rust/options/option_handling.rs"
+    },
+    {
+      "date": "2026-09-17",
+      "language": "java",
+      "difficulty": "intermediate",
+      "category": "optional",
+      "topic": "Optional instead of returning null",
+      "file": "java/optional/optional_instead_of_null.java"
     }
   ]
 }
