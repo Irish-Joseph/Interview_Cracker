@@ -1,5 +1,5 @@
 {
-  "total_examples": 135,
+  "total_examples": 136,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1080,6 +1080,14 @@
       "category": "collections",
       "topic": "Vec and HashMap essentials",
       "file": "examples/rust/collections/vec_and_hashmap.rs"
+    },
+    {
+      "date": "2026-09-18",
+      "language": "sql",
+      "difficulty": "intermediate",
+      "category": "dates",
+      "topic": "Date functions, half-open ranges and complete series",
+      "file": "examples/sql/dates/date_functions_and_ranges.sql"
     }
   ]
 }
