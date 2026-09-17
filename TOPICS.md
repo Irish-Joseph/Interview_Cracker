@@ -132,3 +132,4 @@
 | 2026-09-18 | JavaScript | Beginner | Arrays | Array methods: map, filter, reduce, find, some, every | examples/javascript/arrays/array_methods_tour.js |
 | 2026-09-18 | TypeScript | Intermediate | Classes | Classes: access modifiers, abstract and #private | examples/typescript/classes/classes_and_access_modifiers.ts |
 | 2026-09-18 | Java | Intermediate | Oop | The equals and hashCode contract | examples/java/oop/equals_and_hashcode.java |
+| 2026-09-18 | C | Beginner | Basics | Command-line arguments with argc and argv | examples/c/basics/command_line_arguments.c |

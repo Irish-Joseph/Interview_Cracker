@@ -1,5 +1,5 @@
 {
-  "total_examples": 130,
+  "total_examples": 131,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1040,6 +1040,14 @@
       "category": "oop",
       "topic": "The equals and hashCode contract",
       "file": "examples/java/oop/equals_and_hashcode.java"
+    },
+    {
+      "date": "2026-09-18",
+      "language": "c",
+      "difficulty": "beginner",
+      "category": "basics",
+      "topic": "Command-line arguments with argc and argv",
+      "file": "examples/c/basics/command_line_arguments.c"
     }
   ]
 }
