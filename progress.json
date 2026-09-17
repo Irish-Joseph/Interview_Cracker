@@ -1,5 +1,5 @@
 {
-  "total_examples": 133,
+  "total_examples": 134,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1064,6 +1064,14 @@
       "category": "generics",
       "topic": "Generic constraints, covariance and contravariance",
       "file": "examples/csharp/generics/generic_classes_and_variance.cs"
+    },
+    {
+      "date": "2026-09-18",
+      "language": "go",
+      "difficulty": "intermediate",
+      "category": "structs",
+      "topic": "Structs, embedding and JSON tags",
+      "file": "examples/go/structs/structs_embedding_and_json.go"
     }
   ]
 }
