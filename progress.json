@@ -1,5 +1,5 @@
 {
-  "total_examples": 123,
+  "total_examples": 124,
   "examples": [
     {
       "date": "2026-09-03",
@@ -984,6 +984,14 @@
       "category": "operators",
       "topic": "Operator overloading for value types",
       "file": "cpp/operators/operator_overloading.cpp"
+    },
+    {
+      "date": "2026-09-17",
+      "language": "csharp",
+      "difficulty": "beginner",
+      "category": "error-handling",
+      "topic": "Exceptions, filters and IDisposable cleanup",
+      "file": "csharp/error-handling/exceptions_and_idisposable.cs"
     }
   ]
 }
