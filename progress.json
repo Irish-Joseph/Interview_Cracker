@@ -1,5 +1,5 @@
 {
-  "total_examples": 124,
+  "total_examples": 125,
   "examples": [
     {
       "date": "2026-09-03",
@@ -992,6 +992,14 @@
       "category": "error-handling",
       "topic": "Exceptions, filters and IDisposable cleanup",
       "file": "csharp/error-handling/exceptions_and_idisposable.cs"
+    },
+    {
+      "date": "2026-09-17",
+      "language": "bash",
+      "difficulty": "intermediate",
+      "category": "arrays",
+      "topic": "Indexed and associative arrays",
+      "file": "bash/arrays/indexed_and_associative_arrays.sh"
     }
   ]
 }

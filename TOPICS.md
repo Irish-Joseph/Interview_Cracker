@@ -126,3 +126,4 @@
 | 2026-09-17 | C | Beginner | Files | Text file I/O with fopen, fgets and error checks | c/files/read_write_text_file.c |
 | 2026-09-17 | C++ | Intermediate | Operators | Operator overloading for value types | cpp/operators/operator_overloading.cpp |
 | 2026-09-17 | C# | Beginner | Error handling | Exceptions, filters and IDisposable cleanup | csharp/error-handling/exceptions_and_idisposable.cs |
+| 2026-09-17 | Bash | Intermediate | Arrays | Indexed and associative arrays | bash/arrays/indexed_and_associative_arrays.sh |
