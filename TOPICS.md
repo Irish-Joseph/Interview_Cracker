@@ -116,3 +116,4 @@
 | 2026-09-15 | C# | Intermediate | LINQ | Deferred execution — LINQ queries run when enumerated | csharp/linq/deferred_execution_ienumerable.cs |
 | 2026-09-15 | Bash | Beginner | Basics | Reading a file line by line: while IFS= read -r | bash/basics/read_file_line_by_line.sh |
 | 2026-09-15 | Ruby | Beginner | Basics | Symbol #to_proc — calling a named method on each element | ruby/basics/symbols_and_to_proc.rb |
+| 2026-09-17 | Python | Intermediate | Collections | defaultdict, deque, namedtuple and ChainMap | python/collections/defaultdict_deque_namedtuple.py |

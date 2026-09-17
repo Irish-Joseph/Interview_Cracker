@@ -1,5 +1,5 @@
 {
-  "total_examples": 114,
+  "total_examples": 115,
   "examples": [
     {
       "date": "2026-09-03",
@@ -912,6 +912,14 @@
       "category": "basics",
       "topic": "Symbol #to_proc — calling a named method on each element",
       "file": "ruby/basics/symbols_and_to_proc.rb"
+    },
+    {
+      "date": "2026-09-17",
+      "language": "python",
+      "difficulty": "intermediate",
+      "category": "collections",
+      "topic": "defaultdict, deque, namedtuple and ChainMap",
+      "file": "python/collections/defaultdict_deque_namedtuple.py"
     }
   ]
 }
