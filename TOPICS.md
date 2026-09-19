@@ -143,3 +143,4 @@
 | 2026-09-19 | Python | Beginner | Typing | Type hints and the typing module | examples/python/typing/type_hints_and_typing_module.py |
 | 2026-09-19 | JavaScript | Intermediate | Errors | Error handling: custom errors, cause and retries | examples/javascript/errors/error_handling_patterns.js |
 | 2026-09-19 | Ruby | Intermediate | Oop | Classes, modules and mixins | examples/ruby/oop/classes_modules_and_mixins.rb |
+| 2026-09-19 | Java | Intermediate | Interfaces | Default, static and functional interfaces | examples/java/interfaces/default_and_functional_interfaces.java |
