@@ -1,5 +1,5 @@
 {
-  "total_examples": 145,
+  "total_examples": 146,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1160,6 +1160,14 @@
       "category": "nullability",
       "topic": "Nullable reference types and null operators",
       "file": "examples/csharp/nullability/nullable_reference_types.cs"
+    },
+    {
+      "date": "2026-09-19",
+      "language": "go",
+      "difficulty": "advanced",
+      "category": "testing",
+      "topic": "Table-driven tests and subtests",
+      "file": "examples/go/testing/table_driven_tests.go"
     }
   ]
 }
