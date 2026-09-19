@@ -1,5 +1,5 @@
 {
-  "total_examples": 140,
+  "total_examples": 141,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1120,6 +1120,14 @@
       "category": "errors",
       "topic": "Error handling: custom errors, cause and retries",
       "file": "examples/javascript/errors/error_handling_patterns.js"
+    },
+    {
+      "date": "2026-09-19",
+      "language": "ruby",
+      "difficulty": "intermediate",
+      "category": "oop",
+      "topic": "Classes, modules and mixins",
+      "file": "examples/ruby/oop/classes_modules_and_mixins.rb"
     }
   ]
 }

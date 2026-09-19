@@ -142,3 +142,4 @@
 | 2026-09-18 | PowerShell | Intermediate | Functions | Parameters, validation attributes and pipeline input | examples/powershell/functions/parameters_and_validation.ps1 |
 | 2026-09-19 | Python | Beginner | Typing | Type hints and the typing module | examples/python/typing/type_hints_and_typing_module.py |
 | 2026-09-19 | JavaScript | Intermediate | Errors | Error handling: custom errors, cause and retries | examples/javascript/errors/error_handling_patterns.js |
+| 2026-09-19 | Ruby | Intermediate | Oop | Classes, modules and mixins | examples/ruby/oop/classes_modules_and_mixins.rb |
