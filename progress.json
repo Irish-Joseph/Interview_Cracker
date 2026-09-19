@@ -1,5 +1,5 @@
 {
-  "total_examples": 148,
+  "total_examples": 149,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1184,6 +1184,14 @@
       "category": "set-operations",
       "topic": "UNION, INTERSECT and EXCEPT",
       "file": "examples/sql/set-operations/union_intersect_except.sql"
+    },
+    {
+      "date": "2026-09-19",
+      "language": "bash",
+      "difficulty": "intermediate",
+      "category": "functions",
+      "topic": "Functions: arguments, return status and scope",
+      "file": "examples/bash/functions/functions_and_scope.sh"
     }
   ]
 }
