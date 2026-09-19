@@ -151,3 +151,4 @@
 | 2026-09-19 | Rust | Advanced | Modules | Modules, visibility and paths | examples/rust/modules/modules_and_visibility.rs |
 | 2026-09-19 | SQL | Beginner | Set operations | UNION, INTERSECT and EXCEPT | examples/sql/set-operations/union_intersect_except.sql |
 | 2026-09-19 | Bash | Intermediate | Functions | Functions: arguments, return status and scope | examples/bash/functions/functions_and_scope.sh |
+| 2026-09-19 | PowerShell | Intermediate | Data | Hashtables, splatting and JSON/CSV conversion | examples/powershell/data/hashtables_and_conversion.ps1 |
