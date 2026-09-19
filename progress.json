@@ -1,5 +1,5 @@
 {
-  "total_examples": 146,
+  "total_examples": 147,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1168,6 +1168,14 @@
       "category": "testing",
       "topic": "Table-driven tests and subtests",
       "file": "examples/go/testing/table_driven_tests.go"
+    },
+    {
+      "date": "2026-09-19",
+      "language": "rust",
+      "difficulty": "advanced",
+      "category": "modules",
+      "topic": "Modules, visibility and paths",
+      "file": "examples/rust/modules/modules_and_visibility.rs"
     }
   ]
 }
