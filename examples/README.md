@@ -1,6 +1,6 @@
 # Examples
 
-138 focused, runnable programs across 13 languages. **One concept per
+150 focused, runnable programs across 13 languages. **One concept per
 file** - each is small enough to read in a sitting, and most print their own
 expected output.
 
@@ -26,19 +26,19 @@ running it.
 
 | Language | Examples | Categories |
 |---|---|---|
-| [Python](python/) | 18 | `algorithms`, `basics`, `collections`, `context-managers`, `data-models`, `dates`, `decorators`, `files`, `generators`, `oop`, `standard-library`, `strings` |
-| [SQL](sql/) | 13 | `aggregation`, `dates`, `filters`, `joins`, `recursive-ctes`, `subqueries`, `transactions`, `window-functions` |
-| [Go](go/) | 12 | `algorithms`, `concurrency`, `data-structures`, `errors`, `files`, `generics`, `interfaces`, `maps`, `slices`, `structs` |
-| [JavaScript](javascript/) | 12 | `arrays`, `async`, `basics`, `collections`, `generators`, `objects`, `utilities` |
-| [Rust](rust/) | 12 | `basics`, `closures`, `collections`, `concurrency`, `enums`, `error-handling`, `iterators`, `lifetimes`, `options`, `ownership`, `strings`, `traits` |
-| [Bash](bash/) | 11 | `arrays`, `basics`, `scripting`, `testing`, `utilities` |
-| [C](c/) | 11 | `arrays`, `basics`, `data-structures`, `files`, `pointers`, `strings` |
-| [Java](java/) | 11 | `algorithms`, `collections`, `exceptions`, `generics`, `oop`, `optional`, `records`, `streams`, `strings` |
+| [Python](python/) | 19 | `algorithms`, `basics`, `collections`, `context-managers`, `data-models`, `dates`, `decorators`, `files`, `generators`, `oop`, `standard-library`, `strings`, `typing` |
+| [SQL](sql/) | 14 | `aggregation`, `dates`, `filters`, `joins`, `recursive-ctes`, `set-operations`, `subqueries`, `transactions`, `window-functions` |
+| [Go](go/) | 13 | `algorithms`, `concurrency`, `data-structures`, `errors`, `files`, `generics`, `interfaces`, `maps`, `slices`, `structs`, `testing` |
+| [JavaScript](javascript/) | 13 | `arrays`, `async`, `basics`, `collections`, `errors`, `generators`, `objects`, `utilities` |
+| [Rust](rust/) | 13 | `basics`, `closures`, `collections`, `concurrency`, `enums`, `error-handling`, `iterators`, `lifetimes`, `modules`, `options`, `ownership`, `strings`, `traits` |
+| [Bash](bash/) | 12 | `arrays`, `basics`, `functions`, `scripting`, `testing`, `utilities` |
+| [C](c/) | 12 | `arrays`, `basics`, `data-structures`, `files`, `pointers`, `strings` |
+| [Java](java/) | 12 | `algorithms`, `collections`, `exceptions`, `generics`, `interfaces`, `oop`, `optional`, `records`, `streams`, `strings` |
+| [C++](cpp/) | 11 | `algorithms`, `data-structures`, `error-handling`, `operators`, `raii`, `smart-pointers`, `stl`, `strings`, `sum-types`, `templates` |
+| [C#](csharp/) | 11 | `async`, `basics`, `collections`, `delegates`, `error-handling`, `generics`, `linq`, `methods`, `nullability`, `patterns` |
 | [TypeScript](typescript/) | 11 | `advanced-types`, `async`, `basics`, `classes`, `enums`, `generics`, `interfaces`, `narrowing`, `unions`, `utility-types` |
-| [C++](cpp/) | 10 | `algorithms`, `data-structures`, `error-handling`, `operators`, `raii`, `smart-pointers`, `stl`, `sum-types`, `templates` |
-| [C#](csharp/) | 10 | `async`, `basics`, `collections`, `delegates`, `error-handling`, `generics`, `linq`, `methods`, `patterns` |
-| [Ruby](ruby/) | 4 | `basics`, `blocks`, `pattern-matching` |
-| [PowerShell](powershell/) | 3 | `error-handling`, `functions`, `objects` |
+| [Ruby](ruby/) | 5 | `basics`, `blocks`, `oop`, `pattern-matching` |
+| [PowerShell](powershell/) | 4 | `data`, `error-handling`, `functions`, `objects` |
 
 ## Running them
 

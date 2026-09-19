@@ -1,5 +1,5 @@
 {
-  "total_examples": 149,
+  "total_examples": 150,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1192,6 +1192,14 @@
       "category": "functions",
       "topic": "Functions: arguments, return status and scope",
       "file": "examples/bash/functions/functions_and_scope.sh"
+    },
+    {
+      "date": "2026-09-19",
+      "language": "powershell",
+      "difficulty": "intermediate",
+      "category": "data",
+      "topic": "Hashtables, splatting and JSON/CSV conversion",
+      "file": "examples/powershell/data/hashtables_and_conversion.ps1"
     }
   ]
 }
