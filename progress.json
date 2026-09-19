@@ -1,5 +1,5 @@
 {
-  "total_examples": 144,
+  "total_examples": 145,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1152,6 +1152,14 @@
       "category": "strings",
       "topic": "std::string operations and string_view",
       "file": "examples/cpp/strings/string_operations.cpp"
+    },
+    {
+      "date": "2026-09-19",
+      "language": "csharp",
+      "difficulty": "intermediate",
+      "category": "nullability",
+      "topic": "Nullable reference types and null operators",
+      "file": "examples/csharp/nullability/nullable_reference_types.cs"
     }
   ]
 }
