@@ -149,3 +149,4 @@
 | 2026-09-19 | C# | Intermediate | Nullability | Nullable reference types and null operators | examples/csharp/nullability/nullable_reference_types.cs |
 | 2026-09-19 | Go | Advanced | Testing | Table-driven tests and subtests | examples/go/testing/table_driven_tests.go |
 | 2026-09-19 | Rust | Advanced | Modules | Modules, visibility and paths | examples/rust/modules/modules_and_visibility.rs |
+| 2026-09-19 | SQL | Beginner | Set operations | UNION, INTERSECT and EXCEPT | examples/sql/set-operations/union_intersect_except.sql |

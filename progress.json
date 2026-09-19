@@ -1,5 +1,5 @@
 {
-  "total_examples": 147,
+  "total_examples": 148,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1176,6 +1176,14 @@
       "category": "modules",
       "topic": "Modules, visibility and paths",
       "file": "examples/rust/modules/modules_and_visibility.rs"
+    },
+    {
+      "date": "2026-09-19",
+      "language": "sql",
+      "difficulty": "beginner",
+      "category": "set-operations",
+      "topic": "UNION, INTERSECT and EXCEPT",
+      "file": "examples/sql/set-operations/union_intersect_except.sql"
     }
   ]
 }
