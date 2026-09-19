@@ -1,5 +1,5 @@
 {
-  "total_examples": 138,
+  "total_examples": 139,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1104,6 +1104,14 @@
       "category": "functions",
       "topic": "Parameters, validation attributes and pipeline input",
       "file": "examples/powershell/functions/parameters_and_validation.ps1"
+    },
+    {
+      "date": "2026-09-19",
+      "language": "python",
+      "difficulty": "beginner",
+      "category": "typing",
+      "topic": "Type hints and the typing module",
+      "file": "examples/python/typing/type_hints_and_typing_module.py"
     }
   ]
 }

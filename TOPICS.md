@@ -140,3 +140,4 @@
 | 2026-09-18 | SQL | Intermediate | Dates | Date functions, half-open ranges and complete series | examples/sql/dates/date_functions_and_ranges.sql |
 | 2026-09-18 | Bash | Beginner | Basics | Conditionals: [[ ]] vs [ ], string, numeric and file tests | examples/bash/basics/conditionals_and_tests.sh |
 | 2026-09-18 | PowerShell | Intermediate | Functions | Parameters, validation attributes and pipeline input | examples/powershell/functions/parameters_and_validation.ps1 |
+| 2026-09-19 | Python | Beginner | Typing | Type hints and the typing module | examples/python/typing/type_hints_and_typing_module.py |
