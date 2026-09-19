@@ -1,5 +1,5 @@
 {
-  "total_examples": 142,
+  "total_examples": 143,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1136,6 +1136,14 @@
       "category": "interfaces",
       "topic": "Default, static and functional interfaces",
       "file": "examples/java/interfaces/default_and_functional_interfaces.java"
+    },
+    {
+      "date": "2026-09-19",
+      "language": "c",
+      "difficulty": "beginner",
+      "category": "basics",
+      "topic": "enum, union, typedef and the tagged union",
+      "file": "examples/c/basics/enum_union_typedef.c"
     }
   ]
 }
