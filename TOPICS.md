@@ -145,3 +145,4 @@
 | 2026-09-19 | Ruby | Intermediate | Oop | Classes, modules and mixins | examples/ruby/oop/classes_modules_and_mixins.rb |
 | 2026-09-19 | Java | Intermediate | Interfaces | Default, static and functional interfaces | examples/java/interfaces/default_and_functional_interfaces.java |
 | 2026-09-19 | C | Beginner | Basics | enum, union, typedef and the tagged union | examples/c/basics/enum_union_typedef.c |
+| 2026-09-19 | C++ | Beginner | Strings | std::string operations and string_view | examples/cpp/strings/string_operations.cpp |

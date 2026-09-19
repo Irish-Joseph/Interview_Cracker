@@ -1,5 +1,5 @@
 {
-  "total_examples": 143,
+  "total_examples": 144,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1144,6 +1144,14 @@
       "category": "basics",
       "topic": "enum, union, typedef and the tagged union",
       "file": "examples/c/basics/enum_union_typedef.c"
+    },
+    {
+      "date": "2026-09-19",
+      "language": "cpp",
+      "difficulty": "beginner",
+      "category": "strings",
+      "topic": "std::string operations and string_view",
+      "file": "examples/cpp/strings/string_operations.cpp"
     }
   ]
 }
