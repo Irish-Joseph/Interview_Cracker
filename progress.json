@@ -1,5 +1,5 @@
 {
-  "total_examples": 139,
+  "total_examples": 140,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1112,6 +1112,14 @@
       "category": "typing",
       "topic": "Type hints and the typing module",
       "file": "examples/python/typing/type_hints_and_typing_module.py"
+    },
+    {
+      "date": "2026-09-19",
+      "language": "javascript",
+      "difficulty": "intermediate",
+      "category": "errors",
+      "topic": "Error handling: custom errors, cause and retries",
+      "file": "examples/javascript/errors/error_handling_patterns.js"
     }
   ]
 }
