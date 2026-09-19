@@ -1,5 +1,5 @@
 {
-  "total_examples": 141,
+  "total_examples": 142,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1128,6 +1128,14 @@
       "category": "oop",
       "topic": "Classes, modules and mixins",
       "file": "examples/ruby/oop/classes_modules_and_mixins.rb"
+    },
+    {
+      "date": "2026-09-19",
+      "language": "java",
+      "difficulty": "intermediate",
+      "category": "interfaces",
+      "topic": "Default, static and functional interfaces",
+      "file": "examples/java/interfaces/default_and_functional_interfaces.java"
     }
   ]
 }
