@@ -155,3 +155,4 @@
 | 2026-09-20 | Python | Beginner | JSON | JSON parsing and serialization with the json module | examples/python/json/json_parsing_and_encoding.py |
 | 2026-09-21 | Python | Beginner | Standard library | Path operations with pathlib | examples/python/standard-library/pathlib_path_operations.py |
 | 2026-09-21 | JavaScript | Beginner | Strings | String methods: padding, case, localeCompare, template literals | examples/javascript/strings/string_methods.js |
+| 2026-09-21 | TypeScript | Advanced | Advanced Types | DeepPartial and DeepReadonly with recursive conditional types | examples/typescript/advanced-types/deep_partial_and_readonly.ts |

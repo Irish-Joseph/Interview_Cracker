@@ -1,5 +1,5 @@
 {
-  "total_examples": 153,
+  "total_examples": 154,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1224,6 +1224,14 @@
       "category": "strings",
       "topic": "String methods: padding, case, localeCompare, template literals",
       "file": "examples/javascript/strings/string_methods.js"
+    },
+    {
+      "date": "2026-09-21",
+      "language": "typescript",
+      "difficulty": "advanced",
+      "category": "advanced-types",
+      "topic": "DeepPartial and DeepReadonly with recursive conditional types",
+      "file": "examples/typescript/advanced-types/deep_partial_and_readonly.ts"
     }
   ]
 }
