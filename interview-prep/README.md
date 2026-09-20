@@ -42,6 +42,7 @@ Questions are tagged by difficulty:
 | [sorting-and-searching.md](algorithms/sorting-and-searching.md) | Comparison sorts, stability, binary search and its edge cases |
 | [recursion-and-backtracking.md](algorithms/recursion-and-backtracking.md) | Base cases, call stack, memoisation, pruning |
 | [dynamic-programming.md](algorithms/dynamic-programming.md) | Recognising DP, state design, top-down vs bottom-up |
+| [number-theory-and-math.md](algorithms/number-theory-and-math.md) | GCD, modular arithmetic, primality/sieve, bit tricks, big-number overflow |
 
 ### Databases
 | File | Covers |
