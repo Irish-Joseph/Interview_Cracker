@@ -49,3 +49,4 @@ window once and leaves at most once, so the total work across the whole run is
 |---|---|---|
 | [max_sum_subarray_of_size_k.py](max_sum_subarray_of_size_k.py) | 🟢 Easy | Fixed |
 | [longest_substring_without_repeats.py](longest_substring_without_repeats.py) | 🟡 Medium | Variable |
+| [minimum_window_substring.py](minimum_window_substring.py) | 🔴 Hard | Variable, frequency-driven |
