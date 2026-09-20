@@ -1,5 +1,5 @@
 {
-  "total_examples": 158,
+  "total_examples": 159,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1264,6 +1264,14 @@
       "category": "strings",
       "topic": "StringBuilder, string interpolation and culture-aware formatting",
       "file": "examples/csharp/strings/string_builder_and_culture_formatting.cs"
+    },
+    {
+      "date": "2026-09-21",
+      "language": "go",
+      "difficulty": "intermediate",
+      "category": "sorting",
+      "topic": "sort.Slice, sort.Interface and sort.Search",
+      "file": "examples/go/sorting/sorting_slices.go"
     }
   ]
 }
