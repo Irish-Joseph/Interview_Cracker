@@ -70,15 +70,23 @@ If you change the Markdown, regenerate the PDFs (see below) in the same PR.
 
 ---
 
-## Regenerating the PDFs (`resources/pdf/`)
+## Regenerating the site and PDFs
+
+Both are **generated**. Edit the Markdown, never the output.
 
 ```bash
-pip install reportlab
-python scripts/build_pdfs.py
+pip install markdown pymdown-extensions pygments jinja2 pillow reportlab
+
+python scripts/build_site.py            # docs/ - the GitHub Pages site
+python scripts/build_social_preview.py  # docs/assets/social-preview.png
+python scripts/build_pdfs.py            # resources/pdf/
 ```
 
-Never hand-edit a PDF — it is a generated artefact. Commit prefix:
-`feat(resources):`.
+`build_site.py` deletes and recreates `docs/`, so anything that must live at
+the site root (the Search Console file, `CNAME`, `robots.txt`) is written *by
+the script*. Adding such a file by hand will lose it on the next build.
+
+Commit prefix: `chore(site):`.
 
 ---
 

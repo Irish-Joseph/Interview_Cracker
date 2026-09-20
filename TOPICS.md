@@ -152,4 +152,4 @@
 | 2026-09-19 | SQL | Beginner | Set operations | UNION, INTERSECT and EXCEPT | examples/sql/set-operations/union_intersect_except.sql |
 | 2026-09-19 | Bash | Intermediate | Functions | Functions: arguments, return status and scope | examples/bash/functions/functions_and_scope.sh |
 | 2026-09-19 | PowerShell | Intermediate | Data | Hashtables, splatting and JSON/CSV conversion | examples/powershell/data/hashtables_and_conversion.ps1 |
-| 2026-09-19 | Python | Beginner | JSON | JSON parsing and serialization with the json module | examples/python/json/json_parsing_and_encoding.py |
+| 2026-09-20 | Python | Beginner | JSON | JSON parsing and serialization with the json module | examples/python/json/json_parsing_and_encoding.py |
