@@ -1,5 +1,5 @@
 {
-  "total_examples": 157,
+  "total_examples": 158,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1256,6 +1256,14 @@
       "category": "stl",
       "topic": "Range-based for, structured bindings and std::array",
       "file": "examples/cpp/stl/structured_bindings_range_for.cpp"
+    },
+    {
+      "date": "2026-09-21",
+      "language": "csharp",
+      "difficulty": "beginner",
+      "category": "strings",
+      "topic": "StringBuilder, string interpolation and culture-aware formatting",
+      "file": "examples/csharp/strings/string_builder_and_culture_formatting.cs"
     }
   ]
 }
