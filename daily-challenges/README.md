@@ -41,6 +41,7 @@ One file per day, named `YYYY-MM-DD.md`, filed under `YYYY/MM/`.
 | [2026-09-19](2026/09/2026-09-19.md) | Find the duplicate number | 🔴 Hard | Floyd's cycle detection |
 | [2026-09-20](2026/09/2026-09-20.md) | First unique character in a string | 🟢 Easy | Hash map (count, then scan) |
 | [2026-09-21](2026/09/2026-09-21.md) | Next permutation | 🟡 Medium | In-place array manipulation |
+| [2026-09-22](2026/09/2026-09-22.md) | Trapping rain water | 🔴 Hard | Two pointers + running maxima |
 
 ## Contributing a day
 
