@@ -158,3 +158,4 @@
 | 2026-09-21 | TypeScript | Advanced | Advanced Types | DeepPartial and DeepReadonly with recursive conditional types | examples/typescript/advanced-types/deep_partial_and_readonly.ts |
 | 2026-09-21 | Java | Intermediate | Concurrency | ThreadLocal and basic synchronization (synchronized, AtomicInteger) | examples/java/concurrency/threadlocal_and_synchronization.java |
 | 2026-09-21 | C | Intermediate | Arrays | Passing 2D arrays to functions: decay, pointer-to-array, flat view | examples/c/arrays/passing_2d_arrays_to_functions.c |
+| 2026-09-21 | C++ | Beginner | Stl | Range-based for, structured bindings and std::array | examples/cpp/stl/structured_bindings_range_for.cpp |

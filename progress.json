@@ -1,5 +1,5 @@
 {
-  "total_examples": 156,
+  "total_examples": 157,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1248,6 +1248,14 @@
       "category": "arrays",
       "topic": "Passing 2D arrays to functions: decay, pointer-to-array, flat view",
       "file": "examples/c/arrays/passing_2d_arrays_to_functions.c"
+    },
+    {
+      "date": "2026-09-21",
+      "language": "cpp",
+      "difficulty": "beginner",
+      "category": "stl",
+      "topic": "Range-based for, structured bindings and std::array",
+      "file": "examples/cpp/stl/structured_bindings_range_for.cpp"
     }
   ]
 }
