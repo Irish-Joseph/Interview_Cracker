@@ -48,3 +48,4 @@ tuple for a composite key.
 |---|---|---|
 | [two_sum.py](two_sum.py) | 🟢 Easy | Seen-so-far |
 | [group_anagrams.py](group_anagrams.py) | 🟡 Medium | Canonical key |
+| [longest_consecutive_sequence.py](longest_consecutive_sequence.py) | 🟡 Medium | Run-start detection |
