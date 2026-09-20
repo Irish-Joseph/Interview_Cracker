@@ -36,3 +36,4 @@ trapping rain water, stock span.
 |---|---|---|
 | [valid_parentheses.py](valid_parentheses.py) | 🟢 Easy | Matching pairs |
 | [daily_temperatures.py](daily_temperatures.py) | 🟡 Medium | Monotonic stack |
+| [min_stack.py](min_stack.py) | 🟡 Medium | Auxiliary mirror stack |
