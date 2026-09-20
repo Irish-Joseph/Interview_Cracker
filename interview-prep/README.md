@@ -50,6 +50,7 @@ Questions are tagged by difficulty:
 |---|---|
 | [sql-query-questions.md](databases/sql-query-questions.md) | Joins, grouping, window functions, the NULL traps |
 | [indexing-and-transactions.md](databases/indexing-and-transactions.md) | B-tree indexes, query plans, ACID, isolation levels, deadlocks |
+| [database-normalization.md](databases/database-normalization.md) | Functional dependencies, 1NF-3NF/BCNF, anomalies, when to denormalize |
 
 ### Core computer science
 | File | Covers |
