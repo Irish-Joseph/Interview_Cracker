@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Networking &middot; Interview Cracker</title>
+<meta name="description" content=""What happens when you type a URL into a browser?" is the single most-asked open-ended interview question. Everything here feeds into it.">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/core-cs/networking.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Networking &middot; Interview Cracker">
+<meta property="og:description" content=""What happens when you type a URL into a browser?" is the single most-asked open-ended interview question. Everything here feeds into it.">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/core-cs/networking.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/networking.html" class="current" aria-current="page">Networking</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="networking">Networking</h1>
+<p>"What happens when you type a URL into a browser?" is the single most-asked
+open-ended interview question. Everything here feeds into it.</p>
+<hr>
+<h3 id="q-tcp-vs-udp">🟢 Q. TCP vs UDP?</h3>
+<p><strong>Answer.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>TCP</th>
+<th>UDP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Connection</td>
+<td>Handshake first</td>
+<td>None — just send</td>
+</tr>
+<tr>
+<td>Delivery</td>
+<td>Guaranteed, retransmits</td>
+<td>Best effort, may drop</td>
+</tr>
+<tr>
+<td>Ordering</td>
+<td>Preserved</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Congestion control</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Header</td>
+<td>20+ bytes</td>
+<td>8 bytes</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>Slower</td>
+<td>Faster, lower latency</td>
+</tr>
+</tbody>
+</table>
+<p><strong>TCP</strong> when correctness matters: HTTP, email, file transfer, databases.
+<strong>UDP</strong> when timeliness beats completeness: live video and voice, gaming, DNS.</p>
+<p>The insight worth stating: for a video call, a packet that arrives late is
+useless — retransmitting it would make things <em>worse</em> by delaying everything
+behind it. Dropping it and carrying on is the correct behaviour. (QUIC, which
+HTTP/3 runs on, is built on UDP and reimplements reliability per-stream to avoid
+exactly this head-of-line blocking.)</p>
+<hr>
+<h3 id="q-explain-the-tcp-three-way-handshake-and-why-it-is-three">🟡 Q. Explain the TCP three-way handshake, and why it is three.</h3>
+<p><strong>Answer.</strong></p>
+<ol>
+<li><strong>SYN</strong> — client sends its initial sequence number.</li>
+<li><strong>SYN-ACK</strong> — server acknowledges it and sends its own.</li>
+<li><strong>ACK</strong> — client acknowledges the server's.</li>
+</ol>
+<p>Three steps because <strong>both directions</strong> must be established, and each side must
+confirm the other's sequence number. Two would leave the server unsure the client
+received its number.</p>
+<p>The cost: one full round trip before any data flows. On a 100 ms link that is 100
+ms before the request is even sent, plus another ~2 round trips for the TLS
+handshake. This is why connection reuse (keep-alive), HTTP/2 multiplexing and
+QUIC's 0-RTT resumption all exist.</p>
+<p>Closing takes <strong>four</strong> steps (FIN/ACK each way), because each direction closes
+independently — one side can finish sending while still receiving.</p>
+<hr>
+<h3 id="q-what-happens-when-you-type-a-url-and-press-enter">🟢 Q. What happens when you type a URL and press enter?</h3>
+<p><strong>Answer.</strong> The structure matters more than the detail; go layer by layer.</p>
+<ol>
+<li><strong>URL parsing</strong> — scheme, host, port, path.</li>
+<li><strong>DNS resolution</strong> — browser cache → OS cache → router → resolver → root → TLD
+   → authoritative nameserver, returning an IP.</li>
+<li><strong>TCP connection</strong> — three-way handshake to that IP on port 443.</li>
+<li><strong>TLS handshake</strong> — negotiate the cipher, validate the certificate chain
+   against a trusted root, derive session keys.</li>
+<li><strong>HTTP request</strong> — <code>GET / HTTP/1.1</code> plus headers (Host, cookies, Accept).</li>
+<li><strong>Server processing</strong> — load balancer → application server → cache or database
+   → response.</li>
+<li><strong>Response</strong> — status line, headers, body.</li>
+<li><strong>Rendering</strong> — parse HTML into the DOM, fetch CSS/JS/images (more requests,
+   back to step 2), build the render tree, layout, paint.</li>
+</ol>
+<p>Strong candidates then mention <strong>caching at every layer</strong> — DNS TTL, browser
+cache, CDN, server-side cache — because the fastest request is the one never made.</p>
+<hr>
+<h3 id="q-what-is-the-difference-between-http11-http2-and-http3">🟡 Q. What is the difference between HTTP/1.1, HTTP/2 and HTTP/3?</h3>
+<p><strong>Answer.</strong></p>
+<ul>
+<li><strong>HTTP/1.1</strong> — one request at a time per connection. Browsers open ~6
+  connections per host to compensate. Suffers <strong>head-of-line blocking</strong>: a slow
+  response stalls everything behind it.</li>
+<li><strong>HTTP/2</strong> — binary framing with <strong>multiplexing</strong>: many concurrent streams over
+  one TCP connection, plus header compression (HPACK) and server push. Fixes HTTP
+  head-of-line blocking, but not TCP's — one lost packet still stalls every
+  stream, because TCP must deliver bytes in order.</li>
+<li><strong>HTTP/3</strong> — runs over <strong>QUIC on UDP</strong>, giving each stream independent delivery.
+  A lost packet stalls only its own stream. Also merges the transport and TLS
+  handshakes into one round trip.</li>
+</ul>
+<hr>
+<h3 id="q-what-does-dns-actually-do-and-what-is-a-ttl">🟡 Q. What does DNS actually do, and what is a TTL?</h3>
+<p><strong>Answer.</strong> It translates a hostname into an IP address, through a hierarchy:
+root servers → TLD servers (<code>.com</code>) → the domain's authoritative nameservers.</p>
+<p>Record types worth knowing: <strong>A</strong> (IPv4), <strong>AAAA</strong> (IPv6), <strong>CNAME</strong> (alias),
+<strong>MX</strong> (mail), <strong>TXT</strong> (verification, SPF), <strong>NS</strong> (delegation).</p>
+<p><strong>TTL</strong> is how long a resolver may cache a record. It is the trade-off at the
+heart of DNS-based failover: a low TTL means changes propagate fast but you pay
+more lookups; a high TTL is efficient but leaves stale records pointing at a dead
+server for hours. Lowering the TTL <em>before</em> a planned migration is the standard
+practice.</p>
+<hr>
+<h3 id="q-what-does-https-actually-protect-and-how">🟡 Q. What does HTTPS actually protect, and how?</h3>
+<p><strong>Answer.</strong> TLS provides three things:</p>
+<ol>
+<li><strong>Encryption</strong> — an eavesdropper sees ciphertext.</li>
+<li><strong>Integrity</strong> — tampering is detected.</li>
+<li><strong>Authentication</strong> — the certificate proves you are talking to the real host.</li>
+</ol>
+<p>It works by using <strong>asymmetric</strong> cryptography (slow) only to agree on a shared
+<strong>symmetric</strong> key (fast), then encrypting the actual traffic symmetrically. Trust
+comes from a chain: the site's certificate is signed by an intermediate CA,
+signed by a root CA that your OS or browser already trusts.</p>
+<p>Worth knowing what it does <em>not</em> hide: the destination IP, and the hostname
+during the handshake (SNI is sent in clear unless Encrypted Client Hello is in
+use). An observer cannot read your traffic but can see which site you visited.</p>
+<hr>
+<h3 id="q-what-do-the-http-status-code-classes-mean">🟢 Q. What do the HTTP status code classes mean?</h3>
+<p><strong>Answer.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Meaning</th>
+<th>Worth knowing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1xx</td>
+<td>Informational</td>
+<td>101 Switching Protocols (WebSocket upgrade)</td>
+</tr>
+<tr>
+<td>2xx</td>
+<td>Success</td>
+<td>200 OK, 201 Created, 204 No Content</td>
+</tr>
+<tr>
+<td>3xx</td>
+<td>Redirection</td>
+<td>301 permanent, 302 temporary, 304 Not Modified</td>
+</tr>
+<tr>
+<td>4xx</td>
+<td><strong>Client</strong> error</td>
+<td>400, 401 unauthenticated, 403 unauthorised, 404, 429 rate limited</td>
+</tr>
+<tr>
+<td>5xx</td>
+<td><strong>Server</strong> error</td>
+<td>500, 502 bad gateway, 503 unavailable, 504 timeout</td>
+</tr>
+</tbody>
+</table>
+<p>The distinction interviewers probe: <strong>401 vs 403</strong> — 401 means "I do not know who
+you are, authenticate"; 403 means "I know who you are and you may not do this".
+And <strong>301 vs 302</strong> — 301 is cached aggressively by browsers and is effectively
+permanent, so it is hard to undo.</p>
+<hr>
+<h3 id="q-what-is-the-difference-between-a-load-balancer-at-l4-and-l7">🟡 Q. What is the difference between a load balancer at L4 and L7?</h3>
+<p><strong>Answer.</strong> <strong>Layer 4</strong> balances on TCP/UDP information — IP and port. It cannot
+see inside the request, so it is fast and protocol-agnostic, but it can only do
+simple distribution.</p>
+<p><strong>Layer 7</strong> parses the HTTP request, so it can route on path, host, headers or
+cookies (<code>/api/*</code> to one pool, <code>/static/*</code> to another), terminate TLS, retry
+failed requests and do sticky sessions. The cost is CPU and latency.</p>
+<p>Use L4 for raw throughput and non-HTTP protocols; use L7 when routing decisions
+depend on request content, which for a typical web application is most of the
+time.</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\core-cs\networking.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../";</script>
+<script src="../../assets/search.js" defer></script>
+</body>
+</html>

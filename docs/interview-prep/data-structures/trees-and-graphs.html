@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trees and Graphs &middot; Interview Cracker</title>
+<meta name="description" content="The highest-yield topic after hash tables. Most "hard" interview problems are a graph problem wearing a costume.">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/data-structures/trees-and-graphs.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Trees and Graphs &middot; Interview Cracker">
+<meta property="og:description" content="The highest-yield topic after hash tables. Most "hard" interview problems are a graph problem wearing a costume.">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/data-structures/trees-and-graphs.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/trees-and-graphs.html" class="current" aria-current="page">Trees and Graphs</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="trees-and-graphs">Trees and Graphs</h1>
+<p>The highest-yield topic after hash tables. Most "hard" interview problems are a
+graph problem wearing a costume.</p>
+<hr>
+<h3 id="q-what-is-a-binary-search-tree-and-what-is-its-complexity">🟢 Q. What is a binary search tree, and what is its complexity?</h3>
+<p><strong>Answer.</strong> A binary tree where, for every node, all keys in the left subtree are
+smaller and all keys in the right subtree are larger. That invariant makes search
+a series of "left or right?" decisions.</p>
+<p>Search, insert and delete are <strong>O(h)</strong> where h is the height — <strong>not</strong> O(log n).
+The two coincide only when the tree is balanced:</p>
+<ul>
+<li>Balanced: h ≈ log n → <strong>O(log n)</strong>.</li>
+<li>Degenerate (insert already-sorted data): h = n → <strong>O(n)</strong>, a linked list with
+  extra pointers.</li>
+</ul>
+<p>That degeneration is the entire reason self-balancing trees exist. Saying "O(h),
+which is O(log n) only if balanced" is a much stronger answer than "O(log n)".</p>
+<hr>
+<h3 id="q-what-are-the-tree-traversals-and-when-do-you-use-each">🟢 Q. What are the tree traversals and when do you use each?</h3>
+<p><strong>Answer.</strong> Three depth-first orders, defined by when you visit the node relative
+to its children, plus one breadth-first order.</p>
+<div class="highlight"><pre><span></span><code>        4
+      /   \
+     2     6
+    / \   / \
+   1   3 5   7
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Traversal</th>
+<th>Order</th>
+<th>Result</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>In-order</strong></td>
+<td>left, <strong>node</strong>, right</td>
+<td>1 2 3 4 5 6 7</td>
+<td><strong>Sorted output from a BST</strong></td>
+</tr>
+<tr>
+<td><strong>Pre-order</strong></td>
+<td><strong>node</strong>, left, right</td>
+<td>4 2 1 3 6 5 7</td>
+<td>Copying/serialising a tree</td>
+</tr>
+<tr>
+<td><strong>Post-order</strong></td>
+<td>left, right, <strong>node</strong></td>
+<td>1 3 2 5 7 6 4</td>
+<td>Deleting; computing from children up</td>
+</tr>
+<tr>
+<td><strong>Level-order (BFS)</strong></td>
+<td>by depth</td>
+<td>4 2 6 1 3 5 7</td>
+<td>Shortest path; level-by-level work</td>
+</tr>
+</tbody>
+</table>
+<p>The fact worth memorising: <strong>in-order traversal of a BST yields sorted order.</strong>
+"Validate a BST" and "find the kth smallest" are both just that observation.</p>
+<hr>
+<h3 id="q-how-do-you-validate-a-binary-search-tree">🟡 Q. How do you validate a binary search tree?</h3>
+<p><strong>Answer.</strong> The trap: checking only <code>left &lt; node &lt; right</code> locally is <strong>wrong</strong>.
+It passes trees that are not BSTs:</p>
+<div class="highlight"><pre><span></span><code>    5
+   / \
+  3   7
+     / \
+    2   8     &lt;- 2 &lt; 5, so it violates the BST property,
+              but locally 2 &lt; 7 looks fine
+</code></pre></div>
+<p>Every node must fall inside a range inherited from its ancestors:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_bst</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">low</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;-inf&quot;</span><span class="p">),</span> <span class="n">high</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">node</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">low</span> <span class="o">&lt;</span> <span class="n">node</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;</span> <span class="n">high</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">is_bst</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">value</span><span class="p">)</span> <span class="ow">and</span>
+            <span class="n">is_bst</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">high</span><span class="p">))</span>
+</code></pre></div>
+<p>Equivalently: do an in-order traversal and check the output is strictly
+increasing. Both are O(n) time, O(h) space.</p>
+<hr>
+<h3 id="q-which-balanced-trees-should-i-know-and-what-balances-them">🟡 Q. Which balanced trees should I know, and what balances them?</h3>
+<p><strong>Answer.</strong> You need the idea, not the rotation code.</p>
+<ul>
+<li><strong>AVL</strong> — strictly balanced; heights of sibling subtrees differ by at most 1.
+  Faster lookups, more rotations on write.</li>
+<li><strong>Red–black</strong> — loosely balanced via colour rules; the longest path is at most
+  twice the shortest. Fewer rotations, so better for write-heavy work. This is
+  what <code>TreeMap</code>, <code>std::map</code> and most standard libraries use.</li>
+<li><strong>B-tree / B+ tree</strong> — high branching factor, so the tree is very shallow. Used
+  by databases and filesystems because each node is one disk/page read; a
+  three-level B+ tree can index millions of rows. Discussed further in
+  <a href="../../interview-prep/databases/indexing-and-transactions.html"><code>databases/indexing-and-transactions.md</code></a>.</li>
+</ul>
+<p>All give <strong>O(log n)</strong> worst case. The distinction is the constant factor and the
+read/write balance.</p>
+<hr>
+<h3 id="q-bfs-or-dfs-how-do-you-choose">🟢 Q. BFS or DFS — how do you choose?</h3>
+<p><strong>Answer.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>BFS</th>
+<th>DFS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Structure</td>
+<td>Queue</td>
+<td>Stack (or recursion)</td>
+</tr>
+<tr>
+<td>Visits</td>
+<td>Nearest first</td>
+<td>Deepest first</td>
+</tr>
+<tr>
+<td>Finds shortest path</td>
+<td><strong>Yes</strong>, in an unweighted graph</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>O(width) — can be huge</td>
+<td>O(depth)</td>
+</tr>
+<tr>
+<td>Natural for</td>
+<td>Levels, shortest hops, "minimum steps"</td>
+<td>Cycles, topological sort, connectivity, backtracking</td>
+</tr>
+</tbody>
+</table>
+<p>Both are <strong>O(V + E)</strong> time.</p>
+<p><strong>The decisive rule:</strong> if the question says <em>shortest</em>, <em>fewest</em>, or <em>minimum
+number of steps</em> in an unweighted graph, use <strong>BFS</strong>. BFS reaches every node by
+the fewest edges, so the first time it arrives is the shortest way. DFS gives no
+such guarantee — it may find a long path first.</p>
+<p>If edges are weighted, neither works: use <strong>Dijkstra</strong> (non-negative weights) or
+<strong>Bellman–Ford</strong> (negative weights allowed).</p>
+<hr>
+<h3 id="q-how-do-you-represent-a-graph-and-which-representation-should-you-pick">🟡 Q. How do you represent a graph, and which representation should you pick?</h3>
+<p><strong>Answer.</strong> Two options, chosen by density.</p>
+<p><strong>Adjacency list</strong> — map each vertex to its neighbours.
+<div class="highlight"><pre><span></span><code><span class="n">graph</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">],</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">],</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;d&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+</code></pre></div>
+Space O(V + E). Iterating a vertex's neighbours is O(degree). <strong>The default.</strong></p>
+<p><strong>Adjacency matrix</strong> — a V×V grid where <code>m[i][j]</code> marks an edge.
+Space O(V²) regardless of edge count. Edge lookup is O(1); listing neighbours is
+O(V).</p>
+<p>Pick the matrix when the graph is <strong>dense</strong> (E approaches V²), when you need
+constant-time "is there an edge?", or for matrix algorithms like Floyd–Warshall.
+Pick the list otherwise — real graphs are almost always sparse, and O(V²) space
+for a million vertices is a terabyte.</p>
+<hr>
+<h3 id="q-why-must-graph-traversal-track-visited-nodes-when-tree-traversal-need-not">🟡 Q. Why must graph traversal track visited nodes when tree traversal need not?</h3>
+<p><strong>Answer.</strong> Because a tree is by definition acyclic and each node has exactly one
+parent — you cannot arrive anywhere twice. A general graph can have cycles and
+multiple paths to the same node, so without a <code>visited</code> set traversal loops
+forever or does exponential redundant work.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">visited</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">visited</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">neighbour</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">node</span><span class="p">]:</span>
+        <span class="n">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">neighbour</span><span class="p">,</span> <span class="n">visited</span><span class="p">)</span>
+</code></pre></div>
+<p>Mark a node <strong>when you enqueue/visit it</strong>, not when you dequeue it — otherwise
+the same node can be queued many times before it is ever processed.</p>
+<hr>
+<h3 id="q-what-is-a-topological-sort-and-when-is-it-impossible">🔴 Q. What is a topological sort and when is it impossible?</h3>
+<p><strong>Answer.</strong> A linear ordering of a directed graph's vertices such that every edge
+points forward — every task appears after everything it depends on. Build
+systems, task schedulers and course prerequisites all need it.</p>
+<p><strong>It is impossible exactly when the graph contains a cycle</strong>, since a cycle means
+a set of tasks that each depend on the other. So a topological sort doubles as a
+cycle detector, which is often the real question.</p>
+<p>Kahn's algorithm, O(V + E):</p>
+<ol>
+<li>Compute every vertex's in-degree.</li>
+<li>Enqueue all vertices with in-degree 0.</li>
+<li>Pop one, append it to the output, and decrement its neighbours' in-degrees;
+   enqueue any that reach 0.</li>
+<li>If the output holds fewer than V vertices, <strong>there is a cycle</strong>.</li>
+</ol>
+<p>A recursive example over a hierarchy is in
+<a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/sql/recursive-ctes/org_chart_tree_traversal.sql"><code>examples/sql/recursive-ctes/org_chart_tree_traversal.sql</code></a>.</p>
+<hr>
+<h3 id="q-what-is-a-trie-and-why-use-one-over-a-hash-table">🟡 Q. What is a trie and why use one over a hash table?</h3>
+<p><strong>Answer.</strong> A tree keyed by character, where a word's letters spell out the path
+from the root. Shared prefixes share nodes.</p>
+<p>Lookup is <strong>O(k)</strong> for a key of length k — independent of how many words are
+stored, and with no hashing and no collisions.</p>
+<p>The reason to choose it over a hash map is <strong>prefix queries</strong>. "All words
+starting with <code>pre</code>" is one walk to the <code>pre</code> node followed by a subtree
+traversal. A hash map cannot do this at all without scanning every key, because
+hashing deliberately destroys the relationship between similar keys.</p>
+<p>That makes tries the structure behind autocomplete, spell-checkers and IP routing
+tables. The cost is memory: a node per character per distinct prefix.</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\data-structures\trees-and-graphs.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../";</script>
+<script src="../../assets/search.js" defer></script>
+</body>
+</html>

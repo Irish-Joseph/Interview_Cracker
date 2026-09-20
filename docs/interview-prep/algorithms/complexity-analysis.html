@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Complexity Analysis &middot; Interview Cracker</title>
+<meta name="description" content="If you get one subject right, make it this one. Every other answer you give will be followed by "and what's the complexity?"">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/algorithms/complexity-analysis.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Complexity Analysis &middot; Interview Cracker">
+<meta property="og:description" content="If you get one subject right, make it this one. Every other answer you give will be followed by "and what's the complexity?"">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/algorithms/complexity-analysis.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/algorithms/complexity-analysis.html" class="current" aria-current="page">Complexity Analysis</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="complexity-analysis">Complexity Analysis</h1>
+<p>If you get one subject right, make it this one. Every other answer you give will
+be followed by "and what's the complexity?"</p>
+<hr>
+<h3 id="q-what-does-big-o-actually-describe">🟢 Q. What does Big-O actually describe?</h3>
+<p><strong>Answer.</strong> An upper bound on how the cost of an algorithm <em>grows</em> as the input
+grows, ignoring constant factors and lower-order terms.</p>
+<p>It deliberately throws away detail. <code>O(n)</code> says "doubling the input roughly
+doubles the work". It does not say the algorithm is fast — an <code>O(n)</code> algorithm
+with a huge constant can lose to an <code>O(n log n)</code> one at every realistic size.</p>
+<p>The three you will be asked to distinguish:</p>
+<ul>
+<li><strong>O</strong> — upper bound ("no worse than").</li>
+<li><strong>Ω</strong> — lower bound ("no better than").</li>
+<li><strong>Θ</strong> — both, a tight bound.</li>
+</ul>
+<p>In practice interviewers say "Big-O" but mean Θ. Answer with the tight bound and
+you will never be wrong.</p>
+<hr>
+<h3 id="q-order-these-from-fastest-growing-to-slowest-on-log-n-o1-o2n-on2-olog-n-on">🟢 Q. Order these from fastest-growing to slowest: O(n log n), O(1), O(2ⁿ), O(n²), O(log n), O(n)</h3>
+<p><strong>Answer.</strong> From slowest-growing (best) to fastest-growing (worst):</p>
+<div class="highlight"><pre><span></span><code>O(1) &lt; O(log n) &lt; O(n) &lt; O(n log n) &lt; O(n²) &lt; O(2ⁿ) &lt; O(n!)
+</code></pre></div>
+<p>A rough feel for what each survives, at roughly a second of compute:</p>
+<table>
+<thead>
+<tr>
+<th>Complexity</th>
+<th>Largest practical n</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O(log n)</td>
+<td>effectively unbounded</td>
+</tr>
+<tr>
+<td>O(n)</td>
+<td>~100,000,000</td>
+</tr>
+<tr>
+<td>O(n log n)</td>
+<td>~5,000,000</td>
+</tr>
+<tr>
+<td>O(n²)</td>
+<td>~10,000</td>
+</tr>
+<tr>
+<td>O(2ⁿ)</td>
+<td>~25</td>
+</tr>
+<tr>
+<td>O(n!)</td>
+<td>~11</td>
+</tr>
+</tbody>
+</table>
+<p>This table is the real reason constraints appear in problem statements. If the
+input is 10⁵, an O(n²) solution will not pass and you should stop and look for
+an O(n log n) one.</p>
+<hr>
+<h3 id="q-what-is-amortised-complexity-and-why-is-appending-to-a-dynamic-array-o1">🟡 Q. What is amortised complexity, and why is appending to a dynamic array O(1)?</h3>
+<p><strong>Answer.</strong> Amortised complexity is the average cost per operation across a
+<em>worst-case sequence</em> of operations — not the average over random inputs.</p>
+<p>A dynamic array (Python <code>list</code>, Java <code>ArrayList</code>, Go slice, C++ <code>vector</code>) keeps
+spare capacity. Appending is normally a write to a free slot: O(1). When capacity
+runs out it allocates a bigger block — usually double — and copies everything,
+which is O(n).</p>
+<p>The doubling is what makes it work. To reach n elements the copies cost
+<code>1 + 2 + 4 + … + n</code>, which sums to less than <code>2n</code>. Spread across n appends that
+is O(1) each.</p>
+<p><strong>The follow-up:</strong> <em>what if it grew by a constant 10 instead of doubling?</em> Then
+reaching n costs <code>10 + 20 + 30 + …</code>, an arithmetic series that sums to O(n²), so
+each append is O(n) amortised. Geometric growth is the whole trick.</p>
+<hr>
+<h3 id="q-what-is-the-difference-between-amortised-average-case-and-worst-case">🟡 Q. What is the difference between amortised, average-case and worst-case?</h3>
+<p><strong>Answer.</strong> They answer different questions:</p>
+<ul>
+<li><strong>Worst case</strong> — the most expensive single input. Hash table lookup: O(n),
+  when every key collides.</li>
+<li><strong>Average case</strong> — expected cost over a distribution of inputs. Hash table
+  lookup: O(1), assuming a reasonable hash.</li>
+<li><strong>Amortised</strong> — guaranteed average across a sequence, with no probability
+  involved. Dynamic array append: O(1), always.</li>
+</ul>
+<p>The distinction that catches people out: amortised is a <em>guarantee</em>, average is a
+<em>statistical expectation</em>. A quicksort's O(n log n) is average-case — an
+adversary can still force O(n²). A dynamic array's O(1) append is amortised — no
+adversary can break it.</p>
+<hr>
+<h3 id="q-how-do-you-analyse-nested-loops">🟢 Q. How do you analyse nested loops?</h3>
+<p><strong>Answer.</strong> Multiply the iteration counts, but read the bounds carefully.</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>          <span class="c1"># n</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>      <span class="c1"># n</span>
+        <span class="n">work</span><span class="p">()</span>              <span class="c1"># O(1)</span>
+<span class="c1"># O(n²)</span>
+</code></pre></div>
+<p>The one that trips people up:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>   <span class="c1"># shrinking inner loop</span>
+        <span class="n">work</span><span class="p">()</span>
+</code></pre></div>
+<p>That is <code>n + (n-1) + … + 1 = n(n+1)/2</code>, which is still <strong>O(n²)</strong>. Halving the
+work does not change the growth class.</p>
+<p>And the one that looks quadratic but is not:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">j</span> <span class="o">*=</span> <span class="mi">2</span>              <span class="c1"># log n iterations, not n</span>
+</code></pre></div>
+<p>That is <strong>O(n log n)</strong>.</p>
+<hr>
+<h3 id="q-what-is-the-complexity-of-this-and-why">🟡 Q. What is the complexity of this, and why?</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="n">ch</span>
+    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div>
+<p><strong>Answer.</strong> <strong>O(n²)</strong> in languages with immutable strings (Python, Java, C#,
+JavaScript).</p>
+<p><code>result += ch</code> cannot extend the existing string — strings are immutable, so it
+allocates a new string and copies every character across. Doing that n times
+copies <code>1 + 2 + … + n</code> characters, which is O(n²).</p>
+<p>The fix is to collect the pieces and join once, which is O(n):</p>
+<div class="highlight"><pre><span></span><code><span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>          <span class="c1"># Python</span>
+<span class="c1"># StringBuilder in Java/C#, array.push + join in JavaScript</span>
+</code></pre></div>
+<p>This is a genuinely common interview trap, because the O(n²) version looks like
+a simple linear loop.</p>
+<hr>
+<h3 id="q-how-do-you-reason-about-the-complexity-of-a-recursive-function">🟡 Q. How do you reason about the complexity of a recursive function?</h3>
+<p><strong>Answer.</strong> Count the nodes in the recursion tree, then multiply by the work done
+per node.</p>
+<p><strong>Fibonacci, naive:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<p>Each call spawns two, to a depth of n, so roughly 2ⁿ nodes with O(1) work each:
+<strong>O(2ⁿ) time, O(n) space</strong> (the deepest path of the call stack).</p>
+<p><strong>Merge sort:</strong> the tree has log n levels, and every level touches all n elements
+during the merges: <strong>O(n log n)</strong>.</p>
+<p><strong>Binary search:</strong> one child per call, log n deep, O(1) per node: <strong>O(log n)</strong>.</p>
+<p>For divide-and-conquer, the Master Theorem formalises this, but the recursion
+tree gets you there and is easier to explain out loud.</p>
+<hr>
+<h3 id="q-what-is-space-complexity-and-does-the-call-stack-count">🟡 Q. What is space complexity, and does the call stack count?</h3>
+<p><strong>Answer.</strong> Space complexity is the <em>extra</em> memory an algorithm needs beyond its
+input — and yes, the call stack counts.</p>
+<p>A recursive function that is O(n) deep uses O(n) space even if it allocates
+nothing, which is exactly why deep recursion causes stack overflow. Converting to
+iteration with an explicit stack does not reduce the space, but it does move it
+from the (small, fixed) stack to the (large) heap.</p>
+<p>Common values worth memorising:</p>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Time</th>
+<th>Space</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Merge sort</td>
+<td>O(n log n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Quicksort</td>
+<td>O(n log n) avg</td>
+<td>O(log n) stack</td>
+</tr>
+<tr>
+<td>Heap sort</td>
+<td>O(n log n)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>BFS / DFS on a graph</td>
+<td>O(V + E)</td>
+<td>O(V)</td>
+</tr>
+<tr>
+<td>Binary search, iterative</td>
+<td>O(log n)</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table>
+<p>Heap sort being the only O(1)-space O(n log n) comparison sort is a favourite
+follow-up.</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\algorithms\complexity-analysis.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../";</script>
+<script src="../../assets/search.js" defer></script>
+</body>
+</html>

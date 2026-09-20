@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indexing and Transactions &middot; Interview Cracker</title>
+<meta name="description" content="The two database topics that separate "can write a query" from "can run a system".">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/databases/indexing-and-transactions.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Indexing and Transactions &middot; Interview Cracker">
+<meta property="og:description" content="The two database topics that separate "can write a query" from "can run a system".">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/databases/indexing-and-transactions.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../interview-prep/databases/indexing-and-transactions.html" class="current" aria-current="page">Indexing and Transactions</a></li>
+        
+          <li><a href="../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="indexing-and-transactions">Indexing and Transactions</h1>
+<p>The two database topics that separate "can write a query" from "can run a
+system".</p>
+<hr>
+<h3 id="q-what-is-an-index-and-what-does-it-cost">🟢 Q. What is an index and what does it cost?</h3>
+<p><strong>Answer.</strong> A separate data structure — almost always a <strong>B+ tree</strong> — that maps
+column values to row locations, so the engine can seek instead of scanning every
+row.</p>
+<p>It turns an O(n) table scan into roughly O(log n).</p>
+<p>The costs, which matter as much as the benefit:</p>
+<ul>
+<li><strong>Writes get slower.</strong> Every <code>INSERT</code>, <code>UPDATE</code> and <code>DELETE</code> must also update
+  every affected index.</li>
+<li><strong>Storage.</strong> An index on a wide column can approach the size of the table.</li>
+<li><strong>They can be ignored.</strong> If a query would match most of the table, the planner
+  correctly decides a sequential scan is cheaper than an index lookup plus
+  millions of random row fetches.</li>
+</ul>
+<p>So: index columns you filter, join or sort on frequently. Do not index everything.</p>
+<hr>
+<h3 id="q-why-a-b-tree-rather-than-a-hash-index-or-a-binary-tree">🟡 Q. Why a B+ tree rather than a hash index or a binary tree?</h3>
+<p><strong>Answer.</strong> Because disk and page size dominate.</p>
+<p>A B+ tree node holds hundreds of keys and fills one page, so the tree is very
+shallow — three or four levels indexes millions of rows, meaning three or four
+page reads. A binary tree with the same data would be ~20 levels deep and each
+level is a potential random I/O.</p>
+<p>B+ trees also keep all data in the <strong>leaves, linked in sorted order</strong>, which
+makes range scans (<code>WHERE date BETWEEN …</code>, <code>ORDER BY</code>) a straight walk along the
+leaf chain.</p>
+<p>A <strong>hash index</strong> gives O(1) equality lookup but supports no range queries, no
+sorting and no prefix matching. Some engines offer them; the B-tree is the
+default because it is good at everything rather than excellent at one thing.</p>
+<hr>
+<h3 id="q-what-is-a-composite-index-and-why-does-column-order-matter">🟡 Q. What is a composite index, and why does column order matter?</h3>
+<p><strong>Answer.</strong> An index on several columns, sorted by the first column, then the
+second within that, and so on — like a phone book sorted by surname then forename.</p>
+<p>This is the <strong>leftmost prefix rule</strong>. With <code>INDEX (last_name, first_name)</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th>Uses the index?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>WHERE last_name = 'Khan'</code></td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><code>WHERE last_name = 'Khan' AND first_name = 'Sara'</code></td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><code>WHERE first_name = 'Sara'</code></td>
+<td>❌ No</td>
+</tr>
+</tbody>
+</table>
+<p>You cannot look someone up by forename in a phone book; same reason. Put the
+column you always filter on first, and the highest-selectivity column early.</p>
+<hr>
+<h3 id="q-name-things-that-stop-an-index-being-used">🟡 Q. Name things that stop an index being used.</h3>
+<p><strong>Answer.</strong> Mostly, wrapping the indexed column in something:</p>
+<ul>
+<li><strong>A function on the column.</strong> <code>WHERE YEAR(created_at) = 2026</code> cannot use an
+  index on <code>created_at</code>. Rewrite as a range: <code>WHERE created_at &gt;= '2026-01-01'
+  AND created_at &lt; '2027-01-01'</code>.</li>
+<li><strong>A leading wildcard.</strong> <code>LIKE '%son'</code> cannot seek; <code>LIKE 'John%'</code> can.</li>
+<li><strong>Implicit type conversion.</strong> Comparing an indexed <code>VARCHAR</code> to a number makes
+  the engine cast the column, which is a function call.</li>
+<li><strong>Low selectivity.</strong> An index on a boolean that is 90% true will be skipped.</li>
+<li><strong><code>OR</code> across different columns.</strong> Often forces a scan; <code>UNION</code> of two indexed
+  queries can be faster.</li>
+</ul>
+<p>Use <code>EXPLAIN</code> (or <code>EXPLAIN ANALYZE</code>) to check rather than guessing — look for
+<code>Seq Scan</code> / <code>type: ALL</code> where you expected a seek.</p>
+<hr>
+<h3 id="q-what-does-acid-stand-for">🟢 Q. What does ACID stand for?</h3>
+<p><strong>Answer.</strong></p>
+<ul>
+<li><strong>Atomicity</strong> — all of a transaction's changes apply, or none do.</li>
+<li><strong>Consistency</strong> — a transaction moves the database from one valid state to
+  another, respecting constraints.</li>
+<li><strong>Isolation</strong> — concurrent transactions do not see each other's partial work.</li>
+<li><strong>Durability</strong> — once committed, changes survive a crash (via the write-ahead
+  log).</li>
+</ul>
+<p>Atomicity is the one people can illustrate: a bank transfer debits one account
+and credits another, and a crash in between must not leave money destroyed.</p>
+<hr>
+<h3 id="q-explain-the-isolation-levels-and-the-anomalies-they-prevent">🔴 Q. Explain the isolation levels and the anomalies they prevent.</h3>
+<p><strong>Answer.</strong> Stronger isolation removes more anomalies and costs more concurrency.</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Dirty read</th>
+<th>Non-repeatable read</th>
+<th>Phantom read</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read uncommitted</td>
+<td>possible</td>
+<td>possible</td>
+<td>possible</td>
+</tr>
+<tr>
+<td><strong>Read committed</strong></td>
+<td>prevented</td>
+<td>possible</td>
+<td>possible</td>
+</tr>
+<tr>
+<td><strong>Repeatable read</strong></td>
+<td>prevented</td>
+<td>prevented</td>
+<td>possible*</td>
+</tr>
+<tr>
+<td><strong>Serializable</strong></td>
+<td>prevented</td>
+<td>prevented</td>
+<td>prevented</td>
+</tr>
+</tbody>
+</table>
+<p>The anomalies:</p>
+<ul>
+<li><strong>Dirty read</strong> — you read another transaction's uncommitted change, which may
+  then roll back.</li>
+<li><strong>Non-repeatable read</strong> — you read the same <strong>row</strong> twice and get different
+  values, because someone committed in between.</li>
+<li><strong>Phantom read</strong> — you run the same <strong>query</strong> twice and get different <em>rows</em>,
+  because someone inserted a row matching your filter.</li>
+</ul>
+<p>* PostgreSQL's repeatable read uses snapshot isolation and does prevent
+phantoms; the SQL standard does not require this. Defaults differ too —
+PostgreSQL and Oracle default to read committed, MySQL/InnoDB to repeatable read.
+Knowing that defaults vary is a better answer than reciting one vendor's.</p>
+<hr>
+<h3 id="q-what-is-a-deadlock-and-how-do-you-handle-it">🟡 Q. What is a deadlock and how do you handle it?</h3>
+<p><strong>Answer.</strong> Two transactions each hold a lock the other needs, so neither can
+proceed. Transaction A locks row 1 and wants row 2; B locks row 2 and wants row 1.</p>
+<p>Databases <strong>detect</strong> deadlocks (a cycle in the wait-for graph) and resolve them
+by killing one transaction — the "victim" — which then gets an error and must
+retry.</p>
+<p>Prevention, in order of usefulness:</p>
+<ol>
+<li><strong>Consistent lock ordering.</strong> If every transaction touches rows in ascending
+   primary-key order, a cycle cannot form. This is the real fix.</li>
+<li><strong>Keep transactions short.</strong> Never hold a lock across a network call or user
+   input.</li>
+<li><strong>Lower isolation</strong> where the workload permits it.</li>
+<li><strong>Retry with backoff.</strong> Deadlocks are normal under load; application code
+   should expect and retry them.</li>
+</ol>
+<hr>
+<h3 id="q-optimistic-vs-pessimistic-locking">🟡 Q. Optimistic vs pessimistic locking?</h3>
+<p><strong>Answer.</strong></p>
+<p><strong>Pessimistic</strong> — take the lock before reading (<code>SELECT … FOR UPDATE</code>) and hold
+it until commit. Nobody else can interfere. Correct, but it serialises access and
+risks deadlocks. Right when contention is high and conflicts are likely.</p>
+<p><strong>Optimistic</strong> — take no lock. Read a version number with the row, and on write
+check the version is unchanged:</p>
+<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">accounts</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">version</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="k">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">      </span><span class="c1">-- 0 rows updated means someone else won</span>
+</code></pre></div>
+<p>If zero rows are affected, someone else committed first; re-read and retry. Right
+when conflicts are rare — no locks, better throughput, at the cost of occasional
+wasted work.</p>
+<hr>
+<h3 id="q-normalisation-vs-denormalisation">🟡 Q. Normalisation vs denormalisation?</h3>
+<p><strong>Answer.</strong> <strong>Normalisation</strong> removes redundancy by splitting data into related
+tables. Each fact lives in exactly one place, so updates cannot leave
+contradictory copies. The cost is more joins.</p>
+<p><strong>Denormalisation</strong> deliberately duplicates data to avoid those joins — faster
+reads, but every copy must be kept in sync, and that synchronisation is where
+bugs live.</p>
+<p>The practical answer: <strong>normalise by default, denormalise with evidence.</strong> Start
+at third normal form, measure, and denormalise the specific read path that is
+demonstrably too slow. Analytics and reporting systems (star schemas) are
+routinely denormalised because they are read-heavy and loaded in batches.</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\databases\indexing-and-transactions.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../";</script>
+<script src="../../assets/search.js" defer></script>
+</body>
+</html>

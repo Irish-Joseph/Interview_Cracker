@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tries & Prefix Data Structures &middot; Interview Cracker</title>
+<meta name="description" content="A trie (prefix tree) stores strings so that shared prefixes are stored once. It is the go-to structure when the question mentions "prefix", "autocomplete", or "dictionary word" — a...">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/data-structures/tries.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tries & Prefix Data Structures &middot; Interview Cracker">
+<meta property="og:description" content="A trie (prefix tree) stores strings so that shared prefixes are stored once. It is the go-to structure when the question mentions "prefix", "autocomplete", or "dictionary word" — a...">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/data-structures/tries.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/tries.html" class="current" aria-current="page">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="tries-prefix-data-structures">Tries &amp; Prefix Data Structures</h1>
+<p>A trie (prefix tree) stores strings so that shared prefixes are stored
+once. It is the go-to structure when the question mentions "prefix",
+"autocomplete", or "dictionary word" — and it is the backbone of command
+completion, spell-checking, and routing tables.</p>
+<hr>
+<h3 id="q-what-is-a-trie-and-what-does-it-buy-you-over-a-hash-set-of-words">🟢 Q. What is a trie, and what does it buy you over a hash set of words?</h3>
+<p><strong>Answer.</strong> A trie is a tree where each edge is labelled with a character
+and a path from the root spells a string. What it buys you is <strong>prefix
+awareness</strong>: <code>search</code>, <code>insert</code>, and <code>starts_with</code> all cost O(L) in the
+string length L (not the number of words), and you can enumerate every
+word with a given prefix by walking the subtree — something a hash set
+cannot do at all.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">TrieNode</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_end</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Trie</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">TrieNode</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span>
+        <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">ch</span><span class="p">,</span> <span class="n">TrieNode</span><span class="p">())</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">is_end</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_walk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span>
+        <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">ch</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">None</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">ch</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">node</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_walk</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">node</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">node</span><span class="o">.</span><span class="n">is_end</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">starts_with</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_walk</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">Trie</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;car&quot;</span><span class="p">,</span> <span class="s2">&quot;card&quot;</span><span class="p">,</span> <span class="s2">&quot;care&quot;</span><span class="p">]:</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">t</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;cat&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">t</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;card&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">t</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;ca&quot;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">t</span><span class="o">.</span><span class="n">starts_with</span><span class="p">(</span><span class="s2">&quot;car&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">t</span><span class="o">.</span><span class="n">starts_with</span><span class="p">(</span><span class="s2">&quot;dog&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>The key detail: <code>search("ca")</code> is False even though <code>starts_with("ca")</code> is
+True, because <code>ca</code> is a prefix but was never itself inserted — the <code>is_end</code>
+flag distinguishes "a word ends here" from "a path passes through here".</p>
+<hr>
+<h3 id="q-how-do-you-list-all-words-that-share-a-prefix-and-whats-the-cost">🟡 Q. How do you list all words that share a prefix, and what's the cost?</h3>
+<p><strong>Answer.</strong> Walk to the node for the prefix (O(L)), then a DFS of that
+subtree collecting every <code>is_end</code> node. The cost is O(L + K) where K is
+the total number of characters in all matching words — you pay for the
+output, which is unavoidable.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">words_with_prefix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+    <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_walk</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">node</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dfs</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">acc</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">is_end</span><span class="p">:</span>
+            <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prefix</span> <span class="o">+</span> <span class="n">acc</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">children</span><span class="p">):</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">ch</span><span class="p">],</span> <span class="n">acc</span> <span class="o">+</span> <span class="n">ch</span><span class="p">)</span>
+    <span class="n">dfs</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+<span class="n">t</span><span class="o">.</span><span class="n">words_with_prefix</span><span class="p">(</span><span class="s2">&quot;ca&quot;</span><span class="p">)</span>   <span class="c1"># [&#39;car&#39;, &#39;card&#39;, &#39;care&#39;, &#39;cat&#39;]</span>
+<span class="n">t</span><span class="o">.</span><span class="n">words_with_prefix</span><span class="p">(</span><span class="s2">&quot;do&quot;</span><span class="p">)</span>   <span class="c1"># []</span>
+</code></pre></div>
+<p>This is exactly the autocomplete step. Note the <code>sorted(...)</code> makes the
+output deterministic (alphabetical); drop it if you only care about
+existence and want to stop early.</p>
+<hr>
+<h3 id="q-trie-vs-sorted-array-binary-search-vs-hash-set-when-is-each-right">🟡 Q. Trie vs sorted array + binary search vs hash set — when is each right?</h3>
+<p><strong>Answer.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Need</th>
+<th>Best fit</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Is this exact word present?"</td>
+<td>Hash set</td>
+<td>O(L) expected, tiny constant</td>
+</tr>
+<tr>
+<td>"Any word with this prefix?"</td>
+<td>Trie</td>
+<td>Subtree walk; the other two can't</td>
+</tr>
+<tr>
+<td>"Nearest word / suggest close match"</td>
+<td>Trie</td>
+<td>DFS with a small edit budget</td>
+</tr>
+<tr>
+<td>Memory is tight, no prefix queries</td>
+<td>Sorted array</td>
+<td>No per-node object overhead</td>
+</tr>
+</tbody>
+</table>
+<p>A hash set wins on plain membership and uses far less memory. A trie's
+cost is one node object per distinct prefix, so a dictionary of 100k long
+words can be memory-heavy — which is why production systems often use a
+<strong>radix trie</strong> (compress unary chains into a single labelled edge) or a
+sorted array with binary search when they don't actually need prefix
+enumeration.</p>
+<hr>
+<h3 id="q-how-would-you-implement-longest-word-in-the-dict-that-is-a">🔴 Q. How would you implement "longest word in the dict that is a</h3>
+<p>prefix of <code>s</code>", and what's the complexity?</p>
+<p><strong>Answer.</strong> Insert every dictionary word into a trie, then walk <code>s</code>
+character by character, tracking the deepest <code>is_end</code> node you pass.
+When the walk falls off a branch, stop — you've found the longest prefix
+that exists. Time is O(L + total dict characters) to build plus O(L) to
+query; space O(total dict characters).</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">longest_prefix</span><span class="p">(</span><span class="n">trie</span><span class="p">:</span> <span class="s2">&quot;Trie&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">node</span> <span class="o">=</span> <span class="n">trie</span><span class="o">.</span><span class="n">root</span>
+    <span class="n">best</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">ch</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">ch</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">is_end</span><span class="p">:</span>
+            <span class="n">best</span> <span class="o">=</span> <span class="n">s</span><span class="p">[:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">best</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">Trie</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;we&quot;</span><span class="p">,</span> <span class="s2">&quot;word&quot;</span><span class="p">,</span> <span class="s2">&quot;flower&quot;</span><span class="p">,</span> <span class="s2">&quot;flowering&quot;</span><span class="p">]:</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">longest_prefix</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="s2">&quot;flowerpowers&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;flower&quot;</span>
+<span class="k">assert</span> <span class="n">longest_prefix</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span>
+</code></pre></div>
+<p>The trap is returning the last <em>matched character</em> instead of the last
+position where a <strong>complete word</strong> ended — "flowe" walks fine but isn't a
+word, so <code>is_end</code> is what makes the answer "flower", not "flowe".</p>
+<hr>
+<h3 id="q-why-do-we-mark-a-terminal-node-instead-of-say-storing-the-word">🟢 Q. Why do we mark a terminal node instead of, say, storing the word?</h3>
+<p><strong>Answer.</strong> Storing the full word at each terminal node would duplicate
+every prefix's characters and blow the space from O(total characters) to
+O(total characters × average length). A single boolean <code>is_end</code> marks the
+end of a word while the shared path still holds each character exactly
+once. If you do need the actual string (e.g. to return it), reconstruct it
+from the path during the walk — that's what <code>prefix + acc</code> does in the
+DFS above — rather than storing copies.</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\data-structures\tries.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../";</script>
+<script src="../../assets/search.js" defer></script>
+</body>
+</html>

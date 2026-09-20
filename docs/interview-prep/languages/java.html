@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Interview Questions &middot; Interview Cracker</title>
+<meta name="description" content=""Write once, run anywhere" is a property of bytecode plus a per-platform JVM, not of the source language.">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/languages/java.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java Interview Questions &middot; Interview Cracker">
+<meta property="og:description" content=""Write once, run anywhere" is a property of bytecode plus a per-platform JVM, not of the source language.">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/languages/java.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../interview-prep/languages/java.html" class="current" aria-current="page">Java Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="java-interview-questions">Java Interview Questions</h1>
+<hr>
+<h3 id="q-what-is-the-difference-between-jdk-jre-and-jvm">🟢 Q. What is the difference between JDK, JRE and JVM?</h3>
+<p><strong>Answer.</strong> <strong>JVM</strong> executes bytecode and is the thing that makes Java portable —
+one <code>.class</code> file runs anywhere a JVM exists. <strong>JRE</strong> is the JVM plus the standard
+class libraries: enough to <em>run</em> Java. <strong>JDK</strong> is the JRE plus development tools
+(<code>javac</code>, <code>jdb</code>, <code>jar</code>): enough to <em>build</em> Java.</p>
+<p>"Write once, run anywhere" is a property of bytecode plus a per-platform JVM, not
+of the source language.</p>
+<hr>
+<h3 id="q-primitive-vs-reference-types">🟢 Q. Primitive vs reference types?</h3>
+<p><strong>Answer.</strong> Primitives (<code>int</code>, <code>double</code>, <code>boolean</code>, <code>char</code>, …) hold values
+directly, live on the stack when local, cannot be null, and have no methods.
+Reference types hold a pointer to a heap object, can be null, and carry methods.</p>
+<p>The consequence that produces bugs:</p>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">);</span>
+<span class="n">String</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">);</span>
+<span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">b</span><span class="w">        </span><span class="c1">// false — different objects</span>
+<span class="n">a</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="w">   </span><span class="c1">// true  — same characters</span>
+</code></pre></div>
+<p><code>==</code> compares references for objects, values for primitives. <strong>Always use
+<code>.equals()</code> for objects.</strong></p>
+<p>Autoboxing makes this worse:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Integer</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">127</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">127</span><span class="p">;</span>
+<span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w">                 </span><span class="c1">// true  — cached (-128..127)</span>
+<span class="n">Integer</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">128</span><span class="p">;</span>
+<span class="n">p</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">q</span><span class="p">;</span><span class="w">                 </span><span class="c1">// false — outside the cache</span>
+</code></pre></div>
+<p>Same code, different answer depending on the value. Never compare boxed types
+with <code>==</code>.</p>
+<hr>
+<h3 id="q-explain-the-equalshashcode-contract">🔴 Q. Explain the equals/hashCode contract.</h3>
+<p><strong>Answer.</strong> If <code>a.equals(b)</code> then <code>a.hashCode() == b.hashCode()</code>, <strong>always</strong>. The
+reverse is not required — equal hash codes with unequal objects is just a
+collision.</p>
+<p>Override one and you must override the other. Break it and hash-based collections
+fail silently:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">Point</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;origin-ish&quot;</span><span class="p">);</span>
+<span class="n">map</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">));</span><span class="w">   </span><span class="c1">// null, if hashCode() was not overridden</span>
+</code></pre></div>
+<p>The lookup hashes to a different bucket and never finds the entry.</p>
+<p>The second half of the contract: <strong>a key's hash must not change while it is in a
+collection.</strong> Mutating a field used by <code>hashCode</code> strands the entry — present but
+unreachable, and <code>remove()</code> will not find it either. Prefer immutable keys;
+<code>record</code> types give you correct <code>equals</code>/<code>hashCode</code> for free.</p>
+<hr>
+<h3 id="q-compare-the-collections">🟡 Q. Compare the collections.</h3>
+<p><strong>Answer.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Implementation</th>
+<th>Ordering</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>List</code></td>
+<td><code>ArrayList</code></td>
+<td>insertion</td>
+<td>O(1) index, O(n) middle insert. <strong>The default.</strong></td>
+</tr>
+<tr>
+<td></td>
+<td><code>LinkedList</code></td>
+<td>insertion</td>
+<td>O(1) ends, poor locality — rarely the right choice</td>
+</tr>
+<tr>
+<td><code>Set</code></td>
+<td><code>HashSet</code></td>
+<td>none</td>
+<td>O(1) average</td>
+</tr>
+<tr>
+<td></td>
+<td><code>LinkedHashSet</code></td>
+<td>insertion</td>
+<td>O(1), remembers order</td>
+</tr>
+<tr>
+<td></td>
+<td><code>TreeSet</code></td>
+<td><strong>sorted</strong></td>
+<td>O(log n), needs <code>Comparable</code>/<code>Comparator</code></td>
+</tr>
+<tr>
+<td><code>Map</code></td>
+<td><code>HashMap</code></td>
+<td>none</td>
+<td>O(1) average; chains become trees past 8 entries</td>
+</tr>
+<tr>
+<td></td>
+<td><code>LinkedHashMap</code></td>
+<td>insertion or access</td>
+<td>access-order mode gives you an LRU cache</td>
+</tr>
+<tr>
+<td></td>
+<td><code>TreeMap</code></td>
+<td><strong>sorted</strong></td>
+<td>O(log n), range queries</td>
+</tr>
+</tbody>
+</table>
+<p><code>ArrayList</code> unless you need ordering or sorting. <code>LinkedList</code> is almost never the
+answer despite what its Big-O table suggests — cache locality wins.</p>
+<hr>
+<h3 id="q-checked-vs-unchecked-exceptions">🟡 Q. Checked vs unchecked exceptions?</h3>
+<p><strong>Answer.</strong> <strong>Checked</strong> (extend <code>Exception</code>) must be declared or caught — the
+compiler enforces it. Intended for recoverable conditions: <code>IOException</code>,
+<code>SQLException</code>.</p>
+<p><strong>Unchecked</strong> (extend <code>RuntimeException</code>) need no declaration. Intended for
+programming errors: <code>NullPointerException</code>, <code>IllegalArgumentException</code>,
+<code>IndexOutOfBoundsException</code>.</p>
+<p><code>Error</code> (e.g. <code>OutOfMemoryError</code>, <code>StackOverflowError</code>) signals a JVM-level
+problem you should not catch.</p>
+<p>The design debate is worth knowing: checked exceptions were meant to force
+handling, but in practice they encourage <code>catch (Exception e) {}</code> and leak
+implementation details through signatures. Later languages (C#, Kotlin, Scala)
+deliberately omitted them. Worked example:
+<a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/java/exceptions/exception_handling_basics.java"><code>examples/java/exceptions/exception_handling_basics.java</code></a>.</p>
+<hr>
+<h3 id="q-what-is-type-erasure">🔴 Q. What is type erasure?</h3>
+<p><strong>Answer.</strong> Generics are a <strong>compile-time</strong> feature. The compiler checks types,
+then erases them — <code>List&lt;String&gt;</code> becomes plain <code>List</code> in the bytecode, with
+casts inserted automatically. This was done for backwards compatibility with
+pre-generics code.</p>
+<p>The consequences you can be asked to explain:</p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">a</span><span class="p">.</span><span class="na">getClass</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="na">getClass</span><span class="p">();</span><span class="w">      </span><span class="c1">// true — both are just ArrayList</span>
+
+<span class="c1">// Illegal, because the type is not available at runtime:</span>
+<span class="c1">// if (obj instanceof List&lt;String&gt;) { }</span>
+<span class="c1">// T[] array = new T[10];</span>
+</code></pre></div>
+<p>You also cannot overload on <code>List&lt;String&gt;</code> vs <code>List&lt;Integer&gt;</code> — after erasure
+both methods have identical signatures. Contrast with C#, where generics are
+reified and the runtime does know the type argument.</p>
+<hr>
+<h3 id="q-how-does-garbage-collection-work">🟡 Q. How does garbage collection work?</h3>
+<p><strong>Answer.</strong> The JVM reclaims objects no longer <strong>reachable</strong> from GC roots (stack
+references, statics, JNI references). Note it is reachability, not reference
+counting — so cycles are collected correctly.</p>
+<p>The design rests on the <strong>generational hypothesis</strong>: most objects die young. So
+the heap is split:</p>
+<ul>
+<li><strong>Young generation</strong> (Eden + two survivor spaces) — collected frequently with
+  cheap <em>minor</em> GCs that copy the few survivors out.</li>
+<li><strong>Old generation</strong> — objects that survived several collections; collected
+  rarely by an expensive <em>major</em> GC.</li>
+</ul>
+<p>Modern collectors (G1, ZGC, Shenandoah) do most work concurrently to keep pause
+times low — ZGC targets sub-millisecond pauses on large heaps.</p>
+<p><code>System.gc()</code> is a <em>suggestion</em> the JVM may ignore. You cannot force collection,
+and calling it is almost always a mistake. Memory leaks in Java are real but take
+a different form: objects still referenced but never used — a static collection
+that only ever grows, an unremoved listener, an unclosed resource.</p>
+<hr>
+<h3 id="q-what-does-the-stream-api-give-you">🟡 Q. What does the Stream API give you?</h3>
+<p><strong>Answer.</strong> A declarative pipeline over a sequence, with lazy intermediate
+operations and one terminal operation that triggers execution.</p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">age</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="p">)</span><span class="w">          </span><span class="c1">// intermediate, lazy</span>
+<span class="w">    </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">Person</span><span class="p">::</span><span class="n">name</span><span class="p">)</span><span class="w">                   </span><span class="c1">// intermediate, lazy</span>
+<span class="w">    </span><span class="p">.</span><span class="na">sorted</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">toList</span><span class="p">();</span><span class="w">                           </span><span class="c1">// terminal, runs the pipeline</span>
+</code></pre></div>
+<p>Nothing executes until the terminal operation, which allows fusion and
+short-circuiting (<code>findFirst</code> stops early).</p>
+<p>Two cautions worth raising unprompted: a stream is <strong>single-use</strong> — reusing one
+throws <code>IllegalStateException</code>; and <code>parallelStream()</code> is not free speed. It uses
+the common ForkJoinPool, so it helps only for large datasets with CPU-bound,
+independent, side-effect-free work, and can be slower otherwise. Worked example:
+<a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/java/streams/group_and_collect_with_streams.java"><code>examples/java/streams/group_and_collect_with_streams.java</code></a>.</p>
+<hr>
+<h3 id="q-string-stringbuilder-stringbuffer">🟡 Q. <code>String</code>, <code>StringBuilder</code>, <code>StringBuffer</code>?</h3>
+<p><strong>Answer.</strong> <code>String</code> is <strong>immutable</strong> — every concatenation allocates a new
+object, so building in a loop is O(n²). <code>StringBuilder</code> is a mutable buffer, not
+thread-safe, and is what you want. <code>StringBuffer</code> is the synchronised version:
+slower, and almost never needed since a builder is normally local to one thread.</p>
+<p>Note the compiler rewrites simple <code>+</code> concatenation into builder calls, so
+<code>"a" + b + "c"</code> is fine — it is concatenation <strong>inside a loop</strong> that is the
+problem. Worked example:
+<a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/java/strings/string_immutability_and_stringbuilder.java"><code>examples/java/strings/string_immutability_and_stringbuilder.java</code></a>.</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\languages\java.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../";</script>
+<script src="../../assets/search.js" defer></script>
+</body>
+</html>

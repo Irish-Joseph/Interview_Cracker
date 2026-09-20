@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-09-23 — Interleaving String &middot; Interview Cracker</title>
+<meta name="description" content="Given strings s1, s2 and s3, determine whether s3 can be formed by an interleaving of s1 and s2. An interleaving merges the two strings while preserving the relative order of the c...">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/daily-challenges/2026/09/2026-09-23.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2026-09-23 — Interleaving String &middot; Interview Cracker">
+<meta property="og:description" content="Given strings s1, s2 and s3, determine whether s3 can be formed by an interleaving of s1 and s2. An interleaving merges the two strings while preserving the relative order of the c...">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/daily-challenges/2026/09/2026-09-23.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-23.html" class="current" aria-current="page">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="2026-09-23-interleaving-string">2026-09-23 — Interleaving String</h1>
+<p><strong>Difficulty:</strong> 🟡 Medium
+<strong>Pattern:</strong> Dynamic programming (2D grid over two inputs)
+<strong>Time-box:</strong> 20 minutes</p>
+<h2 id="problem">Problem</h2>
+<p>Given strings <code>s1</code>, <code>s2</code> and <code>s3</code>, determine whether <code>s3</code> can be formed
+by an <strong>interleaving</strong> of <code>s1</code> and <code>s2</code>. An interleaving merges the two
+strings while preserving the relative order of the characters in each —
+e.g. <code>"abc"</code> and <code>"123"</code> interleave to <code>"a1b2c3"</code>, <code>"1a2b3c"</code> or
+<code>"abc123"</code> (20 ways in total), but never to <code>"acb123"</code>.</p>
+<p>Return <code>True</code> or <code>False</code>.</p>
+<h3 id="examples">Examples</h3>
+<div class="highlight"><pre><span></span><code>s1=&quot;aab&quot;, s2=&quot;bc&quot;,  s3=&quot;ababc&quot; -&gt; True   (a·a·b and b·c woven as a b a b c)
+s1=&quot;aab&quot;, s2=&quot;bc&quot;,  s3=&quot;aacbb&quot; -&gt; False  (s2 needs b before c, impossible here)
+s1=&quot;&quot;,    s2=&quot;xyz&quot;, s3=&quot;xyz&quot;    -&gt; True   (one side is empty)
+s1=&quot;&quot;,    s2=&quot;&quot;,    s3=&quot;&quot;       -&gt; True
+</code></pre></div>
+<h3 id="constraints">Constraints</h3>
+<ul>
+<li><code>0 &lt;= s1.length, s2.length &lt;= 100</code>, <code>s3.length &lt;= 200</code>.</li>
+<li><code>s3</code> made of an interleaving must satisfy
+  <code>len(s1) + len(s2) == len(s3)</code> — check that first and bail out.</li>
+<li>Aim for O(len(s1) * len(s2)) time; a set of "all prefixes tried so far"
+  with memoised DFS is the common O(n*m) alternative.</li>
+</ul>
+<hr>
+<details >
+<summary ><b>Hint</b> (open only if stuck after 10 minutes)</summary>
+<p>Define <code>dp[i][j]</code> = "the first i characters of s1 and the first j of s2
+can interleave to exactly s3[:i+j]". The first row/column only depend on
+one string. For the general cell, the next character of s3 must come from
+s1 (<code>dp[i-1][j] and s1[i-1] == s3[i+j-1]</code>) or from s2
+(<code>dp[i][j-1] and s2[j-1] == s3[i+j-1]</code>).</p>
+</details>
+<hr>
+<details >
+<summary ><b>Solution</b></summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_interleave</span><span class="p">(</span><span class="n">s1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">s2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">s3</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s3</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+    <span class="c1"># dp[j] = first j chars of s2 interleave with the CURRENT row&#39;s</span>
+    <span class="c1"># s1 prefix to form the matching prefix of s3.</span>
+    <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>            <span class="c1"># first row: s1 is empty</span>
+        <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">s2</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">s3</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">s1</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">s3</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># first column</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span>                 <span class="c1"># index of the s3 char being placed</span>
+            <span class="n">from_s1</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="ow">and</span> <span class="n">s1</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">s3</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>      <span class="c1"># dp[j] is still row i-1</span>
+            <span class="n">from_s2</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">s2</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">s3</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">from_s1</span> <span class="ow">or</span> <span class="n">from_s2</span>
+
+    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+</code></pre></div>
+<p><strong>How it works.</strong> Every prefix of <code>s3</code> of length <code>i+j</code> must be built from
+exactly <code>i</code> characters of <code>s1</code> and <code>j</code> of <code>s2</code>, so the problem shrinks
+to a grid walk: from <code>(i, j)</code> you could have arrived by consuming
+<code>s1[i-1]</code> (from above) or <code>s2[j-1]</code> (from the left), provided that
+character matches <code>s3[i+j-1]</code>. One row of the grid is enough because each
+cell only reads its own row and the one above.</p>
+<p><strong>Complexity.</strong> Time: O(m<em>n) — one match comparison per cell. Space:
+O(n) — the collapsed row (O(m</em>n) for the full table).</p>
+<p><strong>Edge cases that matter.</strong> Length mismatch (immediate False — the most
+common "works in tests, wrong in production" miss). Both strings empty.
+One string empty (pure prefix check). Repeated characters like
+<code>"aa"</code>/<code>"bc"</code>/<code>"ababbc"</code> where both <code>from_s1</code> and <code>from_s2</code> branches are
+simultaneously valid and must both be kept.</p>
+<p><strong>Common wrong answer.</strong> Updating <code>dp[j] = ...</code> BEFORE evaluating
+<code>from_s1</code>, so <code>from_s1</code> reads the NEW row's <code>dp[j]</code> instead of the
+previous row's — the "from s1" transition then silently becomes the "from
+s2" transition and whole families of valid interleavings are rejected.
+Store both predecessors in temporaries first (as <code>from_s1</code>/<code>from_s2</code>
+above), or iterate the table so the read order is unambiguous.</p>
+</details>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/daily-challenges\2026\09\2026-09-23.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../../";</script>
+<script src="../../../assets/search.js" defer></script>
+</body>
+</html>

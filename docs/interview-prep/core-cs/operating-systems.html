@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operating Systems &middot; Interview Cracker</title>
+<meta name="description" content="Asked in almost every interview that touches backend or systems work.">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/core-cs/operating-systems.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Operating Systems &middot; Interview Cracker">
+<meta property="og:description" content="Asked in almost every interview that touches backend or systems work.">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/core-cs/operating-systems.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/operating-systems.html" class="current" aria-current="page">Operating Systems</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="operating-systems">Operating Systems</h1>
+<p>Asked in almost every interview that touches backend or systems work.</p>
+<hr>
+<h3 id="q-process-vs-thread">🟢 Q. Process vs thread?</h3>
+<p><strong>Answer.</strong> A <strong>process</strong> is a running program with its own address space. A
+<strong>thread</strong> is an execution path inside a process; threads of one process share
+that address space.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Process</th>
+<th>Thread</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Memory</td>
+<td>Isolated</td>
+<td><strong>Shared</strong> (heap, globals, files)</td>
+</tr>
+<tr>
+<td>Own stack</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Creation cost</td>
+<td>High</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Communication</td>
+<td>IPC (pipes, sockets, shared memory)</td>
+<td>Shared variables</td>
+</tr>
+<tr>
+<td>Crash blast radius</td>
+<td>Contained</td>
+<td><strong>Takes down the process</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The shared address space is the entire trade-off: threads communicate cheaply,
+and that same sharing is what makes race conditions possible. Chrome uses a
+process per tab precisely so one crashed tab cannot take the browser with it.</p>
+<hr>
+<h3 id="q-what-is-a-context-switch-and-why-is-it-expensive">🟡 Q. What is a context switch and why is it expensive?</h3>
+<p><strong>Answer.</strong> Saving the CPU state of one thread (registers, program counter, stack
+pointer) and restoring another's, so the CPU can run something else.</p>
+<p>The direct cost — copying registers — is small, a microsecond or so. The real
+cost is indirect: the new thread's data is not in the CPU caches, so it runs
+slowly until they refill, and a process switch also flushes the TLB because the
+page tables change.</p>
+<p>This is why thread-per-request servers stop scaling around a few thousand
+connections, and why async I/O exists — one thread multiplexing thousands of
+sockets never context-switches between them.</p>
+<hr>
+<h3 id="q-what-is-virtual-memory">🟡 Q. What is virtual memory?</h3>
+<p><strong>Answer.</strong> An abstraction giving each process its own contiguous address space,
+which the MMU translates to physical addresses via <strong>page tables</strong>.</p>
+<p>It provides three things at once:</p>
+<ul>
+<li><strong>Isolation</strong> — a process cannot name another process's memory, so it cannot
+  corrupt it.</li>
+<li><strong>More memory than you have</strong> — pages not in use can be evicted to disk and
+  faulted back in on access.</li>
+<li><strong>Simplicity</strong> — every program is compiled as if it owns all of memory; the
+  kernel handles fragmentation.</li>
+</ul>
+<p>A <strong>page fault</strong> is the CPU trapping to the kernel because a page is not resident.
+A <em>minor</em> fault is resolved from memory (the page is already cached); a <em>major</em>
+fault requires disk I/O and is thousands of times slower. Sustained major faults
+are <strong>thrashing</strong> — the system spends all its time paging instead of working.</p>
+<hr>
+<h3 id="q-stack-vs-heap">🟢 Q. Stack vs heap?</h3>
+<p><strong>Answer.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Stack</th>
+<th>Heap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Allocation</td>
+<td>Move a pointer — very fast</td>
+<td>Search a free list — slower</td>
+</tr>
+<tr>
+<td>Lifetime</td>
+<td>Automatic, at scope exit</td>
+<td>Manual or garbage-collected</td>
+</tr>
+<tr>
+<td>Size</td>
+<td>Small and fixed (~1–8 MB)</td>
+<td>Large</td>
+</tr>
+<tr>
+<td>Fragmentation</td>
+<td>None</td>
+<td>Possible</td>
+</tr>
+<tr>
+<td>Thread sharing</td>
+<td>Private per thread</td>
+<td><strong>Shared</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Local variables and call frames go on the stack; anything outliving its scope, or
+whose size is not known at compile time, goes on the heap. "Stack overflow" is
+deep recursion exhausting that small fixed region.</p>
+<hr>
+<h3 id="q-explain-the-conditions-for-deadlock">🟡 Q. Explain the conditions for deadlock.</h3>
+<p><strong>Answer.</strong> Four conditions must hold <strong>simultaneously</strong> (Coffman conditions);
+break any one and deadlock is impossible.</p>
+<ol>
+<li><strong>Mutual exclusion</strong> — a resource cannot be shared.</li>
+<li><strong>Hold and wait</strong> — a process holds one resource while waiting for another.</li>
+<li><strong>No preemption</strong> — resources cannot be forcibly taken back.</li>
+<li><strong>Circular wait</strong> — a cycle of processes each waiting on the next.</li>
+</ol>
+<p>In practice you break <strong>circular wait</strong> by imposing a global lock ordering: every
+piece of code acquires locks in the same order, so a cycle cannot form. That is
+the answer to give — it is the one that is cheap and actually used.</p>
+<p><strong>Livelock</strong> is the related trap: threads are not blocked but keep reacting to
+each other and make no progress, like two people stepping aside in the same
+direction repeatedly.</p>
+<hr>
+<h3 id="q-what-is-the-difference-between-concurrency-and-parallelism">🟡 Q. What is the difference between concurrency and parallelism?</h3>
+<p><strong>Answer.</strong> <strong>Concurrency</strong> is dealing with many things at once — a structure
+that lets tasks make progress in overlapping time periods. <strong>Parallelism</strong> is
+doing many things at once — literally simultaneous execution on multiple cores.</p>
+<p>Concurrency is about program structure; parallelism is about hardware execution.
+A single-core machine can be concurrent (interleaving) but never parallel. An
+async web server is concurrent without necessarily being parallel.</p>
+<p>The practical consequence: concurrency helps with <strong>I/O-bound</strong> work (waiting on
+network or disk), parallelism helps with <strong>CPU-bound</strong> work. Adding threads to a
+CPU-bound task on a single core makes it slower, not faster.</p>
+<hr>
+<h3 id="q-how-does-the-kernel-decide-what-runs-next">🟡 Q. How does the kernel decide what runs next?</h3>
+<p><strong>Answer.</strong> A scheduler balances throughput, latency and fairness. The approaches
+worth naming:</p>
+<ul>
+<li><strong>Round robin</strong> — each ready thread gets a time slice in turn. Fair, simple,
+  ignores priority.</li>
+<li><strong>Priority scheduling</strong> — highest priority first; risks <strong>starvation</strong> of low
+  priority work, mitigated by <em>aging</em> (raising priority the longer a task waits).</li>
+<li><strong>Multi-level feedback queue</strong> — several queues; a task that uses its whole
+  slice drops to a lower-priority queue, one that blocks early stays high. This
+  automatically favours interactive work over batch work, which is why your
+  editor stays responsive during a compile.</li>
+</ul>
+<p>Linux's CFS aims to give each runnable task an equal share of CPU time, tracking
+how much each has had and running whichever is furthest behind.</p>
+<hr>
+<h3 id="q-what-is-a-system-call">🟡 Q. What is a system call?</h3>
+<p><strong>Answer.</strong> The controlled entry point from user space into the kernel — the only
+way a program can do I/O, allocate memory or create processes.</p>
+<p>Normal code runs in <strong>user mode</strong>, which cannot touch hardware or other
+processes' memory. A syscall traps into <strong>kernel mode</strong>, which can. The CPU
+enforces this boundary, which is what makes process isolation real rather than a
+convention.</p>
+<p>Syscalls cost far more than a function call (a mode switch, argument validation,
+cache effects), which is why I/O is buffered — <code>printf</code> accumulates output and
+issues one <code>write</code> instead of one per character, and why <code>sendfile</code> exists to
+copy a file to a socket without crossing the boundary repeatedly.</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\core-cs\operating-systems.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../";</script>
+<script src="../../assets/search.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-09-20 — First Unique Character in a String &middot; Interview Cracker</title>
+<meta name="description" content="Given a string s, return the index (0-based) of the first character that appears exactly once. If every character repeats, return -1.">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/daily-challenges/2026/09/2026-09-20.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2026-09-20 — First Unique Character in a String &middot; Interview Cracker">
+<meta property="og:description" content="Given a string s, return the index (0-based) of the first character that appears exactly once. If every character repeats, return -1.">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/daily-challenges/2026/09/2026-09-20.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-20.html" class="current" aria-current="page">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="2026-09-20-first-unique-character-in-a-string">2026-09-20 — First Unique Character in a String</h1>
+<p><strong>Difficulty:</strong> 🟢 Easy
+<strong>Pattern:</strong> Hash map (count first, scan second)
+<strong>Time-box:</strong> 20 minutes</p>
+<h2 id="problem">Problem</h2>
+<p>Given a string <code>s</code>, return the index (0-based) of the first character that
+appears exactly once. If every character repeats, return <code>-1</code>.</p>
+<p>You may assume <code>s</code> contains only lowercase letters.</p>
+<h3 id="examples">Examples</h3>
+<div class="highlight"><pre><span></span><code>&quot;leetcode&quot;      -&gt; 0   (the &#39;l&#39; is the first character occurring once)
+&quot;loveleetcode&quot;  -&gt; 2   (&#39;o&#39; is the first unique letter)
+&quot;aabb&quot;          -&gt; -1  (no character is unique)
+&quot;&quot;              -&gt; -1  (empty string)
+</code></pre></div>
+<h3 id="constraints">Constraints</h3>
+<ul>
+<li><code>0 &lt;= s.length &lt;= 5 * 10^4</code></li>
+<li><code>s</code> consists of lowercase English letters.</li>
+<li>Scanning the string twice is fine; scanning it once per character is not.</li>
+</ul>
+<hr>
+<details >
+<summary ><b>Hint</b> (open only if stuck after 10 minutes)</summary>
+<p>Count how many times each character occurs — a single pass into a small
+frequency table. Then make a SECOND pass and return the first index whose
+character's count is 1. The order of the string only matters in the second
+pass, which is why "count first, decide later" is the move.</p>
+</details>
+<hr>
+<details >
+<summary ><b>Solution</b></summary>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">first_unique</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>                 <span class="c1"># one pass: how often each letter occurs</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>          <span class="c1"># second pass: first with count 1</span>
+        <span class="k">if</span> <span class="n">counts</span><span class="p">[</span><span class="n">ch</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</code></pre></div>
+<p><strong>How it works.</strong> The decision "is this character unique?" needs global
+information (the total count), so it cannot be made while you are still
+reading the string. Collect the counts, then walk the original string —
+not the count table, which would lose the order — and report the first
+character whose total is 1.</p>
+<p><strong>Complexity.</strong> Time: O(n) — two linear passes, O(1) hash work each
+(alphabet size is bounded at 26). Space: O(1) — the counter holds at most
+26 entries regardless of input length.</p>
+<p><strong>Edge cases that matter.</strong> Empty string (returns -1 without looping).
+A string of all identical characters. A unique character sitting at the
+END — the second pass must run to completion before giving up.</p>
+<p><strong>Common wrong answer.</strong> Tracking a <code>seen</code> set and returning the first
+character <em>not in</em> <code>seen</code> — that finds the first character you have not
+yet seen, i.e. index 0, always. "Seen once so far" is not "will be seen
+exactly once in total"; you need the full count before deciding.</p>
+</details>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/daily-challenges\2026\09\2026-09-20.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../../";</script>
+<script src="../../../assets/search.js" defer></script>
+</body>
+</html>

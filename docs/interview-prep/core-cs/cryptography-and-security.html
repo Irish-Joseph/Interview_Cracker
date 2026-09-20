@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security & Cryptography &middot; Interview Cracker</title>
+<meta name="description" content="Interviewers use crypto questions to see if you can separate the three jobs that get lumped together: confidentiality (encryption), integrity and authenticity (hashes, MACs, signat...">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/core-cs/cryptography-and-security.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Security & Cryptography &middot; Interview Cracker">
+<meta property="og:description" content="Interviewers use crypto questions to see if you can separate the three jobs that get lumped together: confidentiality (encryption), integrity and authenticity (hashes, MACs, signat...">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/core-cs/cryptography-and-security.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/cryptography-and-security.html" class="current" aria-current="page">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="security-cryptography">Security &amp; Cryptography</h1>
+<p>Interviewers use crypto questions to see if you can separate the three jobs
+that get lumped together: <strong>confidentiality</strong> (encryption), <strong>integrity and
+authenticity</strong> (hashes, MACs, signatures), and <strong>availability</strong> (DoS,
+rate limits). Getting the labels straight is most of the answer.</p>
+<hr>
+<h3 id="q-symmetric-vs-asymmetric-encryption-whats-the-difference-and">🟢 Q. Symmetric vs asymmetric encryption — what's the difference and</h3>
+<p>why do we need both?</p>
+<p><strong>Answer.</strong> <strong>Symmetric</strong> (AES, ChaCha20) uses one shared key for encrypt
+and decrypt — fast, but you must get the key to the other party safely.
+<strong>Asymmetric</strong> (RSA, X25519) uses a public/private key pair — anyone can
+encrypt with the public key, only the holder of the private key can decrypt
+— which solves key distribution but is far slower.</p>
+<p>Real systems use both: TLS does an <strong>asymmetric</strong> (or Diffie-Hellman) key
+exchange to agree on a fresh <strong>symmetric</strong> session key, then bulk-encrypts
+the data with the symmetric key. You get the secure key exchange of public
+keys and the speed of symmetric crypto. The same split underpins signing
+(sign fast with a hash, then apply the slow private key to the digest).</p>
+<hr>
+<h3 id="q-a-cryptographic-hash-is-not-a-mac-whats-the-difference-and">🟡 Q. A cryptographic hash is not a MAC. What's the difference, and</h3>
+<p>why does it matter?</p>
+<p><strong>Answer.</strong> A plain hash (SHA-256) is a <strong>one-way fingerprint</strong>: it has no
+secret, so anyone who can see the message can recompute the digest. A
+<strong>MAC</strong> (HMAC) additionally takes a <strong>shared secret key</strong>, so only someone
+with the key can produce a valid tag — that's what gives it <em>authenticity</em>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span><span class="o">,</span><span class="w"> </span><span class="nn">hmac</span><span class="o">,</span><span class="w"> </span><span class="nn">secrets</span>
+
+<span class="c1"># Plain hash: deterministic, and reproducible by ANYONE who has the message.</span>
+<span class="k">assert</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;password&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span> <span class="o">==</span> \
+       <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;password&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+
+<span class="c1"># HMAC: needs the key to forge a valid tag.</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">secrets</span><span class="o">.</span><span class="n">token_bytes</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+<span class="n">msg</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;transfer 100 to bob&quot;</span>
+<span class="n">tag</span> <span class="o">=</span> <span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">tag</span> <span class="o">==</span> <span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>          <span class="c1"># same key, same tag</span>
+<span class="k">assert</span> <span class="n">tag</span> <span class="o">!=</span> <span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;transfer 200 to bob&quot;</span><span class="p">,</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">hmac</span><span class="o">.</span><span class="n">compare_digest</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">hmac</span><span class="o">.</span><span class="n">compare_digest</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>The concrete failure of <code>hash(secret + msg)</code> (a "homebrew MAC"): the
+concatenation is ambiguous, so different <code>(secret, msg)</code> pairs collide.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Two different (secret, msg) splits hash to the SAME value:</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;sec&quot;</span> <span class="o">+</span> <span class="sa">b</span><span class="s2">&quot;retmsg&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;secret&quot;</span> <span class="o">+</span> <span class="sa">b</span><span class="s2">&quot;msg&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span>   <span class="c1"># both are the byte string &#39;secretmsg&#39; — the split is unknowable</span>
+</code></pre></div>
+<p>HMAC's structure (keyed inner/outer hash) is designed to avoid exactly this.
+Also note <code>hmac.compare_digest</code> — a <strong>timing-safe</strong> comparison, because a
+naive <code>==</code> can leak how many leading bytes of a forger's tag were correct.</p>
+<hr>
+<h3 id="q-how-should-you-store-user-passwords">🟡 Q. How should you store user passwords?</h3>
+<p><strong>Answer.</strong> Never a plain hash. Use a <strong>slow, salted, keyed</strong> function:
+a <strong>per-user random salt</strong> (so identical passwords produce different
+digests and rainbow tables are useless) plus a deliberately expensive
+function (bcrypt, scrypt, or Argon2 — or PBKDF2 with a high iteration
+count) so brute force is expensive.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span><span class="o">,</span><span class="w"> </span><span class="nn">secrets</span>
+
+<span class="n">password</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;hunter2&quot;</span>
+<span class="n">salt</span> <span class="o">=</span> <span class="n">secrets</span><span class="o">.</span><span class="n">token_bytes</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>                       <span class="c1"># per-user, stored alongside</span>
+<span class="n">digest</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">pbkdf2_hmac</span><span class="p">(</span><span class="s2">&quot;sha256&quot;</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">salt</span><span class="p">,</span> <span class="mi">600_000</span><span class="p">)</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+
+<span class="c1"># Verification re-derives with the SAME salt and compares in constant time.</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">hmac</span>
+<span class="k">assert</span> <span class="n">hmac</span><span class="o">.</span><span class="n">compare_digest</span><span class="p">(</span>
+    <span class="n">hashlib</span><span class="o">.</span><span class="n">pbkdf2_hmac</span><span class="p">(</span><span class="s2">&quot;sha256&quot;</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">salt</span><span class="p">,</span> <span class="mi">600_000</span><span class="p">)</span><span class="o">.</span><span class="n">hex</span><span class="p">(),</span> <span class="n">digest</span>
+<span class="p">)</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">hmac</span><span class="o">.</span><span class="n">compare_digest</span><span class="p">(</span>
+    <span class="n">hashlib</span><span class="o">.</span><span class="n">pbkdf2_hmac</span><span class="p">(</span><span class="s2">&quot;sha256&quot;</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;hunter3&quot;</span><span class="p">,</span> <span class="n">salt</span><span class="p">,</span> <span class="mi">600_000</span><span class="p">)</span><span class="o">.</span><span class="n">hex</span><span class="p">(),</span> <span class="n">digest</span>
+<span class="p">)</span>
+<span class="c1"># Same password, different salt -&gt; different digest (defeats rainbow tables).</span>
+<span class="n">salt2</span> <span class="o">=</span> <span class="n">secrets</span><span class="o">.</span><span class="n">token_bytes</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">pbkdf2_hmac</span><span class="p">(</span><span class="s2">&quot;sha256&quot;</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">salt2</span><span class="p">,</span> <span class="mi">600_000</span><span class="p">)</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span> <span class="o">!=</span> <span class="n">digest</span>
+</code></pre></div>
+<p>The three properties to name: <strong>salt</strong> (uniqueness), <strong>slowness/work
+factor</strong> (costs the attacker), and <strong>you cannot reverse it</strong> (so on breach
+an attacker still has to brute-force each password individually). Store
+only <code>salt + digest</code>, never the password or a reversible-encrypted form.</p>
+<hr>
+<h3 id="q-what-happens-during-a-tls-handshake-in-one-paragraph">🟡 Q. What happens during a TLS handshake, in one paragraph?</h3>
+<p><strong>Answer.</strong> The client sends a <code>ClientHello</code> with its cipher preferences
+and a random; the server replies with its certificate (signed up a chain
+to a trusted CA) and its own random, and the two parties run a key
+exchange (ECDHE) from which both independently derive the same symmetric
+session keys using the two randoms. Because the server's certificate is
+verified against the CA chain, the client is confident it's talking to the
+right host, and because ECDHE contributes fresh randomness, the session
+keys are new each connection (giving <strong>forward secrecy</strong> — a later leak of
+the server's private key doesn't decrypt past sessions). Only then does
+encrypted application data flow, using the fast symmetric keys.</p>
+<p>The two things interviewers probe: <strong>authentication</strong> (the certificate
+chain answers "are you really <code>bank.com</code>?") and <strong>forward secrecy</strong>
+(ECDHE answers "if my private key leaks next year, is today's traffic safe?").</p>
+<hr>
+<h3 id="q-an-attacker-steals-your-database-what-should-have-been-true">🔴 Q. An attacker steals your database. What should have been true,</h3>
+<p>and what are they still missing?</p>
+<p><strong>Answer.</strong> Layered defence, in order of how much it helps <em>after</em> the
+breach: (1) <strong>passwords</strong> were stored as salted slow hashes, so the dump
+doesn't hand over logins — the attacker must brute-force each one; (2)
+<strong>sensitive fields</strong> (cards, SSNs, tokens) were <strong>encrypted at rest</strong> with
+keys held outside the database (KMS/HSM), so the dump is ciphertext
+without the key; (3) <strong>secrets</strong> (API keys, DB credentials) were never in
+the repo or the image — they live in a secrets manager; (4) access was
+<strong>least-privilege</strong> and logged, limiting what the stolen role could reach.</p>
+<p>The answer they want is the shift in mindset: you <strong>cannot</strong> assume the
+database is safe, so you make a stolen database <em>worth less</em> than the cost
+of attacking it. The single most-cited failure is storing passwords as a
+plain or fast hash (or reversible-encrypted), which turns a DB breach into
+an instant credential breach.</p>
+<hr>
+<h3 id="q-whats-the-difference-between-a-hash-a-mac-and-a-signature">🟢 Q. What's the difference between a hash, a MAC, and a signature?</h3>
+<p><strong>Answer.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Secret?</th>
+<th>Proves</th>
+<th>Who can verify</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hash (SHA-256)</td>
+<td>none</td>
+<td>integrity only (accidental)</td>
+<td>anyone</td>
+</tr>
+<tr>
+<td>MAC (HMAC)</td>
+<td>shared key</td>
+<td>integrity + authenticity</td>
+<td>anyone with the key</td>
+</tr>
+<tr>
+<td>Signature (RSA/Ed25519)</td>
+<td>private key</td>
+<td>integrity + authenticity + <strong>non-repudiation</strong></td>
+<td>anyone with the public key</td>
+</tr>
+</tbody>
+</table>
+<p>A <strong>signature</strong> is the asymmetric upgrade of a MAC: the sender signs with a
+private key, and <em>anyone</em> can verify with the public key, and the sender
+can't plausibly deny it (non-repudiation). A <strong>MAC</strong> is symmetric — fast,
+but the verifier must hold the shared secret, so it can't be publicly
+verified. Use MACs for server↔server over a trusted channel, signatures for
+publicly verifiable artifacts (code, containers, documents, TLS certs).</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\core-cs\cryptography-and-security.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../";</script>
+<script src="../../assets/search.js" defer></script>
+</body>
+</html>

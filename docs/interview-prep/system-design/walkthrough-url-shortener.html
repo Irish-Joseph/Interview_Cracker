@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Worked Example: Design a URL Shortener &middot; Interview Cracker</title>
+<meta name="description" content="A complete answer, start to finish, in the order you should actually deliver it. The point is the shape of the answer — the same structure works for any design question.">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/system-design/walkthrough-url-shortener.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Worked Example: Design a URL Shortener &middot; Interview Cracker">
+<meta property="og:description" content="A complete answer, start to finish, in the order you should actually deliver it. The point is the shape of the answer — the same structure works for any design question.">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/system-design/walkthrough-url-shortener.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html" class="current" aria-current="page">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="worked-example-design-a-url-shortener">Worked Example: Design a URL Shortener</h1>
+<p>A complete answer, start to finish, in the order you should actually deliver it.
+The point is the <em>shape</em> of the answer — the same structure works for any design
+question.</p>
+<hr>
+<h2 id="1-clarify-requirements">1. Clarify requirements</h2>
+<p>Ask before designing. Suggested questions and the answers assumed here:</p>
+<p><strong>Functional</strong>
+- Shorten a long URL into a short one, and redirect from short to long. ✅
+- Custom aliases? <em>Yes, optional.</em>
+- Expiry? <em>Yes, optional TTL.</em>
+- Analytics on clicks? <em>Basic counts, not real-time.</em>
+- User accounts, editing, deletion? <em>Out of scope for now.</em></p>
+<p><strong>Non-functional</strong>
+- Scale? <em>100 M new URLs per day.</em>
+- Read/write ratio? <em>100:1 — redirects vastly outnumber creations.</em>
+- Latency? <em>Redirect under 100 ms at p99.</em>
+- Availability? <em>Highly available. A redirect failing is worse than a creation
+  failing.</em>
+- Consistency? <em>A newly created link should work immediately; analytics may lag.</em></p>
+<p>That last pair is the important trade: <strong>AP for reads, with read-your-writes for
+the creator.</strong></p>
+<hr>
+<h2 id="2-estimate-the-scale">2. Estimate the scale</h2>
+<div class="highlight"><pre><span></span><code>Writes:   100 M/day ÷ 10⁵ s     ≈ 1,000 URLs/second
+Reads:    100 × writes           ≈ 100,000 redirects/second
+Peak:     ~2× average            ≈ 200,000 redirects/second
+
+Storage per record:
+  short code      7 bytes
+  long URL      ~500 bytes
+  metadata      ~100 bytes  (created_at, expiry, owner, counter)
+  ------------------------
+  ~600 bytes, round to 1 KB
+
+  100 M/day × 1 KB = 100 GB/day ≈ 36 TB/year
+</code></pre></div>
+<p><strong>What these numbers tell us immediately:</strong>
+- 200 K reads/second cannot come from a database → <strong>cache is mandatory</strong>.
+- 36 TB/year does not fit one node → <strong>sharding required</strong>.
+- Reads dominate 100:1 → optimise the read path above everything else.</p>
+<hr>
+<h2 id="3-how-long-must-the-short-code-be">3. How long must the short code be?</h2>
+<p>With 62 characters (<code>a–z A–Z 0–9</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Length</th>
+<th>Combinations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>62⁵ ≈ 916 M</td>
+</tr>
+<tr>
+<td>6</td>
+<td>62⁶ ≈ 56 B</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td><strong>62⁷ ≈ 3.5 trillion</strong></td>
+</tr>
+</tbody>
+</table>
+<p>At 100 M/day we use 36.5 B/year. Six characters is exhausted in about 18 months;
+<strong>seven characters gives roughly 95 years of headroom.</strong> Choose 7.</p>
+<hr>
+<h2 id="4-api">4. API</h2>
+<div class="highlight"><pre><span></span><code>POST /api/v1/urls
+  { &quot;long_url&quot;: &quot;https://…&quot;, &quot;custom_alias&quot;: &quot;sale&quot;, &quot;ttl_days&quot;: 30 }
+  -&gt; 201 { &quot;short_url&quot;: &quot;https://sho.rt/aB3dE7x&quot;, &quot;expires_at&quot;: &quot;…&quot; }
+
+GET /{code}
+  -&gt; 301 or 302 to the long URL
+  -&gt; 404 if unknown or expired
+</code></pre></div>
+<p><strong>301 vs 302 is a real decision.</strong> 301 (permanent) is cached by the browser, so
+subsequent visits never reach your servers — cheaper and faster, but you lose
+click analytics and cannot ever change the target. <strong>302</strong> keeps every click
+flowing through you. Given the analytics requirement: <strong>302</strong>.</p>
+<hr>
+<h2 id="5-generating-the-code">5. Generating the code</h2>
+<p>Three options, and the trade-off is the answer:</p>
+<p><strong>(a) Hash the URL</strong> — <code>base62(md5(url))[:7]</code>. Deterministic, so the same URL
+gives the same code. But collisions must be detected and resolved by rehashing
+with a salt, which costs a read before every write.</p>
+<p><strong>(b) Random generation</strong> — pick 7 random characters, retry on collision. At 3.5
+trillion possibilities and billions of records, collisions are rare, but you
+still need a uniqueness check.</p>
+<p><strong>(c) Counter + base62 encoding</strong> ✅ — maintain a distributed counter and encode
+it. <strong>Collision-free by construction</strong>, no read before write, and short codes.
+The downsides: codes are sequential and therefore guessable and enumerable, and
+the counter is a coordination point.</p>
+<p><strong>Chosen: (c), with mitigations.</strong> Use a ticket service (or Redis <code>INCR</code>, or
+ZooKeeper) handing out <strong>ranges</strong> of 1,000 IDs to each application server, so
+servers only coordinate once per thousand URLs rather than per request. Then
+XOR/permute the counter before encoding so codes are not obviously sequential.</p>
+<hr>
+<h2 id="6-data-model">6. Data model</h2>
+<p>A key–value workload: look up one row by primary key, no joins, no complex
+queries. That points at a NoSQL store (DynamoDB, Cassandra) rather than a
+relational one, though a sharded relational database is entirely defensible.</p>
+<div class="highlight"><pre><span></span><code>urls
+  code        VARCHAR(7)  PRIMARY KEY / partition key
+  long_url    TEXT
+  created_at  TIMESTAMP
+  expires_at  TIMESTAMP   NULL
+  owner_id    VARCHAR     NULL
+</code></pre></div>
+<p><strong>Shard by <code>code</code></strong> using consistent hashing. Every read is by code, so every
+read hits exactly one shard — no scatter-gather.</p>
+<hr>
+<h2 id="7-the-architecture">7. The architecture</h2>
+<div class="highlight"><pre><span></span><code>                    ┌──────────────┐
+   client ────────► │     CDN      │  (static assets only)
+                    └──────────────┘
+                           │
+                    ┌──────▼───────┐
+                    │ Load balancer│
+                    └──────┬───────┘
+              ┌───────────┴────────────┐
+       ┌──────▼──────┐          ┌──────▼──────┐
+       │ Read service│          │Write service│
+       │ (redirects) │          │ (shorten)   │
+       └──────┬──────┘          └──────┬──────┘
+              │                        │
+       ┌──────▼──────┐          ┌──────▼──────┐
+       │ Redis cache │          │Ticket server│
+       │  (LRU, hot) │          │ (ID ranges) │
+       └──────┬──────┘          └──────┬──────┘
+              │                        │
+              └────────┬───────────────┘
+                 ┌─────▼──────┐     ┌──────────────┐
+                 │  Sharded   │     │ Click events │
+                 │  KV store  │     │  → queue →   │
+                 └────────────┘     │  analytics   │
+                                    └──────────────┘
+</code></pre></div>
+<p>Read and write paths are separate services because their load differs by 100×
+and they should scale — and fail — independently.</p>
+<hr>
+<h2 id="8-the-read-path-in-detail">8. The read path in detail</h2>
+<ol>
+<li>Request arrives at the read service.</li>
+<li>Look up <code>code</code> in Redis. <strong>Expect ~90% hit rate</strong>: link popularity follows a
+   power law, so a small hot set serves most traffic.</li>
+<li>On a miss, read the shard, populate the cache, return.</li>
+<li>Emit a click event to a queue (fire-and-forget) — <strong>never</strong> let analytics
+   block the redirect.</li>
+</ol>
+<p>Cache sizing: if 20% of URLs are hot, that is 20 M × 1 KB = <strong>20 GB</strong>, which fits
+comfortably in a small Redis cluster.</p>
+<hr>
+<h2 id="9-bottlenecks-and-what-you-would-do-next">9. Bottlenecks and what you would do next</h2>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cache stampede on a viral link</td>
+<td>Single-flight refill; never expire hot keys mid-spike</td>
+</tr>
+<tr>
+<td>Ticket server is a SPOF</td>
+<td>Replicate it; servers hold a local range so a brief outage is invisible</td>
+</tr>
+<tr>
+<td>Hot shard</td>
+<td>Consistent hashing with virtual nodes</td>
+</tr>
+<tr>
+<td>Abuse (malware, phishing)</td>
+<td>Reputation check on creation, blocklist on redirect</td>
+</tr>
+<tr>
+<td>Expired-record cleanup</td>
+<td>TTL in the store, or a background sweeper</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="10-what-the-interviewer-is-grading">10. What the interviewer is grading</h2>
+<p>Not the diagram. They want to see that you:</p>
+<ul>
+<li><strong>asked about requirements before designing</strong> — the most common failure;</li>
+<li><strong>used numbers</strong> to justify the cache, the shard count and the code length;</li>
+<li><strong>named trade-offs explicitly</strong> (301 vs 302, counter vs hash) rather than
+  presenting one option as obviously correct;</li>
+<li><strong>separated read and write paths</strong> once you knew the ratio;</li>
+<li><strong>knew what you had not solved</strong> and could say so.</li>
+</ul>
+<p>Saying "I'd choose X because of Y, though Z would be better if the requirement
+were W" is worth more than any particular architecture.</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\system-design\walkthrough-url-shortener.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../";</script>
+<script src="../../assets/search.js" defer></script>
+</body>
+</html>

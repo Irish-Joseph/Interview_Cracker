@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://irish-joseph.github.io/Interview_Cracker/sitemap.xml

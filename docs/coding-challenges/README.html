@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coding Challenges &middot; Interview Cracker</title>
+<meta name="description" content="Problems grouped by the pattern that solves them, not by difficulty or by data structure. Recognising the pattern is the transferable skill; an individual problem is not.">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/README.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Coding Challenges &middot; Interview Cracker">
+<meta property="og:description" content="Problems grouped by the pattern that solves them, not by difficulty or by data structure. Recognising the pattern is the transferable skill; an individual problem is not.">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/README.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../coding-challenges/README.html" class="current" aria-current="page">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="coding-challenges">Coding Challenges</h1>
+<p>Problems grouped by the <strong>pattern that solves them</strong>, not by difficulty or by
+data structure. Recognising the pattern is the transferable skill; an individual
+problem is not.</p>
+<h2 id="how-to-use-these">How to use these</h2>
+<ol>
+<li>Read the pattern's <code>README.md</code> first — it tells you what signal in a problem
+   statement means "use this pattern".</li>
+<li>Open a challenge and read <strong>only</strong> down to the <code>HINT</code> line.</li>
+<li>Give yourself 20 minutes on a blank file. Write the code before running it.</li>
+<li>Stuck at 20 minutes? Read the hint, not the solution.</li>
+<li>Compare with the solution — including the complexity section.</li>
+</ol>
+<p>Every file is runnable and self-testing:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>coding-challenges/two-pointers/valid_palindrome.py
+</code></pre></div>
+<p>Run the whole suite:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>scripts/run_challenges.py
+</code></pre></div>
+<h2 id="patterns">Patterns</h2>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Use it when</th>
+<th>Challenges</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/two-pointers">two-pointers</a></td>
+<td>Sorted array; find a pair/triplet; filter in place</td>
+<td>Valid palindrome, 3Sum</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/sliding-window">sliding-window</a></td>
+<td>Longest/shortest <strong>contiguous</strong> run satisfying a rule</td>
+<td>Longest unique substring, max sum of size k</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/hashing">hashing</a></td>
+<td>You are searching inside a loop</td>
+<td>Two sum, group anagrams</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/binary-search">binary-search</a></td>
+<td>Sorted input, or a monotonic yes/no over a numeric range</td>
+<td>Search rotated array, minimum eating speed</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/stack">stack</a></td>
+<td>Matching pairs; "next greater/smaller element"</td>
+<td>Valid parentheses, daily temperatures</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/linked-list">linked-list</a></td>
+<td>Pointer rewiring; fast/slow traversal</td>
+<td>Reverse a list, detect a cycle</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/trees">trees</a></td>
+<td>Recursive structure; level-by-level work</td>
+<td>Level-order traversal, validate a BST</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/graphs">graphs</a></td>
+<td>Connectivity, shortest hops, dependency order</td>
+<td>Number of islands, course schedule</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/dynamic-programming">dynamic-programming</a></td>
+<td>Overlapping subproblems; count/min/max</td>
+<td>Climbing stairs, coin change</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/intervals">intervals</a></td>
+<td>Ranges that may overlap</td>
+<td>Merge intervals, meeting rooms</td>
+</tr>
+</tbody>
+</table>
+<h2 id="difficulty">Difficulty</h2>
+<p>🟢 Easy · 🟡 Medium · 🔴 Hard — the label reflects the <em>insight</em> required, not the
+amount of code.</p>
+<h2 id="a-note-on-these-problems">A note on these problems</h2>
+<p>These are long-standing, widely-known problems that appear in textbooks, courses
+and practice sites. They are here because the underlying pattern is genuinely
+worth knowing, not because any company is claimed to ask them.</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges\README.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../";</script>
+<script src="../assets/search.js" defer></script>
+</body>
+</html>

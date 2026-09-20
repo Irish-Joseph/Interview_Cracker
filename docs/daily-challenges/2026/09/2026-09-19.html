@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-09-19 — Find the Duplicate Number &middot; Interview Cracker</title>
+<meta name="description" content="Given an array nums of n + 1 integers where every value is in the range 1..n, there is exactly one repeated number. Find it.">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/daily-challenges/2026/09/2026-09-19.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2026-09-19 — Find the Duplicate Number &middot; Interview Cracker">
+<meta property="og:description" content="Given an array nums of n + 1 integers where every value is in the range 1..n, there is exactly one repeated number. Find it.">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/daily-challenges/2026/09/2026-09-19.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-19.html" class="current" aria-current="page">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="2026-09-19-find-the-duplicate-number">2026-09-19 — Find the Duplicate Number</h1>
+<p><strong>Difficulty:</strong> 🔴 Hard
+<strong>Pattern:</strong> Floyd's cycle detection, applied to an array
+<strong>Time-box:</strong> 20 minutes</p>
+<h2 id="problem">Problem</h2>
+<p>Given an array <code>nums</code> of <code>n + 1</code> integers where every value is in the range
+<code>1..n</code>, there is <strong>exactly one</strong> repeated number. Find it.</p>
+<h3 id="examples">Examples</h3>
+<div class="highlight"><pre><span></span><code>[1, 3, 4, 2, 2]     -&gt;  2
+[3, 1, 3, 4, 2]     -&gt;  3
+[1, 1]              -&gt;  1
+[2, 2, 2, 2, 2]     -&gt;  2
+</code></pre></div>
+<h3 id="constraints">Constraints</h3>
+<ul>
+<li><strong>Do not modify the array</strong> (so no sorting).</li>
+<li><strong>Use O(1) extra space</strong> (so no hash set).</li>
+<li>The repeated number may appear more than twice.</li>
+</ul>
+<hr>
+<details >
+<summary ><b>Hint</b> (open only if stuck after 10 minutes)</summary>
+<p>The two easy solutions are ruled out on purpose: a hash set is O(n) space,
+sorting modifies the input. Binary search on the value range (counting how many
+elements are ≤ mid) is a genuine O(n log n), O(1) answer and worth mentioning.</p>
+<p>For the O(n) solution, look at the array differently. Treat each index as a node
+that points to the node at <code>nums[i]</code>:</p>
+<div class="highlight"><pre><span></span><code>i = 0 -&gt; nums[0] -&gt; nums[nums[0]] -&gt; ...
+</code></pre></div>
+<p>Because values are in <code>1..n</code> and there are <code>n+1</code> slots, following those pointers
+from index 0 can never run off the end. What must eventually happen? And what
+does the duplicate correspond to in that structure?</p>
+</details>
+<hr>
+<details >
+<summary ><b>Solution</b></summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">find_duplicate</span><span class="p">(</span><span class="n">nums</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="c1"># Phase 1: find a meeting point inside the cycle.</span>
+    <span class="n">slow</span> <span class="o">=</span> <span class="n">fast</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">slow</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">slow</span><span class="p">]</span>              <span class="c1"># one step</span>
+        <span class="n">fast</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">nums</span><span class="p">[</span><span class="n">fast</span><span class="p">]]</span>        <span class="c1"># two steps</span>
+        <span class="k">if</span> <span class="n">slow</span> <span class="o">==</span> <span class="n">fast</span><span class="p">:</span>
+            <span class="k">break</span>
+
+    <span class="c1"># Phase 2: walk from the start and from the meeting point, one step each.</span>
+    <span class="c1"># They meet at the cycle&#39;s entrance, which is the duplicated value.</span>
+    <span class="n">slow</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">while</span> <span class="n">slow</span> <span class="o">!=</span> <span class="n">fast</span><span class="p">:</span>
+        <span class="n">slow</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">slow</span><span class="p">]</span>
+        <span class="n">fast</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">fast</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">slow</span>
+</code></pre></div>
+<p><strong>How it works.</strong> Treat the array as a function <code>i -&gt; nums[i]</code>. Since all values
+lie in <code>1..n</code>, following it from index 0 stays in bounds forever, so the sequence
+must eventually revisit a value — it contains a cycle.</p>
+<p>The entrance to that cycle is a value reachable from two different predecessors,
+which is exactly the duplicated number: two distinct indices hold the same value,
+so two nodes point at it.</p>
+<p>From there it is Floyd's tortoise and hare. Phase 1 finds <em>a</em> point inside the
+cycle. Phase 2 finds <em>the entrance</em>: the distance from the start to the entrance
+equals the distance from the meeting point to the entrance, going forward, so
+advancing both one step at a time makes them meet there.</p>
+<p><strong>Complexity.</strong> Time: O(n). Space: O(1) — three integer variables, and the array
+is never written to.</p>
+<p><strong>Edge cases that matter.</strong>
+- <code>[1, 1]</code> — the smallest possible input.
+- All elements identical, e.g. <code>[2, 2, 2, 2, 2]</code>.
+- The duplicate appearing more than twice — the argument does not depend on it
+  appearing exactly twice.
+- Starting at index 0 is important: index 0 can never be <em>inside</em> the cycle,
+  because no value is 0, so nothing points at it.</p>
+<p><strong>Common wrong answer.</strong> <code>return sum(nums) - sum(set(nums))</code> finds the duplicate
+only when it appears exactly twice; it silently gives the wrong answer for
+<code>[2, 2, 2, 2, 2]</code>, and <code>set()</code> is O(n) space anyway.</p>
+<p><strong>Worth saying out loud.</strong> Name the two easier solutions and why they are
+excluded, then give the binary-search-on-value-range answer (O(n log n), O(1)),
+then this one. Showing the ladder of solutions is worth more than jumping
+straight to the clever one.</p>
+</details>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/daily-challenges\2026\09\2026-09-19.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../../";</script>
+<script src="../../../assets/search.js" defer></script>
+</body>
+</html>

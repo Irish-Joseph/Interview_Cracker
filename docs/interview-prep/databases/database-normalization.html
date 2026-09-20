@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Database Normalization &middot; Interview Cracker</title>
+<meta name="description" content="Normalization is about arranging tables so that each fact is stored in exactly one place. The payoff is not academic purity — it is the elimination of update, insertion, and deleti...">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/databases/database-normalization.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Database Normalization &middot; Interview Cracker">
+<meta property="og:description" content="Normalization is about arranging tables so that each fact is stored in exactly one place. The payoff is not academic purity — it is the elimination of update, insertion, and deleti...">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/databases/database-normalization.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/databases/database-normalization.html" class="current" aria-current="page">Database Normalization</a></li>
+        
+          <li><a href="../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="database-normalization">Database Normalization</h1>
+<p>Normalization is about arranging tables so that each <strong>fact</strong> is stored in
+exactly one place. The payoff is not academic purity — it is the elimination
+of update, insertion, and deletion <strong>anomalies</strong>, where one logical change
+has to be written to (or breaks) several rows.</p>
+<hr>
+<h3 id="q-what-is-a-functional-dependency-and-why-is-it-the-root-of">🟢 Q. What is a functional dependency, and why is it the root of</h3>
+<p>normalization?</p>
+<p><strong>Answer.</strong> A functional dependency <code>X → Y</code> means the value of <code>X</code>
+determines the value of <code>Y</code> — two rows with the same <code>X</code> must have the same
+<code>Y</code>. Normalization is the process of splitting tables so that every
+non-key attribute depends on the <strong>whole key</strong>, <strong>nothing but the key</strong>,
+and <strong>nothing but the key</strong> (the 3NF slogan). Every normal form is a rule
+about which dependencies are allowed to live in a table.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># An unnormalized &quot;enrollment&quot; table where the teacher is repeated per row.</span>
+<span class="n">rows</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;S1&quot;</span><span class="p">,</span> <span class="s2">&quot;Math&quot;</span><span class="p">,</span> <span class="s2">&quot;Alice&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;S1&quot;</span><span class="p">,</span> <span class="s2">&quot;Bio&quot;</span><span class="p">,</span>  <span class="s2">&quot;Bob&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;S2&quot;</span><span class="p">,</span> <span class="s2">&quot;Math&quot;</span><span class="p">,</span> <span class="s2">&quot;Alice&quot;</span><span class="p">),</span>   <span class="c1"># &quot;Math is taught by Alice&quot; stored TWICE</span>
+<span class="p">]</span>
+<span class="n">teachers_for_math</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rows</span> <span class="k">if</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Math&quot;</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">teachers_for_math</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Alice&quot;</span><span class="p">]</span>   <span class="c1"># redundant copies</span>
+</code></pre></div>
+<p>The fact "Math is taught by Alice" depends only on <code>course</code>, not on the
+<code>(student, course)</code> key — that is the dependency that normalization will
+eventually force out of the table.</p>
+<hr>
+<h3 id="q-walk-through-1nf-2nf-and-3nf-and-name-the-anomaly-each-one">🟡 Q. Walk through 1NF, 2NF, and 3NF, and name the anomaly each one</h3>
+<p>removes.</p>
+<p><strong>Answer.</strong></p>
+<ul>
+<li><strong>1NF</strong> — atomic values only, no repeating groups / nested arrays.
+  Removes the "column is a list" problem.</li>
+<li><strong>2NF</strong> — 1NF + no <em>partial</em> dependency: every non-key attribute depends
+  on the <strong>whole</strong> primary key, not just part of it. Removes anomalies
+  where you can't add a course with a known teacher unless a student is
+  already enrolled in it.</li>
+<li><strong>3NF</strong> — 2NF + no <em>transitive</em> dependency: non-key attributes depend on
+  the key directly, not via another non-key attribute. Removes the
+  <strong>update anomaly</strong> — changing a teacher requires updating many rows and
+  invites inconsistent copies.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sqlite3</span>
+
+<span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;:memory:&quot;</span><span class="p">)</span>
+<span class="n">cur</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="c1"># Unnormalized: (student, course) key, teacher transitively dependent.</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+    <span class="s2">&quot;CREATE TABLE enrollment &quot;</span>
+    <span class="s2">&quot;(id INTEGER PRIMARY KEY, student TEXT, course TEXT, teacher TEXT)&quot;</span>
+<span class="p">)</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">executemany</span><span class="p">(</span>
+    <span class="s2">&quot;INSERT INTO enrollment (student, course, teacher) VALUES (?,?,?)&quot;</span><span class="p">,</span>
+    <span class="p">[(</span><span class="s2">&quot;S1&quot;</span><span class="p">,</span> <span class="s2">&quot;Math&quot;</span><span class="p">,</span> <span class="s2">&quot;Alice&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;S1&quot;</span><span class="p">,</span> <span class="s2">&quot;Bio&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;S2&quot;</span><span class="p">,</span> <span class="s2">&quot;Math&quot;</span><span class="p">,</span> <span class="s2">&quot;Alice&quot;</span><span class="p">)],</span>
+<span class="p">)</span>
+<span class="c1"># The &quot;update anomaly&quot;: one logical fact lives in two rows.</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT COUNT(*) FROM enrollment WHERE teacher = &#39;Alice&#39;&quot;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span>
+
+<span class="c1"># 3NF: split out the transitive dependency course -&gt; teacher.</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;CREATE TABLE course (course TEXT PRIMARY KEY, teacher TEXT)&quot;</span><span class="p">)</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;CREATE TABLE takes (student TEXT, course TEXT, PRIMARY KEY (student, course))&quot;</span><span class="p">)</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO course VALUES (&#39;Math&#39;,&#39;Alice&#39;), (&#39;Bio&#39;,&#39;Bob&#39;)&quot;</span><span class="p">)</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO takes VALUES (&#39;S1&#39;,&#39;Math&#39;),(&#39;S1&#39;,&#39;Bio&#39;),(&#39;S2&#39;,&#39;Math&#39;)&quot;</span><span class="p">)</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+    <span class="s2">&quot;SELECT t.student, t.course, c.teacher &quot;</span>
+    <span class="s2">&quot;FROM takes t JOIN course c ON t.course = c.course ORDER BY 1,2&quot;</span>
+<span class="p">)</span>
+<span class="k">assert</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span> <span class="o">==</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;S1&quot;</span><span class="p">,</span> <span class="s2">&quot;Bio&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;S1&quot;</span><span class="p">,</span> <span class="s2">&quot;Math&quot;</span><span class="p">,</span> <span class="s2">&quot;Alice&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;S2&quot;</span><span class="p">,</span> <span class="s2">&quot;Math&quot;</span><span class="p">,</span> <span class="s2">&quot;Alice&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre></div>
+<p>Now "Math is taught by Alice" is stored <strong>once</strong> in <code>course</code>; updating it
+touches one row, and enrolling a student never forces you to restate the
+teacher.</p>
+<hr>
+<h3 id="q-what-is-bcnf-and-how-is-it-stronger-than-3nf">🟡 Q. What is BCNF, and how is it stronger than 3NF?</h3>
+<p><strong>Answer.</strong> BCNF says: for every non-trivial dependency <code>X → Y</code>, <code>X</code> must
+be a <strong>superkey</strong>. 3NF allows a non-key to determine another non-key as long
+as the dependent side is a key; BCNF forbids it entirely. In practice the
+two coincide unless you have overlapping candidate keys.</p>
+<p>The classic 3NF-but-not-BCNF example: a table <code>student, course, teacher</code>
+with candidate keys <code>(student, course)</code> and <code>(course, teacher)</code>, where
+<code>course → teacher</code>. Here <code>teacher</code> is part of a candidate key, so 3NF is
+satisfied (the dependent attribute is a key attribute), but <code>course →
+teacher</code> has a non-superkey determinant, so BCNF is violated. Splitting on
+<code>course → teacher</code> (a <code>course(teacher)</code> table) restores BCNF.</p>
+<p>The interview takeaway: <strong>3NF is the usual stopping point for OLTP
+schemas</strong> because BCNF decompositions can sometimes lose a dependency and
+force joins; you reach for BCNF when you specifically want to kill every
+remaining redundancy.</p>
+<hr>
+<h3 id="q-if-normalization-is-so-good-why-do-people-denormalize-at-all">🟡 Q. If normalization is so good, why do people denormalize at all?</h3>
+<p><strong>Answer.</strong> Normalization optimises for <strong>write</strong> consistency (no
+anomalies, minimal storage). Denormalization trades that away to optimise
+<strong>read</strong> cost — fewer joins, faster reports, simpler queries. It is a
+deliberate, documented decision, not laziness.</p>
+<table>
+<thead>
+<tr>
+<th>Reason to denormalize</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Join-heavy read path is the bottleneck</td>
+<td>Store <code>order.total</code> instead of summing <code>line_item</code> each time</td>
+</tr>
+<tr>
+<td>Historical / audit value</td>
+<td>Keep <code>customer.name_at_purchase</code> frozen at the moment of sale</td>
+</tr>
+<tr>
+<td>Redundant fact is cheap and almost never changes</td>
+<td>Store <code>country</code> next to a normalised <code>region_id</code></td>
+</tr>
+<tr>
+<td>Analytics / reporting on a copy</td>
+<td>A warehouse or materialised view is a denormalised projection</td>
+</tr>
+</tbody>
+</table>
+<p>The discipline: identify the specific read you are optimising, store the
+redundant value, and own the <strong>write path</strong> that keeps it in sync (trigger,
+application code, or a rebuild job). The moment you denormalise, you
+re-introduce an update anomaly on purpose — so you must have a mechanism
+and a test that proves the copy stays consistent.</p>
+<hr>
+<h3 id="q-what-is-a-surrogate-key-vs-a-natural-key-and-which-do-you-use">🟢 Q. What is a surrogate key vs a natural key, and which do you use?</h3>
+<p><strong>Answer.</strong> A <strong>natural key</strong> is a real-world identifier (email, VIN,
+passport number); a <strong>surrogate key</strong> is an artificial, meaningless
+identifier (auto-increment int, UUID) whose only job is to be unique and
+stable. Surrogates are preferred for primary keys because natural keys
+change (someone updates their email), are often long (bad for index size
+and join speed), and can collide or be reused across contexts.</p>
+<p>The rule of thumb: use a <strong>surrogate</strong> primary key, keep the natural
+identifier as a <strong>unique, indexed</strong> column, and foreign keys reference the
+surrogate. This keeps joins cheap and insulates your schema from the day
+the business decides the "real" identifier was a bad choice.</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\databases\database-normalization.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../";</script>
+<script src="../../assets/search.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Go &middot; Interview Cracker</title>
+<meta name="description" content="Go interviews focus on the concurrency model (goroutines + channels), explicit error handling, and the small set of language rules that differ from C-family intuition (no inheritan...">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/languages/go.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Go &middot; Interview Cracker">
+<meta property="og:description" content="Go interviews focus on the concurrency model (goroutines + channels), explicit error handling, and the small set of language rules that differ from C-family intuition (no inheritan...">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/languages/go.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/languages/go.html" class="current" aria-current="page">Go</a></li>
+        
+          <li><a href="../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="go">Go</h1>
+<p>Go interviews focus on the concurrency model (goroutines + channels),
+explicit error handling, and the small set of language rules that differ
+from C-family intuition (no inheritance, no exceptions, <code>interface{}</code>
+everywhere). (Snippets below validated by inspection — no Go toolchain on
+the authoring machine.)</p>
+<hr>
+<h3 id="q-what-is-a-goroutine-and-how-is-it-different-from-a-thread">🟢 Q. What is a goroutine, and how is it different from a thread?</h3>
+<p><strong>Answer.</strong> A goroutine is a function executed concurrently by the Go
+<strong>runtime</strong>, not the OS. The runtime multiplexes thousands of them onto a
+small pool of OS threads (the GMP model: Goroutines, runnables on
+Machine threads, driven by Ps). A goroutine starts at ~2KB of stack that
+grows on demand, versus ~1-8MB fixed for an OS thread — so spawning them
+is cheap, and the idiom is one goroutine per connection/task rather than a
+thread pool you size by hand.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">worker</span><span class="p">(</span><span class="nx">id</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="nx">out</span><span class="w"> </span><span class="kd">chan</span><span class="o">&lt;-</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">out</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">id</span><span class="w">   </span><span class="c1">// blocks until the value is received</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">out</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">(</span><span class="kd">chan</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="c1">// buffered: workers never block</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">go</span><span class="w"> </span><span class="nx">worker</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">out</span><span class="p">)</span><span class="w">    </span><span class="c1">// start a goroutine</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">out</span><span class="p">)</span><span class="w">   </span><span class="c1">// 1, 4, 9 — in some order</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The key mental shift: concurrency is <strong>explicit dataflow</strong>. Goroutines
+communicate by sending/receiving on channels, and a send on an unbuffered
+channel <em>blocks</em> until the other side is ready — that blocking is the
+synchronisation, not a lock.</p>
+<hr>
+<h3 id="q-buffered-vs-unbuffered-channels-when-does-each-cause-a">🟡 Q. Buffered vs unbuffered channels — when does each cause a</h3>
+<p>goroutine to block?</p>
+<p><strong>Answer.</strong> An <strong>unbuffered</strong> channel is a direct handoff: send blocks
+until a receiver is waiting, and receive blocks until a sender is waiting.
+A <strong>buffered</strong> channel of size N absorbs up to N values without a waiting
+peer; send blocks only when the buffer is full, receive only when it is
+empty.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">ch</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">(</span><span class="kd">chan</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w">      </span><span class="c1">// unbuffered</span>
+<span class="nx">ch</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="mi">1</span><span class="w">                   </span><span class="c1">// BLOCKS forever here: no receiver yet</span>
+
+<span class="nx">bch</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">(</span><span class="kd">chan</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w">  </span><span class="c1">// buffered, capacity 2</span>
+<span class="nx">bch</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="mi">1</span><span class="w">                  </span><span class="c1">// fine: goes into the buffer</span>
+<span class="nx">bch</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="mi">2</span><span class="w">                  </span><span class="c1">// fine: buffer full now</span>
+<span class="c1">// bch &lt;- 3               // would BLOCK: buffer full, no receiver</span>
+</code></pre></div>
+<p>The classic deadlock is a send on an unbuffered channel (or a full buffer)
+with nobody receiving — the runtime kills the program when every goroutine
+is blocked. Rule of thumb: use unbuffered channels when you want strict
+handoff/synchronisation, buffered channels when you want to decouple
+producer and consumer rates or absorb bursts.</p>
+<hr>
+<h3 id="q-how-does-go-handle-errors-and-why-no-exceptions">🟡 Q. How does Go handle errors, and why no exceptions?</h3>
+<p><strong>Answer.</strong> Errors are <strong>values</strong>: fallible functions return an extra
+<code>error</code> (an interface), and the caller checks it explicitly, usually
+immediately. There are no exceptions, so there is no hidden control flow
+and no "this call might throw halfway through" reasoning — every failure
+point is visible at the call site.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">divide</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="kt">float64</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">float64</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Errorf</span><span class="p">(</span><span class="s">&quot;division by zero&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">r</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">divide</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span><span class="w">  </span><span class="c1">// handle the failure explicitly</span>
+<span class="w">        </span><span class="k">return</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span><span class="w"> </span><span class="c1">// 5</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The standard library's <code>errors.Is</code> / <code>errors.As</code> and the <code>%w</code> wrap verb let
+you <strong>wrap</strong> errors to add context while keeping the original checkable:
+<code>fmt.Errorf("reading config: %w", err)</code> means <code>errors.Is(wrapped,
+os.ErrNotExist)</code> still matches the underlying <code>os.ErrNotExist</code>. The trade-
+off to state: verbosity (the <code>if err != nil</code> dance) in exchange for
+explicitness — and the idiomatic fix for deep chains is to let <code>?</code>-style
+helpers or a single early return at each boundary do the work.</p>
+<hr>
+<h3 id="q-what-are-interfaces-in-go-and-why-is-ioreader-so-central">🟡 Q. What are interfaces in Go, and why is <code>io.Reader</code> so central?</h3>
+<p><strong>Answer.</strong> An interface is a set of method requirements, and a type
+satisfies it <strong>implicitly</strong> by implementing the methods — no <code>implements</code>
+keyword. This makes interfaces small and adopted at the point of use: a
+function takes <code>io.Reader</code> (a single <code>Read([]byte) (int, error)</code>) and can
+be handed a file, a network connection, a <code>bytes.Buffer</code>, or your own
+type, with no changes.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Anything with Read(p []byte) (int, error) is an io.Reader.</span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">MySource</span><span class="w"> </span><span class="kd">struct</span><span class="p">{</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">[]</span><span class="kt">byte</span><span class="p">;</span><span class="w"> </span><span class="nx">pos</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">m</span><span class="w"> </span><span class="o">*</span><span class="nx">MySource</span><span class="p">)</span><span class="w"> </span><span class="nx">Read</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="p">[]</span><span class="kt">byte</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">m</span><span class="p">.</span><span class="nx">pos</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nx">m</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nx">io</span><span class="p">.</span><span class="nx">EOF</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nx">n</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">copy</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="w"> </span><span class="nx">m</span><span class="p">.</span><span class="nx">data</span><span class="p">[</span><span class="nx">m</span><span class="p">.</span><span class="nx">pos</span><span class="p">:])</span>
+<span class="w">    </span><span class="nx">m</span><span class="p">.</span><span class="nx">pos</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">n</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">n</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span>
+<span class="p">}</span>
+
+<span class="c1">// Now this generic decoder works on files, HTTP bodies, AND MySource:</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">decode</span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="nx">io</span><span class="p">.</span><span class="nx">Reader</span><span class="p">)</span><span class="w"> </span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">io</span><span class="p">.</span><span class="nx">ReadAll</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p>The design principle: <strong>accept interfaces, return concrete types</strong>. Small
+interfaces (1-3 methods) keep things composable — <code>io.Reader</code>,
+<code>io.Writer</code>, <code>io.Closer</code> combine into <code>io.ReadWriter</code>, <code>io.ReadCloser</code>,
+etc. The flip side to mention: implicit satisfaction can make it hard to
+find what implements an interface, and empty <code>interface{}</code>/<code>any</code> erases
+type safety until you assert.</p>
+<hr>
+<h3 id="q-a-goroutine-leaks-in-your-service-what-does-that-mean-how-do">🔴 Q. A goroutine leaks in your service. What does that mean, how do</h3>
+<p>you find it, and how do you fix it?</p>
+<p><strong>Answer.</strong> A <strong>goroutine leak</strong> is a goroutine that can never finish —
+usually blocked forever on a channel send/receive, a lock, or a <code>select</code>
+with no ready case and no exit path. Each one holds its stack and any
+closures (and the data they reference), so a leak is a slow memory growth
+plus lost work, and it shows up as "goroutine count climbs linearly with
+requests" in a runtime profile.</p>
+<p>How you find it: the runtime traceback (<code>/debug/pprof/goroutine?debug=1</code>
+or <code>go tool pprof</code>) groups leaked goroutines by the stack they're blocked
+on — you'll see hundreds parked in <code>&lt;-ch</code> or <code>select</code>. The fixes, in order
+of idiom:</p>
+<ol>
+<li><strong>Context cancellation</strong> — thread a <code>context.Context</code> into long-running
+   goroutines and <code>select</code> on <code>ctx.Done()</code> so a cancelled request can
+   unblock its workers.</li>
+<li><strong>Ensure every channel send has a receiver</strong> (or a buffer that will be
+   drained) — the usual leak is <code>resultCh &lt;- x</code> where the caller already
+   gave up and never receives.</li>
+<li><strong>Prefer <code>select</code> with an exit case</strong> over a bare <code>&lt;-ch</code>, and close
+   channels from a single owner so receivers can detect shutdown via the
+   zero value.</li>
+</ol>
+<p>The answer they're looking for is the mental model: a goroutine is only as
+dead as its last blocking operation, so "leak" almost always means "someone
+stopped receiving (or stopped cancelling) and this goroutine is waiting on
+it forever."</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\languages\go.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../";</script>
+<script src="../../assets/search.js" defer></script>
+</body>
+</html>

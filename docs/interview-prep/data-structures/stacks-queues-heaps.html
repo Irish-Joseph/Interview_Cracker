@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stacks, Queues and Heaps &middot; Interview Cracker</title>
+<meta name="description" content="Three small structures that unlock a surprising number of problems once you learn to recognise their signals.">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/data-structures/stacks-queues-heaps.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stacks, Queues and Heaps &middot; Interview Cracker">
+<meta property="og:description" content="Three small structures that unlock a surprising number of problems once you learn to recognise their signals.">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/data-structures/stacks-queues-heaps.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/stacks-queues-heaps.html" class="current" aria-current="page">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="stacks-queues-and-heaps">Stacks, Queues and Heaps</h1>
+<p>Three small structures that unlock a surprising number of problems once you learn
+to recognise their signals.</p>
+<hr>
+<h3 id="q-stack-vs-queue">🟢 Q. Stack vs queue?</h3>
+<p><strong>Answer.</strong> Both restrict where you may add and remove; they differ in which end.</p>
+<ul>
+<li><strong>Stack</strong> — LIFO, last in first out. <code>push</code>/<code>pop</code> at the same end.</li>
+<li><strong>Queue</strong> — FIFO, first in first out. Add at the back, remove from the front.</li>
+</ul>
+<p>All four operations are O(1) in a good implementation.</p>
+<p>Where each shows up:</p>
+<table>
+<thead>
+<tr>
+<th>Stack</th>
+<th>Queue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Function call stack</td>
+<td>BFS / level-order traversal</td>
+</tr>
+<tr>
+<td>Undo history</td>
+<td>Task and message queues</td>
+</tr>
+<tr>
+<td>Bracket matching</td>
+<td>Print spoolers, request buffers</td>
+</tr>
+<tr>
+<td>DFS (explicit or via recursion)</td>
+<td>Rate limiting, buffering</td>
+</tr>
+<tr>
+<td>Expression evaluation</td>
+<td>Producer–consumer pipelines</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The rule of thumb:</strong> DFS uses a stack, BFS uses a queue. That one fact decides
+a lot of problems.</p>
+<hr>
+<h3 id="q-how-do-you-implement-a-queue-efficiently">🟢 Q. How do you implement a queue efficiently?</h3>
+<p><strong>Answer.</strong> Not with a plain array and <code>pop(0)</code> — that shifts every element, so
+it is O(n) per dequeue and O(n²) overall.</p>
+<p>Three correct options:</p>
+<ul>
+<li><strong>Doubly linked list</strong> — O(1) at both ends, but a pointer per node and poor
+  cache behaviour.</li>
+<li><strong>Circular buffer</strong> — a fixed array with <code>head</code> and <code>tail</code> indices that wrap via
+  modulo. O(1), contiguous, no allocation. Best when capacity is bounded. Worked
+  example: <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/c/data-structures/circular_queue.c"><code>examples/c/data-structures/circular_queue.c</code></a>.</li>
+<li><strong>Deque from the standard library</strong> — <code>collections.deque</code>, <code>ArrayDeque</code>,
+  <code>std::deque</code>. Usually a list of fixed-size blocks: O(1) at both ends with
+  decent locality. <strong>Use this in an interview unless asked to implement one.</strong></li>
+</ul>
+<p>The classic puzzle — <em>implement a queue with two stacks</em> — is worth knowing: push
+onto <code>in</code>; to pop, if <code>out</code> is empty pour all of <code>in</code> into it (reversing order)
+then pop from <code>out</code>. Each element moves at most twice, so it is <strong>O(1)
+amortised</strong>.</p>
+<hr>
+<h3 id="q-what-is-a-monotonic-stack-and-what-does-it-solve">🟡 Q. What is a monotonic stack and what does it solve?</h3>
+<p><strong>Answer.</strong> A stack kept in sorted order — you pop elements that break the order
+before pushing. It answers "for each element, what is the next element greater
+(or smaller) than it?" in <strong>O(n)</strong> instead of O(n²).</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">next_greater</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+    <span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>                       <span class="c1"># holds indices, values decreasing</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+        <span class="k">while</span> <span class="n">stack</span> <span class="ow">and</span> <span class="n">nums</span><span class="p">[</span><span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">result</span><span class="p">[</span><span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()]</span> <span class="o">=</span> <span class="n">n</span>  <span class="c1"># n is the answer for that index</span>
+        <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># [2, 1, 3] -&gt; [3, 3, -1]</span>
+</code></pre></div>
+<p>Each index is pushed once and popped once, so despite the inner <code>while</code> the total
+work is O(n).</p>
+<p><strong>The tell:</strong> "next greater / previous smaller element", "largest rectangle in a
+histogram", "daily temperatures", "trapping rain water". If a problem asks you to
+relate each element to the nearest element satisfying a comparison, try a
+monotonic stack.</p>
+<hr>
+<h3 id="q-what-is-a-heap-and-what-is-it-good-at">🟢 Q. What is a heap, and what is it good at?</h3>
+<p><strong>Answer.</strong> A complete binary tree satisfying the heap property: in a min-heap,
+every parent is ≤ its children (so the minimum sits at the root).</p>
+<p>It is stored in a <strong>flat array</strong>, not with pointers — for index <code>i</code>, children are
+at <code>2i+1</code> and <code>2i+2</code>, parent at <code>(i-1)//2</code>. That is why heaps are fast: no
+allocation, excellent cache locality.</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Peek min/max</td>
+<td><strong>O(1)</strong></td>
+</tr>
+<tr>
+<td>Insert</td>
+<td>O(log n) — sift up</td>
+</tr>
+<tr>
+<td>Extract min/max</td>
+<td>O(log n) — sift down</td>
+</tr>
+<tr>
+<td>Build from n items</td>
+<td><strong>O(n)</strong>, not O(n log n)</td>
+</tr>
+<tr>
+<td>Search for arbitrary value</td>
+<td>O(n) — no ordering between siblings</td>
+</tr>
+</tbody>
+</table>
+<p>Two points interviewers probe:</p>
+<ul>
+<li><strong>Building a heap is O(n).</strong> Sifting down from the middle backwards costs less
+  at each level because most nodes are near the bottom and barely move.</li>
+<li><strong>A heap is only partially ordered.</strong> Finding an arbitrary element is O(n), and
+  there is no efficient sorted iteration. It is not a substitute for a BST.</li>
+</ul>
+<hr>
+<h3 id="q-how-do-you-find-the-k-largest-elements-in-a-stream-of-n-items">🟡 Q. How do you find the k largest elements in a stream of n items?</h3>
+<p><strong>Answer.</strong> A <strong>min-heap of size k</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">heapq</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">k_largest</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">heap</span> <span class="o">=</span> <span class="p">[]</span>                              <span class="c1"># min-heap of the best k so far</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">stream</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">:</span>
+            <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">heap</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">item</span> <span class="o">&gt;</span> <span class="n">heap</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>               <span class="c1"># bigger than the smallest kept</span>
+            <span class="n">heapq</span><span class="o">.</span><span class="n">heapreplace</span><span class="p">(</span><span class="n">heap</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">heap</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>O(n log k) time, O(k) space.</strong></p>
+<p>The counter-intuitive part, and the point of the question: to track the k
+<em>largest</em> you use a <strong>min</strong>-heap. The root is the weakest of your current
+champions, so it is both the cheapest to check against and the right one to
+evict.</p>
+<p>Why not sort? Sorting is O(n log n) time and <strong>O(n) space</strong> — impossible if the
+stream does not fit in memory. When k is small and n is huge, O(n log k) with
+O(k) space is the meaningful win.</p>
+<hr>
+<h3 id="q-what-is-a-priority-queue-and-how-does-it-differ-from-a-heap">🟡 Q. What is a priority queue and how does it differ from a heap?</h3>
+<p><strong>Answer.</strong> A <strong>priority queue</strong> is an abstract data type: "give me the
+highest-priority item next". A <strong>heap</strong> is the usual concrete implementation.</p>
+<p>The distinction matters because other implementations exist with different
+trade-offs — a sorted array gives O(1) extraction but O(n) insertion; a Fibonacci
+heap gives O(1) amortised insert and decrease-key, which is what makes the
+textbook Dijkstra bound O(E + V log V).</p>
+<p>In interviews, "priority queue" almost always means "binary heap". It is the
+engine inside Dijkstra's algorithm, A*, Huffman coding, and event-driven
+simulation.</p>
+<hr>
+<h3 id="q-how-do-you-check-for-balanced-brackets">🟡 Q. How do you check for balanced brackets?</h3>
+<p><strong>Answer.</strong> The canonical stack problem. Push opening brackets; on a closing
+bracket, the top of the stack must be its partner.</p>
+<div class="highlight"><pre><span></span><code><span class="n">PAIRS</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;)&quot;</span><span class="p">:</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="s2">&quot;]&quot;</span><span class="p">:</span> <span class="s2">&quot;[&quot;</span><span class="p">,</span> <span class="s2">&quot;}&quot;</span><span class="p">:</span> <span class="s2">&quot;{&quot;</span><span class="p">}</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">is_balanced</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">ch</span> <span class="ow">in</span> <span class="s2">&quot;([{&quot;</span><span class="p">:</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">PAIRS</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">stack</span> <span class="ow">or</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span> <span class="o">!=</span> <span class="n">PAIRS</span><span class="p">[</span><span class="n">ch</span><span class="p">]:</span>
+                <span class="k">return</span> <span class="kc">False</span>           <span class="c1"># wrong partner, or nothing open</span>
+    <span class="k">return</span> <span class="ow">not</span> <span class="n">stack</span>                   <span class="c1"># anything left open is unbalanced</span>
+</code></pre></div>
+<p><strong>O(n) time, O(n) space.</strong> The two edge cases that separate a correct answer from
+a nearly-correct one: a closing bracket when the stack is <strong>empty</strong>, and leftover
+openers at the <strong>end</strong>. Candidates routinely forget the second and return <code>True</code>
+for <code>"((("</code>.</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\data-structures\stacks-queues-heaps.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../";</script>
+<script src="../../assets/search.js" defer></script>
+</body>
+</html>

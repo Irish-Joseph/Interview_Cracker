@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hash Tables &middot; Interview Cracker</title>
+<meta name="description" content="The most useful data structure in interviews. A very large fraction of "optimise this O(n²) solution" problems are solved by adding a hash table.">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/data-structures/hash-tables.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hash Tables &middot; Interview Cracker">
+<meta property="og:description" content="The most useful data structure in interviews. A very large fraction of "optimise this O(n²) solution" problems are solved by adding a hash table.">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/data-structures/hash-tables.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/hash-tables.html" class="current" aria-current="page">Hash Tables</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="hash-tables">Hash Tables</h1>
+<p>The most useful data structure in interviews. A very large fraction of "optimise
+this O(n²) solution" problems are solved by adding a hash table.</p>
+<hr>
+<h3 id="q-how-does-a-hash-table-work">🟢 Q. How does a hash table work?</h3>
+<p><strong>Answer.</strong> It stores key–value pairs in an array, and uses a hash function to
+compute which slot a key belongs in.</p>
+<ol>
+<li><code>hash(key)</code> produces an integer.</li>
+<li>That integer is reduced to an index, usually <code>hash % capacity</code>.</li>
+<li>The pair is stored at that index.</li>
+</ol>
+<p>Lookup repeats the same computation, so it goes straight to the slot instead of
+scanning — O(1) average instead of O(n).</p>
+<p>The whole structure rests on one assumption: that the hash function spreads keys
+roughly evenly. Everything that goes wrong with hash tables is that assumption
+failing.</p>
+<hr>
+<h3 id="q-what-is-a-collision-and-how-are-collisions-resolved">🟢 Q. What is a collision, and how are collisions resolved?</h3>
+<p><strong>Answer.</strong> A collision is two different keys mapping to the same slot. They are
+unavoidable — there are more possible keys than slots (the pigeonhole principle).</p>
+<p>Two families of solution:</p>
+<p><strong>Separate chaining.</strong> Each slot holds a list of entries. On collision, append.
+Lookup scans that one short list. Simple, degrades gracefully, but costs a
+pointer per entry and scatters memory. Used by Java's <code>HashMap</code> (which upgrades a
+long chain to a balanced tree) and most C++ <code>unordered_map</code> implementations.</p>
+<p><strong>Open addressing.</strong> Everything lives in the array itself. On collision, probe
+for another free slot — linearly, quadratically, or via a second hash. Better
+cache behaviour, no per-entry allocation, but deletion is awkward (you must leave
+a tombstone, or later probes stop too early) and it degrades badly when full.
+Used by Python's <code>dict</code> and Go's maps.</p>
+<hr>
+<h3 id="q-hash-table-lookup-is-o1-when-is-it-not">🟡 Q. Hash table lookup is "O(1)". When is it not?</h3>
+<p><strong>Answer.</strong> O(1) is the <em>average</em> case. The worst case is <strong>O(n)</strong>, when every
+key hashes to the same slot and the table degenerates into a linked list.</p>
+<p>This matters in practice in two ways:</p>
+<ul>
+<li><strong>Bad hash functions.</strong> If you write <code>hashCode()</code> as <code>return 1</code>, every lookup
+  becomes a linear scan. Correct but catastrophic.</li>
+<li><strong>Hash-flooding attacks.</strong> If an attacker can choose your keys and knows your
+  hash function, they can deliberately force collisions and turn an O(1) endpoint
+  into an O(n²) one. The defence is a randomly seeded hash per process — which is
+  why Python's string hashes differ between runs unless you set <code>PYTHONHASHSEED</code>.</li>
+</ul>
+<p>Java 8+ mitigates it differently: a bucket whose chain exceeds 8 entries converts
+to a red–black tree, capping the worst case at O(log n).</p>
+<hr>
+<h3 id="q-what-is-the-load-factor-and-why-does-it-trigger-a-resize">🟡 Q. What is the load factor and why does it trigger a resize?</h3>
+<p><strong>Answer.</strong> Load factor = entries ÷ capacity. It measures how full the table is.</p>
+<p>As it rises, collisions rise, and average probe length rises with it. Past
+roughly 0.7 the performance falls off sharply, so implementations resize — double
+the capacity and <strong>rehash every entry</strong>, because the index depends on capacity.</p>
+<p>That rehash is O(n), which makes a single insert occasionally O(n) — but
+amortised O(1) across all inserts, for exactly the same geometric-growth reason a
+dynamic array append is.</p>
+<p>Practical consequence: if you know you will insert a million entries, pre-size
+the map. You avoid about 20 rehashes.</p>
+<hr>
+<h3 id="q-what-makes-a-good-hash-function">🟡 Q. What makes a good hash function?</h3>
+<p><strong>Answer.</strong> Three properties:</p>
+<ol>
+<li><strong>Deterministic</strong> — the same key always hashes to the same value. Within one
+   process run, at minimum.</li>
+<li><strong>Uniform</strong> — outputs spread evenly across the range, so no slot is favoured.</li>
+<li><strong>Fast</strong> — it runs on every single operation.</li>
+</ol>
+<p>Note that cryptographic strength is <em>not</em> required and usually not wanted; SHA-256
+is uniform but far too slow for a hash table.</p>
+<hr>
+<h3 id="q-what-is-the-contract-between-equals-and-hashcode">🔴 Q. What is the contract between equals and hashCode?</h3>
+<p><strong>Answer.</strong> <strong>If two objects are equal, they must have the same hash code.</strong> The
+converse is not required — unequal objects may share a hash code, that is just a
+collision.</p>
+<p>Break it and hash tables break silently:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Set</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">set</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">));</span>
+<span class="n">set</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">));</span><span class="w">   </span><span class="c1">// false, if hashCode() was not overridden</span>
+</code></pre></div>
+<p>The lookup hashes to a different slot and never finds the entry, even though
+<code>equals</code> would have said yes.</p>
+<p>The other half of the contract: <strong>a key's hash must not change while it is in the
+table.</strong> Mutating a field that feeds <code>hashCode</code> strands the entry in the wrong
+slot — it is in the table but unreachable, and it will not even be removed by
+<code>remove()</code>. This is why immutable keys are strongly preferred, and why Python
+simply refuses to hash a <code>list</code>.</p>
+<hr>
+<h3 id="q-when-would-you-not-use-a-hash-table">🟡 Q. When would you <em>not</em> use a hash table?</h3>
+<p><strong>Answer.</strong> Four cases:</p>
+<ul>
+<li><strong>You need ordering.</strong> Hash tables have none. Use a balanced BST (<code>TreeMap</code>,
+  <code>std::map</code>) for sorted iteration or range queries like "all keys between X and Y".</li>
+<li><strong>You need the worst case bounded.</strong> Real-time systems cannot accept an
+  occasional O(n) rehash pause; a balanced tree's guaranteed O(log n) is better.</li>
+<li><strong>The dataset is tiny.</strong> For five entries, a linear scan of an array is faster
+  and uses less memory — no hashing, perfect cache locality.</li>
+<li><strong>Keys are not hashable.</strong> Mutable or unorderable keys.</li>
+</ul>
+<hr>
+<h3 id="q-what-is-the-difference-between-a-hashmap-a-hashset-and-a-hashtable">🟡 Q. What is the difference between a HashMap, a HashSet and a HashTable?</h3>
+<p><strong>Answer.</strong></p>
+<ul>
+<li><strong>Map</strong> — key → value. The core structure.</li>
+<li><strong>Set</strong> — keys only. Almost always implemented as a map with a dummy value.</li>
+<li><strong>Hashtable</strong> (the legacy Java class, capital-T) — a synchronised, slower
+  predecessor of <code>HashMap</code> that also forbids null keys and values. Do not use it;
+  if you need thread safety, use <code>ConcurrentHashMap</code>, which locks per-bucket
+  rather than locking the whole table.</li>
+</ul>
+<hr>
+<h3 id="q-how-do-you-use-a-hash-table-to-turn-on2-into-on">🟡 Q. How do you use a hash table to turn O(n²) into O(n)?</h3>
+<p><strong>Answer.</strong> The pattern: <strong>replace an inner search loop with a lookup</strong>, trading
+memory for time.</p>
+<p>Two Sum is the canonical example. The brute force checks every pair:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>              <span class="c1"># O(n²)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+</code></pre></div>
+<p>The hash table version asks, for each number, "have I already seen the value that
+completes this pair?" — a lookup instead of a scan:</p>
+<div class="highlight"><pre><span></span><code><span class="n">seen</span> <span class="o">=</span> <span class="p">{}</span>                               <span class="c1"># value -&gt; index</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>            <span class="c1"># O(n) time, O(n) space</span>
+    <span class="k">if</span> <span class="n">target</span> <span class="o">-</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">seen</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">seen</span><span class="p">[</span><span class="n">target</span> <span class="o">-</span> <span class="n">n</span><span class="p">],</span> <span class="n">i</span><span class="p">]</span>
+    <span class="n">seen</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+</code></pre></div>
+<p>Recognising this — <em>"I am searching inside a loop, so I should index instead"</em> —
+is worth more than memorising any individual solution. Worked examples are in
+<a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../coding-challenges/hashing"><code>coding-challenges/hashing/</code></a>.</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\data-structures\hash-tables.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../";</script>
+<script src="../../assets/search.js" defer></script>
+</body>
+</html>

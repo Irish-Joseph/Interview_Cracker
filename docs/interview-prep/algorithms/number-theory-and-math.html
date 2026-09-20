@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Number Theory & Math &middot; Interview Cracker</title>
+<meta name="description" content="The math questions that actually come up: GCD, modular arithmetic, primality, and a handful of bit tricks. None of them require advanced theory — they require knowing which tool fi...">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/algorithms/number-theory-and-math.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Number Theory & Math &middot; Interview Cracker">
+<meta property="og:description" content="The math questions that actually come up: GCD, modular arithmetic, primality, and a handful of bit tricks. None of them require advanced theory — they require knowing which tool fi...">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/algorithms/number-theory-and-math.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/number-theory-and-math.html" class="current" aria-current="page">Number Theory & Math</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="number-theory-math">Number Theory &amp; Math</h1>
+<p>The math questions that actually come up: GCD, modular arithmetic, primality,
+and a handful of bit tricks. None of them require advanced theory — they
+require knowing which tool fits which shape of problem.</p>
+<hr>
+<h3 id="q-how-does-the-euclidean-algorithm-compute-a-gcd-and-why-is-it-fast">🟢 Q. How does the Euclidean algorithm compute a GCD, and why is it fast?</h3>
+<p><strong>Answer.</strong> <code>gcd(a, b) == gcd(b, a % b)</code>, repeated until the remainder is 0.
+Each step shrinks the pair, and the remainder at least halves every two
+steps, so it runs in O(log(min(a, b))) — which is why it is the workhorse
+behind fraction reduction, CRT, and RSA.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">while</span> <span class="n">b</span><span class="p">:</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">a</span>
+
+<span class="k">assert</span> <span class="n">gcd</span><span class="p">(</span><span class="mi">1071</span><span class="p">,</span> <span class="mi">462</span><span class="p">)</span> <span class="o">==</span> <span class="mi">21</span>
+<span class="k">assert</span> <span class="n">gcd</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>          <span class="c1"># gcd(0, x) == x by convention</span>
+<span class="k">assert</span> <span class="n">gcd</span><span class="p">(</span><span class="mi">270</span><span class="p">,</span> <span class="mi">192</span><span class="p">)</span> <span class="o">==</span> <span class="mi">6</span>
+</code></pre></div>
+<p>The extended version also returns <code>x, y</code> with <code>a*x + b*y == gcd(a, b)</code> —
+that identity is what makes modular inverses possible at all.</p>
+<hr>
+<h3 id="q-when-do-you-need-modular-arithmetic-and-how-do-you-divide-mod-p">🟡 Q. When do you need modular arithmetic, and how do you divide "mod p"?</h3>
+<p><strong>Answer.</strong> Modulo keeps numbers bounded — hashing, cyclic buffers, "is it
+a power of two" checks, and big-prime arithmetic in cryptography. The trap
+is division: <code>a / b mod p</code> is NOT <code>(a mod p) / (b mod p)</code>. You multiply by
+the <strong>modular inverse</strong> of <code>b</code> instead, which exists only when
+<code>gcd(b, p) == 1</code> (always true when <code>p</code> is prime and <code>b</code> is not a multiple
+of it).</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># &quot;1000 * 7^(mod -1) mod 13&quot; — i.e. 1000/7 mod 13, done by multiplying</span>
+<span class="c1"># 1000 by the modular inverse of 7.</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="k">assert</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>        <span class="c1"># 7 * 2 = 14 = 1 (mod 13)</span>
+<span class="n">answer</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1000</span> <span class="o">%</span> <span class="n">p</span><span class="p">)</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="o">%</span> <span class="n">p</span>
+<span class="k">assert</span> <span class="n">answer</span> <span class="o">==</span> <span class="mi">11</span>              <span class="c1"># 1000 * 2 = 2000 = 11 (mod 13)</span>
+</code></pre></div>
+<p>When <code>p</code> is prime you can also get the inverse from Fermat's little
+theorem: <code>b^(p-2) mod p</code>. Python's <code>pow(base, exp, mod)</code> does fast
+modular exponentiation, so this is cheap.</p>
+<hr>
+<h3 id="q-trial-division-vs-a-sieve-how-do-you-test-or-generate-primes">🟡 Q. Trial division vs a sieve — how do you test or generate primes?</h3>
+<p><strong>Answer.</strong> To test ONE number, trial-divide up to its square root (skip
+evens after 2): O(√n). To generate ALL primes up to n, use the Sieve of
+Eratosthenes: mark multiples of each prime starting at its square, because
+smaller multiples were already crossed off. The sieve is roughly
+O(n log log n) and beats testing each number individually by a wide margin
+once n is large.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="k">while</span> <span class="n">f</span> <span class="o">*</span> <span class="n">f</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>      <span class="c1"># only need to test up to sqrt(n)</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">f</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">f</span> <span class="o">+=</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+<span class="k">assert</span> <span class="n">is_prime</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="n">is_prime</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="ow">and</span> <span class="n">is_prime</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">is_prime</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_prime</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_prime</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">prime</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">prime</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00\x00</span><span class="s2">&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">prime</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">prime</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="p">::</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">prime</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="p">::</span> <span class="n">i</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">prime</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+
+<span class="k">assert</span> <span class="n">sieve</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">29</span><span class="p">]</span>
+</code></pre></div>
+<p>Starting each marking pass at <code>i*i</code> (not <code>2*i</code>) is the detail interviewers
+probe for: everything below <code>i*i</code> that is a multiple of <code>i</code> already has a
+smaller prime factor and was crossed off earlier.</p>
+<hr>
+<h3 id="q-what-are-the-bit-tricks-you-should-be-able-to-write-without-looking-up">🟡 Q. What are the bit tricks you should be able to write without looking up?</h3>
+<p><strong>Answer.</strong> With <code>n</code> a non-negative int: <code>n &amp; 1</code> tests parity; <code>n &amp; (n-1)</code>
+clears the lowest set bit (and is 0 exactly when <code>n</code> is a power of two);
+<code>n | (n-1)</code> rounds up to the next all-ones mask; <code>n ^ (n-1)</code> isolates the
+run of low bits. For the count of set bits, either loop-and-clear or
+<code>bin(n).count("1")</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">assert</span> <span class="nb">bin</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="k">assert</span> <span class="p">(</span><span class="mi">16</span> <span class="o">&amp;</span> <span class="mi">15</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">12</span> <span class="o">&amp;</span> <span class="mi">11</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span>   <span class="c1"># 10000-&gt;0, 1100-&gt;1000</span>
+<span class="k">assert</span> <span class="p">(</span><span class="mi">5</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">5</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">==</span> <span class="mi">4</span>                  <span class="c1"># clear lowest set bit: 101 -&gt; 100</span>
+<span class="k">assert</span> <span class="p">(</span><span class="mi">7</span> <span class="o">|</span> <span class="p">(</span><span class="mi">7</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">==</span> <span class="mi">7</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">6</span> <span class="o">|</span> <span class="mi">5</span><span class="p">)</span> <span class="o">==</span> <span class="mi">7</span> <span class="c1"># round up to next all-ones</span>
+<span class="k">assert</span> <span class="p">((</span><span class="n">n</span> <span class="o">:=</span> <span class="mi">8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span>            <span class="c1"># power of two -&gt; 0</span>
+</code></pre></div>
+<p>The power-of-two test generalises to "is this a valid bitmask / block
+size?" checks all over systems code. The XOR identity <code>a ^ a == 0</code> and
+<code>a ^ 0 == a</code> is also how you find the single unpaired element in one pass.</p>
+<hr>
+<h3 id="q-you-need-ab-as-a-fraction-reduced-to-lowest-terms-and-a-and-b">🔴 Q. You need a/b as a fraction reduced to lowest terms, and a and b</h3>
+<p>are up to 10^18. What do you do, and what are the overflow traps?</p>
+<p><strong>Answer.</strong> Compute <code>g = gcd(a, b)</code> and return <code>(a//g, b//g)</code>. The Euclidean
+algorithm is safe at that size in Python (arbitrary precision), but in
+fixed-width languages the trap is not the GCD — it is anywhere you
+<strong>multiply</strong> before dividing. If a problem needs <code>a * b / c</code> and you do
+the multiplication first, you can overflow even when the final quotient
+fits. Reduce by <code>gcd</code> factors <em>before</em> multiplying, or use a
+bignum / <code>__int128</code> / <code>Math.multiplyHigh</code> equivalent.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">gcd</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">reduce</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">//</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span> <span class="o">//</span> <span class="n">g</span>
+
+<span class="k">assert</span> <span class="n">reduce</span><span class="p">(</span><span class="mi">462</span><span class="p">,</span> <span class="mi">1071</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">22</span><span class="p">,</span> <span class="mi">51</span><span class="p">)</span>   <span class="c1"># gcd is 21</span>
+<span class="k">assert</span> <span class="n">reduce</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">reduce</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">18</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">18</span> <span class="o">-</span> <span class="mi">10</span><span class="o">**</span><span class="mi">9</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">9</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<p>The follow-up they will ask: the same for <em>adding</em> fractions
+<code>a/b + c/d = (a*d + c*b) / (b*d)</code> — the numerator and denominator can be
+quadratically larger than the inputs, so cross-reduce with
+<code>gcd(a, d)</code> and <code>gcd(c, b)</code> before the big multiply.</p>
+<hr>
+<h3 id="q-when-is-a-number-a-power-of-two-and-how-do-you-find-that-power">🟢 Q. When is a number a power of two, and how do you find that power?</h3>
+<p><strong>Answer.</strong> A positive integer is a power of two exactly when it has a
+single set bit: <code>n &gt; 0 and (n &amp; (n - 1)) == 0</code>. To find the exponent use
+the bit length minus one (<code>n.bit_length() - 1</code>), which is O(1) in Python.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_power_of_two</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span>
+
+<span class="k">assert</span> <span class="n">is_power_of_two</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">is_power_of_two</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">is_power_of_two</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_power_of_two</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="p">(</span><span class="mi">64</span><span class="p">)</span><span class="o">.</span><span class="n">bit_length</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">6</span>     <span class="c1"># 64 == 2**6</span>
+</code></pre></div>
+<p>Why it works: a power of two looks like <code>1000…0</code>; subtracting 1 gives
+<code>0111…1</code>, so the AND is 0. Any number with two or more set bits keeps at
+least one bit in common with <code>n-1</code>. The <code>n &gt; 0</code> guard matters — 0 is <code>1000
+&amp; 0111</code>-free but is not a power of two.</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\algorithms\number-theory-and-math.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../";</script>
+<script src="../../assets/search.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SQL Query Questions &middot; Interview Cracker</title>
+<meta name="description" content="SQL rounds are mostly the same eight ideas. Know joins, grouping, window functions and how NULL behaves, and you will handle almost anything asked.">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/databases/sql-query-questions.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL Query Questions &middot; Interview Cracker">
+<meta property="og:description" content="SQL rounds are mostly the same eight ideas. Know joins, grouping, window functions and how NULL behaves, and you will handle almost anything asked.">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/databases/sql-query-questions.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../interview-prep/databases/sql-query-questions.html" class="current" aria-current="page">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="sql-query-questions">SQL Query Questions</h1>
+<p>SQL rounds are mostly the same eight ideas. Know joins, grouping, window
+functions and how NULL behaves, and you will handle almost anything asked.</p>
+<hr>
+<h3 id="q-explain-the-join-types">🟢 Q. Explain the join types.</h3>
+<p><strong>Answer.</strong> A join matches rows from two tables on a condition; the type decides
+what happens to rows that find no match.</p>
+<table>
+<thead>
+<tr>
+<th>Join</th>
+<th>Keeps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>INNER</code></td>
+<td>Only rows matching in both</td>
+</tr>
+<tr>
+<td><code>LEFT</code></td>
+<td>All left rows; NULLs where the right has no match</td>
+</tr>
+<tr>
+<td><code>RIGHT</code></td>
+<td>All right rows; NULLs where the left has no match</td>
+</tr>
+<tr>
+<td><code>FULL OUTER</code></td>
+<td>All rows from both sides</td>
+</tr>
+<tr>
+<td><code>CROSS</code></td>
+<td>Every combination (Cartesian product)</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>anti-join</strong> is the pattern worth having ready — "rows on the left with no
+match on the right":</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">c</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">customer_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span><span class="w">      </span><span class="c1">-- the join produced no match</span>
+</code></pre></div>
+<p>Worked examples: <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/sql/joins/inner_left_right_and_anti_joins.sql"><code>examples/sql/joins/inner_left_right_and_anti_joins.sql</code></a>.</p>
+<hr>
+<h3 id="q-what-is-the-difference-between-where-and-having">🟡 Q. What is the difference between WHERE and HAVING?</h3>
+<p><strong>Answer.</strong> <code>WHERE</code> filters <strong>rows before</strong> grouping. <code>HAVING</code> filters <strong>groups
+after</strong> aggregation.</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">department</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">headcount</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">active</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">TRUE</span><span class="w">          </span><span class="c1">-- drop inactive people first</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">department</span>
+<span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">         </span><span class="c1">-- then drop small departments</span>
+</code></pre></div>
+<p>You cannot put <code>COUNT(*) &gt; 5</code> in <code>WHERE</code>, because at that point the groups do not
+exist yet. The logical order of evaluation explains every question of this shape:</p>
+<div class="highlight"><pre><span></span><code>FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT
+</code></pre></div>
+<p><code>SELECT</code> running so late is also why you generally cannot reference a column
+alias in <code>WHERE</code>, but usually can in <code>ORDER BY</code>.</p>
+<hr>
+<h3 id="q-what-is-the-trap-with-null">🟡 Q. What is the trap with NULL?</h3>
+<p><strong>Answer.</strong> NULL means <em>unknown</em>, not <em>empty</em>, and comparisons with unknown are
+themselves unknown — not false.</p>
+<ul>
+<li><code>NULL = NULL</code> is <strong>NULL</strong>, not true. Use <code>IS NULL</code>.</li>
+<li><code>WHERE status != 'shipped'</code> <strong>excludes rows where status is NULL</strong>, which
+  surprises almost everyone. Write <code>WHERE status IS DISTINCT FROM 'shipped'</code> or
+  add <code>OR status IS NULL</code>.</li>
+<li>Aggregates skip NULLs: <code>COUNT(col)</code> ignores them, <code>COUNT(*)</code> does not. <code>AVG</code>
+  divides by the non-NULL count.</li>
+</ul>
+<p>The worst one, and a genuine favourite in interviews:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">manager_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">departments</span><span class="p">);</span>
+</code></pre></div>
+<p>If any <code>manager_id</code> is NULL, this returns <strong>zero rows</strong>, always. <code>x NOT IN (1,
+NULL)</code> evaluates to <code>NOT (x=1 OR x=NULL)</code> = <code>NOT (false OR unknown)</code> = unknown.
+Use <code>NOT EXISTS</code>, which handles NULL correctly. See
+<a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/sql/subqueries/exists_in_and_correlated.sql"><code>examples/sql/subqueries/exists_in_and_correlated.sql</code></a>.</p>
+<hr>
+<h3 id="q-find-the-second-highest-salary">🟡 Q. Find the second-highest salary.</h3>
+<p><strong>Answer.</strong> Several ways; the interviewer usually wants to see you handle ties
+and the "no such row" case.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Ranking approach: DENSE_RANK treats tied salaries as one rank.</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">salary</span><span class="p">,</span><span class="w"> </span><span class="n">DENSE_RANK</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">DESC</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">rnk</span>
+<span class="w">      </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">)</span><span class="w"> </span><span class="n">ranked</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">rnk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Without window functions:</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">);</span>
+</code></pre></div>
+<p>The second form returns <code>NULL</code> rather than no rows when everyone earns the same —
+worth saying out loud, because "what if there is no second-highest?" is the
+follow-up.</p>
+<hr>
+<h3 id="q-explain-rank-dense_rank-and-row_number">🟡 Q. Explain RANK, DENSE_RANK and ROW_NUMBER.</h3>
+<p><strong>Answer.</strong> All three number rows within a window; they differ on ties.</p>
+<p>For salaries 100, 90, 90, 80:</p>
+<table>
+<thead>
+<tr>
+<th>Salary</th>
+<th>ROW_NUMBER</th>
+<th>RANK</th>
+<th>DENSE_RANK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>90</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>90</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>80</td>
+<td>4</td>
+<td><strong>4</strong></td>
+<td><strong>3</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>ROW_NUMBER</code> — always distinct, ties broken arbitrarily.</li>
+<li><code>RANK</code> — ties share a rank, then it <strong>skips</strong>.</li>
+<li><code>DENSE_RANK</code> — ties share a rank, no gaps.</li>
+</ul>
+<p>Use <code>ROW_NUMBER</code> for deduplication (keep the first row per group), <code>DENSE_RANK</code>
+for "top 3 salary levels". Worked example:
+<a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/sql/window-functions/rank_vs_dense_rank_vs_row_number.sql"><code>examples/sql/window-functions/rank_vs_dense_rank_vs_row_number.sql</code></a>.</p>
+<hr>
+<h3 id="q-how-do-you-remove-duplicate-rows-keeping-the-newest-per-group">🟡 Q. How do you remove duplicate rows, keeping the newest per group?</h3>
+<p><strong>Answer.</strong> Number rows within each group, then keep number 1.</p>
+<div class="highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="n">ranked</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">updated_at</span><span class="p">,</span>
+<span class="w">           </span><span class="n">ROW_NUMBER</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">updated_at</span><span class="w"> </span><span class="k">DESC</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">rn</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span>
+<span class="p">)</span>
+<span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ranked</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">rn</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div>
+<p>The CTE is required because a window function cannot appear in <code>WHERE</code> — <code>WHERE</code>
+is evaluated before window functions are. Full example:
+<a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/sql/window-functions/deduplicate_keep_newest_per_group.sql"><code>examples/sql/window-functions/deduplicate_keep_newest_per_group.sql</code></a>.</p>
+<hr>
+<h3 id="q-what-is-a-cte-and-when-would-you-use-a-recursive-one">🟡 Q. What is a CTE, and when would you use a recursive one?</h3>
+<p><strong>Answer.</strong> A Common Table Expression is a named subquery defined with <code>WITH</code>,
+used to give a step a name and to reference it more than once. It makes long
+queries readable and is often the only way to use a window function in a filter.</p>
+<p>A <strong>recursive</strong> CTE references itself, which is how you traverse hierarchies —
+org charts, category trees, bill-of-materials, graph reachability:</p>
+<div class="highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="k">RECURSIVE</span><span class="w"> </span><span class="k">chain</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">manager_id</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">depth</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">manager_id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w">     </span><span class="c1">-- anchor</span>
+<span class="w">    </span><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">manager_id</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">depth</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="k">chain</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">manager_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">id</span><span class="w">   </span><span class="c1">-- recursive step</span>
+<span class="p">)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">chain</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">depth</span><span class="p">;</span>
+</code></pre></div>
+<p>Always confirm the recursion terminates — a cycle in the data loops forever
+unless you track visited nodes or cap the depth. Worked example:
+<a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/sql/recursive-ctes/org_chart_tree_traversal.sql"><code>examples/sql/recursive-ctes/org_chart_tree_traversal.sql</code></a>.</p>
+<hr>
+<h3 id="q-what-is-the-difference-between-union-and-union-all">🟡 Q. What is the difference between UNION and UNION ALL?</h3>
+<p><strong>Answer.</strong> <code>UNION</code> removes duplicate rows; <code>UNION ALL</code> keeps everything.</p>
+<p>Deduplication requires a sort or hash over the combined result, so <code>UNION</code> is
+materially more expensive. <strong>Use <code>UNION ALL</code> unless you actually need distinct
+rows</strong> — this is one of the most common easy wins in slow queries.</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\databases\sql-query-questions.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../";</script>
+<script src="../../assets/search.js" defer></script>
+</body>
+</html>

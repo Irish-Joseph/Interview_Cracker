@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concurrency &middot; Interview Cracker</title>
+<meta name="description" content="Where correct-looking code is wrong 1% of the time, on a machine you cannot reproduce.">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/core-cs/concurrency.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Concurrency &middot; Interview Cracker">
+<meta property="og:description" content="Where correct-looking code is wrong 1% of the time, on a machine you cannot reproduce.">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/core-cs/concurrency.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/core-cs/concurrency.html" class="current" aria-current="page">Concurrency</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="concurrency">Concurrency</h1>
+<p>Where correct-looking code is wrong 1% of the time, on a machine you cannot
+reproduce.</p>
+<hr>
+<h3 id="q-what-is-a-race-condition">🟢 Q. What is a race condition?</h3>
+<p><strong>Answer.</strong> When the result depends on the unpredictable timing of concurrent
+operations.</p>
+<p>The canonical example is that <code>count += 1</code> is not one operation. It is three:</p>
+<div class="highlight"><pre><span></span><code>LOAD  count -&gt; register
+ADD   1
+STORE register -&gt; count
+</code></pre></div>
+<p>Two threads can both load 5, both compute 6, and both store 6. Two increments,
+one net effect — a <strong>lost update</strong>. Worked demonstration:
+<a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/rust/concurrency/threads_and_channels.rs"><code>examples/rust/concurrency/threads_and_channels.rs</code></a>.</p>
+<p>The general term is a <strong>critical section</strong>: a region that must not be entered by
+more than one thread at a time.</p>
+<hr>
+<h3 id="q-what-is-a-mutex-and-how-does-it-differ-from-a-semaphore">🟢 Q. What is a mutex, and how does it differ from a semaphore?</h3>
+<p><strong>Answer.</strong> A <strong>mutex</strong> enforces mutual exclusion: one holder at a time, and
+ownership matters — the thread that locks it must be the one that unlocks it.</p>
+<p>A <strong>semaphore</strong> is a counter permitting <strong>N</strong> concurrent holders. <code>acquire</code>
+decrements (blocking at zero), <code>release</code> increments. A semaphore with N=1
+resembles a mutex but has no ownership, so any thread may release it — which
+makes it usable as a signal between threads, and easier to misuse.</p>
+<p>Use a mutex to protect shared state. Use a semaphore to limit a resource pool
+("at most 10 concurrent database connections").</p>
+<hr>
+<h3 id="q-what-is-a-deadlock-in-application-code-and-how-do-you-avoid-it">🟡 Q. What is a deadlock in application code, and how do you avoid it?</h3>
+<p><strong>Answer.</strong> Two threads each holding a lock the other needs.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Thread 1                 # Thread 2</span>
+<span class="k">with</span> <span class="n">lock_a</span><span class="p">:</span>               <span class="k">with</span> <span class="n">lock_b</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">lock_b</span><span class="p">:</span>               <span class="k">with</span> <span class="n">lock_a</span><span class="p">:</span>     <span class="c1"># both block forever</span>
+        <span class="o">...</span>                        <span class="o">...</span>
+</code></pre></div>
+<p>The reliable fix is <strong>consistent lock ordering</strong> — every thread acquires locks in
+one global order (say, by object id), which makes a cycle impossible. Also:
+prefer a single coarser lock over two fine ones, use timeouts (<code>tryLock</code>) so a
+deadlock becomes a recoverable error, and never hold a lock across a network call.</p>
+<hr>
+<h3 id="q-what-does-volatile-atomic-mean-and-is-it-enough">🟡 Q. What does <code>volatile</code> / <code>atomic</code> mean, and is it enough?</h3>
+<p><strong>Answer.</strong> They solve two different problems, and conflating them is the common
+error.</p>
+<p><strong>Visibility.</strong> Without synchronisation, a value written by one thread may sit in
+a CPU cache or register and never become visible to another. Java's <code>volatile</code>
+forces reads and writes to go to main memory. It does <strong>not</strong> make compound
+operations safe — <code>volatile int count; count++</code> is still a race.</p>
+<p><strong>Atomicity.</strong> An atomic operation completes indivisibly.
+<code>AtomicInteger.incrementAndGet()</code> performs the whole read-modify-write as one
+uninterruptible step, usually via a CPU compare-and-swap instruction.</p>
+<p>So: <code>volatile</code> for a flag one thread writes and others read. <strong>Atomics</strong> for
+counters. A <strong>mutex</strong> when you must keep several variables consistent with each
+other — atomics protect one variable each, not an invariant across two.</p>
+<hr>
+<h3 id="q-asyncawait-vs-threads-when-do-you-use-which">🟡 Q. Async/await vs threads — when do you use which?</h3>
+<p><strong>Answer.</strong> They solve different bottlenecks.</p>
+<p><strong>Threads</strong> give you parallelism across cores. Right for <strong>CPU-bound</strong> work.
+Costly: ~1 MB of stack each, plus context switches.</p>
+<p><strong>Async</strong> gives you concurrency on (usually) one thread by suspending a task at
+its I/O points so another can run. Right for <strong>I/O-bound</strong> work — thousands of
+in-flight requests, each mostly waiting. Cheap: a suspended task is a small heap
+object, not a stack.</p>
+<p>The rule: <strong>async for waiting, threads for computing.</strong> And the trap that follows
+from it — a blocking or CPU-heavy call inside an async function stalls the whole
+event loop and every other task on it. Offload that work to a thread pool.</p>
+<hr>
+<h3 id="q-what-is-the-difference-between-a-thread-pool-and-creating-threads-on-demand">🟡 Q. What is the difference between a thread pool and creating threads on demand?</h3>
+<p><strong>Answer.</strong> A pool creates a fixed set of worker threads once and feeds them
+tasks from a queue.</p>
+<p>It fixes two problems with thread-per-task: <strong>creation cost</strong> (spawning a thread
+is expensive, and doing it per request wastes most of the work) and <strong>unbounded
+growth</strong> (10,000 simultaneous requests creating 10,000 threads will exhaust
+memory and thrash the scheduler).</p>
+<p>The pool size is the tuning knob: roughly the core count for CPU-bound work
+(more threads just add switching); much higher for I/O-bound work, since most
+threads are blocked. A bounded task queue matters too — an unbounded one converts
+an overload into an out-of-memory error instead of applying backpressure.
+Worked example: <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/go/concurrency/worker_pool.go"><code>examples/go/concurrency/worker_pool.go</code></a>.</p>
+<hr>
+<h3 id="q-what-is-the-producerconsumer-problem">🔴 Q. What is the producer–consumer problem?</h3>
+<p><strong>Answer.</strong> Producers add items to a shared bounded buffer, consumers remove
+them. The coordination requirements:</p>
+<ul>
+<li>Producers must <strong>block when the buffer is full</strong> (backpressure).</li>
+<li>Consumers must <strong>block when it is empty</strong>.</li>
+<li>Mutations of the buffer must be mutually exclusive.</li>
+</ul>
+<p>Implemented classically with a mutex plus two condition variables, or in modern
+code with a <strong>blocking queue</strong> (<code>BlockingQueue</code>, <code>queue.Queue</code>, a Go channel),
+which packages exactly this.</p>
+<p>The point of the question is usually backpressure: if producers never block, a
+fast producer and a slow consumer grow the buffer until memory runs out. A
+bounded queue converts that failure into a slowdown, which is almost always
+what you want.</p>
+<hr>
+<h3 id="q-what-is-thread-safety-and-how-do-you-achieve-it-without-locks">🟡 Q. What is thread-safety, and how do you achieve it without locks?</h3>
+<p><strong>Answer.</strong> Code is thread-safe if it behaves correctly when called concurrently,
+with no external synchronisation required.</p>
+<p>Locks are one route. The others are usually better:</p>
+<ul>
+<li><strong>Immutability.</strong> An object that never changes cannot be raced on. This is the
+  single most effective technique, and why functional languages have an easier
+  time with concurrency.</li>
+<li><strong>Confinement.</strong> Do not share the state at all — give each thread its own copy
+  (thread-local), or pass ownership by message rather than sharing memory. This
+  is Go's "share memory by communicating" and Rust's ownership model.</li>
+<li><strong>Atomics</strong> for single-variable counters and flags.</li>
+<li><strong>Concurrent collections</strong> — <code>ConcurrentHashMap</code> and friends, which lock
+  internally at finer granularity than you would.</li>
+</ul>
+<p>Rust enforces this at compile time: its borrow checker rejects a data race rather
+than letting you find it in production. See
+<a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/rust/ownership/count_word_frequencies_borrowed.rs"><code>examples/rust/ownership/count_word_frequencies_borrowed.rs</code></a>.</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\core-cs\concurrency.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../";</script>
+<script src="../../assets/search.js" defer></script>
+</body>
+</html>

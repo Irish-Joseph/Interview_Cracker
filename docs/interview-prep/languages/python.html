@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python Interview Questions &middot; Interview Cracker</title>
+<meta name="description" content="It decides three things: whether a value can be a dict key (hashable, which requires immutable), whether passing it to a function can change the caller's object, and whether it is ...">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/languages/python.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Interview Questions &middot; Interview Cracker">
+<meta property="og:description" content="It decides three things: whether a value can be a dict key (hashable, which requires immutable), whether passing it to a function can change the caller's object, and whether it is ...">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/languages/python.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/python.html" class="current" aria-current="page">Python Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="python-interview-questions">Python Interview Questions</h1>
+<hr>
+<h3 id="q-mutable-vs-immutable-and-why-does-it-matter">🟢 Q. Mutable vs immutable — and why does it matter?</h3>
+<p><strong>Answer.</strong> Immutable: <code>int</code>, <code>float</code>, <code>str</code>, <code>tuple</code>, <code>frozenset</code>, <code>bytes</code>.
+Mutable: <code>list</code>, <code>dict</code>, <code>set</code>, <code>bytearray</code>, most custom classes.</p>
+<p>It decides three things: whether a value can be a dict key (hashable, which
+requires immutable), whether passing it to a function can change the caller's
+object, and whether it is safe to share between threads.</p>
+<p>The classic bug it causes:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">append_to</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="p">[]):</span>      <span class="c1"># DANGER: evaluated once, at def time</span>
+    <span class="n">target</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">target</span>
+
+<span class="n">append_to</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># [1]</span>
+<span class="n">append_to</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>   <span class="c1"># [1, 2]  &lt;- the same list, still there</span>
+</code></pre></div>
+<p>Default arguments are evaluated <strong>once</strong>, when the function is defined. Use
+<code>None</code> as the sentinel:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">append_to</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">target</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">target</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">target</span>
+</code></pre></div>
+<hr>
+<h3 id="q-is-vs">🟢 Q. <code>is</code> vs <code>==</code>?</h3>
+<p><strong>Answer.</strong> <code>==</code> compares <strong>values</strong> (via <code>__eq__</code>); <code>is</code> compares <strong>identity</strong> —
+whether both names point to the same object.</p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">==</span> <span class="n">b</span>    <span class="c1"># True  — same contents</span>
+<span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>    <span class="c1"># False — two distinct objects</span>
+</code></pre></div>
+<p>Use <code>is</code> only for singletons: <code>is None</code>, <code>is True</code>, <code>is False</code>.</p>
+<p>The confusing part is small-integer and string caching. <code>256 is 256</code> is True
+because CPython interns small integers (−5 to 256); <code>1000 is 1000</code> may be False
+depending on context. This is an implementation detail you must never rely on —
+and a favourite trick question.</p>
+<hr>
+<h3 id="q-what-is-the-gil-and-what-does-it-mean-for-you">🔴 Q. What is the GIL and what does it mean for you?</h3>
+<p><strong>Answer.</strong> The Global Interpreter Lock is a mutex ensuring only one thread
+executes Python bytecode at a time, even on a many-core machine. It exists
+because CPython's reference-counting memory management is not thread-safe, and
+one coarse lock was far simpler and faster for single-threaded code than locking
+every object.</p>
+<p>The practical consequence:</p>
+<ul>
+<li><strong>CPU-bound work gets no speedup from threads.</strong> Four threads on four cores
+  still execute one at a time. Use <code>multiprocessing</code> (separate interpreters,
+  separate GILs) or a native extension.</li>
+<li><strong>I/O-bound work does benefit</strong>, because the GIL is released around blocking
+  I/O. Threads and <code>asyncio</code> both work well here.</li>
+</ul>
+<p>Worth knowing this is changing: PEP 703 adds an optional free-threaded build
+(3.13+) with no GIL, and 3.12+ supports per-interpreter GILs. Saying "the GIL is
+being removed as an <em>option</em>, gradually" is more accurate than either "it's gone"
+or "Python can't do parallelism".</p>
+<hr>
+<h3 id="q-what-is-a-generator-and-why-use-one">🟡 Q. What is a generator and why use one?</h3>
+<p><strong>Answer.</strong> A function containing <code>yield</code>. Calling it returns a lazy iterator
+that computes values on demand rather than building a list.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">read_large_file</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>       <span class="c1"># one line in memory, not the whole file</span>
+</code></pre></div>
+<p>Two benefits: <strong>constant memory</strong> regardless of input size, and the ability to
+represent infinite sequences. The costs: you can only iterate once, and you
+cannot index or take <code>len()</code>.</p>
+<p>Use <code>()</code> instead of <code>[]</code> to get a generator expression:
+<code>sum(x*x for x in range(10**8))</code> never allocates the list. Worked example:
+<a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/python/generators/log_pipeline_with_generators.py"><code>examples/python/generators/log_pipeline_with_generators.py</code></a>.</p>
+<hr>
+<h3 id="q-what-is-a-decorator">🟡 Q. What is a decorator?</h3>
+<p><strong>Answer.</strong> A callable that takes a function and returns a replacement, used to
+add behaviour without editing the original.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">functools</span><span class="o">,</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">timed</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>            <span class="c1"># preserve __name__, __doc__, signature</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> took </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@timed</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">work</span><span class="p">():</span> <span class="o">...</span>
+</code></pre></div>
+<p><code>@timed</code> is exactly <code>work = timed(work)</code>.</p>
+<p><strong><code>functools.wraps</code> is the detail interviewers check for.</strong> Without it the
+decorated function reports the wrapper's name and loses its docstring, which
+breaks introspection, documentation tools and debugging. Worked example:
+<a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/python/decorators/retry_decorator_with_backoff.py"><code>examples/python/decorators/retry_decorator_with_backoff.py</code></a>.</p>
+<hr>
+<h3 id="q-shallow-vs-deep-copy">🟡 Q. Shallow vs deep copy?</h3>
+<p><strong>Answer.</strong> A <strong>shallow</strong> copy (<code>list(x)</code>, <code>x[:]</code>, <code>copy.copy</code>) makes a new outer
+object holding <strong>references to the same inner objects</strong>. A <strong>deep</strong> copy
+(<code>copy.deepcopy</code>) recursively copies everything.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">copy</span>
+<span class="n">original</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+<span class="n">shallow</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">original</span><span class="p">)</span>
+<span class="n">shallow</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">99</span><span class="p">)</span>
+<span class="n">original</span>          <span class="c1"># [[1, 2, 99], [3, 4]]  &lt;- mutated!</span>
+
+<span class="n">deep</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">original</span><span class="p">)</span>
+<span class="n">deep</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">original</span>          <span class="c1"># unchanged</span>
+</code></pre></div>
+<p>Deep copy is slower and fails or loops on some structures — it handles cycles,
+but not open file handles or sockets. Prefer immutable data over copying.</p>
+<hr>
+<h3 id="q-what-does-a-context-manager-do">🟡 Q. What does a context manager do?</h3>
+<p><strong>Answer.</strong> Guarantees cleanup via <code>__enter__</code> / <code>__exit__</code>, so a resource is
+released even if an exception is raised.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">contextlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">contextmanager</span>
+
+<span class="nd">@contextmanager</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">timer</span><span class="p">(</span><span class="n">label</span><span class="p">):</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">yield</span>
+    <span class="k">finally</span><span class="p">:</span>                          <span class="c1"># runs on exception too</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><code>with open(...)</code> is the everyday example: the file closes on any exit path.
+Worked example:
+<a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/python/context-managers/custom_context_managers.py"><code>examples/python/context-managers/custom_context_managers.py</code></a>.</p>
+<hr>
+<h3 id="q-__str__-vs-__repr__">🟡 Q. <code>__str__</code> vs <code>__repr__</code>?</h3>
+<p><strong>Answer.</strong> <code>__repr__</code> is for <strong>developers</strong> — unambiguous, ideally valid Python
+that would recreate the object. It is what the REPL and containers show.
+<code>__str__</code> is for <strong>users</strong> — readable.</p>
+<p>If you implement only one, implement <code>__repr__</code>: <code>__str__</code> falls back to it, but
+not the other way round. Worked example:
+<a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/python/oop/dunder_methods.py"><code>examples/python/oop/dunder_methods.py</code></a>.</p>
+<hr>
+<h3 id="q-what-are-args-and-kwargs">🟡 Q. What are <code>*args</code> and <code>**kwargs</code>?</h3>
+<p><strong>Answer.</strong> <code>*args</code> collects extra positional arguments into a tuple; <code>**kwargs</code>
+collects extra keyword arguments into a dict. In a <em>call</em>, the same symbols
+unpack:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span> <span class="o">...</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">values</span><span class="p">)</span>                      <span class="c1"># unpacks positionally</span>
+
+<span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">config</span><span class="p">)</span>                     <span class="c1"># unpacks by keyword</span>
+</code></pre></div>
+<p>This is what lets a decorator wrap any function signature.</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\languages\python.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../";</script>
+<script src="../../assets/search.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>System Design Fundamentals &middot; Interview Cracker</title>
+<meta name="description" content="System design interviews have no single right answer. They test whether you can reason about trade-offs out loud, ask about requirements before designing, and justify choices with ...">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/system-design/fundamentals.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="System Design Fundamentals &middot; Interview Cracker">
+<meta property="og:description" content="System design interviews have no single right answer. They test whether you can reason about trade-offs out loud, ask about requirements before designing, and justify choices with ...">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/system-design/fundamentals.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/system-design/fundamentals.html" class="current" aria-current="page">System Design Fundamentals</a></li>
+        
+          <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="system-design-fundamentals">System Design Fundamentals</h1>
+<p>System design interviews have no single right answer. They test whether you can
+reason about trade-offs out loud, ask about requirements before designing, and
+justify choices with numbers.</p>
+<hr>
+<h3 id="how-to-run-the-interview">How to run the interview</h3>
+<ol>
+<li><strong>Clarify requirements</strong> (5 min). Functional: what must it do? Non-functional:
+   how many users, read/write ratio, latency target, consistency needs? <strong>Never
+   start drawing before this.</strong> Candidates fail here more than anywhere else.</li>
+<li><strong>Estimate scale</strong> (5 min). Get to a rough QPS and storage figure — it decides
+   whether you need one server or a thousand.</li>
+<li><strong>Sketch the high-level design</strong> (10 min). Boxes and arrows: clients, load
+   balancer, services, stores.</li>
+<li><strong>Design the data model and API</strong> (10 min).</li>
+<li><strong>Go deep</strong> (10 min) on whatever the interviewer pushes on.</li>
+<li><strong>Identify bottlenecks</strong> (5 min) and address them.</li>
+</ol>
+<hr>
+<h3 id="q-how-do-you-do-back-of-the-envelope-estimation">🟢 Q. How do you do back-of-the-envelope estimation?</h3>
+<p><strong>Answer.</strong> Learn a handful of numbers and round aggressively.</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Approximate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Seconds in a day</td>
+<td>~86,400, call it 10⁵</td>
+</tr>
+<tr>
+<td>1 million writes/day</td>
+<td>~12 writes/second</td>
+</tr>
+<tr>
+<td>Memory read</td>
+<td>~100 ns</td>
+</tr>
+<tr>
+<td>SSD random read</td>
+<td>~100 µs (1000× memory)</td>
+</tr>
+<tr>
+<td>Disk seek (HDD)</td>
+<td>~10 ms (100× SSD)</td>
+</tr>
+<tr>
+<td>Same-datacentre round trip</td>
+<td>~0.5 ms</td>
+</tr>
+<tr>
+<td>Cross-continent round trip</td>
+<td>~150 ms</td>
+</tr>
+<tr>
+<td>One character (ASCII)</td>
+<td>1 byte</td>
+</tr>
+</tbody>
+</table>
+<p>Example — 100 M daily active users each posting twice:</p>
+<ul>
+<li>Writes: 200 M/day ÷ 10⁵ s ≈ <strong>2,000 writes/second</strong>.</li>
+<li>Peak is typically 2–3× average: <strong>~5,000/s</strong>.</li>
+<li>At 1 KB per post: 200 GB/day, ~<strong>73 TB/year</strong>.</li>
+</ul>
+<p>That tells you immediately: one database will not hold a year of this, you need
+sharding, and reads will dominate so you need caching.</p>
+<hr>
+<h3 id="q-vertical-vs-horizontal-scaling">🟢 Q. Vertical vs horizontal scaling?</h3>
+<p><strong>Answer.</strong> <strong>Vertical</strong> — a bigger machine. Simple, no code changes, but there
+is a hard ceiling, it is expensive at the top end, and it leaves a single point
+of failure.</p>
+<p><strong>Horizontal</strong> — more machines. Effectively unbounded and fault-tolerant, but it
+forces you to handle statelessness, load balancing, data partitioning and
+distributed consistency.</p>
+<p>The practical answer: <strong>scale vertically until it hurts, then horizontally.</strong>
+Horizontal scaling adds real complexity, and a surprising number of systems never
+need it. But design stateless services from the start so the option stays open.</p>
+<hr>
+<h3 id="q-where-do-you-put-caches-and-how-do-they-get-stale">🟡 Q. Where do you put caches, and how do they get stale?</h3>
+<p><strong>Answer.</strong> Caching is the highest-leverage optimisation in most designs, because
+read traffic usually dominates by 10:1 or more.</p>
+<p>Layers: browser → CDN → load balancer → application (in-process) → distributed
+cache (Redis/Memcached) → database buffer pool.</p>
+<p><strong>Strategies:</strong></p>
+<ul>
+<li><strong>Cache-aside</strong> (most common) — app checks the cache, misses, reads the
+  database, populates the cache. Simple; the first request after eviction is slow.</li>
+<li><strong>Write-through</strong> — write to cache and database together. Consistent, slower
+  writes.</li>
+<li><strong>Write-behind</strong> — write to cache, flush to the database asynchronously. Fast,
+  but you can lose data on a crash.</li>
+</ul>
+<p><strong>Eviction:</strong> LRU is the default and usually right. (A worked LRU cache is in
+<a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/cpp/data-structures/lru_cache.cpp"><code>examples/cpp/data-structures/lru_cache.cpp</code></a>.)</p>
+<p><strong>Invalidation</strong> is the hard part. TTLs are simple but serve stale data for their
+duration; explicit invalidation on write is precise but easy to miss a path.
+Watch for the <strong>thundering herd</strong> — a popular key expiring makes thousands of
+requests hit the database simultaneously. Mitigate with a lock so only one
+request refills, or by staggering TTLs.</p>
+<hr>
+<h3 id="q-explain-replication-and-sharding">🟡 Q. Explain replication and sharding.</h3>
+<p><strong>Answer.</strong> They solve different problems and are usually used together.</p>
+<p><strong>Replication</strong> — copies of the same data. Solves read scaling and availability.
+Primary–replica is the usual shape: writes go to the primary and propagate to
+replicas that serve reads. The catch is <strong>replication lag</strong> — a read right after a
+write may hit a replica that has not caught up, so the user does not see their
+own change. Fixes: read-your-own-writes routing to the primary, or a version
+token.</p>
+<p><strong>Sharding (partitioning)</strong> — splitting <em>different</em> data across machines. Solves
+write scaling and dataset size.</p>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>How</th>
+<th>Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Range</td>
+<td>Keys A–M here, N–Z there</td>
+<td>Hot spots from uneven distribution</td>
+</tr>
+<tr>
+<td>Hash</td>
+<td><code>hash(key) % N</code></td>
+<td>Resharding moves almost everything</td>
+</tr>
+<tr>
+<td><strong>Consistent hashing</strong></td>
+<td>Keys and nodes on a ring</td>
+<td>Adding a node moves only ~1/N of keys</td>
+</tr>
+<tr>
+<td>Directory</td>
+<td>A lookup service maps key → shard</td>
+<td>The directory is a bottleneck/SPOF</td>
+</tr>
+</tbody>
+</table>
+<p>Sharding costs you cross-shard joins and transactions. Choose the shard key so
+the common query hits one shard.</p>
+<hr>
+<h3 id="q-what-is-cap-and-what-does-it-actually-mean-in-practice">🔴 Q. What is CAP, and what does it actually mean in practice?</h3>
+<p><strong>Answer.</strong> In a distributed system you can have at most two of <strong>C</strong>onsistency,
+<strong>A</strong>vailability and <strong>P</strong>artition tolerance.</p>
+<p>The nuance most candidates miss: <strong>partitions are not optional.</strong> Networks fail,
+so P is a given. The real choice is what you do <em>during</em> a partition:</p>
+<ul>
+<li><strong>CP</strong> — refuse requests rather than serve possibly-stale data. Banking,
+  inventory, anything where a wrong answer costs money.</li>
+<li><strong>AP</strong> — keep serving, reconcile later. Social feeds, DNS, shopping carts —
+  where being briefly stale beats being down.</li>
+</ul>
+<p><strong>PACELC</strong> extends it usefully: <em>if Partitioned, choose A or C; Else, choose
+Latency or Consistency.</em> That second half describes normal operation, which is
+where systems actually spend their time.</p>
+<p><strong>Eventual consistency</strong> means replicas converge if writes stop. That is weaker
+than it sounds, which is why stronger models exist — read-your-writes, monotonic
+reads, causal consistency — and naming the specific guarantee you need is a much
+better answer than "eventually consistent".</p>
+<hr>
+<h3 id="q-when-do-you-add-a-message-queue">🟡 Q. When do you add a message queue?</h3>
+<p><strong>Answer.</strong> To decouple a producer from a consumer in time.</p>
+<p>It buys you:</p>
+<ul>
+<li><strong>Asynchrony</strong> — return to the user immediately, do the slow work later. (An
+  upload responds at once; transcoding happens in the background.)</li>
+<li><strong>Buffering</strong> — a traffic spike queues up instead of overwhelming the consumer.</li>
+<li><strong>Retries</strong> — a failed message is redelivered rather than lost.</li>
+<li><strong>Fan-out</strong> — one event, many independent consumers.</li>
+</ul>
+<p>The costs are real: eventual consistency (the work is not done when you reply),
+message ordering is hard across partitions, and you must handle <strong>duplicate
+delivery</strong> — most queues guarantee at-least-once, not exactly-once. That makes
+<strong>idempotent consumers</strong> a requirement, not a nicety.</p>
+<hr>
+<h3 id="q-rate-limiting-what-algorithms-would-you-use">🟡 Q. Rate limiting — what algorithms would you use?</h3>
+<p><strong>Answer.</strong></p>
+<ul>
+<li><strong>Fixed window</strong> — count per calendar minute. Trivial, but allows a 2× burst
+  across a window boundary.</li>
+<li><strong>Sliding window log</strong> — timestamps of every request. Exact, memory-hungry.</li>
+<li><strong>Sliding window counter</strong> — weighted blend of the current and previous window.
+  A good approximation, cheap.</li>
+<li><strong>Token bucket</strong> — tokens refill at a steady rate; each request spends one.
+  Allows controlled bursts, which usually matches what you actually want. Worked
+  example: <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/go/concurrency/token_bucket_rate_limiter.go"><code>examples/go/concurrency/token_bucket_rate_limiter.go</code></a>.</li>
+<li><strong>Leaky bucket</strong> — outflow is perfectly constant. Smooths traffic, no bursts.</li>
+</ul>
+<p>In a distributed system the limiter state must be shared (typically Redis), which
+adds a network hop to every request — so a common design is a local limiter with
+a periodically synchronised global budget.</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\system-design\fundamentals.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../";</script>
+<script src="../../assets/search.js" defer></script>
+</body>
+</html>

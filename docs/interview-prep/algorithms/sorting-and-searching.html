@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sorting and Searching &middot; Interview Cracker</title>
+<meta name="description" content="You will rarely implement a sort in production. You will frequently be asked to compare them, and binary search is one of the most bug-prone things in computing.">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/algorithms/sorting-and-searching.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sorting and Searching &middot; Interview Cracker">
+<meta property="og:description" content="You will rarely implement a sort in production. You will frequently be asked to compare them, and binary search is one of the most bug-prone things in computing.">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/algorithms/sorting-and-searching.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/sorting-and-searching.html" class="current" aria-current="page">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="sorting-and-searching">Sorting and Searching</h1>
+<p>You will rarely implement a sort in production. You will frequently be asked to
+compare them, and binary search is one of the most bug-prone things in computing.</p>
+<hr>
+<h3 id="q-compare-the-sorting-algorithms-you-know">🟢 Q. Compare the sorting algorithms you know.</h3>
+<p><strong>Answer.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Best</th>
+<th>Average</th>
+<th>Worst</th>
+<th>Space</th>
+<th>Stable?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bubble / insertion</td>
+<td>O(n)</td>
+<td>O(n²)</td>
+<td>O(n²)</td>
+<td>O(1)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Selection</td>
+<td>O(n²)</td>
+<td>O(n²)</td>
+<td>O(n²)</td>
+<td>O(1)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Merge sort</strong></td>
+<td>O(n log n)</td>
+<td>O(n log n)</td>
+<td><strong>O(n log n)</strong></td>
+<td>O(n)</td>
+<td><strong>Yes</strong></td>
+</tr>
+<tr>
+<td><strong>Quicksort</strong></td>
+<td>O(n log n)</td>
+<td>O(n log n)</td>
+<td>O(n²)</td>
+<td>O(log n)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Heap sort</strong></td>
+<td>O(n log n)</td>
+<td>O(n log n)</td>
+<td><strong>O(n log n)</strong></td>
+<td><strong>O(1)</strong></td>
+<td>No</td>
+</tr>
+<tr>
+<td>Counting / radix</td>
+<td>O(n + k)</td>
+<td>O(n + k)</td>
+<td>O(n + k)</td>
+<td>O(n + k)</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>The three sentences worth having ready:</p>
+<ul>
+<li><strong>Merge sort</strong> guarantees O(n log n) and is stable, but needs O(n) scratch space.</li>
+<li><strong>Quicksort</strong> is usually fastest in practice — great locality, in-place — but
+  has an O(n²) worst case.</li>
+<li><strong>Heap sort</strong> is the only one that is both O(n log n) worst case <em>and</em> O(1)
+  space, but its cache behaviour makes it slower in practice than quicksort.</li>
+</ul>
+<hr>
+<h3 id="q-if-quicksort-has-an-on2-worst-case-why-is-it-the-default-almost-everywhere">🟡 Q. If quicksort has an O(n²) worst case, why is it the default almost everywhere?</h3>
+<p><strong>Answer.</strong> Because the worst case is avoidable and the average case is
+excellent.</p>
+<p>O(n²) happens when the pivot is consistently the smallest or largest element —
+classically, choosing <code>arr[0]</code> on already-sorted input, which is depressingly
+common in real data. The fixes:</p>
+<ul>
+<li><strong>Randomised pivot</strong> — an adversary cannot predict it.</li>
+<li><strong>Median-of-three</strong> — sample first, middle, last.</li>
+<li><strong>Introsort</strong> — start with quicksort, count recursion depth, and switch to heap
+  sort past ~2 log n. This gives quicksort's speed <em>and</em> an O(n log n) guarantee.
+  It is what C++ <code>std::sort</code> does.</li>
+</ul>
+<p>Quicksort also wins on constants: it partitions in place with sequential memory
+access, so it is very cache-friendly, whereas merge sort writes to a second array.</p>
+<p><strong>The real-world answer:</strong> most standard libraries no longer use plain quicksort.
+Python and Java (for objects) use <strong>Timsort</strong>, a stable merge sort that detects
+already-sorted runs and is O(n) on nearly-sorted data. Java uses dual-pivot
+quicksort for primitives, where stability is meaningless.</p>
+<hr>
+<h3 id="q-what-does-stable-mean-and-when-does-it-matter">🟡 Q. What does "stable" mean and when does it matter?</h3>
+<p><strong>Answer.</strong> A stable sort preserves the relative order of elements that compare
+equal.</p>
+<p>It matters whenever you sort <strong>more than once</strong>. To sort employees by department,
+and by salary within each department, a stable sort lets you do it in two passes:</p>
+<div class="highlight"><pre><span></span><code><span class="n">people</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">salary</span><span class="p">)</span>      <span class="c1"># secondary key first</span>
+<span class="n">people</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">department</span><span class="p">)</span>  <span class="c1"># primary key second</span>
+</code></pre></div>
+<p>The second sort preserves the salary ordering inside each department — only
+because it is stable. With an unstable sort this silently produces wrong output.</p>
+<p>Stability is also why Python's <code>sorted</code> and Java's <code>Collections.sort</code> guarantee
+it in their specification: users depend on this pattern.</p>
+<hr>
+<h3 id="q-can-you-sort-faster-than-on-log-n">🟡 Q. Can you sort faster than O(n log n)?</h3>
+<p><strong>Answer.</strong> Not with <strong>comparisons</strong>. There are n! possible orderings, and each
+comparison yields one bit, so you need at least log₂(n!) ≈ n log n comparisons.
+That is a proven lower bound, not a limitation of current algorithms.</p>
+<p>You can beat it by not comparing. <strong>Counting sort</strong> tallies occurrences of each
+value into buckets: O(n + k) for values in a range of size k. <strong>Radix sort</strong>
+applies counting sort digit by digit: O(d × (n + k)).</p>
+<p>The catch is the constraints. Counting sort on 32-bit integers needs a
+4-billion-entry array. These are worth it only when the key range is small and
+known — sorting ages, exam scores, or fixed-length strings.</p>
+<p>If an interviewer asks for better than O(n log n), they are asking you to notice
+a constraint on the values.</p>
+<hr>
+<h3 id="q-write-binary-search-what-are-the-classic-bugs">🟢 Q. Write binary search. What are the classic bugs?</h3>
+<p><strong>Answer.</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">binary_search</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+    <span class="n">low</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>          <span class="c1"># inclusive bounds</span>
+    <span class="k">while</span> <span class="n">low</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">:</span>                   <span class="c1"># &lt;=, not &lt;</span>
+        <span class="n">mid</span> <span class="o">=</span> <span class="n">low</span> <span class="o">+</span> <span class="p">(</span><span class="n">high</span> <span class="o">-</span> <span class="n">low</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>    <span class="c1"># overflow-safe</span>
+        <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">mid</span>
+        <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">target</span><span class="p">:</span>
+            <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>                <span class="c1"># must be +1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>               <span class="c1"># must be -1</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</code></pre></div>
+<p><strong>O(log n) time, O(1) space.</strong> Four bugs live in those eight lines:</p>
+<ol>
+<li><strong><code>while low &lt; high</code></strong> instead of <code>&lt;=</code> — misses a one-element range, so the
+   last candidate is never checked.</li>
+<li><strong><code>(low + high) // 2</code></strong> — overflows in fixed-width languages (C, Java) when
+   both are near <code>INT_MAX</code>. This bug was in the JDK for nine years. Python's
+   unbounded ints are immune, but write the safe form anyway; interviewers look
+   for it.</li>
+<li><strong><code>low = mid</code></strong> instead of <code>mid + 1</code> — infinite loop, because the range stops
+   shrinking.</li>
+<li><strong>Forgetting the array must be sorted.</strong> Binary search on unsorted data
+   returns nonsense, not an error.</li>
+</ol>
+<p>Test with: empty array, one element, target absent, target at index 0, target at
+the last index.</p>
+<hr>
+<h3 id="q-how-do-you-find-the-first-occurrence-of-a-value-in-an-array-with-duplicates">🟡 Q. How do you find the <em>first</em> occurrence of a value in an array with duplicates?</h3>
+<p><strong>Answer.</strong> Do not stop at the first match — record it and keep searching left.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">first_occurrence</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+    <span class="n">low</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">while</span> <span class="n">low</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">:</span>
+        <span class="n">mid</span> <span class="o">=</span> <span class="n">low</span> <span class="o">+</span> <span class="p">(</span><span class="n">high</span> <span class="o">-</span> <span class="n">low</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
+            <span class="n">found</span> <span class="o">=</span> <span class="n">mid</span>                  <span class="c1"># candidate</span>
+            <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>               <span class="c1"># but look further left</span>
+        <span class="k">elif</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">target</span><span class="p">:</span>
+            <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">found</span>
+</code></pre></div>
+<p>Still O(log n). Mirror it (<code>low = mid + 1</code> on a match) for the last occurrence.
+This "keep searching after you find it" shape is the basis of <code>bisect_left</code> /
+<code>lower_bound</code>, and it generalises to the more important question below.</p>
+<hr>
+<h3 id="q-what-is-binary-search-on-the-answer">🔴 Q. What is "binary search on the answer"?</h3>
+<p><strong>Answer.</strong> Binary search does not require an array. It requires a <strong>monotonic
+predicate</strong>: a boolean function that is false, false, …, false, true, true, …,
+true over the search range. Then you can binary search for the boundary.</p>
+<p>This unlocks a whole class of optimisation problems — "minimise the maximum X",
+"what is the smallest capacity that works?":</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">min_feasible</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">,</span> <span class="n">works</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Smallest value in [low, high] for which works(value) is True.&quot;&quot;&quot;</span>
+    <span class="n">best</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">while</span> <span class="n">low</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">:</span>
+        <span class="n">mid</span> <span class="o">=</span> <span class="n">low</span> <span class="o">+</span> <span class="p">(</span><span class="n">high</span> <span class="o">-</span> <span class="n">low</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="n">works</span><span class="p">(</span><span class="n">mid</span><span class="p">):</span>
+            <span class="n">best</span> <span class="o">=</span> <span class="n">mid</span>
+            <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>               <span class="c1"># try to do better</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>                <span class="c1"># not enough</span>
+    <span class="k">return</span> <span class="n">best</span>
+</code></pre></div>
+<p>"Ship packages within D days", "minimum eating speed", "split array to minimise
+the largest sum" are all this function with a different <code>works</code>.</p>
+<p><strong>The tell:</strong> the problem asks for a minimum or maximum value, the answer lies in
+a numeric range, and checking "is value V feasible?" is easy even though finding
+the best V directly is not. Complexity becomes O(log(range) × cost of <code>works</code>).</p>
+<p>A worked binary search with insertion points is in
+<a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/python/algorithms/binary_search_iterative.py"><code>examples/python/algorithms/binary_search_iterative.py</code></a>.</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\algorithms\sorting-and-searching.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../";</script>
+<script src="../../assets/search.js" defer></script>
+</body>
+</html>

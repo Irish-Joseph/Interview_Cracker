@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JavaScript Interview Questions &middot; Interview Cracker</title>
+<meta name="description" content="const prevents rebinding the name, not mutation of the value:">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/languages/javascript.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript Interview Questions &middot; Interview Cracker">
+<meta property="og:description" content="const prevents rebinding the name, not mutation of the value:">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/languages/javascript.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/javascript.html" class="current" aria-current="page">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="javascript-interview-questions">JavaScript Interview Questions</h1>
+<hr>
+<h3 id="q-var-let-and-const">🟢 Q. <code>var</code>, <code>let</code> and <code>const</code>?</h3>
+<p><strong>Answer.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Scope</th>
+<th>Hoisting</th>
+<th>Reassign</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>var</code></td>
+<td>function</td>
+<td>hoisted, initialised <code>undefined</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>let</code></td>
+<td>block</td>
+<td>hoisted into the temporal dead zone</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>const</code></td>
+<td>block</td>
+<td>same as <code>let</code></td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<p><code>const</code> prevents <strong>rebinding the name</strong>, not mutation of the value:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Sara&quot;</span><span class="w"> </span><span class="p">};</span>
+<span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Ali&quot;</span><span class="p">;</span><span class="w">        </span><span class="c1">// fine — the object is mutable</span>
+<span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w">                </span><span class="c1">// TypeError — cannot rebind</span>
+</code></pre></div>
+<p>Use <code>const</code> by default, <code>let</code> when you must reassign, and <code>var</code> never.</p>
+<hr>
+<h3 id="q-what-is-a-closure">🟡 Q. What is a closure?</h3>
+<p><strong>Answer.</strong> A function that retains access to the variables of the scope it was
+created in, even after that scope has returned.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">counter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w">                 </span><span class="c1">// stays alive via the closure</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">increment</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">++</span><span class="nx">count</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">count</span><span class="p">,</span>
+<span class="w">  </span><span class="p">};</span>
+<span class="p">}</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">counter</span><span class="p">();</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">increment</span><span class="p">();</span><span class="w">  </span><span class="nx">c</span><span class="p">.</span><span class="nx">increment</span><span class="p">();</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">value</span><span class="p">();</span><span class="w">      </span><span class="c1">// 2</span>
+</code></pre></div>
+<p><code>count</code> is genuinely private — unreachable except through the returned functions.
+This is the basis of the module pattern, memoisation, and every callback that
+"remembers" something.</p>
+<p>The classic interview trap:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">));</span><span class="w">   </span><span class="c1">// 3, 3, 3</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">));</span><span class="w">   </span><span class="c1">// 0, 1, 2</span>
+</code></pre></div>
+<p><code>var</code> is function-scoped, so all three callbacks close over <strong>one</strong> variable,
+which is 3 by the time they run. <code>let</code> creates a fresh binding per iteration.
+Worked example: <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/javascript/basics/closures.js"><code>examples/javascript/basics/closures.js</code></a>.</p>
+<hr>
+<h3 id="q-explain-the-event-loop">🔴 Q. Explain the event loop.</h3>
+<p><strong>Answer.</strong> JavaScript is single-threaded but non-blocking. The runtime has:</p>
+<ul>
+<li>a <strong>call stack</strong> — what is executing now;</li>
+<li><strong>Web APIs / host APIs</strong> — timers, network, file I/O, running outside the
+  engine;</li>
+<li>a <strong>macrotask queue</strong> — <code>setTimeout</code>, I/O callbacks, UI events;</li>
+<li>a <strong>microtask queue</strong> — promise callbacks, <code>queueMicrotask</code>.</li>
+</ul>
+<p>The loop: when the stack empties, <strong>drain the entire microtask queue</strong>, then take
+<strong>one</strong> macrotask, then drain microtasks again. Microtasks always have priority.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">);</span>
+<span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">),</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w">       </span><span class="c1">// macrotask</span>
+<span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">().</span><span class="nx">then</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// microtask</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;4&quot;</span><span class="p">);</span>
+<span class="c1">// 1, 4, 3, 2</span>
+</code></pre></div>
+<p><code>2</code> comes last despite a 0 ms delay, because the microtask queue is drained
+first. The follow-up: an infinite chain of microtasks <strong>starves</strong> the macrotask
+queue and freezes the page — microtask priority is not free.
+Worked example: <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/javascript/async/promises_and_event_loop.js"><code>examples/javascript/async/promises_and_event_loop.js</code></a>.</p>
+<hr>
+<h3 id="q-how-does-this-get-its-value">🟡 Q. How does <code>this</code> get its value?</h3>
+<p><strong>Answer.</strong> In a normal function <code>this</code> is determined by <strong>how it is called</strong>,
+not where it is defined. Four rules, in precedence order:</p>
+<ol>
+<li><strong><code>new</code></strong> — <code>this</code> is the new object.</li>
+<li><strong>Explicit</strong> — <code>call</code>, <code>apply</code>, <code>bind</code> set it.</li>
+<li><strong>Implicit</strong> — <code>obj.method()</code> sets <code>this</code> to <code>obj</code>.</li>
+<li><strong>Default</strong> — <code>undefined</code> in strict mode, <code>globalThis</code> otherwise.</li>
+</ol>
+<p>Arrow functions ignore all four: they have <strong>no <code>this</code> of their own</strong> and inherit
+it lexically from the enclosing scope. That is the fix for the classic bug:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Timer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">seconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">startBroken</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">seconds</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// wrong `this`</span>
+<span class="w">  </span><span class="nx">start</span><span class="p">()</span><span class="w">       </span><span class="p">{</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">seconds</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w">        </span><span class="c1">// correct</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Worked example: <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/javascript/basics/this_and_binding.js"><code>examples/javascript/basics/this_and_binding.js</code></a>.</p>
+<hr>
+<h3 id="q-vs">🟡 Q. <code>==</code> vs <code>===</code>?</h3>
+<p><strong>Answer.</strong> <code>===</code> compares type and value with no conversion. <code>==</code> coerces first,
+using rules that are genuinely surprising:</p>
+<div class="highlight"><pre><span></span><code><span class="mf">0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span><span class="w">          </span><span class="c1">// true</span>
+<span class="mf">0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">;</span><span class="w">         </span><span class="c1">// true</span>
+<span class="s2">&quot;&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">;</span><span class="w">        </span><span class="c1">// false   &lt;- not transitive!</span>
+<span class="kc">null</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">undefined</span><span class="w"> </span><span class="c1">// true</span>
+<span class="kc">null</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="w">         </span><span class="c1">// false</span>
+<span class="kc">NaN</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">NaN</span><span class="w">        </span><span class="c1">// false</span>
+</code></pre></div>
+<p><strong>Always use <code>===</code>.</strong> The one accepted exception is <code>x == null</code>, which checks for
+<code>null</code> or <code>undefined</code> in a single test.</p>
+<p>For <code>NaN</code>, use <code>Number.isNaN(x)</code>. <code>NaN !== NaN</code> is required by IEEE 754 and is
+also why <code>[NaN].includes(NaN)</code> is true (it uses SameValueZero) while
+<code>[NaN].indexOf(NaN)</code> is -1 (it uses <code>===</code>).</p>
+<hr>
+<h3 id="q-what-is-prototypal-inheritance">🟡 Q. What is prototypal inheritance?</h3>
+<p><strong>Answer.</strong> Every object has a hidden link to another object, its <strong>prototype</strong>.
+A property miss walks up that chain until it is found or the chain ends at <code>null</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">animal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">speak</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> makes a sound`</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">dog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">animal</span><span class="p">);</span>
+<span class="nx">dog</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Rex&quot;</span><span class="p">;</span>
+<span class="nx">dog</span><span class="p">.</span><span class="nx">speak</span><span class="p">();</span><span class="w">      </span><span class="c1">// found on the prototype</span>
+</code></pre></div>
+<p><code>class</code> syntax is sugar over this — there are no classical classes underneath,
+just constructor functions and prototype objects. That is why you can add a
+method to every existing instance at runtime by assigning to the prototype,
+which classical inheritance does not allow.</p>
+<hr>
+<h3 id="q-promise-asyncawait-and-how-do-you-run-things-in-parallel">🟡 Q. Promise, async/await, and how do you run things in parallel?</h3>
+<p><strong>Answer.</strong> A promise represents a value that is not ready yet, in one of three
+states: pending, fulfilled, rejected. <code>async/await</code> is syntax over promises — an
+<code>async</code> function always returns one, and <code>await</code> suspends until it settles.</p>
+<p>The mistake that matters:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Sequential — 3 seconds, and usually a bug</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetchA</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetchB</span><span class="p">();</span>
+
+<span class="c1">// Parallel — 1 second</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span><span class="nx">fetchA</span><span class="p">(),</span><span class="w"> </span><span class="nx">fetchB</span><span class="p">()]);</span>
+</code></pre></div>
+<p>If the calls are independent, awaiting them one at a time wastes the whole
+latency of each. Know the four combinators:</p>
+<ul>
+<li><code>Promise.all</code> — all succeed, or reject on the <strong>first</strong> failure.</li>
+<li><code>Promise.allSettled</code> — wait for all, never rejects; inspect each result.</li>
+<li><code>Promise.race</code> — first to <strong>settle</strong>, success or failure (used for timeouts).</li>
+<li><code>Promise.any</code> — first to <strong>succeed</strong>.</li>
+</ul>
+<p>Worked example:
+<a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/typescript/async/async_await_parallel_vs_sequential.ts"><code>examples/typescript/async/async_await_parallel_vs_sequential.ts</code></a>.</p>
+<hr>
+<h3 id="q-debounce-vs-throttle">🟡 Q. Debounce vs throttle?</h3>
+<p><strong>Answer.</strong> Both limit how often a function runs, in opposite ways.</p>
+<ul>
+<li><strong>Debounce</strong> — wait until the events <em>stop</em>, then run once. Search-as-you-type,
+  resize handlers, autosave.</li>
+<li><strong>Throttle</strong> — run at most once per interval while events continue. Scroll
+  position, mouse tracking, analytics.</li>
+</ul>
+<p>"Fire after the user stops typing" is debounce; "fire at most every 200 ms while
+scrolling" is throttle. Worked example:
+<a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/javascript/utilities/debounce_with_cancellation.js"><code>examples/javascript/utilities/debounce_with_cancellation.js</code></a>.</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\languages\javascript.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../";</script>
+<script src="../../assets/search.js" defer></script>
+</body>
+</html>

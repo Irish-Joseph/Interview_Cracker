@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recursion and Backtracking &middot; Interview Cracker</title>
+<meta name="description" content="Recursion is how you express "solve a smaller version of this". Backtracking is recursion that undoes its choices — the standard tool for permutations, combinations and constraint ...">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/algorithms/recursion-and-backtracking.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Recursion and Backtracking &middot; Interview Cracker">
+<meta property="og:description" content="Recursion is how you express "solve a smaller version of this". Backtracking is recursion that undoes its choices — the standard tool for permutations, combinations and constraint ...">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/algorithms/recursion-and-backtracking.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/recursion-and-backtracking.html" class="current" aria-current="page">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-18.html">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="recursion-and-backtracking">Recursion and Backtracking</h1>
+<p>Recursion is how you express "solve a smaller version of this". Backtracking is
+recursion that undoes its choices — the standard tool for permutations,
+combinations and constraint puzzles.</p>
+<hr>
+<h3 id="q-what-are-the-parts-of-a-correct-recursive-function">🟢 Q. What are the parts of a correct recursive function?</h3>
+<p><strong>Answer.</strong> Three, and missing any one is a bug:</p>
+<ol>
+<li><strong>A base case</strong> that returns without recursing.</li>
+<li><strong>A recursive case</strong> that calls itself on a <strong>strictly smaller</strong> input.</li>
+<li><strong>Progress</strong> — every path must move toward the base case.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>          <span class="c1"># base case</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>   <span class="c1"># smaller input, guaranteed progress</span>
+</code></pre></div>
+<p>Infinite recursion is almost always a missing base case or a recursive call that
+does not shrink the input (<code>factorial(n)</code> instead of <code>factorial(n - 1)</code>).</p>
+<hr>
+<h3 id="q-what-actually-happens-in-memory-when-a-function-recurses">🟢 Q. What actually happens in memory when a function recurses?</h3>
+<p><strong>Answer.</strong> Each call pushes a <strong>stack frame</strong> holding that call's parameters,
+local variables and return address. Frames are popped as calls return.</p>
+<p>That is why recursion costs <strong>O(depth) space</strong> even when it allocates nothing,
+and why exceeding the stack limit raises <code>StackOverflowError</code> /
+<code>RecursionError</code>. Python's default limit is 1000 frames — deliberately low, to
+turn runaway recursion into a clean error instead of a crash.</p>
+<p>The practical consequence: recursion depth proportional to n is fine for a
+balanced tree (depth log n) and dangerous for a linked list or a degenerate tree
+(depth n).</p>
+<hr>
+<h3 id="q-what-is-tail-recursion-and-does-it-help-in-your-language">🟡 Q. What is tail recursion, and does it help in your language?</h3>
+<p><strong>Answer.</strong> A call is in <strong>tail position</strong> when it is the very last thing the
+function does — its result is returned directly, with no pending work.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">sum_to</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">acc</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">acc</span>
+    <span class="k">return</span> <span class="n">sum_to</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">acc</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span>     <span class="c1"># tail call: nothing waits on it</span>
+</code></pre></div>
+<p>A compiler can reuse the current frame instead of pushing a new one, turning the
+recursion into a loop: O(1) space. Scheme and Lua guarantee this; Scala, Kotlin
+and most functional languages do it (<code>@tailrec</code>); JavaScript engines mostly do
+not, despite it being in the spec.</p>
+<p><strong>Python does not do it and will not</strong> — Guido van Rossum has rejected it
+deliberately, partly because it destroys the stack traces that make debugging
+possible. So in Python, rewriting for tail position buys you nothing. Convert to
+an explicit loop instead.</p>
+<hr>
+<h3 id="q-when-should-you-convert-recursion-to-iteration">🟡 Q. When should you convert recursion to iteration?</h3>
+<p><strong>Answer.</strong> When depth can be large, or when the recursion is simple enough that
+a loop is clearer.</p>
+<p>Every recursion can be made iterative with an explicit stack. That does not
+reduce total space — it moves it from the limited call stack to the heap, which
+is exactly the point when depth is the problem.</p>
+<p>Prefer <strong>recursion</strong> for trees, nested structures and divide-and-conquer, where
+it mirrors the shape of the data. Prefer <strong>iteration</strong> for linear traversals, and
+whenever depth is O(n) on untrusted input.</p>
+<hr>
+<h3 id="q-what-is-backtracking">🟡 Q. What is backtracking?</h3>
+<p><strong>Answer.</strong> Systematic search: make a choice, recurse, then <strong>undo the choice</strong>
+before trying the next one. It explores a tree of partial solutions and abandons
+a branch as soon as it cannot lead anywhere ("pruning").</p>
+<p>The template is the same every time:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">backtrack</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">choices</span><span class="p">,</span> <span class="n">results</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">is_complete</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>      <span class="c1"># copy! state keeps mutating</span>
+        <span class="k">return</span>
+    <span class="k">for</span> <span class="n">choice</span> <span class="ow">in</span> <span class="n">choices</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">is_valid</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">choice</span><span class="p">):</span>
+            <span class="k">continue</span>                      <span class="c1"># prune</span>
+        <span class="n">state</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span>              <span class="c1"># 1. choose</span>
+        <span class="n">backtrack</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">choices</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span><span class="c1"># 2. explore</span>
+        <span class="n">state</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>                       <span class="c1"># 3. un-choose</span>
+    <span class="k">return</span> <span class="n">results</span>
+</code></pre></div>
+<p>Two bugs account for most failures: <strong>forgetting to undo</strong> (state leaks between
+branches) and <strong>appending <code>state</code> instead of <code>state.copy()</code></strong> (every result is
+the same list object, which ends up empty).</p>
+<hr>
+<h3 id="q-generate-all-permutations-of-a-list">🟡 Q. Generate all permutations of a list.</h3>
+<p><strong>Answer.</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">permutations</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+    <span class="n">results</span><span class="p">,</span> <span class="n">used</span><span class="p">,</span> <span class="n">current</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">),</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">backtrack</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">current</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+            <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+            <span class="k">return</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="k">continue</span>
+            <span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">current</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+            <span class="n">backtrack</span><span class="p">()</span>
+            <span class="n">current</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>          <span class="c1"># undo</span>
+            <span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>        <span class="c1"># undo</span>
+        <span class="k">return</span>
+
+    <span class="n">backtrack</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">results</span>
+</code></pre></div>
+<p><strong>O(n × n!) time</strong> — there are n! permutations and copying each costs O(n) — and
+<strong>O(n) space</strong> beyond the output.</p>
+<p>You cannot beat n! when the output <em>is</em> n! items; that is an output-size bound,
+not an inefficiency. Say so explicitly, because candidates often apologise for a
+complexity that is provably optimal.</p>
+<hr>
+<h3 id="q-subsets-vs-permutations-vs-combinations-how-do-the-recursions-differ">🟡 Q. Subsets vs permutations vs combinations — how do the recursions differ?</h3>
+<p><strong>Answer.</strong> All three are the same skeleton with a different loop bound.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Count</th>
+<th>Key difference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Subsets</strong></td>
+<td>2ⁿ</td>
+<td>Every element is take-or-skip; record at <strong>every</strong> node</td>
+</tr>
+<tr>
+<td><strong>Permutations</strong></td>
+<td>n!</td>
+<td>Order matters; loop over all unused elements</td>
+</tr>
+<tr>
+<td><strong>Combinations</strong> (choose k)</td>
+<td>C(n,k)</td>
+<td>Order does not matter; loop from <code>start</code> onward</td>
+</tr>
+</tbody>
+</table>
+<p>The single line that separates permutations from combinations is whether the
+recursive call restarts the loop at 0 (permutations) or at <code>i + 1</code>
+(combinations). Passing a <code>start</code> index is what stops <code>[1,2]</code> and <code>[2,1]</code> both
+appearing.</p>
+<hr>
+<h3 id="q-how-does-pruning-change-backtrackings-performance">🔴 Q. How does pruning change backtracking's performance?</h3>
+<p><strong>Answer.</strong> It does not improve the worst case, but it is the difference between
+usable and useless in practice.</p>
+<p>N-Queens is the standard illustration. Brute force places a queen in every square
+of every row: 8⁸ ≈ 16.7 million placements for an 8×8 board. Checking validity
+<em>as you place</em> — abandoning a row the instant a queen is attacked — cuts it to
+roughly 15,000 nodes explored, and only 92 solutions exist.</p>
+<p>The principle: <strong>check constraints as early as possible</strong>, not at the leaves. A
+branch you cut at depth 2 removes everything beneath it. This is also why the
+order you try choices matters — trying the most constrained option first
+("minimum remaining values") prunes hardest and is the core heuristic in Sudoku
+solvers.</p>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\algorithms\recursion-and-backtracking.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../";</script>
+<script src="../../assets/search.js" defer></script>
+</body>
+</html>

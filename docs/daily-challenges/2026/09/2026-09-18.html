@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-09-18 — Product of Array Except Self &middot; Interview Cracker</title>
+<meta name="description" content="Given an integer array nums, return an array answer where answer[i] is the product of every element of nums except nums[i].">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/daily-challenges/2026/09/2026-09-18.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2026-09-18 — Product of Array Except Self &middot; Interview Cracker">
+<meta property="og:description" content="Given an integer array nums, return an array answer where answer[i] is the product of every element of nums except nums[i].">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/daily-challenges/2026/09/2026-09-18.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../../../index.html">Interview Cracker</a>
+  <input id="q" type="search" placeholder="Search 48 pages&hellip;" autocomplete="off" aria-label="Search">
+  <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
+</header>
+<div id="results" hidden></div>
+<div class="layout">
+  <nav class="sidebar" aria-label="Sections">
+    
+    <div class="navsection"><span class="navtitle">Interview Prep</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../../interview-prep/README.html">Interview Prep</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Algorithms</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/algorithms/complexity-analysis.html">Complexity Analysis</a></li>
+        
+          <li><a href="../../../interview-prep/algorithms/dynamic-programming.html">Dynamic Programming</a></li>
+        
+          <li><a href="../../../interview-prep/algorithms/number-theory-and-math.html">Number Theory & Math</a></li>
+        
+          <li><a href="../../../interview-prep/algorithms/recursion-and-backtracking.html">Recursion and Backtracking</a></li>
+        
+          <li><a href="../../../interview-prep/algorithms/sorting-and-searching.html">Sorting and Searching</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Behavioural</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/behavioral/star-stories.html">Behavioural Interviews</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Core Computer Science</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/core-cs/concurrency.html">Concurrency</a></li>
+        
+          <li><a href="../../../interview-prep/core-cs/networking.html">Networking</a></li>
+        
+          <li><a href="../../../interview-prep/core-cs/operating-systems.html">Operating Systems</a></li>
+        
+          <li><a href="../../../interview-prep/core-cs/cryptography-and-security.html">Security & Cryptography</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Data Structures</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/data-structures/arrays-and-strings.html">Arrays and Strings</a></li>
+        
+          <li><a href="../../../interview-prep/data-structures/hash-tables.html">Hash Tables</a></li>
+        
+          <li><a href="../../../interview-prep/data-structures/linked-lists.html">Linked Lists</a></li>
+        
+          <li><a href="../../../interview-prep/data-structures/stacks-queues-heaps.html">Stacks, Queues and Heaps</a></li>
+        
+          <li><a href="../../../interview-prep/data-structures/trees-and-graphs.html">Trees and Graphs</a></li>
+        
+          <li><a href="../../../interview-prep/data-structures/tries.html">Tries & Prefix Data Structures</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Databases</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/databases/database-normalization.html">Database Normalization</a></li>
+        
+          <li><a href="../../../interview-prep/databases/indexing-and-transactions.html">Indexing and Transactions</a></li>
+        
+          <li><a href="../../../interview-prep/databases/sql-query-questions.html">SQL Query Questions</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Language Specific</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/languages/go.html">Go</a></li>
+        
+          <li><a href="../../../interview-prep/languages/java.html">Java Interview Questions</a></li>
+        
+          <li><a href="../../../interview-prep/languages/javascript.html">JavaScript Interview Questions</a></li>
+        
+          <li><a href="../../../interview-prep/languages/python.html">Python Interview Questions</a></li>
+        
+          <li><a href="../../../interview-prep/languages/rust.html">Rust</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">System Design</span>
+        <ul>
+        
+          <li><a href="../../../interview-prep/system-design/fundamentals.html">System Design Fundamentals</a></li>
+        
+          <li><a href="../../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Coding Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../../coding-challenges/README.html">Coding Challenges</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Binary Search</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/binary-search/README.html">Pattern: Binary Search</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Dynamic Programming</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/dynamic-programming/README.html">Pattern: Dynamic Programming</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Graphs</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Hashing</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/hashing/README.html">Pattern: Hashing</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Intervals</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Linked List</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/linked-list/README.html">Pattern: Linked List</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Sliding Window</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/sliding-window/README.html">Pattern: Sliding Window</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Stack</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/stack/README.html">Pattern: Stack</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Trees</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/trees/README.html">Pattern: Trees</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">Two Pointers</span>
+        <ul>
+        
+          <li><a href="../../../coding-challenges/two-pointers/README.html">Pattern: Two Pointers</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="navsection"><span class="navtitle">Daily Challenges</span>
+      
+      <div class="navgroup">
+        
+        <ul>
+        
+          <li><a href="../../../daily-challenges/README.html">Daily Challenges</a></li>
+        
+          <li><a href="../../../daily-challenges/TEMPLATE.html">YYYY-MM-DD — Challenge title</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="navgroup">
+        <span class="navgroup-title">2026</span>
+        <ul>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-17.html">2026-09-17 — Move Zeroes</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-18.html" class="current" aria-current="page">2026-09-18 — Product of Array Except Self</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-19.html">2026-09-19 — Find the Duplicate Number</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-20.html">2026-09-20 — First Unique Character in a String</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-21.html">2026-09-21 — Next Permutation</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-22.html">2026-09-22 — Trapping Rain Water</a></li>
+        
+          <li><a href="../../../daily-challenges/2026/09/2026-09-23.html">2026-09-23 — Interleaving String</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+    
+  </nav>
+  <main id="main" class="content">
+    <h1 id="2026-09-18-product-of-array-except-self">2026-09-18 — Product of Array Except Self</h1>
+<p><strong>Difficulty:</strong> 🟡 Medium
+<strong>Pattern:</strong> Prefix and suffix products
+<strong>Time-box:</strong> 20 minutes</p>
+<h2 id="problem">Problem</h2>
+<p>Given an integer array <code>nums</code>, return an array <code>answer</code> where <code>answer[i]</code> is the
+product of every element of <code>nums</code> <strong>except</strong> <code>nums[i]</code>.</p>
+<h3 id="examples">Examples</h3>
+<div class="highlight"><pre><span></span><code>[1, 2, 3, 4]    -&gt;  [24, 12, 8, 6]
+[-1, 1, 0, -3, 3] -&gt;  [0, 0, 9, 0, 0]
+[2, 3]          -&gt;  [3, 2]
+</code></pre></div>
+<h3 id="constraints">Constraints</h3>
+<ul>
+<li><strong>You may not use division.</strong> (Which rules out "product of everything ÷
+  nums[i]" — and that restriction exists for a reason: see the hint.)</li>
+<li>Run in O(n).</li>
+<li>The output array does not count toward extra space.</li>
+</ul>
+<hr>
+<details >
+<summary ><b>Hint</b> (open only if stuck after 10 minutes)</summary>
+<p>The division approach fails on zeroes: with one zero, every other answer is 0
+and you would be dividing by zero to get the one non-zero entry. With two
+zeroes, everything is 0. Handling that with special cases is possible but ugly —
+and the interviewer's real question is whether you see the alternative.</p>
+<p>The product of everything except <code>i</code> is:</p>
+<div class="highlight"><pre><span></span><code>(everything to the LEFT of i)  ×  (everything to the RIGHT of i)
+</code></pre></div>
+<p>Both of those can be built in a single pass each.</p>
+</details>
+<hr>
+<details >
+<summary ><b>Solution</b></summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">product_except_self</span><span class="p">(</span><span class="n">nums</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span>
+
+    <span class="c1"># Pass 1: answer[i] = product of everything LEFT of i.</span>
+    <span class="n">running</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">answer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">running</span>
+        <span class="n">running</span> <span class="o">*=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+    <span class="c1"># Pass 2: multiply in the product of everything RIGHT of i.</span>
+    <span class="n">running</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">answer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*=</span> <span class="n">running</span>
+        <span class="n">running</span> <span class="o">*=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">answer</span>
+</code></pre></div>
+<p>Tracing <code>[1, 2, 3, 4]</code>:</p>
+<table>
+<thead>
+<tr>
+<th>i</th>
+<th>left product</th>
+<th>right product</th>
+<th>answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>2·3·4 = 24</td>
+<td>24</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>3·4 = 12</td>
+<td>12</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1·2 = 2</td>
+<td>4</td>
+<td>8</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1·2·3 = 6</td>
+<td>1</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How it works.</strong> The first pass writes the left product into <code>answer[i]</code> <em>before</em>
+folding <code>nums[i]</code> into the running product, so <code>nums[i]</code> itself is never
+included. The second pass does the same from the right, multiplying into what is
+already there. No division, and zeroes need no special handling at all — a zero
+simply propagates into the running product like any other value.</p>
+<p><strong>Complexity.</strong> Time: O(n) — two passes. Space: O(1) extra — the running
+variables; the output array is required by the problem and does not count.</p>
+<p><strong>Edge cases that matter.</strong>
+- <strong>One zero</strong> — every position except that one gets 0; the zero's own position
+  gets the product of the rest. Falls out automatically.
+- <strong>Two or more zeroes</strong> — everything is 0. Also automatic.
+- Two elements, the minimum interesting size.
+- Negative numbers — signs take care of themselves.</p>
+<p><strong>Common wrong answer.</strong> <code>total = math.prod(nums)</code> then <code>total // nums[i]</code>. It
+is O(n) and looks clever, but it is explicitly disallowed, it crashes on a zero,
+and with two zeroes there is no total to divide anyway.</p>
+</details>
+    <hr>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/daily-challenges\2026\09\2026-09-18.md" rel="noopener">Edit this page on GitHub</a>.</p>
+  </main>
+</div>
+<script>window.SEARCH_PREFIX="../../../";</script>
+<script src="../../../assets/search.js" defer></script>
+</body>
+</html>
