@@ -5,6 +5,8 @@
 **Everything you need to prepare for a software engineering interview, in one
 repository — explained, worked through, and runnable.**
 
+### 📖 [Read it as a searchable site → irish-joseph.github.io/Interview_Cracker](https://irish-joseph.github.io/Interview_Cracker/)
+
 Most interview repositories are a wall of unexplained solutions. This one is
 built around *why* an answer is right: every question has a written answer, every
 challenge has a commented solution with its complexity, and every concept links

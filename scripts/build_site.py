@@ -204,7 +204,10 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 <meta property="og:title" content="{% if page.title == site_name %}{{ site_name }}{% else %}{{ page.title }} &middot; {{ site_name }}{% endif %}">
 <meta property="og:description" content="{{ page.description }}">
 <meta property="og:url" content="{{ base_url }}/{{ page.url }}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="{{ base_url }}/assets/social-preview.png">
+<meta property="og:site_name" content="{{ site_name }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ base_url }}/assets/social-preview.png">
 <link rel="stylesheet" href="{{ prefix }}assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
 </head>
