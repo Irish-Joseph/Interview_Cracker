@@ -39,6 +39,7 @@ One file per day, named `YYYY-MM-DD.md`, filed under `YYYY/MM/`.
 | [2026-09-17](2026/09/2026-09-17.md) | Move zeroes to the end, in place | 🟢 Easy | Two pointers |
 | [2026-09-18](2026/09/2026-09-18.md) | Product of array except self | 🟡 Medium | Prefix/suffix products |
 | [2026-09-19](2026/09/2026-09-19.md) | Find the duplicate number | 🔴 Hard | Floyd's cycle detection |
+| [2026-09-20](2026/09/2026-09-20.md) | First unique character in a string | 🟢 Easy | Hash map (count, then scan) |
 
 ## Contributing a day
 
