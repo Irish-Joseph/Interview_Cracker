@@ -197,11 +197,11 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ page.title }} &middot; {{ site_name }}</title>
+<title>{% if page.title == site_name %}{{ site_name }} &mdash; {{ tagline }}{% else %}{{ page.title }} &middot; {{ site_name }}{% endif %}</title>
 <meta name="description" content="{{ page.description }}">
 <link rel="canonical" href="{{ base_url }}/{{ page.url }}">
 <meta property="og:type" content="article">
-<meta property="og:title" content="{{ page.title }} &middot; {{ site_name }}">
+<meta property="og:title" content="{% if page.title == site_name %}{{ site_name }}{% else %}{{ page.title }} &middot; {{ site_name }}{% endif %}">
 <meta property="og:description" content="{{ page.description }}">
 <meta property="og:url" content="{{ base_url }}/{{ page.url }}">
 <meta name="twitter:card" content="summary">
@@ -359,6 +359,7 @@ def main() -> int:
         return template.render(
             page=page, nav=nav, site_name=SITE_NAME, base_url=BASE_URL,
             repo_url=REPO_URL, repo_blob=REPO_BLOB, prefix="../" * depth,
+            tagline=SITE_TAGLINE,
             page_count=len(pages) + 1,
         )
 
