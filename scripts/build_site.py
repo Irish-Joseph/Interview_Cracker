@@ -51,6 +51,12 @@ REPO_BLOB = REPO_URL + "/blob/main"
 #   <meta name="google-site-verification" content="abc123def456..." />
 GOOGLE_SITE_VERIFICATION = ""
 
+# Google's OTHER method hands you a file named googleXXXX.html to place at the
+# site root. Because this script rebuilds docs/ from scratch, a hand-placed
+# file would be deleted on the next run -- so the build writes it instead.
+# Set the filename Google gave you; the body is the single line Google expects.
+GOOGLE_VERIFICATION_FILE = "googleabab5b3b9673ebec.html"
+
 # Bing Webmaster Tools, same idea. Optional.
 BING_SITE_VERIFICATION = ""
 
@@ -425,6 +431,15 @@ def main() -> int:
         encoding="utf-8")
     # .nojekyll stops GitHub Pages running Jekyll over already-built HTML.
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
+
+    # Search Console's file-based verification. Regenerated every build so it
+    # cannot be lost, which is the failure mode of placing it by hand.
+    if GOOGLE_VERIFICATION_FILE:
+        (OUT / GOOGLE_VERIFICATION_FILE).write_text(
+            "google-site-verification: " + GOOGLE_VERIFICATION_FILE
+            + chr(10),
+            encoding="utf-8", newline="")   # LF only, exactly as Google issues it
+        print("  verification: {}".format(GOOGLE_VERIFICATION_FILE))
 
     (OUT / "assets" / "style.css").write_text(STYLE_CSS, encoding="utf-8")
     (OUT / "assets" / "search.js").write_text(SEARCH_JS, encoding="utf-8")
