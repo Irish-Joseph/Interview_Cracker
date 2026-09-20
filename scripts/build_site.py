@@ -36,7 +36,22 @@ OUT = ROOT / "docs"
 
 SITE_NAME = "Interview Cracker"
 SITE_TAGLINE = "Interview prep that explains why an answer is right"
-BASE_URL = "https://irish-joseph.github.io/Interview_Cracker"
+# Custom domain. Leave empty to publish at the github.io URL.
+#
+# When you buy a domain and point it here, set it below (no scheme, no
+# trailing slash), e.g. "interview.example.com". The build then:
+#   * writes the CNAME file GitHub Pages needs, on EVERY run -- important,
+#     because this script deletes docs/ each build, so a CNAME placed by
+#     hand through the GitHub UI would be wiped and the domain would break
+#   * rewrites BASE_URL, so canonical tags, og:url, og:image, the sitemap
+#     and robots.txt all point at the new domain instead of github.io
+#
+# Internal links are relative, so nothing else needs to change when the site
+# moves from a /Interview_Cracker/ subpath to a domain root.
+CUSTOM_DOMAIN = ""
+
+BASE_URL = ("https://" + CUSTOM_DOMAIN if CUSTOM_DOMAIN
+            else "https://irish-joseph.github.io/Interview_Cracker")
 REPO_URL = "https://github.com/Irish-Joseph/Interview_Cracker"
 REPO_BLOB = REPO_URL + "/blob/main"
 
@@ -431,6 +446,13 @@ def main() -> int:
         encoding="utf-8")
     # .nojekyll stops GitHub Pages running Jekyll over already-built HTML.
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
+
+    # GitHub Pages reads CNAME to route the custom domain. Rewritten every
+    # build so it cannot be lost when docs/ is regenerated.
+    if CUSTOM_DOMAIN:
+        (OUT / "CNAME").write_text(CUSTOM_DOMAIN + chr(10),
+                                   encoding="utf-8", newline="")
+        print("  custom domain: {}".format(CUSTOM_DOMAIN))
 
     # Search Console's file-based verification. Regenerated every build so it
     # cannot be lost, which is the failure mode of placing it by hand.
