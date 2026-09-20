@@ -1,5 +1,5 @@
 {
-  "total_examples": 155,
+  "total_examples": 156,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1240,6 +1240,14 @@
       "category": "concurrency",
       "topic": "ThreadLocal and basic synchronization (synchronized, AtomicInteger)",
       "file": "examples/java/concurrency/threadlocal_and_synchronization.java"
+    },
+    {
+      "date": "2026-09-21",
+      "language": "c",
+      "difficulty": "intermediate",
+      "category": "arrays",
+      "topic": "Passing 2D arrays to functions: decay, pointer-to-array, flat view",
+      "file": "examples/c/arrays/passing_2d_arrays_to_functions.c"
     }
   ]
 }
