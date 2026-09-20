@@ -43,3 +43,4 @@ for dr, dc in DIRECTIONS:
 |---|---|---|
 | [number_of_islands.py](number_of_islands.py) | 🟡 Medium | Grid DFS / flood fill |
 | [course_schedule.py](course_schedule.py) | 🟡 Medium | Topological sort (cycle detection) |
+| [word_ladder.py](word_ladder.py) | 🔴 Hard | Implicit graph + BFS |
