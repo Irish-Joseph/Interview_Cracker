@@ -34,6 +34,7 @@ Questions are tagged by difficulty:
 | [stacks-queues-heaps.md](data-structures/stacks-queues-heaps.md) | LIFO/FIFO, monotonic stacks, priority queues, heap operations |
 | [hash-tables.md](data-structures/hash-tables.md) | Hashing, collisions, load factor, why O(1) is *average* not worst |
 | [trees-and-graphs.md](data-structures/trees-and-graphs.md) | BSTs, balancing, traversals, BFS/DFS, representations |
+| [tries.md](data-structures/tries.md) | Prefix trees, prefix enumeration, trie vs hash set, longest-prefix query |
 
 ### Algorithms
 | File | Covers |
