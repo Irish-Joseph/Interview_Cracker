@@ -1,5 +1,5 @@
 {
-  "total_examples": 162,
+  "total_examples": 163,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1296,6 +1296,14 @@
       "category": "utilities",
       "topic": "Process substitution: <(...) and >(...)",
       "file": "examples/bash/utilities/process_substitution.sh"
+    },
+    {
+      "date": "2026-09-21",
+      "language": "ruby",
+      "difficulty": "beginner",
+      "category": "files",
+      "topic": "File I/O: read, write, append, and line-by-line streaming",
+      "file": "examples/ruby/files/file_io_read_write_stream.rb"
     }
   ]
 }
