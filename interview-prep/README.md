@@ -73,6 +73,7 @@ Questions are tagged by difficulty:
 | [javascript.md](languages/javascript.md) | Event loop, closures, `this`, prototypes, promises |
 | [java.md](languages/java.md) | JVM memory, collections, equals/hashCode, generics erasure |
 | [rust.md](languages/rust.md) | Ownership and moves, borrowing/lifetimes, Option/Result/`?`, Box/Rc/RefCell |
+| [go.md](languages/go.md) | Goroutines vs threads, channel blocking, error values, interfaces, goroutine leaks |
 
 ### Behavioural
 | File | Covers |
