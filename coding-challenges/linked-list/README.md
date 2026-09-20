@@ -32,3 +32,4 @@ Every linked-list answer is graded on these. Walk through them out loud:
 |---|---|---|
 | [reverse_linked_list.py](reverse_linked_list.py) | 🟢 Easy | Three pointers |
 | [detect_cycle.py](detect_cycle.py) | 🟡 Medium | Floyd's fast/slow |
+| [remove_nth_from_end.py](remove_nth_from_end.py) | 🟡 Medium | Dummy + gap of n+1 |
