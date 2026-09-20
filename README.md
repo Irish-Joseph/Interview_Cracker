@@ -120,6 +120,10 @@ PDFs. Full per-example listing in [TOPICS.md](TOPICS.md).
 See [CONTRIBUTING.md](CONTRIBUTING.md) — there is a checklist for each area.
 `Skill.md` documents the repository's full maintenance rules.
 
+## License
+
+[MIT](LICENSE) — use it, fork it, teach from it. Attribution appreciated.
+
 ## Community
 
 - Ask questions in [Q&A Discussions](https://github.com/Irish-Joseph/Interview_Cracker/discussions/categories/q-a).
