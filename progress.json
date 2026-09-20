@@ -1,5 +1,5 @@
 {
-  "total_examples": 161,
+  "total_examples": 162,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1288,6 +1288,14 @@
       "category": "strings",
       "topic": "String functions: length, substr, trim, case, concat, LIKE, NULL",
       "file": "examples/sql/strings/string_functions.sql"
+    },
+    {
+      "date": "2026-09-21",
+      "language": "bash",
+      "difficulty": "intermediate",
+      "category": "utilities",
+      "topic": "Process substitution: <(...) and >(...)",
+      "file": "examples/bash/utilities/process_substitution.sh"
     }
   ]
 }
