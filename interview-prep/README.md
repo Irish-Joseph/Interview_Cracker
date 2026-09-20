@@ -70,6 +70,7 @@ Questions are tagged by difficulty:
 | [python.md](languages/python.md) | GIL, mutability, generators, decorators, `is` vs `==` |
 | [javascript.md](languages/javascript.md) | Event loop, closures, `this`, prototypes, promises |
 | [java.md](languages/java.md) | JVM memory, collections, equals/hashCode, generics erasure |
+| [rust.md](languages/rust.md) | Ownership and moves, borrowing/lifetimes, Option/Result/`?`, Box/Rc/RefCell |
 
 ### Behavioural
 | File | Covers |
