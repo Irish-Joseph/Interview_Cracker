@@ -40,6 +40,20 @@ BASE_URL = "https://irish-joseph.github.io/Interview_Cracker"
 REPO_URL = "https://github.com/Irish-Joseph/Interview_Cracker"
 REPO_BLOB = REPO_URL + "/blob/main"
 
+# Google Search Console verification.
+#
+# Use the "HTML tag" method, NOT the "HTML file" method: this script deletes
+# and rebuilds docs/ on every run, so an uploaded googleXXXX.html file would
+# vanish the next time the site is generated. The token below is baked into
+# every page's <head>, so it survives rebuilds.
+#
+# Paste just the content value here, e.g. "abc123def456..." from
+#   <meta name="google-site-verification" content="abc123def456..." />
+GOOGLE_SITE_VERIFICATION = ""
+
+# Bing Webmaster Tools, same idea. Optional.
+BING_SITE_VERIFICATION = ""
+
 # Sections rendered into the site, in nav order.
 SECTIONS = [
     ("interview-prep", "Interview Prep"),
@@ -208,7 +222,9 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 <meta property="og:site_name" content="{{ site_name }}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="{{ base_url }}/assets/social-preview.png">
-<link rel="stylesheet" href="{{ prefix }}assets/style.css">
+{% if google_verification %}<meta name="google-site-verification" content="{{ google_verification }}">
+{% endif %}{% if bing_verification %}<meta name="msvalidate.01" content="{{ bing_verification }}">
+{% endif %}<link rel="stylesheet" href="{{ prefix }}assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
 </head>
 <body>
@@ -363,6 +379,8 @@ def main() -> int:
             page=page, nav=nav, site_name=SITE_NAME, base_url=BASE_URL,
             repo_url=REPO_URL, repo_blob=REPO_BLOB, prefix="../" * depth,
             tagline=SITE_TAGLINE,
+            google_verification=GOOGLE_SITE_VERIFICATION,
+            bing_verification=BING_SITE_VERIFICATION,
             page_count=len(pages) + 1,
         )
 
