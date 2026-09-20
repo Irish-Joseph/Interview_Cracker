@@ -156,3 +156,4 @@
 | 2026-09-21 | Python | Beginner | Standard library | Path operations with pathlib | examples/python/standard-library/pathlib_path_operations.py |
 | 2026-09-21 | JavaScript | Beginner | Strings | String methods: padding, case, localeCompare, template literals | examples/javascript/strings/string_methods.js |
 | 2026-09-21 | TypeScript | Advanced | Advanced Types | DeepPartial and DeepReadonly with recursive conditional types | examples/typescript/advanced-types/deep_partial_and_readonly.ts |
+| 2026-09-21 | Java | Intermediate | Concurrency | ThreadLocal and basic synchronization (synchronized, AtomicInteger) | examples/java/concurrency/threadlocal_and_synchronization.java |

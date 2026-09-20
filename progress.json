@@ -1,5 +1,5 @@
 {
-  "total_examples": 154,
+  "total_examples": 155,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1232,6 +1232,14 @@
       "category": "advanced-types",
       "topic": "DeepPartial and DeepReadonly with recursive conditional types",
       "file": "examples/typescript/advanced-types/deep_partial_and_readonly.ts"
+    },
+    {
+      "date": "2026-09-21",
+      "language": "java",
+      "difficulty": "intermediate",
+      "category": "concurrency",
+      "topic": "ThreadLocal and basic synchronization (synchronized, AtomicInteger)",
+      "file": "examples/java/concurrency/threadlocal_and_synchronization.java"
     }
   ]
 }

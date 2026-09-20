@@ -110,9 +110,9 @@ Both run on every push and pull request.
 
 ## Statistics
 
-Examples: 154
+Examples: 155
 Languages: 13
-Categories: 116
+Categories: 117
 
 Plus 19 subject question banks, 20 pattern-grouped challenges, and 8 generated
 PDFs. Full per-example listing in [TOPICS.md](TOPICS.md).
