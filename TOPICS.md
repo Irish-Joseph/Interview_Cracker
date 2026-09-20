@@ -161,3 +161,4 @@
 | 2026-09-21 | C++ | Beginner | Stl | Range-based for, structured bindings and std::array | examples/cpp/stl/structured_bindings_range_for.cpp |
 | 2026-09-21 | C# | Beginner | Strings | StringBuilder, string interpolation and culture-aware formatting | examples/csharp/strings/string_builder_and_culture_formatting.cs |
 | 2026-09-21 | Go | Intermediate | Sorting | sort.Slice, sort.Interface and sort.Search | examples/go/sorting/sorting_slices.go |
+| 2026-09-21 | Rust | Intermediate | Matching | Match guards, let-else and destructuring patterns | examples/rust/matching/match_guards_let_else.rs |

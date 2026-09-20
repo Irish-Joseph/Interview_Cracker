@@ -1,5 +1,5 @@
 {
-  "total_examples": 159,
+  "total_examples": 160,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1272,6 +1272,14 @@
       "category": "sorting",
       "topic": "sort.Slice, sort.Interface and sort.Search",
       "file": "examples/go/sorting/sorting_slices.go"
+    },
+    {
+      "date": "2026-09-21",
+      "language": "rust",
+      "difficulty": "intermediate",
+      "category": "matching",
+      "topic": "Match guards, let-else and destructuring patterns",
+      "file": "examples/rust/matching/match_guards_let_else.rs"
     }
   ]
 }
