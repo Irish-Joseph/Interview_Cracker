@@ -1,5 +1,5 @@
 {
-  "total_examples": 150,
+  "total_examples": 151,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1200,6 +1200,14 @@
       "category": "data",
       "topic": "Hashtables, splatting and JSON/CSV conversion",
       "file": "examples/powershell/data/hashtables_and_conversion.ps1"
+    },
+    {
+      "date": "2026-09-19",
+      "language": "python",
+      "difficulty": "beginner",
+      "category": "json",
+      "topic": "JSON parsing and serialization with the json module",
+      "file": "examples/python/json/json_parsing_and_encoding.py"
     }
   ]
 }
