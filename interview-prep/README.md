@@ -58,6 +58,7 @@ Questions are tagged by difficulty:
 | [operating-systems.md](core-cs/operating-systems.md) | Processes vs threads, scheduling, memory, virtual memory, deadlock |
 | [networking.md](core-cs/networking.md) | TCP/UDP, HTTP, DNS, TLS, what happens when you type a URL |
 | [concurrency.md](core-cs/concurrency.md) | Race conditions, locks, atomics, async vs threads |
+| [cryptography-and-security.md](core-cs/cryptography-and-security.md) | Symmetric vs asymmetric, hash vs MAC vs signature, password storage, TLS |
 
 ### System design
 | File | Covers |
