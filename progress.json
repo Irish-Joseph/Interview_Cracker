@@ -1,5 +1,5 @@
 {
-  "total_examples": 152,
+  "total_examples": 153,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1216,6 +1216,14 @@
       "category": "standard-library",
       "topic": "Path operations with pathlib",
       "file": "examples/python/standard-library/pathlib_path_operations.py"
+    },
+    {
+      "date": "2026-09-21",
+      "language": "javascript",
+      "difficulty": "beginner",
+      "category": "strings",
+      "topic": "String methods: padding, case, localeCompare, template literals",
+      "file": "examples/javascript/strings/string_methods.js"
     }
   ]
 }

@@ -154,3 +154,4 @@
 | 2026-09-19 | PowerShell | Intermediate | Data | Hashtables, splatting and JSON/CSV conversion | examples/powershell/data/hashtables_and_conversion.ps1 |
 | 2026-09-20 | Python | Beginner | JSON | JSON parsing and serialization with the json module | examples/python/json/json_parsing_and_encoding.py |
 | 2026-09-21 | Python | Beginner | Standard library | Path operations with pathlib | examples/python/standard-library/pathlib_path_operations.py |
+| 2026-09-21 | JavaScript | Beginner | Strings | String methods: padding, case, localeCompare, template literals | examples/javascript/strings/string_methods.js |
