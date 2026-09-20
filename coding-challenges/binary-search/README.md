@@ -42,3 +42,4 @@ Always test: empty, one element, target absent, target first, target last.
 |---|---|---|
 | [search_rotated_array.py](search_rotated_array.py) | 🟡 Medium | Sorted-but-rotated input |
 | [minimum_eating_speed.py](minimum_eating_speed.py) | 🟡 Medium | Binary search on the answer |
+| [find_peak_element.py](find_peak_element.py) | 🟡 Medium | Search on slope, not value |
