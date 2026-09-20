@@ -41,3 +41,4 @@ take at most 2n steps — even though the code looks like it might be quadratic.
 |---|---|---|
 | [valid_palindrome.py](valid_palindrome.py) | 🟢 Easy | Converging |
 | [three_sum.py](three_sum.py) | 🟡 Medium | Sort + converging inside a loop |
+| [remove_duplicates_sorted.py](remove_duplicates_sorted.py) | 🟢 Easy | Read and write |
