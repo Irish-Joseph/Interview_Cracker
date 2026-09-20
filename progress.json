@@ -1,5 +1,5 @@
 {
-  "total_examples": 160,
+  "total_examples": 161,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1280,6 +1280,14 @@
       "category": "matching",
       "topic": "Match guards, let-else and destructuring patterns",
       "file": "examples/rust/matching/match_guards_let_else.rs"
+    },
+    {
+      "date": "2026-09-21",
+      "language": "sql",
+      "difficulty": "intermediate",
+      "category": "strings",
+      "topic": "String functions: length, substr, trim, case, concat, LIKE, NULL",
+      "file": "examples/sql/strings/string_functions.sql"
     }
   ]
 }
