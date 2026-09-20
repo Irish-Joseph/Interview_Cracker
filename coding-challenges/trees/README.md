@@ -33,3 +33,4 @@ capturing `len(queue)` before the inner loop.
 |---|---|---|
 | [level_order_traversal.py](level_order_traversal.py) | 🟡 Medium | BFS |
 | [validate_bst.py](validate_bst.py) | 🟡 Medium | DFS with bounds |
+| [lowest_common_ancestor_bst.py](lowest_common_ancestor_bst.py) | 🟡 Medium | Walk to the split point |
