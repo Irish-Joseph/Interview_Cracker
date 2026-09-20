@@ -1,5 +1,5 @@
 {
-  "total_examples": 151,
+  "total_examples": 152,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1208,6 +1208,14 @@
       "category": "json",
       "topic": "JSON parsing and serialization with the json module",
       "file": "examples/python/json/json_parsing_and_encoding.py"
+    },
+    {
+      "date": "2026-09-21",
+      "language": "python",
+      "difficulty": "beginner",
+      "category": "standard-library",
+      "topic": "Path operations with pathlib",
+      "file": "examples/python/standard-library/pathlib_path_operations.py"
     }
   ]
 }

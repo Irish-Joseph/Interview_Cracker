@@ -110,7 +110,7 @@ Both run on every push and pull request.
 
 ## Statistics
 
-Examples: 151
+Examples: 152
 Languages: 13
 Categories: 115
 
