@@ -44,3 +44,4 @@ and without it you would shrink the range.
 |---|---|---|
 | [merge_intervals.py](merge_intervals.py) | 🟡 Medium | Start |
 | [meeting_rooms.py](meeting_rooms.py) | 🟡 Medium | Start, with a min-heap |
+| [insert_interval.py](insert_interval.py) | 🟡 Medium | Already sorted — no re-sort, O(n) |
