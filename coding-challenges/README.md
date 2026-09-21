@@ -41,6 +41,7 @@ python scripts/run_challenges.py
 | [linked-list](linked-list/) | Pointer rewiring; fast/slow traversal | Reverse a list, detect a cycle |
 | [trees](trees/) | Recursive structure; level-by-level work | Level-order traversal, validate a BST |
 | [graphs](graphs/) | Connectivity, shortest hops, dependency order | Number of islands, course schedule |
+| [union-find](union-find/) | Edges arrive over time; "are these connected yet?"; cycles in an undirected graph | Redundant connection |
 | [dynamic-programming](dynamic-programming/) | Overlapping subproblems; count/min/max | Climbing stairs, coin change |
 | [intervals](intervals/) | Ranges that may overlap | Merge intervals, meeting rooms |
 
