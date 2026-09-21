@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pattern: Intervals &middot; Interview Cracker</title>
-<meta name="description" content="Problems about ranges [start, end] that may overlap: meeting rooms, calendar bookings, merging ranges, resource allocation.">
-<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/intervals/README.html">
+<title>Pattern: Trie (Prefix Tree) &middot; Interview Cracker</title>
+<meta name="description" content="A tree keyed by character, where a word's letters spell out the path from the root. Words sharing a prefix share the nodes for that prefix.">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/trie/README.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pattern: Intervals &middot; Interview Cracker">
-<meta property="og:description" content="Problems about ranges [start, end] that may overlap: meeting rooms, calendar bookings, merging ranges, resource allocation.">
-<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/intervals/README.html">
+<meta property="og:title" content="Pattern: Trie (Prefix Tree) &middot; Interview Cracker">
+<meta property="og:description" content="A tree keyed by character, where a word's letters spell out the path from the root. Words sharing a prefix share the nodes for that prefix.">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/trie/README.html">
 <meta property="og:image" content="https://irish-joseph.github.io/Interview_Cracker/assets/social-preview.png">
 <meta property="og:site_name" content="Interview Cracker">
 <meta name="twitter:card" content="summary_large_image">
@@ -211,7 +211,7 @@
         <span class="navgroup-title">Intervals</span>
         <ul>
         
-          <li><a href="../../coding-challenges/intervals/README.html" class="current" aria-current="page">Pattern: Intervals</a></li>
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
         
         </ul>
       </div>
@@ -265,7 +265,7 @@
         <span class="navgroup-title">Trie</span>
         <ul>
         
-          <li><a href="../../coding-challenges/trie/README.html">Pattern: Trie (Prefix Tree)</a></li>
+          <li><a href="../../coding-challenges/trie/README.html" class="current" aria-current="page">Pattern: Trie (Prefix Tree)</a></li>
         
         </ul>
       </div>
@@ -328,61 +328,95 @@
     
   </nav>
   <main id="main" class="content">
-    <h1 id="pattern-intervals">Pattern: Intervals</h1>
-<p>Problems about ranges <code>[start, end]</code> that may overlap: meeting rooms, calendar
-bookings, merging ranges, resource allocation.</p>
-<h2 id="the-first-move-is-almost-always-sort">The first move is almost always: sort</h2>
-<p>Sort by <strong>start</strong> time for merging and overlap detection. Sort by <strong>end</strong> time
-for "maximum non-overlapping intervals" (the classic greedy — always keep the
-one that frees up soonest).</p>
-<p>Sorting costs O(n log n) and that usually dominates the whole solution.</p>
-<h2 id="overlap-in-one-line">Overlap in one line</h2>
-<p>Two intervals <code>a</code> and <code>b</code> overlap when:</p>
-<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="o">.</span><span class="n">start</span> <span class="o">&lt;</span> <span class="n">b</span><span class="o">.</span><span class="n">end</span> <span class="ow">and</span> <span class="n">b</span><span class="o">.</span><span class="n">start</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="n">end</span>
+    <h1 id="pattern-trie-prefix-tree">Pattern: Trie (Prefix Tree)</h1>
+<p>A tree keyed by character, where a word's letters spell out the path from the
+root. Words sharing a prefix share the nodes for that prefix.</p>
+<h2 id="when-to-reach-for-it">When to reach for it</h2>
+<p>The decisive signal is <strong>prefix</strong>. If the problem says <em>starts with</em>,
+<em>autocomplete</em>, <em>common prefix</em>, or <em>search with wildcards</em>, a hash map cannot
+help and a trie can.</p>
+<ul>
+<li>Autocomplete and type-ahead</li>
+<li>"Do any stored words start with X?"</li>
+<li>Longest common prefix across a set</li>
+<li>Word-search grids, where you prune a path the moment it stops being a prefix</li>
+<li>Spell-checking, IP routing tables</li>
+</ul>
+<h2 id="why-not-just-a-hash-map">Why not just a hash map?</h2>
+<p>A hash map finds a <strong>whole key</strong> in O(1), and that is all it can do. Hashing
+deliberately destroys the relationship between similar keys, so <code>"pre"</code> and
+<code>"prefix"</code> land in unrelated buckets. Answering "all words starting with <code>pre</code>"
+would mean scanning every key.</p>
+<p>A trie keeps that relationship in its structure:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Hash map</th>
+<th>Trie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exact lookup</td>
+<td>O(1) average</td>
+<td>O(k), k = key length</td>
+</tr>
+<tr>
+<td>Prefix query</td>
+<td><strong>O(total keys)</strong></td>
+<td><strong>O(k + matches)</strong></td>
+</tr>
+<tr>
+<td>Worst case</td>
+<td>O(n) on collisions</td>
+<td>O(k), always</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>one entry per key</td>
+<td>one node per distinct prefix character</td>
+</tr>
+</tbody>
+</table>
+<p>A trie's lookup cost does not depend on how many words are stored — only on
+how long the key is. That is unusual and worth saying in an interview.</p>
+<h2 id="the-shape">The shape</h2>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">TrieNode</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="p">{}</span>        <span class="c1"># char -&gt; TrieNode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_word</span> <span class="o">=</span> <span class="kc">False</span>      <span class="c1"># does a word END here?</span>
 </code></pre></div>
-<p>It is easier to reason about the negation: they do <strong>not</strong> overlap when one ends
-before the other starts. Decide up front whether touching endpoints (<code>[1,2]</code> and
-<code>[2,3]</code>) count as overlapping — interviewers ask, and it flips a <code>&lt;</code> to a <code>&lt;=</code>.</p>
-<h2 id="the-merge-template">The merge template</h2>
-<div class="highlight"><pre><span></span><code><span class="n">intervals</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">merged</span> <span class="o">=</span> <span class="p">[</span><span class="n">intervals</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-<span class="k">for</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="ow">in</span> <span class="n">intervals</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
-    <span class="k">if</span> <span class="n">start</span> <span class="o">&lt;=</span> <span class="n">merged</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]:</span>                  <span class="c1"># overlaps the last kept one</span>
-        <span class="n">merged</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">end</span><span class="p">)</span> <span class="c1"># extend it</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">merged</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">])</span>             <span class="c1"># disjoint, start a new one</span>
-</code></pre></div>
-<p>The <code>max</code> matters: the next interval may be entirely <em>inside</em> the current one,
-and without it you would shrink the range.</p>
+<p><code>is_word</code> is the part people forget. Without it you cannot tell a stored word
+from a mere prefix of one: after inserting <code>"apple"</code>, a search for <code>"app"</code> must
+return False, but the path exists either way.</p>
+<h2 id="cost">Cost</h2>
+<ul>
+<li><strong>Time:</strong> O(k) for insert, search and prefix-search, for a key of length k.</li>
+<li><strong>Space:</strong> O(total characters) worst case. Shared prefixes are the saving,
+  so tries pay off on dense vocabularies and waste memory on sparse ones.</li>
+</ul>
+<p>For a large alphabet, a dict of children beats a fixed 26-slot array unless the
+trie is nearly full — most nodes have very few children.</p>
 <h2 id="challenges">Challenges</h2>
 <table>
 <thead>
 <tr>
 <th>File</th>
 <th>Difficulty</th>
-<th>Sort by</th>
+<th>Shape</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/intervals/merge_intervals.py">merge_intervals.py</a></td>
+<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/trie/implement_trie.py">implement_trie.py</a></td>
 <td>🟡 Medium</td>
-<td>Start</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/intervals/meeting_rooms.py">meeting_rooms.py</a></td>
-<td>🟡 Medium</td>
-<td>Start, with a min-heap</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/intervals/insert_interval.py">insert_interval.py</a></td>
-<td>🟡 Medium</td>
-<td>Already sorted — no re-sort, O(n)</td>
+<td>insert / search / startsWith</td>
 </tr>
 </tbody>
 </table>
     <hr>
-    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges\intervals\README.md" rel="noopener">Edit this page on GitHub</a>.</p>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges\trie\README.md" rel="noopener">Edit this page on GitHub</a>.</p>
   </main>
 </div>
 <script>window.SEARCH_PREFIX="../../";</script>

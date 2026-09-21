@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pattern: Intervals &middot; Interview Cracker</title>
-<meta name="description" content="Problems about ranges [start, end] that may overlap: meeting rooms, calendar bookings, merging ranges, resource allocation.">
-<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/intervals/README.html">
+<title>Pattern: Union-Find (Disjoint Set Union) &middot; Interview Cracker</title>
+<meta name="description" content="Track which elements belong to the same group, while groups keep merging. Two operations, both effectively O(1):">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/union-find/README.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pattern: Intervals &middot; Interview Cracker">
-<meta property="og:description" content="Problems about ranges [start, end] that may overlap: meeting rooms, calendar bookings, merging ranges, resource allocation.">
-<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/intervals/README.html">
+<meta property="og:title" content="Pattern: Union-Find (Disjoint Set Union) &middot; Interview Cracker">
+<meta property="og:description" content="Track which elements belong to the same group, while groups keep merging. Two operations, both effectively O(1):">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/union-find/README.html">
 <meta property="og:image" content="https://irish-joseph.github.io/Interview_Cracker/assets/social-preview.png">
 <meta property="og:site_name" content="Interview Cracker">
 <meta name="twitter:card" content="summary_large_image">
@@ -211,7 +211,7 @@
         <span class="navgroup-title">Intervals</span>
         <ul>
         
-          <li><a href="../../coding-challenges/intervals/README.html" class="current" aria-current="page">Pattern: Intervals</a></li>
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
         
         </ul>
       </div>
@@ -283,7 +283,7 @@
         <span class="navgroup-title">Union Find</span>
         <ul>
         
-          <li><a href="../../coding-challenges/union-find/README.html">Pattern: Union-Find (Disjoint Set Union)</a></li>
+          <li><a href="../../coding-challenges/union-find/README.html" class="current" aria-current="page">Pattern: Union-Find (Disjoint Set Union)</a></li>
         
         </ul>
       </div>
@@ -328,61 +328,118 @@
     
   </nav>
   <main id="main" class="content">
-    <h1 id="pattern-intervals">Pattern: Intervals</h1>
-<p>Problems about ranges <code>[start, end]</code> that may overlap: meeting rooms, calendar
-bookings, merging ranges, resource allocation.</p>
-<h2 id="the-first-move-is-almost-always-sort">The first move is almost always: sort</h2>
-<p>Sort by <strong>start</strong> time for merging and overlap detection. Sort by <strong>end</strong> time
-for "maximum non-overlapping intervals" (the classic greedy — always keep the
-one that frees up soonest).</p>
-<p>Sorting costs O(n log n) and that usually dominates the whole solution.</p>
-<h2 id="overlap-in-one-line">Overlap in one line</h2>
-<p>Two intervals <code>a</code> and <code>b</code> overlap when:</p>
-<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="o">.</span><span class="n">start</span> <span class="o">&lt;</span> <span class="n">b</span><span class="o">.</span><span class="n">end</span> <span class="ow">and</span> <span class="n">b</span><span class="o">.</span><span class="n">start</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="n">end</span>
+    <h1 id="pattern-union-find-disjoint-set-union">Pattern: Union-Find (Disjoint Set Union)</h1>
+<p>Track which elements belong to the same group, while groups keep merging.
+Two operations, both effectively O(1):</p>
+<ul>
+<li><code>find(x)</code> — which group is x in?</li>
+<li><code>union(a, b)</code> — merge the two groups</li>
+</ul>
+<h2 id="when-to-reach-for-it">When to reach for it</h2>
+<ul>
+<li><strong>Dynamic connectivity</strong>: edges arrive one at a time and you must answer
+  "are these two connected <em>yet</em>?" after each one.</li>
+<li><strong>Cycle detection in an UNDIRECTED graph</strong>: an edge whose endpoints are
+  already in the same group closes a cycle.</li>
+<li><strong>Counting connected components</strong> as they merge.</li>
+<li><strong>Kruskal's MST</strong>, where you add the cheapest edge that does not form a cycle.</li>
+<li>Grouping by an equivalence relation: accounts sharing an email, equations
+  like <code>a == b</code>.</li>
+</ul>
+<h2 id="union-find-or-dfsbfs">Union-find or DFS/BFS?</h2>
+<p>Both find connected components, so the distinction is worth having ready:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Union-Find</th>
+<th>DFS / BFS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Edges arrive <strong>incrementally</strong></td>
+<td>✅ natural</td>
+<td>✗ must re-run each time</td>
+</tr>
+<tr>
+<td>Graph is <strong>fixed</strong> up front</td>
+<td>works</td>
+<td>usually simpler</td>
+</tr>
+<tr>
+<td>Needs the actual <strong>path</strong></td>
+<td>✗ cannot</td>
+<td>✅ gives it</td>
+</tr>
+<tr>
+<td>Detects a cycle <strong>as it forms</strong></td>
+<td>✅</td>
+<td>after the fact</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>~O(E·α(n)), α &lt; 5 always</td>
+<td>O(V + E) per run</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rule of thumb:</strong> if the problem streams edges and asks about connectivity
+along the way, use union-find. If it hands you the whole graph and asks for a
+path, traverse.</p>
+<h2 id="the-implementation-and-why-both-optimisations-matter">The implementation, and why both optimisations matter</h2>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">DSU</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rank</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span>                  <span class="c1"># tree depth, for union by rank</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">!=</span> <span class="n">x</span><span class="p">:</span>
+            <span class="c1"># Path compression: point x straight at its grandparent, halving</span>
+            <span class="c1"># the path on the way up. Costs nothing, flattens the tree.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">[</span><span class="n">x</span><span class="p">]]</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">x</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="n">ra</span><span class="p">,</span> <span class="n">rb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ra</span> <span class="o">==</span> <span class="n">rb</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>                     <span class="c1"># already joined -&gt; a cycle</span>
+        <span class="c1"># Union by rank: hang the shorter tree off the taller one, so depth</span>
+        <span class="c1"># grows as slowly as possible.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rank</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">rank</span><span class="p">[</span><span class="n">rb</span><span class="p">]:</span>
+            <span class="n">ra</span><span class="p">,</span> <span class="n">rb</span> <span class="o">=</span> <span class="n">rb</span><span class="p">,</span> <span class="n">ra</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">[</span><span class="n">rb</span><span class="p">]</span> <span class="o">=</span> <span class="n">ra</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rank</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">rank</span><span class="p">[</span><span class="n">rb</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rank</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="kc">True</span>
 </code></pre></div>
-<p>It is easier to reason about the negation: they do <strong>not</strong> overlap when one ends
-before the other starts. Decide up front whether touching endpoints (<code>[1,2]</code> and
-<code>[2,3]</code>) count as overlapping — interviewers ask, and it flips a <code>&lt;</code> to a <code>&lt;=</code>.</p>
-<h2 id="the-merge-template">The merge template</h2>
-<div class="highlight"><pre><span></span><code><span class="n">intervals</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">merged</span> <span class="o">=</span> <span class="p">[</span><span class="n">intervals</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-<span class="k">for</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="ow">in</span> <span class="n">intervals</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
-    <span class="k">if</span> <span class="n">start</span> <span class="o">&lt;=</span> <span class="n">merged</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]:</span>                  <span class="c1"># overlaps the last kept one</span>
-        <span class="n">merged</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">end</span><span class="p">)</span> <span class="c1"># extend it</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">merged</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">])</span>             <span class="c1"># disjoint, start a new one</span>
-</code></pre></div>
-<p>The <code>max</code> matters: the next interval may be entirely <em>inside</em> the current one,
-and without it you would shrink the range.</p>
+<p>Without either optimisation, a union chain degenerates into a linked list and
+<code>find</code> becomes O(n). With both, the amortised cost is O(α(n)) — the inverse
+Ackermann function, which is below 5 for any input that fits in the universe.
+Treat it as constant, but know the name.</p>
+<p><strong><code>union</code> returning a boolean is the useful part.</strong> <code>False</code> means "already
+connected", which is exactly a cycle — so cycle detection falls out for free
+rather than needing a second pass.</p>
 <h2 id="challenges">Challenges</h2>
 <table>
 <thead>
 <tr>
 <th>File</th>
 <th>Difficulty</th>
-<th>Sort by</th>
+<th>Shape</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/intervals/merge_intervals.py">merge_intervals.py</a></td>
+<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/union-find/redundant_connection.py">redundant_connection.py</a></td>
 <td>🟡 Medium</td>
-<td>Start</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/intervals/meeting_rooms.py">meeting_rooms.py</a></td>
-<td>🟡 Medium</td>
-<td>Start, with a min-heap</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/intervals/insert_interval.py">insert_interval.py</a></td>
-<td>🟡 Medium</td>
-<td>Already sorted — no re-sort, O(n)</td>
+<td>Cycle detection as edges arrive</td>
 </tr>
 </tbody>
 </table>
     <hr>
-    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges\intervals\README.md" rel="noopener">Edit this page on GitHub</a>.</p>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges\union-find\README.md" rel="noopener">Edit this page on GitHub</a>.</p>
   </main>
 </div>
 <script>window.SEARCH_PREFIX="../../";</script>
