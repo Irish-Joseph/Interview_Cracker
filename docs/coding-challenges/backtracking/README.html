@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pattern: Intervals &middot; Interview Cracker</title>
-<meta name="description" content="Problems about ranges [start, end] that may overlap: meeting rooms, calendar bookings, merging ranges, resource allocation.">
-<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/intervals/README.html">
+<title>Pattern: Backtracking &middot; Interview Cracker</title>
+<meta name="description" content="Build a candidate one choice at a time, and undo the choice before trying the next. It explores a tree of partial solutions and abandons a branch the moment it cannot lead anywhere...">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/backtracking/README.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pattern: Intervals &middot; Interview Cracker">
-<meta property="og:description" content="Problems about ranges [start, end] that may overlap: meeting rooms, calendar bookings, merging ranges, resource allocation.">
-<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/intervals/README.html">
+<meta property="og:title" content="Pattern: Backtracking &middot; Interview Cracker">
+<meta property="og:description" content="Build a candidate one choice at a time, and undo the choice before trying the next. It explores a tree of partial solutions and abandons a branch the moment it cannot lead anywhere...">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/backtracking/README.html">
 <meta property="og:image" content="https://irish-joseph.github.io/Interview_Cracker/assets/social-preview.png">
 <meta property="og:site_name" content="Interview Cracker">
 <meta name="twitter:card" content="summary_large_image">
@@ -157,7 +157,7 @@
         <span class="navgroup-title">Backtracking</span>
         <ul>
         
-          <li><a href="../../coding-challenges/backtracking/README.html">Pattern: Backtracking</a></li>
+          <li><a href="../../coding-challenges/backtracking/README.html" class="current" aria-current="page">Pattern: Backtracking</a></li>
         
         </ul>
       </div>
@@ -211,7 +211,7 @@
         <span class="navgroup-title">Intervals</span>
         <ul>
         
-          <li><a href="../../coding-challenges/intervals/README.html" class="current" aria-current="page">Pattern: Intervals</a></li>
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
         
         </ul>
       </div>
@@ -328,61 +328,106 @@
     
   </nav>
   <main id="main" class="content">
-    <h1 id="pattern-intervals">Pattern: Intervals</h1>
-<p>Problems about ranges <code>[start, end]</code> that may overlap: meeting rooms, calendar
-bookings, merging ranges, resource allocation.</p>
-<h2 id="the-first-move-is-almost-always-sort">The first move is almost always: sort</h2>
-<p>Sort by <strong>start</strong> time for merging and overlap detection. Sort by <strong>end</strong> time
-for "maximum non-overlapping intervals" (the classic greedy — always keep the
-one that frees up soonest).</p>
-<p>Sorting costs O(n log n) and that usually dominates the whole solution.</p>
-<h2 id="overlap-in-one-line">Overlap in one line</h2>
-<p>Two intervals <code>a</code> and <code>b</code> overlap when:</p>
-<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="o">.</span><span class="n">start</span> <span class="o">&lt;</span> <span class="n">b</span><span class="o">.</span><span class="n">end</span> <span class="ow">and</span> <span class="n">b</span><span class="o">.</span><span class="n">start</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="n">end</span>
+    <h1 id="pattern-backtracking">Pattern: Backtracking</h1>
+<p>Build a candidate one choice at a time, and <strong>undo the choice</strong> before trying
+the next. It explores a tree of partial solutions and abandons a branch the
+moment it cannot lead anywhere.</p>
+<h2 id="when-to-reach-for-it">When to reach for it</h2>
+<ul>
+<li>The problem asks for <strong>all</strong> solutions, not one: every subset, every
+  permutation, every valid board.</li>
+<li>You are making a <strong>sequence of choices</strong> where an early choice constrains
+  later ones.</li>
+<li>The answer is a <strong>combination of elements</strong> satisfying a constraint.</li>
+<li>Brute force is exponential and you need to prune, not just enumerate.</li>
+</ul>
+<p>The tell: the words <em>all</em>, <em>every</em>, <em>generate</em>, or <em>count the ways</em> applied to
+arrangements rather than to a single optimum. If the problem wants one optimal
+value rather than every arrangement, think dynamic programming instead.</p>
+<h2 id="the-template">The template</h2>
+<p>Every backtracking solution is this shape:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">backtrack</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">start</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">is_complete</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>     <span class="c1"># copy! state keeps mutating</span>
+        <span class="k">return</span>
+    <span class="k">for</span> <span class="n">choice</span> <span class="ow">in</span> <span class="n">choices_from</span><span class="p">(</span><span class="n">start</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">is_valid</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">choice</span><span class="p">):</span>
+            <span class="k">continue</span>                     <span class="c1"># prune</span>
+        <span class="n">state</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span>             <span class="c1"># 1. choose</span>
+        <span class="n">backtrack</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">next_start</span><span class="p">)</span>     <span class="c1"># 2. explore</span>
+        <span class="n">state</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>                      <span class="c1"># 3. un-choose</span>
 </code></pre></div>
-<p>It is easier to reason about the negation: they do <strong>not</strong> overlap when one ends
-before the other starts. Decide up front whether touching endpoints (<code>[1,2]</code> and
-<code>[2,3]</code>) count as overlapping — interviewers ask, and it flips a <code>&lt;</code> to a <code>&lt;=</code>.</p>
-<h2 id="the-merge-template">The merge template</h2>
-<div class="highlight"><pre><span></span><code><span class="n">intervals</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">merged</span> <span class="o">=</span> <span class="p">[</span><span class="n">intervals</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-<span class="k">for</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="ow">in</span> <span class="n">intervals</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
-    <span class="k">if</span> <span class="n">start</span> <span class="o">&lt;=</span> <span class="n">merged</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]:</span>                  <span class="c1"># overlaps the last kept one</span>
-        <span class="n">merged</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">end</span><span class="p">)</span> <span class="c1"># extend it</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">merged</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">])</span>             <span class="c1"># disjoint, start a new one</span>
-</code></pre></div>
-<p>The <code>max</code> matters: the next interval may be entirely <em>inside</em> the current one,
-and without it you would shrink the range.</p>
+<h2 id="the-two-bugs-that-account-for-most-failures">The two bugs that account for most failures</h2>
+<ol>
+<li><strong>Appending <code>state</code> instead of <code>state.copy()</code>.</strong> Every result ends up being
+   the same list object, so the output is N copies of whatever <code>state</code> held
+   last — usually empty.</li>
+<li><strong>Forgetting to undo.</strong> The <code>pop()</code> must mirror the <code>append()</code> exactly. If
+   you also set a flag or mark a cell, undo that too.</li>
+</ol>
+<h2 id="subsets-vs-permutations-vs-combinations">Subsets vs permutations vs combinations</h2>
+<p>All three are the same skeleton; only the loop bound differs.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Count</th>
+<th>Loop starts at</th>
+<th>Order matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Subsets</strong></td>
+<td>2ⁿ</td>
+<td><code>start</code></td>
+<td>no</td>
+</tr>
+<tr>
+<td><strong>Combinations</strong> (choose k)</td>
+<td>C(n,k)</td>
+<td><code>start</code></td>
+<td>no</td>
+</tr>
+<tr>
+<td><strong>Permutations</strong></td>
+<td>n!</td>
+<td>0, skipping used</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<p>Passing a <code>start</code> index is what stops <code>[1,2]</code> and <code>[2,1]</code> both appearing.
+Looping from 0 over unused elements is what makes them both appear.</p>
+<h2 id="complexity">Complexity</h2>
+<p>Bounded by the size of the output. Generating 2ⁿ subsets cannot beat O(2ⁿ) —
+that is an output-size bound, not an inefficiency, and it is worth saying so
+rather than apologising for it. Pruning does not improve the worst case, but it
+is routinely the difference between milliseconds and hours.</p>
 <h2 id="challenges">Challenges</h2>
 <table>
 <thead>
 <tr>
 <th>File</th>
 <th>Difficulty</th>
-<th>Sort by</th>
+<th>Shape</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/intervals/merge_intervals.py">merge_intervals.py</a></td>
+<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/backtracking/subsets.py">subsets.py</a></td>
 <td>🟡 Medium</td>
-<td>Start</td>
+<td>Take-or-skip, record at every node</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/intervals/meeting_rooms.py">meeting_rooms.py</a></td>
+<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/backtracking/combination_sum.py">combination_sum.py</a></td>
 <td>🟡 Medium</td>
-<td>Start, with a min-heap</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/intervals/insert_interval.py">insert_interval.py</a></td>
-<td>🟡 Medium</td>
-<td>Already sorted — no re-sort, O(n)</td>
+<td>Reuse allowed, prune on the running total</td>
 </tr>
 </tbody>
 </table>
     <hr>
-    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges\intervals\README.md" rel="noopener">Edit this page on GitHub</a>.</p>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges\backtracking\README.md" rel="noopener">Edit this page on GitHub</a>.</p>
   </main>
 </div>
 <script>window.SEARCH_PREFIX="../../";</script>

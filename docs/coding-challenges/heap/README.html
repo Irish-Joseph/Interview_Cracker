@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pattern: Intervals &middot; Interview Cracker</title>
-<meta name="description" content="Problems about ranges [start, end] that may overlap: meeting rooms, calendar bookings, merging ranges, resource allocation.">
-<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/intervals/README.html">
+<title>Pattern: Heap / Top-K &middot; Interview Cracker</title>
+<meta name="description" content="A heap gives you the smallest (or largest) element in O(1) and maintains that property in O(log n) per insert or removal. Reach for it when you repeatedly need the extreme element ...">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/heap/README.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pattern: Intervals &middot; Interview Cracker">
-<meta property="og:description" content="Problems about ranges [start, end] that may overlap: meeting rooms, calendar bookings, merging ranges, resource allocation.">
-<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/intervals/README.html">
+<meta property="og:title" content="Pattern: Heap / Top-K &middot; Interview Cracker">
+<meta property="og:description" content="A heap gives you the smallest (or largest) element in O(1) and maintains that property in O(log n) per insert or removal. Reach for it when you repeatedly need the extreme element ...">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/heap/README.html">
 <meta property="og:image" content="https://irish-joseph.github.io/Interview_Cracker/assets/social-preview.png">
 <meta property="og:site_name" content="Interview Cracker">
 <meta name="twitter:card" content="summary_large_image">
@@ -202,7 +202,7 @@
         <span class="navgroup-title">Heap</span>
         <ul>
         
-          <li><a href="../../coding-challenges/heap/README.html">Pattern: Heap / Top-K</a></li>
+          <li><a href="../../coding-challenges/heap/README.html" class="current" aria-current="page">Pattern: Heap / Top-K</a></li>
         
         </ul>
       </div>
@@ -211,7 +211,7 @@
         <span class="navgroup-title">Intervals</span>
         <ul>
         
-          <li><a href="../../coding-challenges/intervals/README.html" class="current" aria-current="page">Pattern: Intervals</a></li>
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
         
         </ul>
       </div>
@@ -328,61 +328,96 @@
     
   </nav>
   <main id="main" class="content">
-    <h1 id="pattern-intervals">Pattern: Intervals</h1>
-<p>Problems about ranges <code>[start, end]</code> that may overlap: meeting rooms, calendar
-bookings, merging ranges, resource allocation.</p>
-<h2 id="the-first-move-is-almost-always-sort">The first move is almost always: sort</h2>
-<p>Sort by <strong>start</strong> time for merging and overlap detection. Sort by <strong>end</strong> time
-for "maximum non-overlapping intervals" (the classic greedy — always keep the
-one that frees up soonest).</p>
-<p>Sorting costs O(n log n) and that usually dominates the whole solution.</p>
-<h2 id="overlap-in-one-line">Overlap in one line</h2>
-<p>Two intervals <code>a</code> and <code>b</code> overlap when:</p>
-<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="o">.</span><span class="n">start</span> <span class="o">&lt;</span> <span class="n">b</span><span class="o">.</span><span class="n">end</span> <span class="ow">and</span> <span class="n">b</span><span class="o">.</span><span class="n">start</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="n">end</span>
+    <h1 id="pattern-heap-top-k">Pattern: Heap / Top-K</h1>
+<p>A heap gives you the smallest (or largest) element in O(1) and maintains that
+property in O(log n) per insert or removal. Reach for it when you repeatedly
+need the extreme element of a changing collection.</p>
+<h2 id="when-to-reach-for-it">When to reach for it</h2>
+<ul>
+<li><strong>Top K / Kth largest / K closest</strong> — the clearest signal. The word "K" in
+  a problem statement should make you think heap.</li>
+<li><strong>A running median</strong>, or any statistic over a stream (two heaps).</li>
+<li><strong>Merging k sorted sequences</strong> — the next element is always the smallest
+  head.</li>
+<li><strong>Scheduling</strong>: always take the task that finishes soonest, or starts next.</li>
+<li>Dijkstra and A*, where the frontier is a priority queue.</li>
+</ul>
+<h2 id="the-counter-intuitive-part">The counter-intuitive part</h2>
+<p><strong>To track the K LARGEST elements, use a MIN-heap of size K.</strong></p>
+<p>The root is then the <em>weakest</em> of your current champions — exactly the one to
+compare against and evict. Keeping a max-heap would put the strongest at the
+root, which tells you nothing about what to drop.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">heapq</span>
+
+<span class="n">heap</span> <span class="o">=</span> <span class="p">[]</span>                          <span class="c1"># min-heap of the best K so far</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">stream</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">:</span>
+        <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">heap</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">item</span> <span class="o">&gt;</span> <span class="n">heap</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>           <span class="c1"># better than the weakest kept</span>
+        <span class="n">heapq</span><span class="o">.</span><span class="n">heapreplace</span><span class="p">(</span><span class="n">heap</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
 </code></pre></div>
-<p>It is easier to reason about the negation: they do <strong>not</strong> overlap when one ends
-before the other starts. Decide up front whether touching endpoints (<code>[1,2]</code> and
-<code>[2,3]</code>) count as overlapping — interviewers ask, and it flips a <code>&lt;</code> to a <code>&lt;=</code>.</p>
-<h2 id="the-merge-template">The merge template</h2>
-<div class="highlight"><pre><span></span><code><span class="n">intervals</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">merged</span> <span class="o">=</span> <span class="p">[</span><span class="n">intervals</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-<span class="k">for</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="ow">in</span> <span class="n">intervals</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
-    <span class="k">if</span> <span class="n">start</span> <span class="o">&lt;=</span> <span class="n">merged</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]:</span>                  <span class="c1"># overlaps the last kept one</span>
-        <span class="n">merged</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">end</span><span class="p">)</span> <span class="c1"># extend it</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">merged</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">])</span>             <span class="c1"># disjoint, start a new one</span>
-</code></pre></div>
-<p>The <code>max</code> matters: the next interval may be entirely <em>inside</em> the current one,
-and without it you would shrink the range.</p>
+<p><strong>O(n log k) time, O(k) space.</strong> Compare with sorting: O(n log n) time and
+O(n) space. When k is small and n is huge — or n does not fit in memory — that
+difference is the whole point.</p>
+<h2 id="python-specifics">Python specifics</h2>
+<p><code>heapq</code> is a <strong>min-heap only</strong>. For a max-heap, push negated values and negate
+on the way out. For tuples, it compares element by element, so
+<code>(priority, item)</code> sorts by priority — but a tie then compares <code>item</code>, which
+raises <code>TypeError</code> if the items are not comparable. Insert a unique counter as
+a tiebreaker: <code>(priority, count, item)</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>heap[0]</code> (peek)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>heappush</code> / <code>heappop</code></td>
+<td>O(log n)</td>
+</tr>
+<tr>
+<td><code>heapreplace</code> (pop then push)</td>
+<td>O(log n), one sift</td>
+</tr>
+<tr>
+<td><code>heapify(list)</code></td>
+<td><strong>O(n)</strong>, not O(n log n)</td>
+</tr>
+<tr>
+<td>find an arbitrary element</td>
+<td>O(n) — a heap is only partially ordered</td>
+</tr>
+</tbody>
+</table>
+<h2 id="do-not-confuse-a-heap-with-a-sorted-structure">Do not confuse a heap with a sorted structure</h2>
+<p>A heap knows its minimum and nothing else. It cannot iterate in order, cannot
+do range queries, and cannot find an arbitrary element quickly. If you need
+those, use a balanced tree.</p>
 <h2 id="challenges">Challenges</h2>
 <table>
 <thead>
 <tr>
 <th>File</th>
 <th>Difficulty</th>
-<th>Sort by</th>
+<th>Shape</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/intervals/merge_intervals.py">merge_intervals.py</a></td>
+<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/heap/top_k_frequent_elements.py">top_k_frequent_elements.py</a></td>
 <td>🟡 Medium</td>
-<td>Start</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/intervals/meeting_rooms.py">meeting_rooms.py</a></td>
-<td>🟡 Medium</td>
-<td>Start, with a min-heap</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/intervals/insert_interval.py">insert_interval.py</a></td>
-<td>🟡 Medium</td>
-<td>Already sorted — no re-sort, O(n)</td>
+<td>Count, then min-heap of size k</td>
 </tr>
 </tbody>
 </table>
     <hr>
-    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges\intervals\README.md" rel="noopener">Edit this page on GitHub</a>.</p>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges\heap\README.md" rel="noopener">Edit this page on GitHub</a>.</p>
   </main>
 </div>
 <script>window.SEARCH_PREFIX="../../";</script>

@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pattern: Intervals &middot; Interview Cracker</title>
-<meta name="description" content="Problems about ranges [start, end] that may overlap: meeting rooms, calendar bookings, merging ranges, resource allocation.">
-<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/intervals/README.html">
+<title>Pattern: Prefix Sum &middot; Interview Cracker</title>
+<meta name="description" content="Precompute cumulative totals once, then answer any range query in O(1).">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/prefix-sum/README.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pattern: Intervals &middot; Interview Cracker">
-<meta property="og:description" content="Problems about ranges [start, end] that may overlap: meeting rooms, calendar bookings, merging ranges, resource allocation.">
-<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/intervals/README.html">
+<meta property="og:title" content="Pattern: Prefix Sum &middot; Interview Cracker">
+<meta property="og:description" content="Precompute cumulative totals once, then answer any range query in O(1).">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/prefix-sum/README.html">
 <meta property="og:image" content="https://irish-joseph.github.io/Interview_Cracker/assets/social-preview.png">
 <meta property="og:site_name" content="Interview Cracker">
 <meta name="twitter:card" content="summary_large_image">
@@ -211,7 +211,7 @@
         <span class="navgroup-title">Intervals</span>
         <ul>
         
-          <li><a href="../../coding-challenges/intervals/README.html" class="current" aria-current="page">Pattern: Intervals</a></li>
+          <li><a href="../../coding-challenges/intervals/README.html">Pattern: Intervals</a></li>
         
         </ul>
       </div>
@@ -229,7 +229,7 @@
         <span class="navgroup-title">Prefix Sum</span>
         <ul>
         
-          <li><a href="../../coding-challenges/prefix-sum/README.html">Pattern: Prefix Sum</a></li>
+          <li><a href="../../coding-challenges/prefix-sum/README.html" class="current" aria-current="page">Pattern: Prefix Sum</a></li>
         
         </ul>
       </div>
@@ -328,61 +328,70 @@
     
   </nav>
   <main id="main" class="content">
-    <h1 id="pattern-intervals">Pattern: Intervals</h1>
-<p>Problems about ranges <code>[start, end]</code> that may overlap: meeting rooms, calendar
-bookings, merging ranges, resource allocation.</p>
-<h2 id="the-first-move-is-almost-always-sort">The first move is almost always: sort</h2>
-<p>Sort by <strong>start</strong> time for merging and overlap detection. Sort by <strong>end</strong> time
-for "maximum non-overlapping intervals" (the classic greedy — always keep the
-one that frees up soonest).</p>
-<p>Sorting costs O(n log n) and that usually dominates the whole solution.</p>
-<h2 id="overlap-in-one-line">Overlap in one line</h2>
-<p>Two intervals <code>a</code> and <code>b</code> overlap when:</p>
-<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="o">.</span><span class="n">start</span> <span class="o">&lt;</span> <span class="n">b</span><span class="o">.</span><span class="n">end</span> <span class="ow">and</span> <span class="n">b</span><span class="o">.</span><span class="n">start</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="n">end</span>
+    <h1 id="pattern-prefix-sum">Pattern: Prefix Sum</h1>
+<p>Precompute cumulative totals once, then answer any range query in O(1).</p>
+<h2 id="the-idea">The idea</h2>
+<p><code>prefix[i]</code> holds the sum of the first <code>i</code> elements. The sum of any range is
+then one subtraction:</p>
+<div class="highlight"><pre><span></span><code><span class="n">prefix</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+    <span class="n">prefix</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prefix</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span>
+
+<span class="n">range_sum</span> <span class="o">=</span> <span class="n">prefix</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">prefix</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>        <span class="c1"># sum of nums[i:j], in O(1)</span>
 </code></pre></div>
-<p>It is easier to reason about the negation: they do <strong>not</strong> overlap when one ends
-before the other starts. Decide up front whether touching endpoints (<code>[1,2]</code> and
-<code>[2,3]</code>) count as overlapping — interviewers ask, and it flips a <code>&lt;</code> to a <code>&lt;=</code>.</p>
-<h2 id="the-merge-template">The merge template</h2>
-<div class="highlight"><pre><span></span><code><span class="n">intervals</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">merged</span> <span class="o">=</span> <span class="p">[</span><span class="n">intervals</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-<span class="k">for</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="ow">in</span> <span class="n">intervals</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
-    <span class="k">if</span> <span class="n">start</span> <span class="o">&lt;=</span> <span class="n">merged</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]:</span>                  <span class="c1"># overlaps the last kept one</span>
-        <span class="n">merged</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">end</span><span class="p">)</span> <span class="c1"># extend it</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">merged</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">])</span>             <span class="c1"># disjoint, start a new one</span>
-</code></pre></div>
-<p>The <code>max</code> matters: the next interval may be entirely <em>inside</em> the current one,
-and without it you would shrink the range.</p>
+<p>Building costs O(n) once; every query afterwards is free. That is the right
+trade when you answer many queries over data that does not change.</p>
+<p>Note the leading <code>0</code>. Without it every query needs an <code>if i == 0</code> special
+case, which is where the off-by-one bugs live.</p>
+<h2 id="when-to-reach-for-it">When to reach for it</h2>
+<ul>
+<li><strong>Many range-sum queries</strong> over a static array.</li>
+<li><strong>"Subarray that sums to k"</strong> — combined with a hash map, this becomes a
+  single O(n) pass. That combination is the one worth memorising.</li>
+<li><strong>Running totals, balances, or differences</strong> between two points.</li>
+<li><strong>2-D versions</strong>: a rectangle sum via inclusion–exclusion on four corners.</li>
+<li><strong>Difference arrays</strong>: the inverse trick, where you add to a whole range in
+  O(1) and reconstruct at the end.</li>
+</ul>
+<h2 id="the-pairing-that-makes-it-powerful">The pairing that makes it powerful</h2>
+<p>Prefix sums alone answer "what is the sum of this range?". Paired with a hash
+map of previously-seen prefix values, they answer <strong>"how many ranges sum to
+k?"</strong> in one pass:</p>
+<blockquote>
+<p>If <code>prefix[j] - prefix[i] == k</code>, then <code>prefix[i] == prefix[j] - k</code>.
+So at each <code>j</code>, ask how many earlier prefixes equalled <code>prefix[j] - k</code>.</p>
+</blockquote>
+<p>That inversion — from <em>searching for a range</em> to <em>looking up a number</em> — is
+the same move that turns Two Sum from O(n²) into O(n).</p>
+<h2 id="watch-for">Watch for</h2>
+<ul>
+<li><strong>Seed the map with <code>{0: 1}</code>.</strong> A prefix that equals <code>k</code> exactly is a valid
+  subarray starting at index 0, and it is only counted if the empty prefix is
+  already present. This is the single most common bug in the pattern.</li>
+<li>Negative numbers are fine here, unlike with a sliding window — which is
+  exactly why you reach for prefix sums when values can be negative.</li>
+<li>Prefix sums assume the array does not change. For updates, use a Fenwick
+  (binary indexed) tree or a segment tree instead.</li>
+</ul>
 <h2 id="challenges">Challenges</h2>
 <table>
 <thead>
 <tr>
 <th>File</th>
 <th>Difficulty</th>
-<th>Sort by</th>
+<th>Shape</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/intervals/merge_intervals.py">merge_intervals.py</a></td>
+<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/prefix-sum/subarray_sum_equals_k.py">subarray_sum_equals_k.py</a></td>
 <td>🟡 Medium</td>
-<td>Start</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/intervals/meeting_rooms.py">meeting_rooms.py</a></td>
-<td>🟡 Medium</td>
-<td>Start, with a min-heap</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/intervals/insert_interval.py">insert_interval.py</a></td>
-<td>🟡 Medium</td>
-<td>Already sorted — no re-sort, O(n)</td>
+<td>Prefix sum + hash map, one pass</td>
 </tr>
 </tbody>
 </table>
     <hr>
-    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges\intervals\README.md" rel="noopener">Edit this page on GitHub</a>.</p>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges\prefix-sum\README.md" rel="noopener">Edit this page on GitHub</a>.</p>
   </main>
 </div>
 <script>window.SEARCH_PREFIX="../../";</script>
