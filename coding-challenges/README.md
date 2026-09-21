@@ -34,6 +34,7 @@ python scripts/run_challenges.py
 | [hashing](hashing/) | You are searching inside a loop | Two sum, group anagrams |
 | [binary-search](binary-search/) | Sorted input, or a monotonic yes/no over a numeric range | Search rotated array, minimum eating speed |
 | [backtracking](backtracking/) | You need **all** arrangements — every subset, permutation or valid board | Subsets, combination sum |
+| [heap](heap/) | Top-K, Kth largest, a running median, or merging k sorted streams | Top K frequent elements |
 | [stack](stack/) | Matching pairs; "next greater/smaller element" | Valid parentheses, daily temperatures |
 | [linked-list](linked-list/) | Pointer rewiring; fast/slow traversal | Reverse a list, detect a cycle |
 | [trees](trees/) | Recursive structure; level-by-level work | Level-order traversal, validate a BST |
