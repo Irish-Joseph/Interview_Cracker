@@ -29,6 +29,7 @@ python scripts/run_challenges.py
 
 | Pattern | Use it when | Challenges |
 |---|---|---|
+| [trie](trie/) | Anything prefix-shaped: autocomplete, "starts with", word search | Implement a trie |
 | [two-pointers](two-pointers/) | Sorted array; find a pair/triplet; filter in place | Valid palindrome, 3Sum |
 | [sliding-window](sliding-window/) | Longest/shortest **contiguous** run satisfying a rule | Longest unique substring, max sum of size k |
 | [hashing](hashing/) | You are searching inside a loop | Two sum, group anagrams |
