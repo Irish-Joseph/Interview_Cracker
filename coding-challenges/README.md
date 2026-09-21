@@ -33,6 +33,7 @@ python scripts/run_challenges.py
 | [sliding-window](sliding-window/) | Longest/shortest **contiguous** run satisfying a rule | Longest unique substring, max sum of size k |
 | [hashing](hashing/) | You are searching inside a loop | Two sum, group anagrams |
 | [binary-search](binary-search/) | Sorted input, or a monotonic yes/no over a numeric range | Search rotated array, minimum eating speed |
+| [backtracking](backtracking/) | You need **all** arrangements — every subset, permutation or valid board | Subsets, combination sum |
 | [stack](stack/) | Matching pairs; "next greater/smaller element" | Valid parentheses, daily temperatures |
 | [linked-list](linked-list/) | Pointer rewiring; fast/slow traversal | Reverse a list, detect a cycle |
 | [trees](trees/) | Recursive structure; level-by-level work | Level-order traversal, validate a BST |
