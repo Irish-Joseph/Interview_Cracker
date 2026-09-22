@@ -1,5 +1,5 @@
 {
-  "total_examples": 170,
+  "total_examples": 171,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1360,6 +1360,14 @@
       "category": "ownership",
       "topic": "Rc<RefCell> reference cycles and breaking them with Weak",
       "file": "examples/rust/ownership/rc_refcell_cycles_and_weak.rs"
+    },
+    {
+      "date": "2026-09-22",
+      "language": "java",
+      "difficulty": "beginner",
+      "category": "enums",
+      "topic": "enum ordinal() vs name(): why ordinal is not stable data",
+      "file": "examples/java/enums/enum_ordinal_vs_name.java"
     }
   ]
 }
