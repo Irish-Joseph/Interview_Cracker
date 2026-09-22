@@ -170,3 +170,4 @@
 | 2026-09-22 | JavaScript | Beginner | Basics | The seven falsy values, typeof's lies (null, arrays), and NaN !== NaN | examples/javascript/basics/falsy_typeof_and_nan.js |
 | 2026-09-22 | TypeScript | Intermediate | Narrowing | Exhaustive checking with the never type and assertNever | examples/typescript/narrowing/exhaustive_never_checking.ts |
 | 2026-09-22 | SQL | Intermediate | Joins | LEFT JOIN + WHERE on the joined table: the silent INNER JOIN, and filtering in ON | examples/sql/joins/left_join_where_filter_trap.sql |
+| 2026-09-22 | Bash | Intermediate | Basics | Arithmetic: $(( )) vs (( )), exit-status semantics, and the octal 08 trap | examples/bash/basics/arithmetic_traps.sh |
