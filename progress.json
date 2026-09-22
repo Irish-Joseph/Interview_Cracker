@@ -1,5 +1,5 @@
 {
-  "total_examples": 172,
+  "total_examples": 173,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1376,6 +1376,14 @@
       "category": "functions",
       "topic": "Variadic functions: va_list, va_copy, measure-then-write, and the format-attribute gap",
       "file": "examples/c/functions/variadic_functions_va_list.c"
+    },
+    {
+      "date": "2026-09-22",
+      "language": "cpp",
+      "difficulty": "advanced",
+      "category": "strings",
+      "topic": "std::string_view lifetime traps: dangling views, const-reference lifetime extension, safe shapes",
+      "file": "examples/cpp/strings/string_view_lifetime_traps.cpp"
     }
   ]
 }
