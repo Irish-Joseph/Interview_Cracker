@@ -169,3 +169,4 @@
 | 2026-09-22 | Python | Intermediate | Numbers | float vs Decimal - binary approximation, Decimal(0.1) trap, rounding modes, speed | examples/python/numbers/float_vs_decimal.py |
 | 2026-09-22 | JavaScript | Beginner | Basics | The seven falsy values, typeof's lies (null, arrays), and NaN !== NaN | examples/javascript/basics/falsy_typeof_and_nan.js |
 | 2026-09-22 | TypeScript | Intermediate | Narrowing | Exhaustive checking with the never type and assertNever | examples/typescript/narrowing/exhaustive_never_checking.ts |
+| 2026-09-22 | SQL | Intermediate | Joins | LEFT JOIN + WHERE on the joined table: the silent INNER JOIN, and filtering in ON | examples/sql/joins/left_join_where_filter_trap.sql |

@@ -1,5 +1,5 @@
 {
-  "total_examples": 167,
+  "total_examples": 168,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1336,6 +1336,14 @@
       "category": "narrowing",
       "topic": "Exhaustive checking with the never type and assertNever",
       "file": "examples/typescript/narrowing/exhaustive_never_checking.ts"
+    },
+    {
+      "date": "2026-09-22",
+      "language": "sql",
+      "difficulty": "intermediate",
+      "category": "joins",
+      "topic": "LEFT JOIN + WHERE on the joined table: the silent INNER JOIN, and filtering in ON",
+      "file": "examples/sql/joins/left_join_where_filter_trap.sql"
     }
   ]
 }
