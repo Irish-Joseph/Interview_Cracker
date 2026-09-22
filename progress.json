@@ -1,5 +1,5 @@
 {
-  "total_examples": 163,
+  "total_examples": 164,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1304,6 +1304,14 @@
       "category": "files",
       "topic": "File I/O: read, write, append, and line-by-line streaming",
       "file": "examples/ruby/files/file_io_read_write_stream.rb"
+    },
+    {
+      "date": "2026-09-22",
+      "language": "powershell",
+      "difficulty": "beginner",
+      "category": "basics",
+      "topic": "[int] casts round to even (banker's rounding), -as and explicit rounding",
+      "file": "examples/powershell/basics/int_cast_banker_rounding.ps1"
     }
   ]
 }

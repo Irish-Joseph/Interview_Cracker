@@ -165,3 +165,4 @@
 | 2026-09-21 | SQL | Intermediate | Strings | String functions: length, substr, trim, case, concat, LIKE, NULL | examples/sql/strings/string_functions.sql |
 | 2026-09-21 | Bash | Intermediate | Utilities | Process substitution: <(...) and >(...) | examples/bash/utilities/process_substitution.sh |
 | 2026-09-21 | Ruby | Beginner | Files | File I/O: read, write, append, and line-by-line streaming | examples/ruby/files/file_io_read_write_stream.rb |
+| 2026-09-22 | PowerShell | Beginner | Basics | [int] casts round to even (banker's rounding), -as and explicit rounding | examples/powershell/basics/int_cast_banker_rounding.ps1 |
