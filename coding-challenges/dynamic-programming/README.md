@@ -38,3 +38,4 @@ for this.
 | [climbing_stairs.py](climbing_stairs.py) | 🟢 Easy | Linear, with the space collapse |
 | [coin_change.py](coin_change.py) | 🟡 Medium | Unbounded knapsack |
 | [unique_paths.py](unique_paths.py) | 🟡 Medium | 2D grid, row collapse |
+| [longest_common_subsequence.py](longest_common_subsequence.py) | 🟡 Medium | Two sequences, take/skip |
