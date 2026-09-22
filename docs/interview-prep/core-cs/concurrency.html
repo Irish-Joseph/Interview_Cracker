@@ -441,6 +441,46 @@ with no external synchronisation required.</p>
 <p>Rust enforces this at compile time: its borrow checker rejects a data race rather
 than letting you find it in production. See
 <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/rust/ownership/count_word_frequencies_borrowed.rs"><code>examples/rust/ownership/count_word_frequencies_borrowed.rs</code></a>.</p>
+<hr>
+<h3 id="q-you-use-a-compare-and-swap-cas-loop-to-update-a-shared-pointer">🔴 Q. You use a compare-and-swap (CAS) loop to update a shared pointer</h3>
+<p>without a lock. A colleague says it's still racy. When would they be right?</p>
+<p><strong>Answer.</strong> They are right because of the <strong>ABA problem</strong>: CAS only compares the
+<em>value</em>, not the <em>history</em>. If another thread changes the pointer from A to B and
+back to A, your CAS sees "still A" and succeeds — even though the object it
+points at has been replaced (and possibly freed) in between. The value is the
+same, but the <em>state</em> your update assumed no longer is.</p>
+<p>The canonical setting is a <strong>lock-free stack</strong>:</p>
+<ol>
+<li>You read the head, it points to node <strong>A</strong> (A → B → C).</li>
+<li>Another thread pops A <em>and B</em>, then a new allocation happens to reuse the
+   same address as A, so head is again <strong>A</strong> (A → D).</li>
+<li>Your CAS compares "head is still A?" — yes — and links the new node after
+   A. But the A you saw was a <em>different</em> node than the A now at the head; the
+   link is now dangling or corrupt.</li>
+</ol>
+<p>The value (the address A) is identical; only the identity of what it points to
+changed. CAS cannot tell the difference.</p>
+<p>The fixes, in order of how often they're the real answer:</p>
+<ul>
+<li><strong>Version / sequence stamp (the standard fix).</strong> Store the pointer <em>and</em> a
+  monotonically increasing counter together and CAS on the pair. A→B→A bumps
+  the counter each time, so your compare now sees (A, 2) ≠ (A, 0) and fails.
+  This is what <code>std::atomic</code>'s tagged pointers / <code>AtomicPtr</code> with a sequence
+  number do, and why "ABA" is really "you compared a projection, not the state."</li>
+<li><strong>Hazard pointers / epoch-based reclamation.</strong> Prevent the <em>real</em> danger
+  behind ABA — a node being freed while someone still holds a pointer to it —
+  by deferring reclamation. You stop relying on CAS correctness over a moving
+  target.</li>
+<li><strong>Just take a lock.</strong> Be honest about it. ABA is a cost you pay to be
+  lock-free; if the critical section is large or the structure is complex, a
+  mutex is simpler and often fast enough. The interview win is <em>naming</em> ABA and
+  stating that "lock-free" is not "synchronization-free."</li>
+</ul>
+<p>The follow-up this sets up: "lock-free" and "wait-free" are different. A CAS
+loop can livelock (always losing the race to another thread) even if it never
+deadlocks — progress guarantees are a spectrum, and ABA is the clearest example
+of why the <em>memory model</em>, not just the algorithm, is what you actually have to
+get right.</p>
     <hr>
     <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\core-cs\concurrency.md" rel="noopener">Edit this page on GitHub</a>.</p>
   </main>

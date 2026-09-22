@@ -1,6 +1,6 @@
 # Examples
 
-163 focused, runnable programs across 13 languages. **One concept per
+173 focused, runnable programs across 13 languages. **One concept per
 file** - each is small enough to read in a sitting, and most print their own
 expected output.
 
@@ -26,19 +26,19 @@ running it.
 
 | Language | Examples | Categories |
 |---|---|---|
-| [Python](python/) | 21 | `algorithms`, `basics`, `collections`, `context-managers`, `data-models`, `dates`, `decorators`, `files`, `generators`, `json`, `oop`, `standard-library`, `strings`, `typing` |
-| [SQL](sql/) | 15 | `aggregation`, `dates`, `filters`, `joins`, `recursive-ctes`, `set-operations`, `strings`, `subqueries`, `transactions`, `window-functions` |
+| [Python](python/) | 22 | `algorithms`, `basics`, `collections`, `context-managers`, `data-models`, `dates`, `decorators`, `files`, `generators`, `json`, `numbers`, `oop`, `standard-library`, `strings`, `typing` |
+| [SQL](sql/) | 16 | `aggregation`, `dates`, `filters`, `joins`, `recursive-ctes`, `set-operations`, `strings`, `subqueries`, `transactions`, `window-functions` |
+| [JavaScript](javascript/) | 15 | `arrays`, `async`, `basics`, `collections`, `errors`, `generators`, `objects`, `strings`, `utilities` |
+| [Rust](rust/) | 15 | `basics`, `closures`, `collections`, `concurrency`, `enums`, `error-handling`, `iterators`, `lifetimes`, `matching`, `modules`, `options`, `ownership`, `strings`, `traits` |
+| [Bash](bash/) | 14 | `arrays`, `basics`, `functions`, `scripting`, `testing`, `utilities` |
+| [C](c/) | 14 | `arrays`, `basics`, `data-structures`, `files`, `functions`, `pointers`, `strings` |
 | [Go](go/) | 14 | `algorithms`, `concurrency`, `data-structures`, `errors`, `files`, `generics`, `interfaces`, `maps`, `slices`, `sorting`, `structs`, `testing` |
-| [JavaScript](javascript/) | 14 | `arrays`, `async`, `basics`, `collections`, `errors`, `generators`, `objects`, `strings`, `utilities` |
-| [Rust](rust/) | 14 | `basics`, `closures`, `collections`, `concurrency`, `enums`, `error-handling`, `iterators`, `lifetimes`, `matching`, `modules`, `options`, `ownership`, `strings`, `traits` |
-| [Bash](bash/) | 13 | `arrays`, `basics`, `functions`, `scripting`, `testing`, `utilities` |
-| [C](c/) | 13 | `arrays`, `basics`, `data-structures`, `files`, `pointers`, `strings` |
-| [Java](java/) | 13 | `algorithms`, `collections`, `concurrency`, `exceptions`, `generics`, `interfaces`, `oop`, `optional`, `records`, `streams`, `strings` |
-| [C++](cpp/) | 12 | `algorithms`, `data-structures`, `error-handling`, `operators`, `raii`, `smart-pointers`, `stl`, `strings`, `sum-types`, `templates` |
+| [Java](java/) | 14 | `algorithms`, `collections`, `concurrency`, `enums`, `exceptions`, `generics`, `interfaces`, `oop`, `optional`, `records`, `streams`, `strings` |
+| [C++](cpp/) | 13 | `algorithms`, `data-structures`, `error-handling`, `operators`, `raii`, `smart-pointers`, `stl`, `strings`, `sum-types`, `templates` |
+| [TypeScript](typescript/) | 13 | `advanced-types`, `async`, `basics`, `classes`, `enums`, `generics`, `interfaces`, `narrowing`, `unions`, `utility-types` |
 | [C#](csharp/) | 12 | `async`, `basics`, `collections`, `delegates`, `error-handling`, `generics`, `linq`, `methods`, `nullability`, `patterns`, `strings` |
-| [TypeScript](typescript/) | 12 | `advanced-types`, `async`, `basics`, `classes`, `enums`, `generics`, `interfaces`, `narrowing`, `unions`, `utility-types` |
 | [Ruby](ruby/) | 6 | `basics`, `blocks`, `files`, `oop`, `pattern-matching` |
-| [PowerShell](powershell/) | 4 | `data`, `error-handling`, `functions`, `objects` |
+| [PowerShell](powershell/) | 5 | `basics`, `data`, `error-handling`, `functions`, `objects` |
 
 ## Running them
 

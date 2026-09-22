@@ -513,6 +513,50 @@ failed requests and do sticky sessions. The cost is CPU and latency.</p>
 <p>Use L4 for raw throughput and non-HTTP protocols; use L7 when routing decisions
 depend on request content, which for a typical web application is most of the
 time.</p>
+<hr>
+<h3 id="q-tcp-delivers-reliably-over-a-network-that-drops-packets-how-does-it">🟡 Q. TCP delivers reliably over a network that drops packets. How does it</h3>
+<p>detect that a segment is lost, and how does it avoid making the loss worse?</p>
+<p><strong>Answer.</strong> It detects loss two ways — a <strong>retransmission timer</strong> expires, or
+it receives <strong>three duplicate ACKs</strong> — and it avoids making things worse by
+<strong>congestion control</strong>: every loss is treated as a signal that the network is
+saturated, so the sender shrinks its rate instead of just retransmitting and
+holding steady.</p>
+<p>Detection, the two mechanisms:</p>
+<ul>
+<li><strong>Retransmission timeout (RTO).</strong> The sender measures RTT and sets a timer
+  per segment. If it expires, the segment is assumed lost and resent. The
+  timeout is deliberately generous (roughly 5× the smoothed RTT, with a floor
+  of 1 second) because retransmitting "early" on a delayed-but-not-lost packet
+  injects extra traffic into a network that may only be slow.</li>
+<li><strong>Fast retransmit.</strong> If the same ACK arrives three times, the missing
+  segment almost certainly is lost, and the segments after it are queued
+  downstream. Three duplicates means you can act in one RTT instead of
+  waiting for the timer — the price is that a single lost segment makes every
+  later segment produce a duplicate, which is why exactly three is the
+  threshold.</li>
+</ul>
+<p>Congestion control, the part most answers skip:</p>
+<ul>
+<li>The sender maintains a <strong>congestion window</strong> (how many unacknowledged bytes
+  it may have in flight). <strong>Slow start</strong> doubles it each RTT from a small
+  value; once it reaches a threshold, <strong>congestion avoidance</strong> grows it by
+  about one segment per RTT.</li>
+<li>On any loss signal, the window is <strong>halved</strong> (Reno; CUBIC, the modern Linux
+  default, uses a curve that recovers faster). This additive-increase /
+  multiplicative-decrease pattern is what makes many competing TCP flows share
+  a link roughly fairly.</li>
+<li>So the answer to "why not just retransmit at full speed?" is: the loss may
+  be <em>caused by</em> that full speed. Retransmitting a lost segment at the same
+  rate adds traffic to a network that is already dropping packets, which
+  drops more, which retransmits more — a positive feedback loop. Shrinking
+  the window breaks it.</li>
+</ul>
+<p>The follow-up this sets up: congestion control cannot distinguish a packet
+lost to <strong>congestion</strong> from one lost to a <strong>flaky wireless link</strong>. On a noisy
+Wi-Fi connection, the flow punishes itself for the radio's mistakes, which is
+one reason real-time and mobile protocols either tune these parameters hard or
+run over UDP with their own recovery (this is a large part of why QUIC puts
+loss recovery in user space where it can be changed without an OS upgrade).</p>
     <hr>
     <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\core-cs\networking.md" rel="noopener">Edit this page on GitHub</a>.</p>
   </main>
