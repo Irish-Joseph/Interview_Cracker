@@ -172,3 +172,4 @@
 | 2026-09-22 | SQL | Intermediate | Joins | LEFT JOIN + WHERE on the joined table: the silent INNER JOIN, and filtering in ON | examples/sql/joins/left_join_where_filter_trap.sql |
 | 2026-09-22 | Bash | Intermediate | Basics | Arithmetic: $(( )) vs (( )), exit-status semantics, and the octal 08 trap | examples/bash/basics/arithmetic_traps.sh |
 | 2026-09-22 | Rust | Advanced | Ownership | Rc<RefCell> reference cycles and breaking them with Weak | examples/rust/ownership/rc_refcell_cycles_and_weak.rs |
+| 2026-09-22 | Java | Beginner | Enums | enum ordinal() vs name(): why ordinal is not stable data | examples/java/enums/enum_ordinal_vs_name.java |
