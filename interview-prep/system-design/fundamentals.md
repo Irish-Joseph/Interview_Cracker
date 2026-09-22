@@ -177,3 +177,45 @@ delivery** — most queues guarantee at-least-once, not exactly-once. That makes
 In a distributed system the limiter state must be shared (typically Redis), which
 adds a network hop to every request — so a common design is a local limiter with
 a periodically synchronised global budget.
+
+---
+
+### 🟡 Q. Your service must call a payment provider over the network and retry
+on failure. How do you make sure a retry does not charge the customer twice?
+
+**Answer.** You make the operation **idempotent** so that sending it once or
+five times has the same effect as sending it once. In practice that means
+giving the *logical* operation a stable **idempotency key** that you generate
+once (before the first attempt) and send with every attempt; the provider
+stores the result of the first key it has seen and returns that stored result
+for every repeat, instead of performing the charge again.
+
+The reasoning, and the traps:
+
+- **The key identifies the operation, not the attempt.** You generate it
+  before the first try (e.g. a UUID or a business id like the order number)
+  and reuse the *same* key on every retry. If you generate a fresh key per
+  retry, each retry looks like a new operation and you are back to double
+  charges.
+- **Retries happen because you cannot tell "failed" from "slow".** The
+  classic ambiguity: you sent the charge, the connection timed out, so did the
+  provider process it? Without idempotency you must guess, and guessing wrong
+  in either direction is costly. With an idempotency key you simply resend and
+  the provider's deduplication resolves the ambiguity.
+- **Idempotency is a property of the receiver, triggered by the sender.** The
+  client supplying the key is necessary but not sufficient — the provider must
+  actually deduplicate on it (typically: store `key -> result` atomically,
+  e.g. an insert that fails if the key exists). A provider that ignores the key
+  gives you no protection.
+- **Scope the key to the thing you want to repeat.** "Charge order 1234" gets
+  one key; "charge order 1234 again for a genuinely new, separate purchase"
+  must get a *different* key. Get this wrong and you either double-charge or,
+  worse, silently skip a legitimate second charge.
+
+The trade-off worth stating: idempotency keys make **at-least-once delivery
+safe**, which is almost always what you want over "at-most-once" (drop on
+failure). The cost is that the receiver keeps a deduplication record with a
+retention window, and the key space must be chosen so that legitimate
+repeat-able operations collide intentionally while distinct operations never
+do. This is also why HTTP distinguishes `POST` (not idempotent by default)
+from `PUT`/`DELETE` (idempotent) — a client can safely retry the latter.
