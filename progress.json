@@ -1,5 +1,5 @@
 {
-  "total_examples": 171,
+  "total_examples": 172,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1368,6 +1368,14 @@
       "category": "enums",
       "topic": "enum ordinal() vs name(): why ordinal is not stable data",
       "file": "examples/java/enums/enum_ordinal_vs_name.java"
+    },
+    {
+      "date": "2026-09-22",
+      "language": "c",
+      "difficulty": "advanced",
+      "category": "functions",
+      "topic": "Variadic functions: va_list, va_copy, measure-then-write, and the format-attribute gap",
+      "file": "examples/c/functions/variadic_functions_va_list.c"
     }
   ]
 }
