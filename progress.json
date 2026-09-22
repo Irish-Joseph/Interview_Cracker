@@ -1,5 +1,5 @@
 {
-  "total_examples": 168,
+  "total_examples": 169,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1344,6 +1344,14 @@
       "category": "joins",
       "topic": "LEFT JOIN + WHERE on the joined table: the silent INNER JOIN, and filtering in ON",
       "file": "examples/sql/joins/left_join_where_filter_trap.sql"
+    },
+    {
+      "date": "2026-09-22",
+      "language": "bash",
+      "difficulty": "intermediate",
+      "category": "basics",
+      "topic": "Arithmetic: $(( )) vs (( )), exit-status semantics, and the octal 08 trap",
+      "file": "examples/bash/basics/arithmetic_traps.sh"
     }
   ]
 }
