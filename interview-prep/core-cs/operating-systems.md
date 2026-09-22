@@ -148,3 +148,43 @@ Syscalls cost far more than a function call (a mode switch, argument validation,
 cache effects), which is why I/O is buffered — `printf` accumulates output and
 issues one `write` instead of one per character, and why `sendfile` exists to
 copy a file to a socket without crossing the boundary repeatedly.
+
+---
+
+### 🟡 Q. What is a zombie process, why can it not be killed, and what is an
+orphan process?
+
+**Answer.** A **zombie** is a process that has exited but still has an entry
+in the process table because its parent has not yet called `wait()` to read
+its exit status. It is already dead — it holds no memory, no CPU, no file
+descriptors — so there is nothing to kill; the entry exists only to hold the
+exit code until the parent collects it. An **orphan** is the mirror case: a
+process whose parent died first; it is *alive* and simply gets adopted by
+`init`/PID 1, which waits on it so it does not become a zombie when it
+exits.
+
+Why zombies happen and what they mean:
+
+- When a process exits, it must report **how** it exited (code or signal) to
+  its parent. That report has nowhere to live except the process-table
+  entry, which is why the entry lingers instead of vanishing.
+- `kill` does not work on a zombie — there is no running code to receive the
+  signal. The only fix is on the *parent's* side: the parent calls `wait()`,
+  or the parent itself dies (then init reaps it).
+- A single zombie is harmless (a few hundred bytes of table space). The
+  failure mode is a **parent that spawns many children and never waits** —
+  each one leaves a zombie, and the table has a finite size, at which point
+  the parent cannot create new processes at all.
+
+The practical rules you end with:
+
+- Servers that fork workers should call `wait()` promptly, or set
+  `SIGCHLD` to `SIG_IGN`, or install a handler that reaps — any of these
+  prevents zombie accumulation.
+- `init` (PID 1) exists partly to be the reaping backstop: every orphan is
+  reparented to it, and init waits on all its children, so the system as a
+  whole can never be clogged with unreaped exits.
+- The classic confusion, stated out loud: **zombie = dead but uncollected
+  (entry lingers); orphan = alive but parentless (gets adopted)**. They are
+  independent properties — a process can be an orphan and never a zombie, and
+  a zombie is never "running", so "killing a zombie" is a category error.
