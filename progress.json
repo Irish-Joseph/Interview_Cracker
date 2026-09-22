@@ -1,5 +1,5 @@
 {
-  "total_examples": 169,
+  "total_examples": 170,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1352,6 +1352,14 @@
       "category": "basics",
       "topic": "Arithmetic: $(( )) vs (( )), exit-status semantics, and the octal 08 trap",
       "file": "examples/bash/basics/arithmetic_traps.sh"
+    },
+    {
+      "date": "2026-09-22",
+      "language": "rust",
+      "difficulty": "advanced",
+      "category": "ownership",
+      "topic": "Rc<RefCell> reference cycles and breaking them with Weak",
+      "file": "examples/rust/ownership/rc_refcell_cycles_and_weak.rs"
     }
   ]
 }

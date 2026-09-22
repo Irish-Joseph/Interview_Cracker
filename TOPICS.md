@@ -171,3 +171,4 @@
 | 2026-09-22 | TypeScript | Intermediate | Narrowing | Exhaustive checking with the never type and assertNever | examples/typescript/narrowing/exhaustive_never_checking.ts |
 | 2026-09-22 | SQL | Intermediate | Joins | LEFT JOIN + WHERE on the joined table: the silent INNER JOIN, and filtering in ON | examples/sql/joins/left_join_where_filter_trap.sql |
 | 2026-09-22 | Bash | Intermediate | Basics | Arithmetic: $(( )) vs (( )), exit-status semantics, and the octal 08 trap | examples/bash/basics/arithmetic_traps.sh |
+| 2026-09-22 | Rust | Advanced | Ownership | Rc<RefCell> reference cycles and breaking them with Weak | examples/rust/ownership/rc_refcell_cycles_and_weak.rs |
