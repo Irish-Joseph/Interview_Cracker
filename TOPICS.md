@@ -166,3 +166,4 @@
 | 2026-09-21 | Bash | Intermediate | Utilities | Process substitution: <(...) and >(...) | examples/bash/utilities/process_substitution.sh |
 | 2026-09-21 | Ruby | Beginner | Files | File I/O: read, write, append, and line-by-line streaming | examples/ruby/files/file_io_read_write_stream.rb |
 | 2026-09-22 | PowerShell | Beginner | Basics | [int] casts round to even (banker's rounding), -as and explicit rounding | examples/powershell/basics/int_cast_banker_rounding.ps1 |
+| 2026-09-22 | Python | Intermediate | Numbers | float vs Decimal - binary approximation, Decimal(0.1) trap, rounding modes, speed | examples/python/numbers/float_vs_decimal.py |
