@@ -1,5 +1,5 @@
 {
-  "total_examples": 166,
+  "total_examples": 167,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1328,6 +1328,14 @@
       "category": "basics",
       "topic": "The seven falsy values, typeof's lies (null, arrays), and NaN !== NaN",
       "file": "examples/javascript/basics/falsy_typeof_and_nan.js"
+    },
+    {
+      "date": "2026-09-22",
+      "language": "typescript",
+      "difficulty": "intermediate",
+      "category": "narrowing",
+      "topic": "Exhaustive checking with the never type and assertNever",
+      "file": "examples/typescript/narrowing/exhaustive_never_checking.ts"
     }
   ]
 }
