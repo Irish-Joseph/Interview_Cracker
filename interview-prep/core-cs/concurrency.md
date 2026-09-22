@@ -156,3 +156,48 @@ Locks are one route. The others are usually better:
 Rust enforces this at compile time: its borrow checker rejects a data race rather
 than letting you find it in production. See
 [`examples/rust/ownership/count_word_frequencies_borrowed.rs`](../../examples/rust/ownership/count_word_frequencies_borrowed.rs).
+
+---
+
+### 🔴 Q. You use a compare-and-swap (CAS) loop to update a shared pointer
+without a lock. A colleague says it's still racy. When would they be right?
+
+**Answer.** They are right because of the **ABA problem**: CAS only compares the
+*value*, not the *history*. If another thread changes the pointer from A to B and
+back to A, your CAS sees "still A" and succeeds — even though the object it
+points at has been replaced (and possibly freed) in between. The value is the
+same, but the *state* your update assumed no longer is.
+
+The canonical setting is a **lock-free stack**:
+
+1. You read the head, it points to node **A** (A → B → C).
+2. Another thread pops A *and B*, then a new allocation happens to reuse the
+   same address as A, so head is again **A** (A → D).
+3. Your CAS compares "head is still A?" — yes — and links the new node after
+   A. But the A you saw was a *different* node than the A now at the head; the
+   link is now dangling or corrupt.
+
+The value (the address A) is identical; only the identity of what it points to
+changed. CAS cannot tell the difference.
+
+The fixes, in order of how often they're the real answer:
+
+- **Version / sequence stamp (the standard fix).** Store the pointer *and* a
+  monotonically increasing counter together and CAS on the pair. A→B→A bumps
+  the counter each time, so your compare now sees (A, 2) ≠ (A, 0) and fails.
+  This is what `std::atomic`'s tagged pointers / `AtomicPtr` with a sequence
+  number do, and why "ABA" is really "you compared a projection, not the state."
+- **Hazard pointers / epoch-based reclamation.** Prevent the *real* danger
+  behind ABA — a node being freed while someone still holds a pointer to it —
+  by deferring reclamation. You stop relying on CAS correctness over a moving
+  target.
+- **Just take a lock.** Be honest about it. ABA is a cost you pay to be
+  lock-free; if the critical section is large or the structure is complex, a
+  mutex is simpler and often fast enough. The interview win is *naming* ABA and
+  stating that "lock-free" is not "synchronization-free."
+
+The follow-up this sets up: "lock-free" and "wait-free" are different. A CAS
+loop can livelock (always losing the race to another thread) even if it never
+deadlocks — progress guarantees are a spectrum, and ABA is the clearest example
+of why the *memory model*, not just the algorithm, is what you actually have to
+get right.
