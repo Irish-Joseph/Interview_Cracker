@@ -1,5 +1,5 @@
 {
-  "total_examples": 164,
+  "total_examples": 165,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1312,6 +1312,14 @@
       "category": "basics",
       "topic": "[int] casts round to even (banker's rounding), -as and explicit rounding",
       "file": "examples/powershell/basics/int_cast_banker_rounding.ps1"
+    },
+    {
+      "date": "2026-09-22",
+      "language": "python",
+      "difficulty": "intermediate",
+      "category": "numbers",
+      "topic": "float vs Decimal - binary approximation, Decimal(0.1) trap, rounding modes, speed",
+      "file": "examples/python/numbers/float_vs_decimal.py"
     }
   ]
 }
