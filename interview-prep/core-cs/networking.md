@@ -157,3 +157,51 @@ failed requests and do sticky sessions. The cost is CPU and latency.
 Use L4 for raw throughput and non-HTTP protocols; use L7 when routing decisions
 depend on request content, which for a typical web application is most of the
 time.
+
+---
+
+### 🟡 Q. TCP delivers reliably over a network that drops packets. How does it
+detect that a segment is lost, and how does it avoid making the loss worse?
+
+**Answer.** It detects loss two ways — a **retransmission timer** expires, or
+it receives **three duplicate ACKs** — and it avoids making things worse by
+**congestion control**: every loss is treated as a signal that the network is
+saturated, so the sender shrinks its rate instead of just retransmitting and
+holding steady.
+
+Detection, the two mechanisms:
+
+- **Retransmission timeout (RTO).** The sender measures RTT and sets a timer
+  per segment. If it expires, the segment is assumed lost and resent. The
+  timeout is deliberately generous (roughly 5× the smoothed RTT, with a floor
+  of 1 second) because retransmitting "early" on a delayed-but-not-lost packet
+  injects extra traffic into a network that may only be slow.
+- **Fast retransmit.** If the same ACK arrives three times, the missing
+  segment almost certainly is lost, and the segments after it are queued
+  downstream. Three duplicates means you can act in one RTT instead of
+  waiting for the timer — the price is that a single lost segment makes every
+  later segment produce a duplicate, which is why exactly three is the
+  threshold.
+
+Congestion control, the part most answers skip:
+
+- The sender maintains a **congestion window** (how many unacknowledged bytes
+  it may have in flight). **Slow start** doubles it each RTT from a small
+  value; once it reaches a threshold, **congestion avoidance** grows it by
+  about one segment per RTT.
+- On any loss signal, the window is **halved** (Reno; CUBIC, the modern Linux
+  default, uses a curve that recovers faster). This additive-increase /
+  multiplicative-decrease pattern is what makes many competing TCP flows share
+  a link roughly fairly.
+- So the answer to "why not just retransmit at full speed?" is: the loss may
+  be *caused by* that full speed. Retransmitting a lost segment at the same
+  rate adds traffic to a network that is already dropping packets, which
+  drops more, which retransmits more — a positive feedback loop. Shrinking
+  the window breaks it.
+
+The follow-up this sets up: congestion control cannot distinguish a packet
+lost to **congestion** from one lost to a **flaky wireless link**. On a noisy
+Wi-Fi connection, the flow punishes itself for the radio's mistakes, which is
+one reason real-time and mobile protocols either tune these parameters hard or
+run over UDP with their own recovery (this is a large part of why QUIC puts
+loss recovery in user space where it can be changed without an OS upgrade).
