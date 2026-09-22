@@ -1,5 +1,5 @@
 {
-  "total_examples": 165,
+  "total_examples": 166,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1320,6 +1320,14 @@
       "category": "numbers",
       "topic": "float vs Decimal - binary approximation, Decimal(0.1) trap, rounding modes, speed",
       "file": "examples/python/numbers/float_vs_decimal.py"
+    },
+    {
+      "date": "2026-09-22",
+      "language": "javascript",
+      "difficulty": "beginner",
+      "category": "basics",
+      "topic": "The seven falsy values, typeof's lies (null, arrays), and NaN !== NaN",
+      "file": "examples/javascript/basics/falsy_typeof_and_nan.js"
     }
   ]
 }
