@@ -177,3 +177,4 @@
 | 2026-09-22 | C++ | Advanced | Strings | std::string_view lifetime traps: dangling views, const-reference lifetime extension, safe shapes | examples/cpp/strings/string_view_lifetime_traps.cpp |
 | 2026-09-23 | PowerShell | Intermediate | Text | Log analysis with the pipeline: Select-String, Group-Object, Measure-Object | examples/powershell/text/text_log_pipeline.ps1 |
 | 2026-09-23 | Ruby | Advanced | Blocks | lambda vs proc: arity, return, and exception propagation | examples/ruby/blocks/lambda_vs_proc.rb |
+| 2026-09-23 | C# | Beginner | Oop | interface vs abstract class: capability contract vs common base | examples/csharp/oop/interface_vs_abstract_class.cs |
