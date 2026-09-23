@@ -61,3 +61,4 @@ trie is nearly full — most nodes have very few children.
 | File | Difficulty | Shape |
 |---|---|---|
 | [implement_trie.py](implement_trie.py) | 🟡 Medium | insert / search / startsWith |
+| [word_search.py](word_search.py) | 🔴 Hard | Trie + board DFS with prefix pruning |
