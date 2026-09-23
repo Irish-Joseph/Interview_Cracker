@@ -77,3 +77,4 @@ rather than needing a second pass.
 | File | Difficulty | Shape |
 |---|---|---|
 | [redundant_connection.py](redundant_connection.py) | 🟡 Medium | Cycle detection as edges arrive |
+| [number_of_provinces.py](number_of_provinces.py) | 🟢 Easy | Count connected components |
