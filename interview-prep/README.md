@@ -65,6 +65,7 @@ Questions are tagged by difficulty:
 |---|---|
 | [fundamentals.md](system-design/fundamentals.md) | Load balancing, caching, replication, sharding, CAP, queues |
 | [walkthrough-url-shortener.md](system-design/walkthrough-url-shortener.md) | A complete worked answer, start to finish |
+| [walkthrough-rate-limiter.md](system-design/walkthrough-rate-limiter.md) | A complete worked answer: rate limiter, fixed window vs token bucket, sharding by key |
 
 ### Language-specific
 | File | Covers |
