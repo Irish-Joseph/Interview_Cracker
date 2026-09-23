@@ -21,7 +21,7 @@ to a small runnable program you can actually execute.
 | **Revise a subject** — data structures, algorithms, SQL, OS, networking, system design | [`interview-prep/`](interview-prep/) |
 | **Practise problems** — grouped by the pattern that solves them | [`coding-challenges/`](coding-challenges/) |
 | **Do one problem a day** | [`daily-challenges/`](daily-challenges/) |
-| **Learn a language feature** — 173 runnable examples across 13 languages | [`examples/`](examples/) |
+| **Learn a language feature** — 183 runnable examples across 13 languages | [`examples/`](examples/) |
 | **Print or read offline** | [`resources/pdf/`](resources/) |
 | **Follow a study plan** — one week or four weeks | [`interview-prep/README.md`](interview-prep/README.md) |
 
@@ -56,7 +56,7 @@ interview-cracker/
 │
 ├── daily-challenges/        One dated problem per day, answer collapsed
 │
-├── examples/                173 runnable examples, one concept per file
+├── examples/                183 runnable examples, one concept per file
 │   ├── python/  javascript/  typescript/  java/  c/  cpp/  csharp/
 │   └── go/  rust/  sql/  bash/  powershell/  ruby/
 │
@@ -110,11 +110,11 @@ Both run on every push and pull request.
 
 ## Statistics
 
-Examples: 173
+Examples: 183
 Languages: 13
-Categories: 126
+Categories: 130
 
-Plus 19 subject question banks, 42 pattern-grouped challenges, and 8 generated
+Plus 19 subject question banks, 46 pattern-grouped challenges, and 8 generated
 PDFs. Full per-example listing in [TOPICS.md](TOPICS.md).
 
 ## Contributing
