@@ -175,3 +175,4 @@
 | 2026-09-22 | Java | Beginner | Enums | enum ordinal() vs name(): why ordinal is not stable data | examples/java/enums/enum_ordinal_vs_name.java |
 | 2026-09-22 | C | Advanced | Functions | Variadic functions: va_list, va_copy, measure-then-write, and the format-attribute gap | examples/c/functions/variadic_functions_va_list.c |
 | 2026-09-22 | C++ | Advanced | Strings | std::string_view lifetime traps: dangling views, const-reference lifetime extension, safe shapes | examples/cpp/strings/string_view_lifetime_traps.cpp |
+| 2026-09-23 | PowerShell | Intermediate | Text | Log analysis with the pipeline: Select-String, Group-Object, Measure-Object | examples/powershell/text/text_log_pipeline.ps1 |
