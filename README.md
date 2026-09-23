@@ -1,135 +1,99 @@
+<div align="center">
+
 # Interview Cracker
 
+**Learn the pattern. Explain the trade-off. Run the code.**
+
 [![Validate](https://github.com/Irish-Joseph/Interview_Cracker/actions/workflows/validate-registry.yml/badge.svg)](https://github.com/Irish-Joseph/Interview_Cracker/actions/workflows/validate-registry.yml)
+[![GitHub Pages](https://img.shields.io/badge/read-searchable_site-22c55e?logo=github)](https://irish-joseph.github.io/Interview_Cracker/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-06b6d4.svg)](LICENSE)
 
-**Everything you need to prepare for a software engineering interview, in one
-repository — explained, worked through, and runnable.**
+<img src="assets/interview-cracker-hero.png" alt="A focused coding workspace with a visual path through code, algorithms, databases, and interview readiness" width="100%">
 
-### 📖 [Read it as a searchable site → irish-joseph.github.io/Interview_Cracker](https://irish-joseph.github.io/Interview_Cracker/)
+193 runnable examples · 50 coding challenges · 34 interview guides · 13 languages
 
-Most interview repositories are a wall of unexplained solutions. This one is
-built around *why* an answer is right: every question has a written answer, every
-challenge has a commented solution with its complexity, and every concept links
-to a small runnable program you can actually execute.
+Examples: 193
 
----
+Languages: 13
 
-## Start here
+Categories: 134
 
-| I want to… | Go to |
-|---|---|
-| **Revise a subject** — data structures, algorithms, SQL, OS, networking, system design | [`interview-prep/`](interview-prep/) |
-| **Practise problems** — grouped by the pattern that solves them | [`coding-challenges/`](coding-challenges/) |
-| **Do one problem a day** | [`daily-challenges/`](daily-challenges/) |
-| **Learn a language feature** — 183 runnable examples across 13 languages | [`examples/`](examples/) |
-| **Print or read offline** | [`resources/pdf/`](resources/) |
-| **Follow a study plan** — one week or four weeks | [`interview-prep/README.md`](interview-prep/README.md) |
+[Start a study plan](interview-prep/README.md) · [Solve today's challenge](daily-challenges/2026/09/2026-09-24.md) · [Browse the website](https://irish-joseph.github.io/Interview_Cracker/)
 
----
+</div>
 
-## Layout
+## Pick your path
 
-```
-interview-cracker/
-│
-├── interview-prep/          Question banks with written answers, by subject
-│   ├── data-structures/       arrays, linked lists, stacks/queues/heaps,
-│   │                          hash tables, trees and graphs
-│   ├── algorithms/            complexity, sorting/searching, recursion, DP
-│   ├── databases/             SQL queries, indexing, transactions
-│   ├── core-cs/               operating systems, networking, concurrency
-│   ├── system-design/         fundamentals + a full worked walkthrough
-│   ├── languages/             Python, JavaScript, Java
-│   └── behavioral/            STAR method and the recurring questions
-│
-├── coding-challenges/       Problems grouped by SOLVING PATTERN, with
-│   ├── two-pointers/          tested solutions and complexity analysis
-│   ├── sliding-window/
-│   ├── hashing/
-│   ├── binary-search/
-│   ├── stack/
-│   ├── linked-list/
-│   ├── trees/
-│   ├── graphs/
-│   ├── dynamic-programming/
-│   └── intervals/
-│
-├── daily-challenges/        One dated problem per day, answer collapsed
-│
-├── examples/                183 runnable examples, one concept per file
-│   ├── python/  javascript/  typescript/  java/  c/  cpp/  csharp/
-│   └── go/  rust/  sql/  bash/  powershell/  ruby/
-│
-├── resources/pdf/           Printable PDFs generated from interview-prep/
-├── scripts/                 Registry validation, test runner, PDF builder
-│
-├── TOPICS.md                Every example: date, difficulty, category
-└── progress.json            The same registry, machine-readable
+| Your goal | Start here | What you get |
+|---|---|---|
+| Prepare for an interview | [Interview prep](interview-prep/) | Answer-first guides for DSA, databases, core CS, system design, languages, and behavioral rounds |
+| Learn problem-solving patterns | [Coding challenges](coding-challenges/) | Self-testing Python problems grouped by the pattern that solves them |
+| Build a daily habit | [Daily challenges](daily-challenges/) | One dated problem, with the hint and solution hidden until you need them |
+| Learn by running code | [Examples](examples/) | Small programs across 13 languages, one concept per file |
+| Study offline | [PDF library](resources/pdf/) | Generated, printable interview question banks |
+
+## Today's learning pack — 24 September 2026
+
+- **Daily challenge:** [Longest Valid Parentheses](daily-challenges/2026/09/2026-09-24.md)
+- **New patterns:** sliding-window maximum, binary-search boundaries, permutations, and tree depth
+- **Interview depth:** cache stampedes, covering indexes, virtual-memory faults, and selection algorithms
+- **Language traps:** mutable defaults, cancellation, branded types, suppressed exceptions, UPSERTs, and more
+
+## A practical study loop
+
+```text
+Learn a concept  →  Recognize its pattern  →  Solve without hints
+       ↑                                         ↓
+Review the trade-offs  ←  Test edge cases  ←  Explain it aloud
 ```
 
----
+1. Pick one topic from [interview prep](interview-prep/README.md).
+2. Attempt a related [challenge](coding-challenges/README.md) for 20 minutes.
+3. Run the tests, then compare complexity and edge cases.
+4. Re-attempt from a blank file a day later.
 
-## How to use this repository
+The repository favors understanding over memorization: solutions explain why
+they work, what breaks the obvious approach, and where the trade-offs change.
 
-**If your interview is months away**, work through `interview-prep/` one subject
-at a time and do the linked challenges as you go.
+## Repository map
 
-**If your interview is next week**, start with
-[`interview-prep/README.md`](interview-prep/README.md), which has a one-week and
-a four-week plan, then drill `coding-challenges/` by pattern.
+```text
+Interview_Cracker/
+├── interview-prep/      answer-first revision guides and study plans
+├── coding-challenges/   50 tested problems grouped by solving pattern
+├── daily-challenges/    one spoiler-safe challenge per day
+├── examples/            193 focused programs across 13 languages
+├── resources/pdf/       generated offline question banks
+├── docs/                generated searchable GitHub Pages site
+├── scripts/             validation and build tools
+├── TOPICS.md             human-readable example index
+└── progress.json         machine-readable example registry
+```
 
-**If you have 20 minutes a day**, do that day's
-[`daily-challenges/`](daily-challenges/) problem.
+## Quality you can verify
 
-The honest advice: recognising the *pattern* beats memorising solutions. Ten
-problems understood deeply will serve you better than a hundred skimmed.
-
----
-
-## What makes this different
-
-- **Every code snippet has been executed.** Solutions are cross-checked against
-  brute-force references on randomised inputs, not just eyeballed.
-- **Complexity is stated and justified**, including the space cost of recursion.
-- **Trade-offs over rules.** Where there is no single right answer — 301 vs 302,
-  greedy vs DP, `orElse` vs `orElseGet` — the answer explains the choice.
-- **No fake company attributions.** Nothing here claims to be "asked at Google".
-  Those claims are not verifiable, and drilling a rumoured list is worse practice
-  than understanding the topic.
-
-## Verify it yourself
+- Runnable code is executed or type-checked when the toolchain is available.
+- Challenge suites cover edge cases and use randomized brute-force checks where practical.
+- Complexity claims include the reason, not only the notation.
+- No unverifiable “asked at company X” claims.
 
 ```bash
-python scripts/validate_registry.py    # registries and README agree
-python scripts/run_challenges.py       # all 20 challenge test suites
+python scripts/validate_registry.py
+python scripts/run_challenges.py
 ```
 
-Both run on every push and pull request.
-
----
-
-## Statistics
-
-Examples: 183
-Languages: 13
-Categories: 130
-
-Plus 19 subject question banks, 46 pattern-grouped challenges, and 8 generated
-PDFs. Full per-example listing in [TOPICS.md](TOPICS.md).
+Both checks run in CI. The searchable site and PDFs are generated from the same
+Markdown sources, so the repository remains the source of truth.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) — there is a checklist for each area.
-`Skill.md` documents the repository's full maintenance rules.
+Read [CONTRIBUTING.md](CONTRIBUTING.md) for the content checklist and
+[Skill.md](Skill.md) for repository maintenance rules. New examples must be
+focused, registered, and honestly labeled with how they were validated.
 
-## License
+## Community and license
 
-[MIT](LICENSE) — use it, fork it, teach from it. Attribution appreciated.
+Ask questions in [Discussions](https://github.com/Irish-Joseph/Interview_Cracker/discussions/categories/q-a), suggest an improvement in [Ideas](https://github.com/Irish-Joseph/Interview_Cracker/discussions/categories/ideas), or open an issue for a correction.
 
-## Community
-
-- Ask questions in [Q&A Discussions](https://github.com/Irish-Joseph/Interview_Cracker/discussions/categories/q-a).
-- Suggest improvements in [Ideas](https://github.com/Irish-Joseph/Interview_Cracker/discussions/categories/ideas).
-- Request a new question or report a mistake through the issue forms.
-
-If a section helped you, a star makes it easier for the next person to find.
+[MIT](LICENSE) — use it, fork it, and teach from it. If it helps your preparation,
+a star helps the next learner find it too.

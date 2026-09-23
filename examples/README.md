@@ -1,79 +1,43 @@
-# Examples
+# Runnable Examples
 
-173 focused, runnable programs across 13 languages. **One concept per
-file** - each is small enough to read in a sitting, and most print their own
-expected output.
+193 focused programs across 13 languages. Each file teaches one concept and
+includes its run command, expected behavior, and validation status.
 
-These are the learning half of the repository. For interview preparation, see
-[`interview-prep/`](../interview-prep/) and
-[`coding-challenges/`](../coding-challenges/).
+## Find an example
 
-## How the files are organised
-
-```
-examples/<language>/<category>/<descriptive_name>.<ext>
-```
-
-So `examples/python/algorithms/binary_search_iterative.py` is a Python example,
-in the algorithms category, about iterative binary search. Filenames describe
-what they teach - there are no `example1.py` files here.
-
-Every file opens with a header stating the topic, the concepts it demonstrates,
-and its expected output, so you can tell whether it is what you want without
-running it.
-
-## Languages
+Examples use `examples/<language>/<category>/<descriptive_name>.<ext>`.
+Browse every entry in [TOPICS.md](../TOPICS.md), or query the same data from
+[progress.json](../progress.json).
 
 | Language | Examples | Categories |
-|---|---|---|
-| [Python](python/) | 22 | `algorithms`, `basics`, `collections`, `context-managers`, `data-models`, `dates`, `decorators`, `files`, `generators`, `json`, `numbers`, `oop`, `standard-library`, `strings`, `typing` |
-| [SQL](sql/) | 16 | `aggregation`, `dates`, `filters`, `joins`, `recursive-ctes`, `set-operations`, `strings`, `subqueries`, `transactions`, `window-functions` |
-| [JavaScript](javascript/) | 15 | `arrays`, `async`, `basics`, `collections`, `errors`, `generators`, `objects`, `strings`, `utilities` |
-| [Rust](rust/) | 15 | `basics`, `closures`, `collections`, `concurrency`, `enums`, `error-handling`, `iterators`, `lifetimes`, `matching`, `modules`, `options`, `ownership`, `strings`, `traits` |
-| [Bash](bash/) | 14 | `arrays`, `basics`, `functions`, `scripting`, `testing`, `utilities` |
-| [C](c/) | 14 | `arrays`, `basics`, `data-structures`, `files`, `functions`, `pointers`, `strings` |
-| [Go](go/) | 14 | `algorithms`, `concurrency`, `data-structures`, `errors`, `files`, `generics`, `interfaces`, `maps`, `slices`, `sorting`, `structs`, `testing` |
-| [Java](java/) | 14 | `algorithms`, `collections`, `concurrency`, `enums`, `exceptions`, `generics`, `interfaces`, `oop`, `optional`, `records`, `streams`, `strings` |
-| [C++](cpp/) | 13 | `algorithms`, `data-structures`, `error-handling`, `operators`, `raii`, `smart-pointers`, `stl`, `strings`, `sum-types`, `templates` |
-| [TypeScript](typescript/) | 13 | `advanced-types`, `async`, `basics`, `classes`, `enums`, `generics`, `interfaces`, `narrowing`, `unions`, `utility-types` |
-| [C#](csharp/) | 12 | `async`, `basics`, `collections`, `delegates`, `error-handling`, `generics`, `linq`, `methods`, `nullability`, `patterns`, `strings` |
-| [Ruby](ruby/) | 6 | `basics`, `blocks`, `files`, `oop`, `pattern-matching` |
-| [PowerShell](powershell/) | 5 | `basics`, `data`, `error-handling`, `functions`, `objects` |
+|---|---:|---|
+| [Python](python/) | 23 | algorithms, basics, collections, context-managers, data-models, dates, decorators, files, functions, generators, json, numbers, oop, standard-library, strings, typing |
+| [SQL](sql/) | 17 | aggregation, dates, filters, joins, recursive-ctes, set-operations, strings, subqueries, transactions, window-functions |
+| [Rust](rust/) | 17 | basics, closures, collections, concurrency, enums, error-handling, iterators, lifetimes, matching, modules, options, ownership, strings, traits |
+| [JavaScript](javascript/) | 16 | arrays, async, basics, collections, errors, generators, objects, strings, utilities |
+| [Java](java/) | 16 | algorithms, collections, concurrency, enums, error-handling, exceptions, generics, interfaces, oop, optional, records, streams, strings |
+| [Go](go/) | 16 | algorithms, concurrency, data-structures, error-handling, errors, files, generics, interfaces, json, maps, slices, sorting, structs, testing |
+| [C](c/) | 16 | arrays, basics, data-structures, files, functions, pointers, strings |
+| [C++](cpp/) | 15 | algorithms, data-structures, error-handling, oop, operators, raii, smart-pointers, stl, strings, sum-types, templates |
+| [TypeScript](typescript/) | 15 | advanced-types, async, basics, classes, enums, generics, interfaces, narrowing, unions, utility-types |
+| [Bash](bash/) | 15 | arrays, basics, functions, scripting, testing, utilities |
+| [C#](csharp/) | 13 | async, basics, collections, delegates, error-handling, generics, linq, methods, nullability, oop, patterns, strings |
+| [Ruby](ruby/) | 8 | basics, blocks, files, methods, oop, pattern-matching |
+| [PowerShell](powershell/) | 6 | basics, data, error-handling, functions, objects, text |
 
-## Running them
+## Run them
 
-Most examples are self-contained with no dependencies:
-
-```bash
-python examples/python/standard-library/functools_essentials.py
-node    examples/javascript/arrays/array_methods_tour.js
-bash    examples/bash/basics/conditionals_and_tests.sh
-```
-
-Compiled languages need the usual toolchain:
+Most examples have no dependencies:
 
 ```bash
-gcc -Wall examples/c/basics/command_line_arguments.c -o demo && ./demo
-g++ -std=c++20 examples/cpp/stl/map_and_set_containers.cpp -o demo && ./demo
-go  run examples/go/structs/structs_embedding_and_json.go
-rustc --edition 2021 examples/rust/collections/vec_and_hashmap.rs && ./vec_and_hashmap
+python examples/python/functions/mutable_default_arguments.py
+node examples/javascript/async/abort_controller_cancellation.js
+node --experimental-strip-types examples/typescript/advanced-types/branded_types.ts
 ```
 
-TypeScript examples run under Node 22+:
+Compiled-language examples include the exact command in their header. If the
+authoring host lacked a toolchain, the file says `validated by inspection`
+instead of pretending it was run.
 
-```bash
-node --experimental-strip-types examples/typescript/basics/satisfies_operator.ts
-node --experimental-transform-types examples/typescript/enums/enums_vs_literal_unions.ts
-```
-
-Where an example could not be executed on the authoring machine, its header says
-`validated by inspection` so you know the difference.
-
-## Finding something specific
-
-- [`../TOPICS.md`](../TOPICS.md) - every example with its date, difficulty and
-  category, in one table.
-- [`../progress.json`](../progress.json) - the same data, machine-readable.
-
-> This file is generated from `progress.json`. Regenerate it rather than editing
-> the table by hand, so the counts cannot drift.
+> This table is generated from `progress.json`; keep it synchronized with the
+> registry when adding examples.

@@ -185,3 +185,13 @@
 | 2026-09-23 | Rust | Intermediate | Ownership | Deref coercion: why APIs take &str, and what it does not convert | examples/rust/ownership/deref_coercion_and_str_signatures.rs |
 | 2026-09-23 | Bash | Beginner | Basics | Word splitting and globbing: why every $variable must be quoted | examples/bash/basics/quoting_word_splitting.sh |
 | 2026-09-23 | C | Beginner | Strings | String literals vs char arrays: storage, sizeof, and the write-to-literal UB | examples/c/strings/string_literal_vs_char_array.c |
+| 2026-09-24 | Python | Beginner | Functions | Mutable default arguments and the sentinel pattern | examples/python/functions/mutable_default_arguments.py |
+| 2026-09-24 | JavaScript | Beginner | Async | Cooperative cancellation with AbortController | examples/javascript/async/abort_controller_cancellation.js |
+| 2026-09-24 | TypeScript | Advanced | Advanced-types | Branded types with unique-symbol phantom properties | examples/typescript/advanced-types/branded_types.ts |
+| 2026-09-24 | Java | Intermediate | Error-handling | Try-with-resources and suppressed exceptions | examples/java/error-handling/try_with_resources_suppressed.java |
+| 2026-09-24 | Go | Intermediate | Json | Nil vs empty slices at the JSON boundary | examples/go/json/nil_vs_empty_slices.go |
+| 2026-09-24 | Rust | Intermediate | Traits | From and Into vs TryFrom and TryInto conversions | examples/rust/traits/from_into_tryfrom.rs |
+| 2026-09-24 | SQL | Intermediate | Transactions | Atomic UPSERT with INSERT ON CONFLICT | examples/sql/transactions/upsert_on_conflict.sql |
+| 2026-09-24 | C | Intermediate | Data-structures | Flexible array members with overflow-safe allocation | examples/c/data-structures/flexible_array_member.c |
+| 2026-09-24 | C++ | Advanced | Raii | Copy-and-swap assignment for strong exception safety | examples/cpp/raii/copy_and_swap_assignment.cpp |
+| 2026-09-24 | Ruby | Beginner | Methods | Forwarding positional, keyword and block arguments | examples/ruby/methods/keyword_argument_forwarding.rb |

@@ -5,18 +5,21 @@
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/algorithms/dynamic-programming.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/algorithms/number-theory-and-math.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/algorithms/recursion-and-backtracking.html</loc></url>
+  <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/algorithms/selection-algorithms.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/algorithms/sorting-and-searching.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/behavioral/star-stories.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/core-cs/concurrency.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/core-cs/cryptography-and-security.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/core-cs/networking.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/core-cs/operating-systems.html</loc></url>
+  <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/core-cs/virtual-memory-faults.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/data-structures/arrays-and-strings.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/data-structures/hash-tables.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/data-structures/linked-lists.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/data-structures/stacks-queues-heaps.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/data-structures/trees-and-graphs.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/data-structures/tries.html</loc></url>
+  <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/databases/covering-indexes.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/databases/database-normalization.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/databases/indexing-and-transactions.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/databases/sql-query-questions.html</loc></url>
@@ -29,6 +32,7 @@
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/languages/python.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/languages/rust.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/README.html</loc></url>
+  <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/system-design/cache-stampede.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/system-design/fundamentals.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/system-design/walkthrough-rate-limiter.html</loc></url>
   <url><loc>https://irish-joseph.github.io/Interview_Cracker/interview-prep/system-design/walkthrough-url-shortener.html</loc></url>

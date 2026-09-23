@@ -31,6 +31,7 @@ capturing `len(queue)` before the inner loop.
 
 | File | Difficulty | Mode |
 |---|---|---|
+| [maximum_depth_binary_tree.py](maximum_depth_binary_tree.py) | Easy | DFS: one plus the deeper child |
 | [level_order_traversal.py](level_order_traversal.py) | 🟡 Medium | BFS |
 | [validate_bst.py](validate_bst.py) | 🟡 Medium | DFS with bounds |
 | [lowest_common_ancestor_bst.py](lowest_common_ancestor_bst.py) | 🟡 Medium | Walk to the split point |

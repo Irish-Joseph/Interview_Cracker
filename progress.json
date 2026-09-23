@@ -1,5 +1,5 @@
 {
-  "total_examples": 183,
+  "total_examples": 193,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1464,6 +1464,86 @@
       "category": "strings",
       "topic": "String literals vs char arrays: storage, sizeof, and the write-to-literal UB",
       "file": "examples/c/strings/string_literal_vs_char_array.c"
+    },
+    {
+      "date": "2026-09-24",
+      "language": "python",
+      "difficulty": "beginner",
+      "category": "functions",
+      "topic": "Mutable default arguments and the sentinel pattern",
+      "file": "examples/python/functions/mutable_default_arguments.py"
+    },
+    {
+      "date": "2026-09-24",
+      "language": "javascript",
+      "difficulty": "beginner",
+      "category": "async",
+      "topic": "Cooperative cancellation with AbortController",
+      "file": "examples/javascript/async/abort_controller_cancellation.js"
+    },
+    {
+      "date": "2026-09-24",
+      "language": "typescript",
+      "difficulty": "advanced",
+      "category": "advanced-types",
+      "topic": "Branded types with unique-symbol phantom properties",
+      "file": "examples/typescript/advanced-types/branded_types.ts"
+    },
+    {
+      "date": "2026-09-24",
+      "language": "java",
+      "difficulty": "intermediate",
+      "category": "error-handling",
+      "topic": "Try-with-resources and suppressed exceptions",
+      "file": "examples/java/error-handling/try_with_resources_suppressed.java"
+    },
+    {
+      "date": "2026-09-24",
+      "language": "go",
+      "difficulty": "intermediate",
+      "category": "json",
+      "topic": "Nil vs empty slices at the JSON boundary",
+      "file": "examples/go/json/nil_vs_empty_slices.go"
+    },
+    {
+      "date": "2026-09-24",
+      "language": "rust",
+      "difficulty": "intermediate",
+      "category": "traits",
+      "topic": "From and Into vs TryFrom and TryInto conversions",
+      "file": "examples/rust/traits/from_into_tryfrom.rs"
+    },
+    {
+      "date": "2026-09-24",
+      "language": "sql",
+      "difficulty": "intermediate",
+      "category": "transactions",
+      "topic": "Atomic UPSERT with INSERT ON CONFLICT",
+      "file": "examples/sql/transactions/upsert_on_conflict.sql"
+    },
+    {
+      "date": "2026-09-24",
+      "language": "c",
+      "difficulty": "intermediate",
+      "category": "data-structures",
+      "topic": "Flexible array members with overflow-safe allocation",
+      "file": "examples/c/data-structures/flexible_array_member.c"
+    },
+    {
+      "date": "2026-09-24",
+      "language": "cpp",
+      "difficulty": "advanced",
+      "category": "raii",
+      "topic": "Copy-and-swap assignment for strong exception safety",
+      "file": "examples/cpp/raii/copy_and_swap_assignment.cpp"
+    },
+    {
+      "date": "2026-09-24",
+      "language": "ruby",
+      "difficulty": "beginner",
+      "category": "methods",
+      "topic": "Forwarding positional, keyword and block arguments",
+      "file": "examples/ruby/methods/keyword_argument_forwarding.rb"
     }
   ]
 }
