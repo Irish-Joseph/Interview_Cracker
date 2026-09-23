@@ -1,5 +1,5 @@
 {
-  "total_examples": 179,
+  "total_examples": 180,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1432,6 +1432,14 @@
       "category": "advanced-types",
       "topic": "Template literal types: interpolation, infer, and route-dependent parameters",
       "file": "examples/typescript/advanced-types/template_literal_types.ts"
+    },
+    {
+      "date": "2026-09-23",
+      "language": "java",
+      "difficulty": "intermediate",
+      "category": "oop",
+      "topic": "Virtual dispatch during construction and the Integer cache (-128..127)",
+      "file": "examples/java/oop/virtual_call_in_constructor.java"
     }
   ]
 }
