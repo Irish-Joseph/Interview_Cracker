@@ -1,5 +1,5 @@
 {
-  "total_examples": 178,
+  "total_examples": 179,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1424,6 +1424,14 @@
       "category": "error-handling",
       "topic": "defer, panic and recover: argument capture, LIFO, and the direct-call rule",
       "file": "examples/go/error-handling/defer_panic_recover.go"
+    },
+    {
+      "date": "2026-09-23",
+      "language": "typescript",
+      "difficulty": "advanced",
+      "category": "advanced-types",
+      "topic": "Template literal types: interpolation, infer, and route-dependent parameters",
+      "file": "examples/typescript/advanced-types/template_literal_types.ts"
     }
   ]
 }
