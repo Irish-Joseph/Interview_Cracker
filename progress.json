@@ -1,5 +1,5 @@
 {
-  "total_examples": 181,
+  "total_examples": 182,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1448,6 +1448,14 @@
       "category": "ownership",
       "topic": "Deref coercion: why APIs take &str, and what it does not convert",
       "file": "examples/rust/ownership/deref_coercion_and_str_signatures.rs"
+    },
+    {
+      "date": "2026-09-23",
+      "language": "bash",
+      "difficulty": "beginner",
+      "category": "basics",
+      "topic": "Word splitting and globbing: why every $variable must be quoted",
+      "file": "examples/bash/basics/quoting_word_splitting.sh"
     }
   ]
 }
