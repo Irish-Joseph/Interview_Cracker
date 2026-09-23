@@ -1,5 +1,5 @@
 {
-  "total_examples": 177,
+  "total_examples": 178,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1416,6 +1416,14 @@
       "category": "oop",
       "topic": "Virtual dispatch, the vtable, hiding vs override, and the non-virtual destructor trap",
       "file": "examples/cpp/oop/virtual_functions_and_the_vtable.cpp"
+    },
+    {
+      "date": "2026-09-23",
+      "language": "go",
+      "difficulty": "intermediate",
+      "category": "error-handling",
+      "topic": "defer, panic and recover: argument capture, LIFO, and the direct-call rule",
+      "file": "examples/go/error-handling/defer_panic_recover.go"
     }
   ]
 }
