@@ -75,6 +75,7 @@ Questions are tagged by difficulty:
 | [rust.md](languages/rust.md) | Ownership and moves, borrowing/lifetimes, Option/Result/`?`, Box/Rc/RefCell |
 | [go.md](languages/go.md) | Goroutines vs threads, channel blocking, error values, interfaces, goroutine leaks |
 | [c.md](languages/c.md) | malloc/calloc/realloc, literals vs arrays, array decay, free() mistakes, undefined behaviour |
+| [cpp.md](languages/cpp.md) | RAII, smart pointers and cycles, move semantics, virtual/vtable traps, rule of zero |
 
 ### Behavioural
 | File | Covers |
