@@ -183,3 +183,4 @@
 | 2026-09-23 | TypeScript | Advanced | Advanced-types | Template literal types: interpolation, infer, and route-dependent parameters | examples/typescript/advanced-types/template_literal_types.ts |
 | 2026-09-23 | Java | Intermediate | Oop | Virtual dispatch during construction and the Integer cache (-128..127) | examples/java/oop/virtual_call_in_constructor.java |
 | 2026-09-23 | Rust | Intermediate | Ownership | Deref coercion: why APIs take &str, and what it does not convert | examples/rust/ownership/deref_coercion_and_str_signatures.rs |
+| 2026-09-23 | Bash | Beginner | Basics | Word splitting and globbing: why every $variable must be quoted | examples/bash/basics/quoting_word_splitting.sh |
