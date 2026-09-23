@@ -179,3 +179,4 @@
 | 2026-09-23 | Ruby | Advanced | Blocks | lambda vs proc: arity, return, and exception propagation | examples/ruby/blocks/lambda_vs_proc.rb |
 | 2026-09-23 | C# | Beginner | Oop | interface vs abstract class: capability contract vs common base | examples/csharp/oop/interface_vs_abstract_class.cs |
 | 2026-09-23 | C++ | Intermediate | Oop | Virtual dispatch, the vtable, hiding vs override, and the non-virtual destructor trap | examples/cpp/oop/virtual_functions_and_the_vtable.cpp |
+| 2026-09-23 | Go | Intermediate | Error-handling | defer, panic and recover: argument capture, LIFO, and the direct-call rule | examples/go/error-handling/defer_panic_recover.go |
