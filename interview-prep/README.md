@@ -74,6 +74,7 @@ Questions are tagged by difficulty:
 | [java.md](languages/java.md) | JVM memory, collections, equals/hashCode, generics erasure |
 | [rust.md](languages/rust.md) | Ownership and moves, borrowing/lifetimes, Option/Result/`?`, Box/Rc/RefCell |
 | [go.md](languages/go.md) | Goroutines vs threads, channel blocking, error values, interfaces, goroutine leaks |
+| [c.md](languages/c.md) | malloc/calloc/realloc, literals vs arrays, array decay, free() mistakes, undefined behaviour |
 
 ### Behavioural
 | File | Covers |
