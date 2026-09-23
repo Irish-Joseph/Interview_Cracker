@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pattern: Graphs &middot; Interview Cracker</title>
-<meta name="description" content="Many problems are graph problems in disguise: a grid is a graph where each cell neighbours its four adjacent cells; course prerequisites are a directed graph; word ladders are a gr...">
-<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/graphs/README.html">
+<title>C Interview Questions &middot; Interview Cracker</title>
+<meta name="description" content="Two more consequences interviewers probe:">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/languages/c.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pattern: Graphs &middot; Interview Cracker">
-<meta property="og:description" content="Many problems are graph problems in disguise: a grid is a graph where each cell neighbours its four adjacent cells; course prerequisites are a directed graph; word ladders are a gr...">
-<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/graphs/README.html">
+<meta property="og:title" content="C Interview Questions &middot; Interview Cracker">
+<meta property="og:description" content="Two more consequences interviewers probe:">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/languages/c.html">
 <meta property="og:image" content="https://irish-joseph.github.io/Interview_Cracker/assets/social-preview.png">
 <meta property="og:site_name" content="Interview Cracker">
 <meta name="twitter:card" content="summary_large_image">
@@ -116,7 +116,7 @@
         <span class="navgroup-title">Language Specific</span>
         <ul>
         
-          <li><a href="../../interview-prep/languages/c.html">C Interview Questions</a></li>
+          <li><a href="../../interview-prep/languages/c.html" class="current" aria-current="page">C Interview Questions</a></li>
         
           <li><a href="../../interview-prep/languages/csharp.html">C# Interview Questions</a></li>
         
@@ -192,7 +192,7 @@
         <span class="navgroup-title">Graphs</span>
         <ul>
         
-          <li><a href="../../coding-challenges/graphs/README.html" class="current" aria-current="page">Pattern: Graphs</a></li>
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
         
         </ul>
       </div>
@@ -338,91 +338,120 @@
     
   </nav>
   <main id="main" class="content">
-    <h1 id="pattern-graphs">Pattern: Graphs</h1>
-<p>Many problems are graph problems in disguise: a grid is a graph where each cell
-neighbours its four adjacent cells; course prerequisites are a directed graph;
-word ladders are a graph of one-letter edits.</p>
-<h2 id="choosing-the-traversal">Choosing the traversal</h2>
-<table>
-<thead>
-<tr>
-<th>Use</th>
-<th>When</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>BFS</strong> (queue)</td>
-<td>Shortest path / fewest steps in an <strong>unweighted</strong> graph; level-by-level work</td>
-</tr>
-<tr>
-<td><strong>DFS</strong> (stack or recursion)</td>
-<td>Connectivity, counting components, cycle detection, backtracking</td>
-</tr>
-<tr>
-<td><strong>Topological sort</strong></td>
-<td>Dependency ordering; also detects cycles</td>
-</tr>
-<tr>
-<td><strong>Dijkstra</strong></td>
-<td>Shortest path with <strong>non-negative weights</strong></td>
-</tr>
-<tr>
-<td><strong>Union–Find</strong></td>
-<td>Dynamic connectivity, Kruskal's MST</td>
-</tr>
-</tbody>
-</table>
-<p>BFS and DFS are both <strong>O(V + E)</strong>. The decisive rule: if the problem says
-<em>shortest</em>, <em>fewest</em> or <em>minimum steps</em> and edges are unweighted, use <strong>BFS</strong> —
-it reaches every node by the fewest edges, so the first arrival is optimal. DFS
-gives no such guarantee.</p>
-<h2 id="always-track-visited">Always track visited</h2>
-<p>A graph can have cycles and multiple paths to the same node. Without a <code>visited</code>
-set, traversal loops forever or does exponential redundant work.</p>
-<p>Mark a node <strong>when you enqueue it</strong>, not when you dequeue it — otherwise the same
-node can be queued many times before it is ever processed.</p>
-<h2 id="grids-as-graphs">Grids as graphs</h2>
-<div class="highlight"><pre><span></span><code><span class="n">DIRECTIONS</span> <span class="o">=</span> <span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>     <span class="c1"># up, down, left, right</span>
-<span class="k">for</span> <span class="n">dr</span><span class="p">,</span> <span class="n">dc</span> <span class="ow">in</span> <span class="n">DIRECTIONS</span><span class="p">:</span>
-    <span class="n">nr</span><span class="p">,</span> <span class="n">nc</span> <span class="o">=</span> <span class="n">row</span> <span class="o">+</span> <span class="n">dr</span><span class="p">,</span> <span class="n">col</span> <span class="o">+</span> <span class="n">dc</span>
-    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">nr</span> <span class="o">&lt;</span> <span class="n">rows</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">nc</span> <span class="o">&lt;</span> <span class="n">cols</span><span class="p">:</span>           <span class="c1"># bounds check first</span>
-        <span class="o">...</span>
-</code></pre></div>
-<h2 id="challenges">Challenges</h2>
-<table>
-<thead>
-<tr>
-<th>File</th>
-<th>Difficulty</th>
-<th>Technique</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/graphs/number_of_islands.py">number_of_islands.py</a></td>
-<td>🟡 Medium</td>
-<td>Grid DFS / flood fill</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/graphs/course_schedule.py">course_schedule.py</a></td>
-<td>🟡 Medium</td>
-<td>Topological sort (cycle detection)</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/graphs/word_ladder.py">word_ladder.py</a></td>
-<td>🔴 Hard</td>
-<td>Implicit graph + BFS</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/graphs/alien_dictionary.py">alien_dictionary.py</a></td>
-<td>🟡 Medium</td>
-<td>Topological sort (Kahn's, smallest-first)</td>
-</tr>
-</tbody>
-</table>
+    <h1 id="c-interview-questions">C Interview Questions</h1>
+<hr>
+<h3 id="q-malloc-calloc-realloc-what-does-each-one-do-and-what-do">🟢 Q. <code>malloc</code>, <code>calloc</code>, <code>realloc</code> — what does each one do, and what do</h3>
+<p>they initialize?</p>
+<p><strong>Answer.</strong> <code>malloc(n)</code> allocates <code>n</code> bytes and returns a suitably aligned
+pointer, or NULL — the bytes are <strong>uninitialized</strong> (indeterminate values).
+<code>calloc(n, size)</code> allocates <code>n * size</code> bytes and <strong>zero-fills</strong> them.
+<code>realloc(p, n)</code> resizes the block pointed to by <code>p</code> to <code>n</code> bytes, moving it if
+necessary, and returns the (possibly new) pointer — <code>realloc(NULL, n)</code> is the
+same as <code>malloc(n)</code>, and <code>realloc(p, 0)</code> is implementation-defined.</p>
+<p>The follow-ups:</p>
+<ul>
+<li>Check every allocation for NULL <em>before</em> using it — the size that made it
+  fail may be a one-element request.</li>
+<li><code>calloc</code>'s zero-fill is why it is the right choice for numeric arrays you
+  intend to sum, but it is not "faster" in general — it can be slower than
+  <code>malloc</code> for large blocks.</li>
+<li>The <code>realloc</code> trap that loses memory:
+  <code>p = realloc(p, n);</code> — if <code>realloc</code> fails it returns NULL <strong>and <code>p</code> still
+  points at the old block</strong>, which you have just overwritten. Assign to a
+  temporary, check, then commit:
+  <code>q = realloc(p, n); if (q) p = q;</code></li>
+<li>The allocation is for <strong>bytes</strong>; <code>malloc(n * sizeof *p)</code> (not
+  <code>malloc(n * sizeof p)</code>) is the idiom that stays correct when <code>p</code> changes
+  from pointer to array.</li>
+</ul>
+<hr>
+<h3 id="q-char-s-abc-versus-char-t-abc-what-is-different">🟢 Q. <code>char *s = "abc";</code> versus <code>char t[] = "abc";</code> — what is different?</h3>
+<p><strong>Answer.</strong> The first points <strong>at</strong> a string literal (read-only storage,
+usually in a <code>.rodata</code>-style section); the second <strong>copies</strong> the literal into
+a new array on the stack that you own. So <code>t[0] = 'X';</code> is fine, while
+<code>s[0] = 'X';</code> is undefined behaviour — and it is the classic "worked on the
+old machine, segfaults on the new one" bug, because older toolchains kept
+literals in writable memory.</p>
+<p>Two more consequences interviewers probe:</p>
+<ul>
+<li><code>sizeof("abc")</code> is 4 and <code>sizeof t</code> is 4 (both include the NUL), but
+  <code>sizeof s</code> is the size of a <strong>pointer</strong> — <code>sizeof</code> on a pointer tells you
+  nothing about the string.</li>
+<li><code>strlen</code> needs the NUL; an array like <code>char three[3] = {'x','y','z'};</code> is
+  not a string, and <code>printf("%s", three)</code> reads past it.</li>
+</ul>
+<hr>
+<h3 id="q-why-is-sizeofarr-different-inside-the-function-that-created-the">🟡 Q. Why is <code>sizeof(arr)</code> different inside the function that created the</h3>
+<p>array from inside the function that received it?</p>
+<p><strong>Answer.</strong> Because in C an array parameter is <strong>not</strong> an array — the
+declaration <code>void f(int a[10])</code> is adjusted to <code>void f(int *a)</code>. This is
+called "array-to-pointer decay," and it happens at every function boundary:
+the callee receives a pointer, so <code>sizeof a</code> is the pointer size, and there is
+no length to recover. (It also means <code>a[3]</code> works in both places, because
+subscripting a pointer and an array is the same operation: <code>a[3]</code> is
+<code>*(a + 3)</code>.)</p>
+<p>The practical consequences:</p>
+<ul>
+<li>Functions that take arrays must <strong>also</strong> take the length (or a NUL sentinel
+  for strings). The "size is implicit" intuition from other languages is
+  simply wrong in C.</li>
+<li><code>sizeof</code> is still useful on the <em>defining</em> side:
+  <code>int a[10]; int n = sizeof a / sizeof a[0];</code> — the division gives the
+  element count and survives type changes.</li>
+<li>Variadic <code>printf</code> solves the same information-loss problem a different way:
+  it does not know the argument types either, so the <strong>format string</strong> is the
+  contract — which is why <code>printf("%d", ptr)</code> is UB and why <code>gcc -Wall</code>
+  checks the format against the arguments.</li>
+</ul>
+<hr>
+<h3 id="q-what-are-the-free-mistakes-and-why-do-people-set-pointers-to">🟡 Q. What are the <code>free()</code> mistakes, and why do people set pointers to</h3>
+<p>NULL after freeing?</p>
+<p><strong>Answer.</strong> The four: <strong>double free</strong> (<code>free(p); free(p);</code> — the allocator's
+metadata is corrupt, this is UB and a classic crash/exploit primitive),
+<strong>freeing what you did not allocate</strong> (stack variables, sub-objects of a
+larger block, or a pointer that was advanced — <code>free(p + 1)</code> is UB),
+<strong>use after free</strong> (reading or writing through the pointer after the block
+went back to the pool — the memory may already belong to someone else), and
+<strong>leaks</strong> (losing the only pointer without freeing).</p>
+<p>Setting <code>p = NULL</code> after <code>free(p)</code> does not prevent any of these by itself —
+it turns <em>use after free</em> and <em>double free</em> from "undefined" into "almost
+certainly a clean NULL dereference you can find," because <code>free(NULL)</code> is a
+defined no-op while <code>free(garbage)</code> is not. The real defenses are: one
+allocation, one free, on one pointer; short pointer lifetimes; and tools
+(Valgrind, ASan) that catch all four in the test run rather than in
+production.</p>
+<hr>
+<h3 id="q-what-is-undefined-behaviour-why-does-the-standard-allow-it-and">🔴 Q. What is undefined behaviour, why does the standard <em>allow</em> it, and</h3>
+<p>which ones are the common offenders?</p>
+<p><strong>Answer.</strong> Undefined behaviour is any program behaviour the standard does not
+constrain: nothing is required to happen, including "crash," "print garbage,"
+or "work perfectly." The standard gets away with this because compilers are
+allowed to <strong>optimize under the assumption that UB never happens in the
+program</strong> — code that contains UB may be transformed as if the UB-producing
+line could not execute, which is how "harmless" UB becomes a silent logic bug.</p>
+<p>The common offenders, and why each is dangerous:</p>
+<ul>
+<li><strong>Signed integer overflow</strong> (<code>INT_MAX + 1</code>). Because it is UB, a compiler
+  may assume it cannot happen and delete the "check" you wrote for it — the
+  famous case where <code>if (x + 1 &gt; x)</code> is optimized away.</li>
+<li><strong>Out-of-bounds reads/writes</strong> — including one past the end for "convenience"
+  (<code>arr[n]</code> when valid is <code>arr[0..n-1]</code>; even a <em>read</em> is UB).</li>
+<li><strong>Dangling pointers</strong> — use after free, or a pointer to a local after return.</li>
+<li><strong>Type punning through strict aliasing</strong> — reading an <code>int</code> through a
+  <code>float*</code> (and the reverse) is UB; the portable routes are <code>memcpy</code> or a
+  union (whose rules were made to allow this in C11).</li>
+<li><strong>Uninitialized reads</strong> — the value is indeterminate, and using it is UB.</li>
+<li><strong>Null dereference</strong> — even <code>if (!p)</code> is not safe to rely on if <code>p</code>'s value
+  is itself the product of UB.</li>
+</ul>
+<p>The interview-grade framing: UB is not "it probably works." It is "the
+compiler may assume your program is a different, well-defined program." The
+defenses are the same as for memory bugs — narrow pointer lifetimes, bounds
+carried as explicit parameters, and sanitizers/Valgrind in CI.</p>
+<p>See also <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/c/strings/string_literal_vs_char_array.c"><code>examples/c/strings/string_literal_vs_char_array.c</code></a>
+and <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/c/pointers/dynamic_int_array.c"><code>examples/c/pointers/dynamic_int_array.c</code></a>.</p>
     <hr>
-    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges\graphs\README.md" rel="noopener">Edit this page on GitHub</a>.</p>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\languages\c.md" rel="noopener">Edit this page on GitHub</a>.</p>
   </main>
 </div>
 <script>window.SEARCH_PREFIX="../../";</script>

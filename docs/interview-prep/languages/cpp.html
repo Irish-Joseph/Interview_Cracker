@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pattern: Graphs &middot; Interview Cracker</title>
-<meta name="description" content="Many problems are graph problems in disguise: a grid is a graph where each cell neighbours its four adjacent cells; course prerequisites are a directed graph; word ladders are a gr...">
-<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/graphs/README.html">
+<title>C++ Interview Questions &middot; Interview Cracker</title>
+<meta name="description" content="The trade-offs that matter in an interview:">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/languages/cpp.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pattern: Graphs &middot; Interview Cracker">
-<meta property="og:description" content="Many problems are graph problems in disguise: a grid is a graph where each cell neighbours its four adjacent cells; course prerequisites are a directed graph; word ladders are a gr...">
-<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/graphs/README.html">
+<meta property="og:title" content="C++ Interview Questions &middot; Interview Cracker">
+<meta property="og:description" content="The trade-offs that matter in an interview:">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/languages/cpp.html">
 <meta property="og:image" content="https://irish-joseph.github.io/Interview_Cracker/assets/social-preview.png">
 <meta property="og:site_name" content="Interview Cracker">
 <meta name="twitter:card" content="summary_large_image">
@@ -120,7 +120,7 @@
         
           <li><a href="../../interview-prep/languages/csharp.html">C# Interview Questions</a></li>
         
-          <li><a href="../../interview-prep/languages/cpp.html">C++ Interview Questions</a></li>
+          <li><a href="../../interview-prep/languages/cpp.html" class="current" aria-current="page">C++ Interview Questions</a></li>
         
           <li><a href="../../interview-prep/languages/go.html">Go</a></li>
         
@@ -192,7 +192,7 @@
         <span class="navgroup-title">Graphs</span>
         <ul>
         
-          <li><a href="../../coding-challenges/graphs/README.html" class="current" aria-current="page">Pattern: Graphs</a></li>
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
         
         </ul>
       </div>
@@ -338,91 +338,126 @@
     
   </nav>
   <main id="main" class="content">
-    <h1 id="pattern-graphs">Pattern: Graphs</h1>
-<p>Many problems are graph problems in disguise: a grid is a graph where each cell
-neighbours its four adjacent cells; course prerequisites are a directed graph;
-word ladders are a graph of one-letter edits.</p>
-<h2 id="choosing-the-traversal">Choosing the traversal</h2>
-<table>
-<thead>
-<tr>
-<th>Use</th>
-<th>When</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>BFS</strong> (queue)</td>
-<td>Shortest path / fewest steps in an <strong>unweighted</strong> graph; level-by-level work</td>
-</tr>
-<tr>
-<td><strong>DFS</strong> (stack or recursion)</td>
-<td>Connectivity, counting components, cycle detection, backtracking</td>
-</tr>
-<tr>
-<td><strong>Topological sort</strong></td>
-<td>Dependency ordering; also detects cycles</td>
-</tr>
-<tr>
-<td><strong>Dijkstra</strong></td>
-<td>Shortest path with <strong>non-negative weights</strong></td>
-</tr>
-<tr>
-<td><strong>Union–Find</strong></td>
-<td>Dynamic connectivity, Kruskal's MST</td>
-</tr>
-</tbody>
-</table>
-<p>BFS and DFS are both <strong>O(V + E)</strong>. The decisive rule: if the problem says
-<em>shortest</em>, <em>fewest</em> or <em>minimum steps</em> and edges are unweighted, use <strong>BFS</strong> —
-it reaches every node by the fewest edges, so the first arrival is optimal. DFS
-gives no such guarantee.</p>
-<h2 id="always-track-visited">Always track visited</h2>
-<p>A graph can have cycles and multiple paths to the same node. Without a <code>visited</code>
-set, traversal loops forever or does exponential redundant work.</p>
-<p>Mark a node <strong>when you enqueue it</strong>, not when you dequeue it — otherwise the same
-node can be queued many times before it is ever processed.</p>
-<h2 id="grids-as-graphs">Grids as graphs</h2>
-<div class="highlight"><pre><span></span><code><span class="n">DIRECTIONS</span> <span class="o">=</span> <span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>     <span class="c1"># up, down, left, right</span>
-<span class="k">for</span> <span class="n">dr</span><span class="p">,</span> <span class="n">dc</span> <span class="ow">in</span> <span class="n">DIRECTIONS</span><span class="p">:</span>
-    <span class="n">nr</span><span class="p">,</span> <span class="n">nc</span> <span class="o">=</span> <span class="n">row</span> <span class="o">+</span> <span class="n">dr</span><span class="p">,</span> <span class="n">col</span> <span class="o">+</span> <span class="n">dc</span>
-    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">nr</span> <span class="o">&lt;</span> <span class="n">rows</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">nc</span> <span class="o">&lt;</span> <span class="n">cols</span><span class="p">:</span>           <span class="c1"># bounds check first</span>
-        <span class="o">...</span>
-</code></pre></div>
-<h2 id="challenges">Challenges</h2>
-<table>
-<thead>
-<tr>
-<th>File</th>
-<th>Difficulty</th>
-<th>Technique</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/graphs/number_of_islands.py">number_of_islands.py</a></td>
-<td>🟡 Medium</td>
-<td>Grid DFS / flood fill</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/graphs/course_schedule.py">course_schedule.py</a></td>
-<td>🟡 Medium</td>
-<td>Topological sort (cycle detection)</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/graphs/word_ladder.py">word_ladder.py</a></td>
-<td>🔴 Hard</td>
-<td>Implicit graph + BFS</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/graphs/alien_dictionary.py">alien_dictionary.py</a></td>
-<td>🟡 Medium</td>
-<td>Topological sort (Kahn's, smallest-first)</td>
-</tr>
-</tbody>
-</table>
+    <h1 id="c-interview-questions">C++ Interview Questions</h1>
+<hr>
+<h3 id="q-what-is-raii-and-why-is-it-the-centre-of-c-resource-management">🟢 Q. What is RAII, and why is it the centre of C++ resource management?</h3>
+<p><strong>Answer.</strong> Resource Acquisition Is Initialization: bind a resource (memory,
+file handle, lock, socket) to an object's <strong>lifetime</strong> — acquire it in the
+constructor, release it in the destructor. Because destructors run
+deterministically when the object goes out of scope, "cleanup" stops being a
+thing you remember to do and becomes a thing the language does for you, on
+every exit path including exceptions.</p>
+<p>The follow-ups:</p>
+<ul>
+<li>This is why C++ has no garbage collector and no <code>finally</code>: a <code>std::lock_guard</code>
+  or <code>std::unique_ptr</code> <em>is</em> the finally. If an exception unwinds the stack,
+  every guard's destructor still runs.</li>
+<li>The flip side: destructors must be <strong>predictable and cheap-ish</strong>, and an
+  exception thrown from a destructor during unwinding terminates the program —
+  which is why destructors are written to never throw.</li>
+<li>The pattern's limits: RAII owns resources with a clear owner and scope. For
+  resources shared between owners you graduate to smart pointers; for "I don't
+  know who frees this" you have a design problem, not a tooling one.</li>
+</ul>
+<hr>
+<h3 id="q-unique_ptr-shared_ptr-weak_ptr-when-is-each-one-right">🟢 Q. <code>unique_ptr</code>, <code>shared_ptr</code>, <code>weak_ptr</code> — when is each one right?</h3>
+<p><strong>Answer.</strong> <code>unique_ptr</code> is the default: single ownership, zero overhead
+(same size as a raw pointer), non-copyable but movable. <code>shared_ptr</code> is
+reference-counted shared ownership — use it when you genuinely cannot decide
+the owner up front. <code>weak_ptr</code> observes a <code>shared_ptr</code>'d object without
+extending its life; <code>lock()</code> upgrades to a <code>shared_ptr</code> or gives you nothing.</p>
+<p>The trade-offs that matter in an interview:</p>
+<ul>
+<li><code>shared_ptr</code> costs an atomic increment/decrement on every copy and a second
+  allocation for the control block — reach for it when shared ownership is
+  real, not as a hedge.</li>
+<li><strong>Cycles</strong>: two <code>shared_ptr</code>s pointing at each other never hit zero and
+  leak. Break the back-edge with <code>weak_ptr</code> (parent owns children with
+  <code>shared_ptr</code>, children point back with <code>weak_ptr</code>). See
+  <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/rust/ownership/rc_refcell_cycles_and_weak.rs"><code>examples/rust/ownership/rc_refcell_cycles_and_weak.rs</code></a>
+  for the same shape in Rust's <code>Rc</code>/<code>Weak</code>.</li>
+<li>A <code>unique_ptr</code> can be a member; a <code>shared_ptr</code> cycle can hide for months.
+  The rule that keeps designs honest: if you have to ask "who owns this?",
+  the answer should be exactly one thing, and <code>unique_ptr</code> should express it.</li>
+</ul>
+<hr>
+<h3 id="q-what-does-move-semantics-actually-do-and-when-does-a-move-happen">🟡 Q. What does "move semantics" actually do, and when does a move happen</h3>
+<p>implicitly?</p>
+<p><strong>Answer.</strong> A <strong>move</strong> transfers a resource from one object to another instead
+of copying it: the moved-from object is left valid-but-unspecified (usually
+empty), and the expensive copy is skipped. <code>std::move(x)</code> does not move
+anything by itself — it is a cast to rvalue reference that <em>permits</em> a move
+constructor/assignment to be selected.</p>
+<p>The practical rules:</p>
+<ul>
+<li>Moves happen implicitly on <strong>prvalues</strong> (the result of a function returning
+  by value, a freshly-built object). You write <code>std::move</code> only when you have
+  a named object and deliberately want to give it away:
+  <code>vec.push_back(std::move(big_string));</code></li>
+<li>The classic bug: <code>return std::move(local);</code> — the <code>std::move</code> <strong>prevents</strong>
+  copy elision (the compiler would have moved or elided anyway). Just write
+  <code>return local;</code>.</li>
+<li>A moved-from object must not be <em>used</em>, only assigned to or destroyed.
+  Reusing it as if it were still full is the "moved-from" class of bugs.</li>
+<li>The rule of zero/five: if you hand-write a destructor, copy, or move for a
+  class that owns a resource, you need to think about all of them — or,
+  better, hold the resource in a <code>unique_ptr</code> and delete your special members.</li>
+</ul>
+<hr>
+<h3 id="q-virtual-what-is-the-runtime-cost-and-what-are-the-two-traps">🟡 Q. <code>virtual</code> — what is the runtime cost, and what are the two traps?</h3>
+<p><strong>Answer.</strong> A class with virtual functions gets a <strong>vtable</strong> (one per dynamic
+type, shared by all its instances) and each object carries a <strong>vptr</strong>; a
+virtual call reads the vptr and dispatches through the table — one extra
+indirection, and the call usually cannot be inlined. The cost is real but
+small; the design cost is that the type's behaviour is no longer knowable
+from the static type.</p>
+<p>The two traps (both demonstrated in
+<a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/cpp/oop/virtual_functions_and_the_vtable.cpp"><code>examples/cpp/oop/virtual_functions_and_the_vtable.cpp</code></a>):</p>
+<ul>
+<li><strong>Non-virtual destructor</strong>: deleting a derived object through a base pointer
+  runs only the base destructor — the derived part is skipped and its members
+  leak. If a class is meant to be deleted polymorphically, its destructor
+  must be <code>virtual</code> (or the class must be <code>final</code>/non-derivable).</li>
+<li><strong>Hiding</strong>: a non-virtual member with the same name in a derived class
+  compiles fine but is selected by the <em>static</em> type of the expression —
+  <code>basePtr-&gt;f()</code> calls the base version even though the object is derived.
+  The <code>override</code> keyword exists to make "I meant to override" explicit and to
+  fail compilation when the base signature changes.</li>
+</ul>
+<p>The follow-up this sets up: <code>virtual</code> on the <em>first</em> virtual call also cannot
+be inlined, which is why hot single-type code sometimes uses the CRTP idiom
+(static dispatch through templates) to buy the call back.</p>
+<hr>
+<h3 id="q-rule-of-zero-rule-of-three-rule-of-five-and-how-does-a-modern">🔴 Q. Rule of zero, rule of three, rule of five — and how does a modern</h3>
+<p>codebase actually avoid all of them?</p>
+<p><strong>Answer.</strong> If a class owns a resource it must manage its five special
+members consistently: destructor, copy constructor, copy assignment, move
+constructor, move assignment. <strong>Rule of three</strong>: if you need one of the first
+three, you probably need all three. <strong>Rule of five</strong>: with move semantics,
+the count is five. <strong>Rule of zero</strong>: the best position is to need <em>none</em> —
+hold resources in types that already manage themselves (<code>unique_ptr</code>,
+<code>string</code>, <code>vector</code>) and let the implicit special members do the right thing.</p>
+<p>Why this is the senior-level answer:</p>
+<ul>
+<li>Each hand-written special member is a place to get the invariant wrong —
+  the copy that should be deep isn't, the assignment that doesn't free the
+  old resource leaks, the move that leaves the source in an invalid state
+  instead of a valid-but-unspecified one.</li>
+<li>The modern idiom: <strong>own with smart pointers and containers, inherit
+  behaviour, and let the compiler generate</strong>. A class that is a bag of
+  <code>std::string</code>, <code>std::vector</code>, and <code>std::unique_ptr</code> members gets correct
+  copy/move/destruction for free, and the compiler will even tell you if you
+  declare one special member and forget the rest (the others become
+  deleted/implicit in ways you can see with <code>static_assert</code>).</li>
+<li>The escape hatch: when you genuinely need custom logic (a refcounted handle,
+  a pooled allocation), write the five consistently — or wrap the resource in
+  its own small class that owns the rule-of-five, and keep the surrounding
+  classes rule-of-zero.</li>
+</ul>
+<p>See also <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/cpp/raii/raii_and_move.cpp"><code>examples/cpp/raii/raii_and_move.cpp</code></a>
+and <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/cpp/smart-pointers"><code>examples/cpp/smart-pointers/</code></a>.</p>
     <hr>
-    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges\graphs\README.md" rel="noopener">Edit this page on GitHub</a>.</p>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\languages\cpp.md" rel="noopener">Edit this page on GitHub</a>.</p>
   </main>
 </div>
 <script>window.SEARCH_PREFIX="../../";</script>

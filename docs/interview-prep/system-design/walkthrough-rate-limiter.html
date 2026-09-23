@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pattern: Graphs &middot; Interview Cracker</title>
-<meta name="description" content="Many problems are graph problems in disguise: a grid is a graph where each cell neighbours its four adjacent cells; course prerequisites are a directed graph; word ladders are a gr...">
-<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/graphs/README.html">
+<title>Worked Example: Design an API Rate Limiter &middot; Interview Cracker</title>
+<meta name="description" content="A complete worked answer for "design the rate limiter in front of a public API," start to finish. The goal is to show the shape of a good answer: clarify, estimate, pick a data str...">
+<link rel="canonical" href="https://irish-joseph.github.io/Interview_Cracker/interview-prep/system-design/walkthrough-rate-limiter.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pattern: Graphs &middot; Interview Cracker">
-<meta property="og:description" content="Many problems are graph problems in disguise: a grid is a graph where each cell neighbours its four adjacent cells; course prerequisites are a directed graph; word ladders are a gr...">
-<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/coding-challenges/graphs/README.html">
+<meta property="og:title" content="Worked Example: Design an API Rate Limiter &middot; Interview Cracker">
+<meta property="og:description" content="A complete worked answer for "design the rate limiter in front of a public API," start to finish. The goal is to show the shape of a good answer: clarify, estimate, pick a data str...">
+<meta property="og:url" content="https://irish-joseph.github.io/Interview_Cracker/interview-prep/system-design/walkthrough-rate-limiter.html">
 <meta property="og:image" content="https://irish-joseph.github.io/Interview_Cracker/assets/social-preview.png">
 <meta property="og:site_name" content="Interview Cracker">
 <meta name="twitter:card" content="summary_large_image">
@@ -143,7 +143,7 @@
         
           <li><a href="../../interview-prep/system-design/walkthrough-url-shortener.html">Worked Example: Design a URL Shortener</a></li>
         
-          <li><a href="../../interview-prep/system-design/walkthrough-rate-limiter.html">Worked Example: Design an API Rate Limiter</a></li>
+          <li><a href="../../interview-prep/system-design/walkthrough-rate-limiter.html" class="current" aria-current="page">Worked Example: Design an API Rate Limiter</a></li>
         
         </ul>
       </div>
@@ -192,7 +192,7 @@
         <span class="navgroup-title">Graphs</span>
         <ul>
         
-          <li><a href="../../coding-challenges/graphs/README.html" class="current" aria-current="page">Pattern: Graphs</a></li>
+          <li><a href="../../coding-challenges/graphs/README.html">Pattern: Graphs</a></li>
         
         </ul>
       </div>
@@ -338,91 +338,163 @@
     
   </nav>
   <main id="main" class="content">
-    <h1 id="pattern-graphs">Pattern: Graphs</h1>
-<p>Many problems are graph problems in disguise: a grid is a graph where each cell
-neighbours its four adjacent cells; course prerequisites are a directed graph;
-word ladders are a graph of one-letter edits.</p>
-<h2 id="choosing-the-traversal">Choosing the traversal</h2>
-<table>
-<thead>
-<tr>
-<th>Use</th>
-<th>When</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>BFS</strong> (queue)</td>
-<td>Shortest path / fewest steps in an <strong>unweighted</strong> graph; level-by-level work</td>
-</tr>
-<tr>
-<td><strong>DFS</strong> (stack or recursion)</td>
-<td>Connectivity, counting components, cycle detection, backtracking</td>
-</tr>
-<tr>
-<td><strong>Topological sort</strong></td>
-<td>Dependency ordering; also detects cycles</td>
-</tr>
-<tr>
-<td><strong>Dijkstra</strong></td>
-<td>Shortest path with <strong>non-negative weights</strong></td>
-</tr>
-<tr>
-<td><strong>Union–Find</strong></td>
-<td>Dynamic connectivity, Kruskal's MST</td>
-</tr>
-</tbody>
-</table>
-<p>BFS and DFS are both <strong>O(V + E)</strong>. The decisive rule: if the problem says
-<em>shortest</em>, <em>fewest</em> or <em>minimum steps</em> and edges are unweighted, use <strong>BFS</strong> —
-it reaches every node by the fewest edges, so the first arrival is optimal. DFS
-gives no such guarantee.</p>
-<h2 id="always-track-visited">Always track visited</h2>
-<p>A graph can have cycles and multiple paths to the same node. Without a <code>visited</code>
-set, traversal loops forever or does exponential redundant work.</p>
-<p>Mark a node <strong>when you enqueue it</strong>, not when you dequeue it — otherwise the same
-node can be queued many times before it is ever processed.</p>
-<h2 id="grids-as-graphs">Grids as graphs</h2>
-<div class="highlight"><pre><span></span><code><span class="n">DIRECTIONS</span> <span class="o">=</span> <span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>     <span class="c1"># up, down, left, right</span>
-<span class="k">for</span> <span class="n">dr</span><span class="p">,</span> <span class="n">dc</span> <span class="ow">in</span> <span class="n">DIRECTIONS</span><span class="p">:</span>
-    <span class="n">nr</span><span class="p">,</span> <span class="n">nc</span> <span class="o">=</span> <span class="n">row</span> <span class="o">+</span> <span class="n">dr</span><span class="p">,</span> <span class="n">col</span> <span class="o">+</span> <span class="n">dc</span>
-    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">nr</span> <span class="o">&lt;</span> <span class="n">rows</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">nc</span> <span class="o">&lt;</span> <span class="n">cols</span><span class="p">:</span>           <span class="c1"># bounds check first</span>
-        <span class="o">...</span>
+    <h1 id="worked-example-design-an-api-rate-limiter">Worked Example: Design an API Rate Limiter</h1>
+<p>A complete worked answer for "design the rate limiter in front of a public API,"
+start to finish. The goal is to show the <em>shape</em> of a good answer: clarify,
+estimate, pick a data structure on purpose, design the data model, walk the
+request path, and name the bottlenecks you would actually hit.</p>
+<hr>
+<h2 id="1-clarify-requirements">1. Clarify requirements</h2>
+<ul>
+<li><strong>What is being limited?</strong> Requests from a <em>client identity</em> (API key or
+  user) to our public API. One global number for everyone is not the real
+  problem.</li>
+<li><strong>What is the limit?</strong> "N requests per rolling window of W seconds, per
+  identity." Example: 100 requests / 60 s. (Ask whether it is <em>fixed</em> windows
+  — simpler, bursty at the boundary — or <em>rolling</em> — fairer, harder.)</li>
+<li><strong>What happens at the limit?</strong> Return <code>429 Too Many Requests</code> with a
+  <code>Retry-After</code> header. We are <em>rejecting</em>, not <em>queuing</em> — say this out loud,
+  because queueing changes the whole design.</li>
+<li><strong>Where does it run?</strong> In front of the API servers, on the hot path of
+  <em>every</em> request, so it must be fast (low single-digit ms) and highly
+  available — it is now a critical component, and a bug in it can take down
+  the whole API.</li>
+<li><strong>Multi-tenant fairness?</strong> A single misbehaving key must not starve others,
+  but we are not doing per-tenant <em>resource</em> isolation here — only admission.</li>
+</ul>
+<p>The honest scoping line: "I'll design a <strong>fixed-window</strong> counter first because
+it is simple and good enough, then show the upgrade to <strong>sliding window</strong> and
+<strong>token bucket</strong> and when each is worth it."</p>
+<hr>
+<h2 id="2-estimate-the-scale">2. Estimate the scale</h2>
+<ul>
+<li>10 M active API keys, 100 M requests/minute peak ≈ <strong>1.7 M req/s</strong>.</li>
+<li>Each decision must take &lt; ~2 ms and touch at most one shard.</li>
+<li>State per key is tiny (a counter, or a few counters). 10 M keys × a few
+  hundred bytes ≈ a few GB — fits in memory on a modest cluster.</li>
+</ul>
+<p>The key insight: this is a <strong>read-mostly, per-key, low-latency</strong> workload. The
+data is small and hot. That argues strongly for an <strong>in-memory, sharded</strong>
+design rather than a database on the hot path.</p>
+<hr>
+<h2 id="3-the-core-data-structure">3. The core data structure</h2>
+<p>Three algorithms, in increasing order of fairness and cost:</p>
+<ul>
+<li><strong>Fixed window.</strong> One counter per key, reset every window. <code>count &lt; limit ?
+  admit : reject</code>. O(1), trivially sharded. The flaw: a client can burst
+  <code>limit</code> at the end of one window and <code>limit</code> at the start of the next — up
+  to <strong>2× the limit</strong> across the boundary in 2W of wall time.</li>
+<li><strong>Sliding window log.</strong> Store every request timestamp per key; admit if
+  fewer than <code>limit</code> timestamps fall in <code>(now - W, now]</code>. Perfectly fair, but
+  it stores up to <code>limit</code> timestamps per key and is O(log) per check — more
+  memory and more work.</li>
+<li><strong>Sliding window counter (the pragmatic middle).</strong> Keep the <em>current</em> and
+  <em>previous</em> fixed-window counts; estimate the rolling count as
+  <code>prev * overlap + curr</code>, where <code>overlap</code> is the fraction of the previous
+  window still in view. O(1) memory, near-fair, no boundary double-burst.</li>
+<li><strong>Token bucket</strong> (the "smooth rate + allow bursts" variant). Each key has a
+  bucket of capacity <code>B</code> that refills at <code>R</code> tokens/s; a request consumes one
+  token. This is the right model when the product says "average rate with
+  short bursts allowed," and it is what most real APIs (and the
+  <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/go/concurrency/token_bucket_rate_limiter.go"><code>examples/go/concurrency/token_bucket_rate_limiter.go</code></a>
+  example) implement.</li>
+</ul>
+<p><strong>Decision to state out loud:</strong> fixed-window counter for v1 (simple,
+shardable, O(1)); token bucket if the spec allows bursts; sliding-window
+counter if the boundary burst is a real problem and we want to stay O(1).</p>
+<hr>
+<h2 id="4-data-model">4. Data model</h2>
+<p>Per key, store the minimum state the chosen algorithm needs:</p>
+<div class="highlight"><pre><span></span><code>limiter_state  (in memory, sharded by key)
+  key           STRING   (API key / user id)  -- partition key
+  window_start  TIMESTAMP
+  count         INT8/INT32
+  -- token bucket variant instead:
+  tokens        FLOAT    (current bucket level)
+  last_refill   TIMESTAMP
 </code></pre></div>
-<h2 id="challenges">Challenges</h2>
-<table>
-<thead>
-<tr>
-<th>File</th>
-<th>Difficulty</th>
-<th>Technique</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/graphs/number_of_islands.py">number_of_islands.py</a></td>
-<td>🟡 Medium</td>
-<td>Grid DFS / flood fill</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/graphs/course_schedule.py">course_schedule.py</a></td>
-<td>🟡 Medium</td>
-<td>Topological sort (cycle detection)</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/graphs/word_ladder.py">word_ladder.py</a></td>
-<td>🔴 Hard</td>
-<td>Implicit graph + BFS</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges/graphs/alien_dictionary.py">alien_dictionary.py</a></td>
-<td>🟡 Medium</td>
-<td>Topological sort (Kahn's, smallest-first)</td>
-</tr>
-</tbody>
-</table>
+<p>State is small and hot → <strong>keep it in memory</strong> on the limiter nodes, sharded
+by hash(key). Persistence is a <em>reliability</em> concern, not a correctness one:
+if a limiter node dies we can lose that shard's counters and briefly
+under-count — acceptable for a limiter (failing open for a few seconds beats
+failing closed and rejecting everyone). Optionally replicate the hot shard to
+a backup node so a failure is a sub-second failover rather than a reset.</p>
+<hr>
+<h2 id="5-the-architecture">5. The architecture</h2>
+<div class="highlight"><pre><span></span><code>                +------------------+
+   request ----&gt; |   edge / LB      |
+                +--------+---------+
+                         |
+                +--------v---------+        shard by hash(key)
+                |  rate limiter    |  ----&gt;  [shard 0] [shard 1] ... [shard N]
+                |  (stateful,      |         in-memory counters / token buckets
+                |   in-memory)     |
+                +--------+---------+
+                         | admit / 429
+                +--------v---------+
+                |   API servers    |
+                +------------------+
+</code></pre></div>
+<ul>
+<li>The limiter is a thin, <strong>stateful</strong> layer. Every request hashes its key to a
+  shard; that shard holds the counter and makes the admit/reject call in memory.</li>
+<li>Because state is per-shard and the decision is local, there is <strong>no
+  cross-node coordination</strong> in the common case — this is the whole point of
+  sharding by key.</li>
+<li><code>429</code> responses carry <code>Retry-After</code> so well-behaved clients back off.</li>
+</ul>
+<hr>
+<h2 id="6-the-request-path-in-detail">6. The request path in detail</h2>
+<ol>
+<li>Edge extracts the identity (API key / auth token) and hashes it → shard.</li>
+<li>That shard computes the decision:
+   - fixed window: if <code>now</code> crossed into a new window, reset <code>count</code>; then
+     <code>count &lt; limit ? admit : reject</code>.
+   - token bucket: refill <code>tokens += R * (now - last_refill)</code> (capped at B),
+     then <code>tokens &gt;= 1 ? (tokens -= 1; admit) : reject</code>.</li>
+<li>Admit → forward to the API servers. Reject → return <code>429</code> + <code>Retry-After</code>
+   <strong>without</strong> touching the API servers (that is a feature: the limiter is the
+  first line of defence against a flood).</li>
+</ol>
+<p>The invariant to name: <strong>the check-and-increment must be atomic per key.</strong>
+Within one shard that is a single-threaded or lock-protected counter — no race.
+Across shards a key always maps to exactly one shard, so there is no cross-shard
+race. This is why "shard by key" is load-bearing, not just a scaling trick.</p>
+<hr>
+<h2 id="7-bottlenecks-and-what-you-would-do-next">7. Bottlenecks and what you would do next</h2>
+<ul>
+<li><strong>Hot keys.</strong> A single abusive key hammers one shard. Mitigations: detect
+  and <em>early-reject</em> at the edge for keys already known to be over limit
+  (a short negative cache: "key X is limited until T"), or temporarily move a
+  hot key to a dedicated node.</li>
+<li><strong>Limiter availability.</strong> It is now on the critical path. Run it as a
+  replicated service; if a shard is unreachable, <strong>fail open</strong> (admit) rather
+  than fail closed (reject everyone) — a limiter outage should degrade to
+  "no limiting," not "no service." Say the trade-off explicitly.</li>
+<li><strong>Clock skew.</strong> Windows and token refill depend on <code>now</code>. Use a shared,
+  synchronized time source (NTP); a skewed clock makes windows inconsistent
+  across nodes.</li>
+<li><strong>Burst at window boundary</strong> (fixed window) → the sliding-window-counter or
+  token-bucket upgrade from §3.</li>
+<li><strong>Global limits</strong> ("the whole API gets 5 M req/s") need a <em>second</em>,
+  coarser counter — per-key limits and a global budget are separate concerns;
+  check both, reject if either is exceeded.</li>
+</ul>
+<hr>
+<h2 id="8-what-the-interviewer-is-grading">8. What the interviewer is grading</h2>
+<ul>
+<li>Did you <strong>clarify</strong> limit semantics (per-key, rolling vs fixed, reject vs
+  queue) before designing?</li>
+<li>Did you pick the data structure <strong>on purpose</strong> and name the trade-off
+  (fixed window's boundary burst, token bucket's burst allowance)?</li>
+<li>Did you get <strong>sharding by key</strong> and the <strong>atomic per-key counter</strong> right —
+  the two things that make it correct under concurrency?</li>
+<li>Did you treat the limiter as a <strong>critical component</strong> (availability, fail
+  open/closed, hot keys, clock skew) rather than a trivial counter?</li>
+<li>Did you estimate scale and use it to argue for <strong>in-memory</strong> state?</li>
+</ul>
     <hr>
-    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/coding-challenges\graphs\README.md" rel="noopener">Edit this page on GitHub</a>.</p>
+    <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\system-design\walkthrough-rate-limiter.md" rel="noopener">Edit this page on GitHub</a>.</p>
   </main>
 </div>
 <script>window.SEARCH_PREFIX="../../";</script>
