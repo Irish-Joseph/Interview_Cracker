@@ -181,3 +181,4 @@
 | 2026-09-23 | C++ | Intermediate | Oop | Virtual dispatch, the vtable, hiding vs override, and the non-virtual destructor trap | examples/cpp/oop/virtual_functions_and_the_vtable.cpp |
 | 2026-09-23 | Go | Intermediate | Error-handling | defer, panic and recover: argument capture, LIFO, and the direct-call rule | examples/go/error-handling/defer_panic_recover.go |
 | 2026-09-23 | TypeScript | Advanced | Advanced-types | Template literal types: interpolation, infer, and route-dependent parameters | examples/typescript/advanced-types/template_literal_types.ts |
+| 2026-09-23 | Java | Intermediate | Oop | Virtual dispatch during construction and the Integer cache (-128..127) | examples/java/oop/virtual_call_in_constructor.java |
