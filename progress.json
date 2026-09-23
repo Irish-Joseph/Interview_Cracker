@@ -1,5 +1,5 @@
 {
-  "total_examples": 182,
+  "total_examples": 183,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1456,6 +1456,14 @@
       "category": "basics",
       "topic": "Word splitting and globbing: why every $variable must be quoted",
       "file": "examples/bash/basics/quoting_word_splitting.sh"
+    },
+    {
+      "date": "2026-09-23",
+      "language": "c",
+      "difficulty": "beginner",
+      "category": "strings",
+      "topic": "String literals vs char arrays: storage, sizeof, and the write-to-literal UB",
+      "file": "examples/c/strings/string_literal_vs_char_array.c"
     }
   ]
 }
