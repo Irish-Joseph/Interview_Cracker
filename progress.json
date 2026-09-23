@@ -1,5 +1,5 @@
 {
-  "total_examples": 174,
+  "total_examples": 175,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1392,6 +1392,14 @@
       "category": "text",
       "topic": "Log analysis with the pipeline: Select-String, Group-Object, Measure-Object",
       "file": "examples/powershell/text/text_log_pipeline.ps1"
+    },
+    {
+      "date": "2026-09-23",
+      "language": "ruby",
+      "difficulty": "advanced",
+      "category": "blocks",
+      "topic": "lambda vs proc: arity, return, and exception propagation",
+      "file": "examples/ruby/blocks/lambda_vs_proc.rb"
     }
   ]
 }
