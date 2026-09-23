@@ -76,6 +76,7 @@ Questions are tagged by difficulty:
 | [go.md](languages/go.md) | Goroutines vs threads, channel blocking, error values, interfaces, goroutine leaks |
 | [c.md](languages/c.md) | malloc/calloc/realloc, literals vs arrays, array decay, free() mistakes, undefined behaviour |
 | [cpp.md](languages/cpp.md) | RAII, smart pointers and cycles, move semantics, virtual/vtable traps, rule of zero |
+| [csharp.md](languages/csharp.md) | Value vs reference types, `==` vs Equals, async/await and the async-void trap, Task vs ValueTask |
 
 ### Behavioural
 | File | Covers |
