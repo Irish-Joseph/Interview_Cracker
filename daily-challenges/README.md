@@ -43,6 +43,7 @@ One file per day, named `YYYY-MM-DD.md`, filed under `YYYY/MM/`.
 | [2026-09-21](2026/09/2026-09-21.md) | Next permutation | 🟡 Medium | In-place array manipulation |
 | [2026-09-22](2026/09/2026-09-22.md) | Trapping rain water | 🔴 Hard | Two pointers + running maxima |
 | [2026-09-23](2026/09/2026-09-23.md) | Interleaving string | 🟡 Medium | DP over two inputs |
+| [2026-09-24](2026/09/2026-09-24.md) | Longest valid parentheses | 🔴 Hard | Stack of indices with a base sentinel |
 
 ## Contributing a day
 
