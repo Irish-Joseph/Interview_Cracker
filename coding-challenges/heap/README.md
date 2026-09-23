@@ -64,3 +64,4 @@ those, use a balanced tree.
 | File | Difficulty | Shape |
 |---|---|---|
 | [top_k_frequent_elements.py](top_k_frequent_elements.py) | 🟡 Medium | Count, then min-heap of size k |
+| [merge_k_sorted_lists.py](merge_k_sorted_lists.py) | 🟡 Medium | K-way merge, heap of size k |
