@@ -219,3 +219,44 @@ retention window, and the key space must be chosen so that legitimate
 repeat-able operations collide intentionally while distinct operations never
 do. This is also why HTTP distinguishes `POST` (not idempotent by default)
 from `PUT`/`DELETE` (idempotent) — a client can safely retry the latter.
+
+### 🟡 Q. Your load balancer fronts 10 replicas. How do you find out when one
+stops working — and what do you do about it?
+
+**Answer.** Health checks, in two flavours: **active** (the LB itself probes
+each replica — an HTTP GET on a `/healthz` endpoint, or a TCP connect — on a
+schedule, and removes replicas that fail N times in a row) and **passive**
+(the LB watches real traffic: if requests routed to a replica start failing
+or timing out, it stops routing to it). Production systems use both: active
+checks catch a replica that is *up but broken* even before traffic would have
+hit it, and passive checks react instantly to failures that active checks'
+poll interval cannot see.
+
+The parts an interviewer is looking for next:
+
+- **The probe must be a liveness probe, not a dependency probe.** If
+  `/healthz` checks the database too, a DB blip removes *every* replica at
+  once and the "recovery" is a full-service failure. The right split is:
+  *liveness* = "can this process serve at all" (used for removal);
+  *readiness* = "are my dependencies ready to take traffic right now"
+  (used to keep a just-started replica out of rotation until it is warm).
+- **Hysteresis in both directions.** Removal should require a few consecutive
+  failures (one GC pause must not bounce a replica), and re-addition should
+  require a few consecutive successes (otherwise a flapping replica oscillates
+  in and out and every recovery takes a cold start).
+- **Ejection beats polling-only.** Passive ejection is the fastest signal you
+  have — real users are already getting errors, so react in one failed request,
+  not in the next 10-second poll.
+- **The trap: removing a sick replica shifts its load to the healthy ones.**
+  With 10 replicas, losing one means the other nine each take +11%. If they
+  were running at 80%, they now take 90% and may start failing too — a
+  cascading failure. This is why health-check design must be discussed
+  together with load headroom, rate limits, and circuit breakers, not in
+  isolation.
+
+**Follow-up.** "Replicas are flapping: healthy, unhealthy, healthy, every
+minute. What do you do?" Expected: lengthen the failure streak and/or add
+hysteresis delay, look for a resource cliff (memory pressure, connection
+pool exhaustion, a dependency at its limit), and if the cause is external,
+prefer keeping the replica in and shedding load (circuit breaker) over
+churning the pool.
