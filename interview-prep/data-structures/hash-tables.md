@@ -173,3 +173,38 @@ for i, n in enumerate(nums):            # O(n) time, O(n) space
 Recognising this — *"I am searching inside a loop, so I should index instead"* —
 is worth more than memorising any individual solution. Worked examples are in
 [`coding-challenges/hashing/`](../../coding-challenges/hashing/).
+
+### 🟡 Q. How can an attacker make my hash table slow, and what do
+implementations do about it?
+
+**Answer.** A **hash-flooding (hash-collision) DoS**: the attacker supplies
+many inputs that hash to the *same* bucket. If the table resolves collisions
+by chaining, that one bucket becomes an O(n) linked list, and every lookup
+degrades from average O(1) to O(n) — a request that costs microseconds now
+costs milliseconds, multiplied across the fleet. (The older variant targeted
+`String.hashCode()` in Java, which is public and predictable; the
+vulnerability was knowing the function and inverting it.)
+
+The mitigations, in the order they matter:
+
+1. **Make the hash unpredictable.** Randomize it per process start: a secret
+   salt/seed mixed into the hash (SipHash in Rust and Python's `hash()`,
+   a random multiplier in many Java implementations). The attacker can no
+   longer compute colliding inputs *after* the process starts. This is why
+   Python's `hash(str)` differs between runs — it is a defence, not a bug.
+2. **Switch to tree buckets at the sign of trouble.** JDK 8+ converts a chain
+   longer than 8 entries into a balanced tree, capping the worst case at
+   O(log n) even if the attacker wins step 1.
+3. **Limit the blast radius.** Caps on key length and on map size per
+   request turn "one adversarial payload" into "at most N·log N work".
+
+The conceptual point: `O(1)` was always *average*; the attack makes the
+adversary control the distribution, so the fix is to remove the adversary's
+knowledge (randomization), not to claim a worst case the structure cannot
+provide.
+
+**Follow-up.** "Randomizing the hash breaks anything?" Expected: yes — the
+hash is no longer stable across processes, so you cannot persist `hash()`
+values to disk or compare them between processes; equality must remain defined
+by the value, and anything needing a *stable* digest (caches, content
+addressing) uses a cryptographic hash, not the table's hasher.
