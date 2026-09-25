@@ -44,3 +44,4 @@ take at most 2n steps — even though the code looks like it might be quadratic.
 | [remove_duplicates_sorted.py](remove_duplicates_sorted.py) | 🟢 Easy | Read and write |
 | [container_with_most_water.py](container_with_most_water.py) | 🟡 Medium | Converging |
 | [sort_colors.py](sort_colors.py) | 🟡 Medium | Three regions, one pass |
+| [best_time_buy_sell_stock.py](best_time_buy_sell_stock.py) | 🟢 Easy | Sweep with a running minimum |
