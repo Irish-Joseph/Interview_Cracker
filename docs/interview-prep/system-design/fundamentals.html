@@ -21,7 +21,7 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="topbar">
   <a class="brand" href="../../index.html">Interview Cracker</a>
-  <input id="q" type="search" placeholder="Search 62 pages&hellip;" autocomplete="off" aria-label="Search">
+  <input id="q" type="search" placeholder="Search 63 pages&hellip;" autocomplete="off" aria-label="Search">
   <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
 </header>
 <div id="results" hidden></div>
@@ -339,6 +339,8 @@
         
           <li><a href="../../daily-challenges/2026/09/2026-09-24.html">2026-09-24 — Longest Valid Parentheses</a></li>
         
+          <li><a href="../../daily-challenges/2026/09/2026-09-25.html">2026-09-25 — Valid Sudoku</a></li>
+        
         </ul>
       </div>
       
@@ -583,6 +585,44 @@ retention window, and the key space must be chosen so that legitimate
 repeat-able operations collide intentionally while distinct operations never
 do. This is also why HTTP distinguishes <code>POST</code> (not idempotent by default)
 from <code>PUT</code>/<code>DELETE</code> (idempotent) — a client can safely retry the latter.</p>
+<h3 id="q-your-load-balancer-fronts-10-replicas-how-do-you-find-out-when-one">🟡 Q. Your load balancer fronts 10 replicas. How do you find out when one</h3>
+<p>stops working — and what do you do about it?</p>
+<p><strong>Answer.</strong> Health checks, in two flavours: <strong>active</strong> (the LB itself probes
+each replica — an HTTP GET on a <code>/healthz</code> endpoint, or a TCP connect — on a
+schedule, and removes replicas that fail N times in a row) and <strong>passive</strong>
+(the LB watches real traffic: if requests routed to a replica start failing
+or timing out, it stops routing to it). Production systems use both: active
+checks catch a replica that is <em>up but broken</em> even before traffic would have
+hit it, and passive checks react instantly to failures that active checks'
+poll interval cannot see.</p>
+<p>The parts an interviewer is looking for next:</p>
+<ul>
+<li><strong>The probe must be a liveness probe, not a dependency probe.</strong> If
+  <code>/healthz</code> checks the database too, a DB blip removes <em>every</em> replica at
+  once and the "recovery" is a full-service failure. The right split is:
+  <em>liveness</em> = "can this process serve at all" (used for removal);
+  <em>readiness</em> = "are my dependencies ready to take traffic right now"
+  (used to keep a just-started replica out of rotation until it is warm).</li>
+<li><strong>Hysteresis in both directions.</strong> Removal should require a few consecutive
+  failures (one GC pause must not bounce a replica), and re-addition should
+  require a few consecutive successes (otherwise a flapping replica oscillates
+  in and out and every recovery takes a cold start).</li>
+<li><strong>Ejection beats polling-only.</strong> Passive ejection is the fastest signal you
+  have — real users are already getting errors, so react in one failed request,
+  not in the next 10-second poll.</li>
+<li><strong>The trap: removing a sick replica shifts its load to the healthy ones.</strong>
+  With 10 replicas, losing one means the other nine each take +11%. If they
+  were running at 80%, they now take 90% and may start failing too — a
+  cascading failure. This is why health-check design must be discussed
+  together with load headroom, rate limits, and circuit breakers, not in
+  isolation.</li>
+</ul>
+<p><strong>Follow-up.</strong> "Replicas are flapping: healthy, unhealthy, healthy, every
+minute. What do you do?" Expected: lengthen the failure streak and/or add
+hysteresis delay, look for a resource cliff (memory pressure, connection
+pool exhaustion, a dependency at its limit), and if the cause is external,
+prefer keeping the replica in and shedding load (circuit breaker) over
+churning the pool.</p>
     <hr>
     <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\system-design\fundamentals.md" rel="noopener">Edit this page on GitHub</a>.</p>
   </main>
