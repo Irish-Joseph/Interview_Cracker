@@ -204,3 +204,4 @@
 | 2026-09-25 | C# | Intermediate | Basics | Boxing: where it sneaks in and what it does to values, identity and GC | examples/csharp/basics/boxing_value_type_traps.cs |
 | 2026-09-25 | Bash | Intermediate | Basics | set -e pitfalls: where errexit is suspended, and pipefail/set -u | examples/bash/basics/set_e_pitfalls.sh |
 | 2026-09-25 | C | Beginner | Basics | Struct padding and alignment: why sizeof lies | examples/c/basics/struct_padding_alignment.c |
+| 2026-09-25 | C++ | Advanced | STL | std::move and T&&: casts, forwarding references and the perfect-forwarding idiom | examples/cpp/stl/move_and_forwarding_reference_traps.cpp |
