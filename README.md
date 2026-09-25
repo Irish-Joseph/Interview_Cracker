@@ -10,15 +10,15 @@
 
 <img src="assets/interview-cracker-hero.png" alt="A focused coding workspace with a visual path through code, algorithms, databases, and interview readiness" width="100%">
 
-193 runnable examples · 50 coding challenges · 34 interview guides · 13 languages
+203 runnable examples · 54 coding challenges · 34 interview guides · 13 languages
 
-Examples: 193
+Examples: 203
 
 Languages: 13
 
 Categories: 134
 
-[Start a study plan](interview-prep/README.md) · [Solve today's challenge](daily-challenges/2026/09/2026-09-24.md) · [Browse the website](https://irish-joseph.github.io/Interview_Cracker/)
+[Start a study plan](interview-prep/README.md) · [Solve today's challenge](daily-challenges/2026/09/2026-09-25.md) · [Browse the website](https://irish-joseph.github.io/Interview_Cracker/)
 
 </div>
 

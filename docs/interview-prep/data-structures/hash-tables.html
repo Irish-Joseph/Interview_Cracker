@@ -21,7 +21,7 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="topbar">
   <a class="brand" href="../../index.html">Interview Cracker</a>
-  <input id="q" type="search" placeholder="Search 62 pages&hellip;" autocomplete="off" aria-label="Search">
+  <input id="q" type="search" placeholder="Search 63 pages&hellip;" autocomplete="off" aria-label="Search">
   <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
 </header>
 <div id="results" hidden></div>
@@ -339,6 +339,8 @@
         
           <li><a href="../../daily-challenges/2026/09/2026-09-24.html">2026-09-24 — Longest Valid Parentheses</a></li>
         
+          <li><a href="../../daily-challenges/2026/09/2026-09-25.html">2026-09-25 — Valid Sudoku</a></li>
+        
         </ul>
       </div>
       
@@ -475,6 +477,37 @@ completes this pair?" — a lookup instead of a scan:</p>
 <p>Recognising this — <em>"I am searching inside a loop, so I should index instead"</em> —
 is worth more than memorising any individual solution. Worked examples are in
 <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../coding-challenges/hashing"><code>coding-challenges/hashing/</code></a>.</p>
+<h3 id="q-how-can-an-attacker-make-my-hash-table-slow-and-what-do">🟡 Q. How can an attacker make my hash table slow, and what do</h3>
+<p>implementations do about it?</p>
+<p><strong>Answer.</strong> A <strong>hash-flooding (hash-collision) DoS</strong>: the attacker supplies
+many inputs that hash to the <em>same</em> bucket. If the table resolves collisions
+by chaining, that one bucket becomes an O(n) linked list, and every lookup
+degrades from average O(1) to O(n) — a request that costs microseconds now
+costs milliseconds, multiplied across the fleet. (The older variant targeted
+<code>String.hashCode()</code> in Java, which is public and predictable; the
+vulnerability was knowing the function and inverting it.)</p>
+<p>The mitigations, in the order they matter:</p>
+<ol>
+<li><strong>Make the hash unpredictable.</strong> Randomize it per process start: a secret
+   salt/seed mixed into the hash (SipHash in Rust and Python's <code>hash()</code>,
+   a random multiplier in many Java implementations). The attacker can no
+   longer compute colliding inputs <em>after</em> the process starts. This is why
+   Python's <code>hash(str)</code> differs between runs — it is a defence, not a bug.</li>
+<li><strong>Switch to tree buckets at the sign of trouble.</strong> JDK 8+ converts a chain
+   longer than 8 entries into a balanced tree, capping the worst case at
+   O(log n) even if the attacker wins step 1.</li>
+<li><strong>Limit the blast radius.</strong> Caps on key length and on map size per
+   request turn "one adversarial payload" into "at most N·log N work".</li>
+</ol>
+<p>The conceptual point: <code>O(1)</code> was always <em>average</em>; the attack makes the
+adversary control the distribution, so the fix is to remove the adversary's
+knowledge (randomization), not to claim a worst case the structure cannot
+provide.</p>
+<p><strong>Follow-up.</strong> "Randomizing the hash breaks anything?" Expected: yes — the
+hash is no longer stable across processes, so you cannot persist <code>hash()</code>
+values to disk or compare them between processes; equality must remain defined
+by the value, and anything needing a <em>stable</em> digest (caches, content
+addressing) uses a cryptographic hash, not the table's hasher.</p>
     <hr>
     <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\data-structures\hash-tables.md" rel="noopener">Edit this page on GitHub</a>.</p>
   </main>

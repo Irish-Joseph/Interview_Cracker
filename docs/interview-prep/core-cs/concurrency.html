@@ -21,7 +21,7 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="topbar">
   <a class="brand" href="../../index.html">Interview Cracker</a>
-  <input id="q" type="search" placeholder="Search 62 pages&hellip;" autocomplete="off" aria-label="Search">
+  <input id="q" type="search" placeholder="Search 63 pages&hellip;" autocomplete="off" aria-label="Search">
   <a class="ghlink" href="https://github.com/Irish-Joseph/Interview_Cracker" rel="noopener">GitHub</a>
 </header>
 <div id="results" hidden></div>
@@ -339,6 +339,8 @@
         
           <li><a href="../../daily-challenges/2026/09/2026-09-24.html">2026-09-24 — Longest Valid Parentheses</a></li>
         
+          <li><a href="../../daily-challenges/2026/09/2026-09-25.html">2026-09-25 — Valid Sudoku</a></li>
+        
         </ul>
       </div>
       
@@ -499,6 +501,46 @@ loop can livelock (always losing the race to another thread) even if it never
 deadlocks — progress guarantees are a spectrum, and ABA is the clearest example
 of why the <em>memory model</em>, not just the algorithm, is what you actually have to
 get right.</p>
+<h3 id="q-how-do-you-shut-down-a-thread-pool-safely">🟡 Q. How do you shut down a thread pool safely?</h3>
+<p><strong>Answer.</strong> In three phases: stop <em>accepting</em> work, signal the workers, and
+<em>join</em> them with a timeout — escalating to interruption (or a logged kill) for
+any worker that does not finish in time. Never just kill the threads: a worker
+mid-mutation or mid-file-write leaves the system in a state you did not choose.</p>
+<p>The phases, and what can go wrong in each:</p>
+<ul>
+<li><strong>Stop submissions.</strong> Reject or fail-fast new <code>submit()</code> calls. If you
+  simply stop calling submit but leave the door open, late arrivals get
+  queued into a pool that will never run them — a silent loss, which is
+  worse than an error.</li>
+<li><strong>Decide the queue's fate.</strong> This is the real fork:</li>
+<li><em>Graceful:</em> let the queued tasks finish too (Java <code>ExecutorService.shutdown()</code>,
+    Go: close the jobs channel and let workers range to the end).</li>
+<li><em>Now:</em> discard the queue, only wait for in-flight tasks
+    (<code>shutdownNow()</code>, which also interrupts blocked workers where the runtime
+    supports it).
+  Say which one you chose and why — for request-handling pools, in-flight is
+  usually enough; for a billing worker, queued-but-not-started work must go
+  to a durable queue instead of being dropped.</li>
+<li><strong>Join with a deadline.</strong> A task that never returns (deadlock, a hung
+  socket) will hang shutdown forever. Bound the wait, then escalate:
+  interrupt, and if still stuck, log the task and its input and continue.
+  The deadline is per-escalation-step, not a single global constant.</li>
+</ul>
+<p>Two traps worth naming even if not asked:</p>
+<ul>
+<li><strong>Ownership of "close".</strong> If workers pull from a channel/queue, exactly
+  ONE component may close it; multiple senders each trying to close it is a
+  panic (Go) or an error. The pool — or a dedicated finisher — owns the close.</li>
+<li><strong>Distinguish shutdown-failure from task-failure.</strong> If a cancelled task
+  reports the same error as a crashed task, your monitoring will miscount
+  every deploy. Give cancellation its own result type or status.</li>
+</ul>
+<p>Worked shape in Go (close jobs once, join with a timeout):
+see <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep/../examples/go/concurrency/worker_pool.go"><code>examples/go/concurrency/worker_pool.go</code></a>.</p>
+<p><strong>Follow-up.</strong> "The process gets a SIGTERM with 30 seconds. Where does each
+phase fit?" Expected: stop taking new requests at the load balancer / stop the
+listener, drain in-flight, join pool within the budget, escalate, exit
+non-zero if the budget ran out (so the orchestrator retries or alerts).</p>
     <hr>
     <p class="editlink">Found a mistake? <a href="https://github.com/Irish-Joseph/Interview_Cracker/blob/main/interview-prep\core-cs\concurrency.md" rel="noopener">Edit this page on GitHub</a>.</p>
   </main>
