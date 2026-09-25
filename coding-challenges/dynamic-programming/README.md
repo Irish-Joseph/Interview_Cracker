@@ -39,3 +39,4 @@ for this.
 | [coin_change.py](coin_change.py) | 🟡 Medium | Unbounded knapsack |
 | [unique_paths.py](unique_paths.py) | 🟡 Medium | 2D grid, row collapse |
 | [longest_common_subsequence.py](longest_common_subsequence.py) | 🟡 Medium | Two sequences, take/skip |
+| [house_robber.py](house_robber.py) | 🟡 Medium | Two-state rolling variables (take/skip) |
