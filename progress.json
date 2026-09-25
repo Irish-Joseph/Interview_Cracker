@@ -1,5 +1,5 @@
 {
-  "total_examples": 200,
+  "total_examples": 201,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1600,6 +1600,14 @@
       "category": "basics",
       "topic": "Boxing: where it sneaks in and what it does to values, identity and GC",
       "file": "examples/csharp/basics/boxing_value_type_traps.cs"
+    },
+    {
+      "date": "2026-09-25",
+      "language": "bash",
+      "difficulty": "intermediate",
+      "category": "basics",
+      "topic": "set -e pitfalls: where errexit is suspended, and pipefail/set -u",
+      "file": "examples/bash/basics/set_e_pitfalls.sh"
     }
   ]
 }
