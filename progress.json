@@ -1,5 +1,5 @@
 {
-  "total_examples": 197,
+  "total_examples": 198,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1576,6 +1576,14 @@
       "category": "concurrency",
       "topic": "Channel close semantics: what panics, what drains, who closes",
       "file": "examples/go/concurrency/channel_close_semantics.go"
+    },
+    {
+      "date": "2026-09-25",
+      "language": "rust",
+      "difficulty": "beginner",
+      "category": "iterators",
+      "topic": "iter(), iter_mut() and into_iter(): the three ways to walk a Vec",
+      "file": "examples/rust/iterators/iter_iter_mut_into_iter.rs"
     }
   ]
 }
