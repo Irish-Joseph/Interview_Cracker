@@ -170,3 +170,47 @@ Why it works: a power of two looks like `1000…0`; subtracting 1 gives
 `0111…1`, so the AND is 0. Any number with two or more set bits keeps at
 least one bit in common with `n-1`. The `n > 0` guard matters — 0 is `1000
 & 0111`-free but is not a power of two.
+
+### 🟡 Q. Why shouldn't I use floating point for money, and what do I use instead?
+
+**Answer.** Because binary floating point cannot represent most decimal
+fractions: `0.1` is `0.1000000000000000055511151231257827…` in a `double`,
+so `0.1 + 0.2 == 0.3` is `false`. For money the error is not philosophical —
+it is a cent that does not match the ledger, and it compounds silently over
+aggregations (summing 10⁵ invoices in float drifts by a visible amount).
+
+The standard fix is **fixed point in integer units**: store the *smallest
+unit* (cents, millis, satoshis) as an integer. All arithmetic is exact
+integer arithmetic; you only divide by 100 when rendering, and round with a
+*named* rule (half-up is the usual choice for customer-facing display; be
+consistent, because "which rounding" is as much a decision as the number).
+
+Why not just use a `Decimal` type? Often that is fine and simpler — `Decimal`
+is exactly fixed-point with a decimal exponent, and it is the right answer
+for anything with variable precision (tax rates, exchange rates). The
+integer-units approach wins when you need the value to be:
+
+- **Stable on the wire and in the database** — `BIGINT cents` is unambiguous
+  across languages; float-as-money is how `3.10` becomes `3.1000000000000001`.
+- **Comparable and sortable without scale negotiation** — `Decimal("1.10")`
+  and `Decimal("1.1")` are equal, but as *strings* or *scaled integers* you
+  must pick one canonical scale and stick to it.
+- **Safe against overflow reasoning** — with integers you can state the bound
+  ("19 digits of cents covers any realistic total") and check it; float
+  overflow is gradual and quiet.
+
+The trap to name even if not asked: **rates are the exception.** "3.99%" is
+not a count of a smallest unit; multiplying `cents × rate` needs a real
+rational step (integer rate in basis points, or a Decimal), then a final
+round to the smallest currency unit — and the rounding rule must be decided
+*before* implementation, because half-up vs half-even changes totals over a
+month of transactions.
+
+Worked example of the float failure:
+[`examples/python/numbers/float_vs_decimal.py`](../../examples/python/numbers/float_vs_decimal.py).
+
+**Follow-up.** "Three friends split $100.00. How do the cents work out?"
+Expected: 33.34 + 33.33 + 33.33 — the remainder of the integer division must
+be allocated to named parties by rule (e.g. first N parties get the extra
+cent), or the split does not sum back to the total, which is exactly the
+ledger-mismatch the integer approach is meant to prevent.
