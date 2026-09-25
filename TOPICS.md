@@ -198,3 +198,4 @@
 | 2026-09-25 | Python | Intermediate | Basics | Shallow copy vs deep copy (and why assignment is neither) | examples/python/basics/shallow_vs_deep_copy.py |
 | 2026-09-25 | JavaScript | Beginner | Objects | Object.freeze is shallow: nested objects stay mutable | examples/javascript/objects/object_freeze_is_shallow.js |
 | 2026-09-25 | TypeScript | Advanced | Advanced types | Strict type-level equality: Equals<T,U> vs the naive mutual-extends test | examples/typescript/advanced-types/strict_equals_type.ts |
+| 2026-09-25 | Go | Intermediate | Concurrency | Channel close semantics: what panics, what drains, who closes | examples/go/concurrency/channel_close_semantics.go |
