@@ -38,3 +38,4 @@ trapping rain water, stock span.
 | [daily_temperatures.py](daily_temperatures.py) | 🟡 Medium | Monotonic stack |
 | [min_stack.py](min_stack.py) | 🟡 Medium | Auxiliary mirror stack |
 | [largest_rectangle_in_histogram.py](largest_rectangle_in_histogram.py) | 🔴 Hard | Monotonic stack + sentinel |
+| [decode_string.py](decode_string.py) | 🟡 Medium | Explicit stack of (context, multiplier) frames |
