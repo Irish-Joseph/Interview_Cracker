@@ -201,3 +201,47 @@ loop can livelock (always losing the race to another thread) even if it never
 deadlocks — progress guarantees are a spectrum, and ABA is the clearest example
 of why the *memory model*, not just the algorithm, is what you actually have to
 get right.
+
+### 🟡 Q. How do you shut down a thread pool safely?
+
+**Answer.** In three phases: stop *accepting* work, signal the workers, and
+*join* them with a timeout — escalating to interruption (or a logged kill) for
+any worker that does not finish in time. Never just kill the threads: a worker
+mid-mutation or mid-file-write leaves the system in a state you did not choose.
+
+The phases, and what can go wrong in each:
+
+- **Stop submissions.** Reject or fail-fast new `submit()` calls. If you
+  simply stop calling submit but leave the door open, late arrivals get
+  queued into a pool that will never run them — a silent loss, which is
+  worse than an error.
+- **Decide the queue's fate.** This is the real fork:
+  - *Graceful:* let the queued tasks finish too (Java `ExecutorService.shutdown()`,
+    Go: close the jobs channel and let workers range to the end).
+  - *Now:* discard the queue, only wait for in-flight tasks
+    (`shutdownNow()`, which also interrupts blocked workers where the runtime
+    supports it).
+  Say which one you chose and why — for request-handling pools, in-flight is
+  usually enough; for a billing worker, queued-but-not-started work must go
+  to a durable queue instead of being dropped.
+- **Join with a deadline.** A task that never returns (deadlock, a hung
+  socket) will hang shutdown forever. Bound the wait, then escalate:
+  interrupt, and if still stuck, log the task and its input and continue.
+  The deadline is per-escalation-step, not a single global constant.
+
+Two traps worth naming even if not asked:
+
+- **Ownership of "close".** If workers pull from a channel/queue, exactly
+  ONE component may close it; multiple senders each trying to close it is a
+  panic (Go) or an error. The pool — or a dedicated finisher — owns the close.
+- **Distinguish shutdown-failure from task-failure.** If a cancelled task
+  reports the same error as a crashed task, your monitoring will miscount
+  every deploy. Give cancellation its own result type or status.
+
+Worked shape in Go (close jobs once, join with a timeout):
+see [`examples/go/concurrency/worker_pool.go`](../../examples/go/concurrency/worker_pool.go).
+
+**Follow-up.** "The process gets a SIGTERM with 30 seconds. Where does each
+phase fit?" Expected: stop taking new requests at the load balancer / stop the
+listener, drain in-flight, join pool within the budget, escalate, exit
+non-zero if the budget ran out (so the orchestrator retries or alerts).
