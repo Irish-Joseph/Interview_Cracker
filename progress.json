@@ -1,5 +1,5 @@
 {
-  "total_examples": 202,
+  "total_examples": 203,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1616,6 +1616,14 @@
       "category": "basics",
       "topic": "Struct padding and alignment: why sizeof lies",
       "file": "examples/c/basics/struct_padding_alignment.c"
+    },
+    {
+      "date": "2026-09-25",
+      "language": "cpp",
+      "difficulty": "advanced",
+      "category": "stl",
+      "topic": "std::move and T&&: casts, forwarding references and the perfect-forwarding idiom",
+      "file": "examples/cpp/stl/move_and_forwarding_reference_traps.cpp"
     }
   ]
 }
