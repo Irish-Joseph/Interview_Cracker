@@ -1,5 +1,5 @@
 {
-  "total_examples": 201,
+  "total_examples": 202,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1608,6 +1608,14 @@
       "category": "basics",
       "topic": "set -e pitfalls: where errexit is suspended, and pipefail/set -u",
       "file": "examples/bash/basics/set_e_pitfalls.sh"
+    },
+    {
+      "date": "2026-09-25",
+      "language": "c",
+      "difficulty": "beginner",
+      "category": "basics",
+      "topic": "Struct padding and alignment: why sizeof lies",
+      "file": "examples/c/basics/struct_padding_alignment.c"
     }
   ]
 }

@@ -203,3 +203,4 @@
 | 2026-09-25 | SQL | Intermediate | Window functions | Window frames: ROWS vs RANGE, and the default frame's tie jump | examples/sql/window-functions/rows_vs_range_window_frames.sql |
 | 2026-09-25 | C# | Intermediate | Basics | Boxing: where it sneaks in and what it does to values, identity and GC | examples/csharp/basics/boxing_value_type_traps.cs |
 | 2026-09-25 | Bash | Intermediate | Basics | set -e pitfalls: where errexit is suspended, and pipefail/set -u | examples/bash/basics/set_e_pitfalls.sh |
+| 2026-09-25 | C | Beginner | Basics | Struct padding and alignment: why sizeof lies | examples/c/basics/struct_padding_alignment.c |
