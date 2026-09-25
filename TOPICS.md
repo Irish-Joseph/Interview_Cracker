@@ -200,3 +200,4 @@
 | 2026-09-25 | TypeScript | Advanced | Advanced types | Strict type-level equality: Equals<T,U> vs the naive mutual-extends test | examples/typescript/advanced-types/strict_equals_type.ts |
 | 2026-09-25 | Go | Intermediate | Concurrency | Channel close semantics: what panics, what drains, who closes | examples/go/concurrency/channel_close_semantics.go |
 | 2026-09-25 | Rust | Beginner | Iterators | iter(), iter_mut() and into_iter(): the three ways to walk a Vec | examples/rust/iterators/iter_iter_mut_into_iter.rs |
+| 2026-09-25 | SQL | Intermediate | Window functions | Window frames: ROWS vs RANGE, and the default frame's tie jump | examples/sql/window-functions/rows_vs_range_window_frames.sql |

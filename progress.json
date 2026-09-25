@@ -1,5 +1,5 @@
 {
-  "total_examples": 198,
+  "total_examples": 199,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1584,6 +1584,14 @@
       "category": "iterators",
       "topic": "iter(), iter_mut() and into_iter(): the three ways to walk a Vec",
       "file": "examples/rust/iterators/iter_iter_mut_into_iter.rs"
+    },
+    {
+      "date": "2026-09-25",
+      "language": "sql",
+      "difficulty": "intermediate",
+      "category": "window-functions",
+      "topic": "Window frames: ROWS vs RANGE, and the default frame's tie jump",
+      "file": "examples/sql/window-functions/rows_vs_range_window_frames.sql"
     }
   ]
 }
