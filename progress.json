@@ -1,5 +1,5 @@
 {
-  "total_examples": 199,
+  "total_examples": 200,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1592,6 +1592,14 @@
       "category": "window-functions",
       "topic": "Window frames: ROWS vs RANGE, and the default frame's tie jump",
       "file": "examples/sql/window-functions/rows_vs_range_window_frames.sql"
+    },
+    {
+      "date": "2026-09-25",
+      "language": "csharp",
+      "difficulty": "intermediate",
+      "category": "basics",
+      "topic": "Boxing: where it sneaks in and what it does to values, identity and GC",
+      "file": "examples/csharp/basics/boxing_value_type_traps.cs"
     }
   ]
 }
