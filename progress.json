@@ -1,5 +1,5 @@
 {
-  "total_examples": 196,
+  "total_examples": 197,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1568,6 +1568,14 @@
       "category": "advanced-types",
       "topic": "Strict type-level equality: Equals<T,U> vs the naive mutual-extends test",
       "file": "examples/typescript/advanced-types/strict_equals_type.ts"
+    },
+    {
+      "date": "2026-09-25",
+      "language": "go",
+      "difficulty": "intermediate",
+      "category": "concurrency",
+      "topic": "Channel close semantics: what panics, what drains, who closes",
+      "file": "examples/go/concurrency/channel_close_semantics.go"
     }
   ]
 }
