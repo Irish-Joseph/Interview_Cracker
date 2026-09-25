@@ -1,5 +1,5 @@
 {
-  "total_examples": 194,
+  "total_examples": 195,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1552,6 +1552,14 @@
       "category": "basics",
       "topic": "Shallow copy vs deep copy (and why assignment is neither)",
       "file": "examples/python/basics/shallow_vs_deep_copy.py"
+    },
+    {
+      "date": "2026-09-25",
+      "language": "javascript",
+      "difficulty": "beginner",
+      "category": "objects",
+      "topic": "Object.freeze is shallow: nested objects stay mutable",
+      "file": "examples/javascript/objects/object_freeze_is_shallow.js"
     }
   ]
 }
