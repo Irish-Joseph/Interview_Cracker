@@ -1,5 +1,5 @@
 {
-  "total_examples": 193,
+  "total_examples": 194,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1544,6 +1544,14 @@
       "category": "methods",
       "topic": "Forwarding positional, keyword and block arguments",
       "file": "examples/ruby/methods/keyword_argument_forwarding.rb"
+    },
+    {
+      "date": "2026-09-25",
+      "language": "python",
+      "difficulty": "intermediate",
+      "category": "basics",
+      "topic": "Shallow copy vs deep copy (and why assignment is neither)",
+      "file": "examples/python/basics/shallow_vs_deep_copy.py"
     }
   ]
 }

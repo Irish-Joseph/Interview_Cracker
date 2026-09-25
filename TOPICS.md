@@ -195,3 +195,4 @@
 | 2026-09-24 | C | Intermediate | Data-structures | Flexible array members with overflow-safe allocation | examples/c/data-structures/flexible_array_member.c |
 | 2026-09-24 | C++ | Advanced | Raii | Copy-and-swap assignment for strong exception safety | examples/cpp/raii/copy_and_swap_assignment.cpp |
 | 2026-09-24 | Ruby | Beginner | Methods | Forwarding positional, keyword and block arguments | examples/ruby/methods/keyword_argument_forwarding.rb |
+| 2026-09-25 | Python | Intermediate | Basics | Shallow copy vs deep copy (and why assignment is neither) | examples/python/basics/shallow_vs_deep_copy.py |
