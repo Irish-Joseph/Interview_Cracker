@@ -1,5 +1,5 @@
 {
-  "total_examples": 195,
+  "total_examples": 196,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1560,6 +1560,14 @@
       "category": "objects",
       "topic": "Object.freeze is shallow: nested objects stay mutable",
       "file": "examples/javascript/objects/object_freeze_is_shallow.js"
+    },
+    {
+      "date": "2026-09-25",
+      "language": "typescript",
+      "difficulty": "advanced",
+      "category": "advanced-types",
+      "topic": "Strict type-level equality: Equals<T,U> vs the naive mutual-extends test",
+      "file": "examples/typescript/advanced-types/strict_equals_type.ts"
     }
   ]
 }
