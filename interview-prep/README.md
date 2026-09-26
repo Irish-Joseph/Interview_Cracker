@@ -52,6 +52,7 @@ Questions are tagged by difficulty:
 | [sql-query-questions.md](databases/sql-query-questions.md) | Joins, grouping, window functions, the NULL traps |
 | [indexing-and-transactions.md](databases/indexing-and-transactions.md) | B-tree indexes, query plans, ACID, isolation levels, deadlocks |
 | [covering-indexes.md](databases/covering-indexes.md) | Index-only scans and their read/write trade-offs |
+| [replication-lag.md](databases/replication-lag.md) | Read-your-writes consistency and lag mitigation |
 | [database-normalization.md](databases/database-normalization.md) | Functional dependencies, 1NF-3NF/BCNF, anomalies, when to denormalize |
 
 ### Core computer science
@@ -59,6 +60,7 @@ Questions are tagged by difficulty:
 |---|---|
 | [operating-systems.md](core-cs/operating-systems.md) | Processes vs threads, scheduling, memory, virtual memory, deadlock |
 | [virtual-memory-faults.md](core-cs/virtual-memory-faults.md) | Page faults, demand paging, and segmentation faults |
+| [false-sharing.md](core-cs/false-sharing.md) | Cache-line contention between independent writers |
 | [networking.md](core-cs/networking.md) | TCP/UDP, HTTP, DNS, TLS, what happens when you type a URL |
 | [concurrency.md](core-cs/concurrency.md) | Race conditions, locks, atomics, async vs threads |
 | [cryptography-and-security.md](core-cs/cryptography-and-security.md) | Symmetric vs asymmetric, hash vs MAC vs signature, password storage, TLS |
@@ -70,6 +72,8 @@ Questions are tagged by difficulty:
 | [walkthrough-url-shortener.md](system-design/walkthrough-url-shortener.md) | A complete worked answer, start to finish |
 | [walkthrough-rate-limiter.md](system-design/walkthrough-rate-limiter.md) | A complete worked answer: rate limiter, fixed window vs token bucket, sharding by key |
 | [cache-stampede.md](system-design/cache-stampede.md) | Single-flight, TTL jitter, and stale-while-revalidate |
+| [distributed-tracing.md](system-design/distributed-tracing.md) | Traces, spans, context propagation, and sampling |
+| [pagination-at-scale.md](system-design/pagination-at-scale.md) | Offset vs cursor pagination under concurrent changes |
 
 ### Language-specific
 | File | Covers |

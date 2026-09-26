@@ -1,6 +1,6 @@
 # Runnable Examples
 
-203 focused programs across 13 languages. Each file teaches one concept and
+213 focused programs across 13 languages. Each file teaches one concept and
 includes its run command, expected behavior, and validation status.
 
 ## Find an example
@@ -12,18 +12,18 @@ Browse every entry in [TOPICS.md](../TOPICS.md), or query the same data from
 | Language | Examples | Categories |
 |---|---:|---|
 | [Python](python/) | 24 | algorithms, basics, collections, context-managers, data-models, dates, decorators, files, functions, generators, json, numbers, oop, standard-library, strings, typing |
-| [SQL](sql/) | 18 | aggregation, dates, filters, joins, recursive-ctes, set-operations, strings, subqueries, transactions, window-functions |
-| [Rust](rust/) | 18 | basics, closures, collections, concurrency, enums, error-handling, iterators, lifetimes, matching, modules, options, ownership, strings, traits |
-| [JavaScript](javascript/) | 17 | arrays, async, basics, collections, errors, generators, objects, strings, utilities |
-| [Go](go/) | 17 | algorithms, concurrency, data-structures, error-handling, errors, files, generics, interfaces, json, maps, slices, sorting, structs, testing |
-| [C](c/) | 17 | arrays, basics, data-structures, files, functions, pointers, strings |
-| [Java](java/) | 16 | algorithms, collections, concurrency, enums, error-handling, exceptions, generics, interfaces, oop, optional, records, streams, strings |
+| [SQL](sql/) | 19 | aggregation, constraints, dates, filters, joins, recursive-ctes, set-operations, strings, subqueries, transactions, window-functions |
+| [Rust](rust/) | 19 | basics, closures, collections, concurrency, enums, error-handling, iterators, lifetimes, matching, modules, options, ownership, strings, traits |
+| [JavaScript](javascript/) | 18 | arrays, async, basics, collections, errors, generators, objects, strings, utilities |
+| [Go](go/) | 18 | algorithms, concurrency, data-structures, error-handling, errors, files, generics, interfaces, json, maps, slices, sorting, structs, testing |
+| [C](c/) | 18 | arrays, basics, data-structures, files, functions, pointers, strings |
+| [Java](java/) | 17 | algorithms, collections, concurrency, enums, error-handling, exceptions, generics, interfaces, oop, optional, records, streams, strings |
 | [C++](cpp/) | 16 | algorithms, data-structures, error-handling, oop, operators, raii, smart-pointers, stl, strings, sum-types, templates |
-| [TypeScript](typescript/) | 16 | advanced-types, async, basics, classes, enums, generics, interfaces, narrowing, unions, utility-types |
+| [TypeScript](typescript/) | 17 | advanced-types, async, basics, classes, enums, generics, interfaces, narrowing, unions, utility-types |
 | [Bash](bash/) | 16 | arrays, basics, functions, scripting, testing, utilities |
-| [C#](csharp/) | 14 | async, basics, collections, delegates, error-handling, generics, linq, methods, nullability, oop, patterns, strings |
-| [Ruby](ruby/) | 8 | basics, blocks, files, methods, oop, pattern-matching |
-| [PowerShell](powershell/) | 6 | basics, data, error-handling, functions, objects, text |
+| [C#](csharp/) | 15 | async, basics, collections, delegates, error-handling, generics, linq, methods, nullability, oop, patterns, strings |
+| [Ruby](ruby/) | 9 | basics, blocks, enumerable, files, methods, oop, pattern-matching |
+| [PowerShell](powershell/) | 7 | basics, data, error-handling, functions, objects, text |
 
 ## Run them
 

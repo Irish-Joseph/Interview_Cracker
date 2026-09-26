@@ -46,6 +46,8 @@ One file per day, named `YYYY-MM-DD.md`, filed under `YYYY/MM/`.
 | [2026-09-24](2026/09/2026-09-24.md) | Longest valid parentheses | 🔴 Hard | Stack of indices with a base sentinel |
 | [2026-09-25](2026/09/2026-09-25.md) | Valid Sudoku | 🟢 Easy | Constrained counting (row, column, box) |
 
+| [2026-09-26](2026/09/2026-09-26.md) | Rotate Image | 🟡 Medium | Matrix transpose + row reversal |
+
 ## Contributing a day
 
 Copy [`TEMPLATE.md`](TEMPLATE.md), fill it in, and add a row to the index above.

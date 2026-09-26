@@ -10,15 +10,15 @@
 
 <img src="assets/interview-cracker-hero.png" alt="A focused coding workspace with a visual path through code, algorithms, databases, and interview readiness" width="100%">
 
-203 runnable examples · 54 coding challenges · 34 interview guides · 13 languages
+213 runnable examples · 58 coding challenges · 38 interview guides · 13 languages
 
-Examples: 203
+Examples: 213
 
 Languages: 13
 
-Categories: 134
+Categories: 136
 
-[Start a study plan](interview-prep/README.md) · [Solve today's challenge](daily-challenges/2026/09/2026-09-25.md) · [Browse the website](https://irish-joseph.github.io/Interview_Cracker/)
+[Start a study plan](interview-prep/README.md) · [Solve today's challenge](daily-challenges/2026/09/2026-09-26.md) · [Browse the website](https://irish-joseph.github.io/Interview_Cracker/)
 
 </div>
 
@@ -32,12 +32,12 @@ Categories: 134
 | Learn by running code | [Examples](examples/) | Small programs across 13 languages, one concept per file |
 | Study offline | [PDF library](resources/pdf/) | Generated, printable interview question banks |
 
-## Today's learning pack — 24 September 2026
+## Today's learning pack — 26 September 2026
 
-- **Daily challenge:** [Longest Valid Parentheses](daily-challenges/2026/09/2026-09-24.md)
-- **New patterns:** sliding-window maximum, binary-search boundaries, permutations, and tree depth
-- **Interview depth:** cache stampedes, covering indexes, virtual-memory faults, and selection algorithms
-- **Language traps:** mutable defaults, cancellation, branded types, suppressed exceptions, UPSERTs, and more
+- **Daily challenge:** [Rotate Image](daily-challenges/2026/09/2026-09-26.md)
+- **New patterns:** graph cloning, greedy interval removal, 2D prefix sums, and constrained backtracking
+- **Interview depth:** distributed tracing, replication lag, false sharing, and cursor pagination
+- **Language traps:** weak metadata, runtime type guards, future composition, clone-on-write, SQL `CHECK` with `NULL`, and more
 
 ## A practical study loop
 

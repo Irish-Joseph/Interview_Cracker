@@ -205,3 +205,13 @@
 | 2026-09-25 | Bash | Intermediate | Basics | set -e pitfalls: where errexit is suspended, and pipefail/set -u | examples/bash/basics/set_e_pitfalls.sh |
 | 2026-09-25 | C | Beginner | Basics | Struct padding and alignment: why sizeof lies | examples/c/basics/struct_padding_alignment.c |
 | 2026-09-25 | C++ | Advanced | STL | std::move and T&&: casts, forwarding references and the perfect-forwarding idiom | examples/cpp/stl/move_and_forwarding_reference_traps.cpp |
+| 2026-09-26 | JavaScript | Beginner | Collections | WeakMap for object-keyed private metadata | examples/javascript/collections/weakmap_private_metadata.js |
+| 2026-09-26 | TypeScript | Intermediate | Generics | User-defined type predicates that validate unknown input | examples/typescript/generics/user_defined_type_predicates.ts |
+| 2026-09-26 | Java | Advanced | Concurrency | CompletableFuture composition and exception recovery | examples/java/concurrency/completable_future_composition.java |
+| 2026-09-26 | Go | Intermediate | Concurrency | Exactly-once initialization with sync.Once | examples/go/concurrency/sync_once_initialization.go |
+| 2026-09-26 | Rust | Intermediate | Ownership | Cow borrow-first clone-on-write APIs | examples/rust/ownership/cow_clone_on_write.rs |
+| 2026-09-26 | SQL | Intermediate | Constraints | CHECK constraints accept UNKNOWN unless NULL is forbidden | examples/sql/constraints/check_constraint_null.sql |
+| 2026-09-26 | C# | Beginner | Collections | Custom equality for Dictionary and HashSet | examples/csharp/collections/custom_equality_comparer.cs |
+| 2026-09-26 | Ruby | Beginner | Enumerable | Lazy Enumerable pipelines over unbounded input | examples/ruby/enumerable/lazy_enumeration.rb |
+| 2026-09-26 | PowerShell | Intermediate | Functions | Pipeline functions with begin process and end | examples/powershell/functions/pipeline_begin_process_end.ps1 |
+| 2026-09-26 | C | Advanced | Pointers | restrict pointers as a non-aliasing optimization contract | examples/c/pointers/restrict_aliasing_contract.c |

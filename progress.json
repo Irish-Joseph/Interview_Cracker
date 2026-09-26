@@ -1,5 +1,5 @@
 {
-  "total_examples": 203,
+  "total_examples": 213,
   "examples": [
     {
       "date": "2026-09-03",
@@ -1624,6 +1624,16 @@
       "category": "stl",
       "topic": "std::move and T&&: casts, forwarding references and the perfect-forwarding idiom",
       "file": "examples/cpp/stl/move_and_forwarding_reference_traps.cpp"
-    }
+    },
+    {"date":"2026-09-26","language":"javascript","difficulty":"beginner","category":"collections","topic":"WeakMap for object-keyed private metadata","file":"examples/javascript/collections/weakmap_private_metadata.js"},
+    {"date":"2026-09-26","language":"typescript","difficulty":"intermediate","category":"generics","topic":"User-defined type predicates that validate unknown input","file":"examples/typescript/generics/user_defined_type_predicates.ts"},
+    {"date":"2026-09-26","language":"java","difficulty":"advanced","category":"concurrency","topic":"CompletableFuture composition and exception recovery","file":"examples/java/concurrency/completable_future_composition.java"},
+    {"date":"2026-09-26","language":"go","difficulty":"intermediate","category":"concurrency","topic":"Exactly-once initialization with sync.Once","file":"examples/go/concurrency/sync_once_initialization.go"},
+    {"date":"2026-09-26","language":"rust","difficulty":"intermediate","category":"ownership","topic":"Cow borrow-first clone-on-write APIs","file":"examples/rust/ownership/cow_clone_on_write.rs"},
+    {"date":"2026-09-26","language":"sql","difficulty":"intermediate","category":"constraints","topic":"CHECK constraints accept UNKNOWN unless NULL is forbidden","file":"examples/sql/constraints/check_constraint_null.sql"},
+    {"date":"2026-09-26","language":"csharp","difficulty":"beginner","category":"collections","topic":"Custom equality for Dictionary and HashSet","file":"examples/csharp/collections/custom_equality_comparer.cs"},
+    {"date":"2026-09-26","language":"ruby","difficulty":"beginner","category":"enumerable","topic":"Lazy Enumerable pipelines over unbounded input","file":"examples/ruby/enumerable/lazy_enumeration.rb"},
+    {"date":"2026-09-26","language":"powershell","difficulty":"intermediate","category":"functions","topic":"Pipeline functions with begin process and end","file":"examples/powershell/functions/pipeline_begin_process_end.ps1"},
+    {"date":"2026-09-26","language":"c","difficulty":"advanced","category":"pointers","topic":"restrict pointers as a non-aliasing optimization contract","file":"examples/c/pointers/restrict_aliasing_contract.c"}
   ]
 }

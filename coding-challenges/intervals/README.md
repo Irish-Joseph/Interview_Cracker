@@ -42,6 +42,7 @@ and without it you would shrink the range.
 
 | File | Difficulty | Sort by |
 |---|---|---|
+| [non_overlapping_intervals.py](non_overlapping_intervals.py) | Medium | Finish time; greedily keep earliest |
 | [merge_intervals.py](merge_intervals.py) | 🟡 Medium | Start |
 | [meeting_rooms.py](meeting_rooms.py) | 🟡 Medium | Start, with a min-heap |
 | [insert_interval.py](insert_interval.py) | 🟡 Medium | Already sorted — no re-sort, O(n) |

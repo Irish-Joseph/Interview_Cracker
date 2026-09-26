@@ -66,6 +66,7 @@ is routinely the difference between milliseconds and hours.
 
 | File | Difficulty | Shape |
 |---|---|---|
+| [generate_parentheses.py](generate_parentheses.py) | Medium | Prune invalid prefixes while constructing |
 | [permutations.py](permutations.py) | Medium | Fix a position, recurse, undo the swap |
 | [subsets.py](subsets.py) | 🟡 Medium | Take-or-skip, record at every node |
 | [combination_sum.py](combination_sum.py) | 🟡 Medium | Reuse allowed, prune on the running total |

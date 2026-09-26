@@ -57,5 +57,6 @@ the same move that turns Two Sum from O(n²) into O(n).
 
 | File | Difficulty | Shape |
 |---|---|---|
+| [range_sum_query_2d.py](range_sum_query_2d.py) | Medium | 2D inclusion-exclusion queries |
 | [subarray_sum_equals_k.py](subarray_sum_equals_k.py) | 🟡 Medium | Prefix sum + hash map, one pass |
 | [subarray_sum_divisible_by_k.py](subarray_sum_divisible_by_k.py) | 🟡 Medium | Prefix residues mod k, count equal pairs |
